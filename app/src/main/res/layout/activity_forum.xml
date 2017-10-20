@@ -11,6 +11,6 @@
         android:id="@+id/button"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:text="ButtonTest"
+        android:text="ButtonTest1"
         android:onClick="onClick_GoToForumActivity" />
 </LinearLayout>
