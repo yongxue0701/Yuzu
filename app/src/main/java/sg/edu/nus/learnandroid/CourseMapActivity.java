@@ -41,14 +41,19 @@ public class CourseMapActivity extends Activity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent myIntent;
+
                 switch (item.getItemId()) {
                     case R.id.navigation_title_account:
-                        Intent myIntent = new Intent(getApplicationContext(), UserAccountActivity.class);
+                        myIntent = new Intent(getApplicationContext(), UserAccountActivity.class);
                         startActivity(myIntent);
                         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
                         break;
                     case R.id.navigation_title_forum:
+                        myIntent = new Intent(getApplicationContext(), ForumActivity.class);
+                        startActivity(myIntent);
+                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
                         break;
                 }

@@ -50,6 +50,7 @@ public class UserAccountActivity extends Activity {
             iconView.setLayoutParams(layoutParams);
         }
 
+        // // Set the first item as unChecked
         bottomNavigationView.getMenu().getItem(0).setCheckable(false);
         bottomNavigationView.getMenu().getItem(0).setChecked(false);
         bottomNavigationView.getMenu().getItem(2).setChecked(true);
@@ -85,7 +86,7 @@ public class UserAccountActivity extends Activity {
         accountButtonNames.add("Achievements");
         accountButtonNames.add("Logout");
 
-        adapter = new UserAccountRVAdapter(accountButtonNames, this);
+        adapter = new UserAccountRVAdapter(accountButtonNames, this, this);
         userAccountRVWithAccountBtn = findViewById(R.id.userAccount_account_RV);
         userAccountRVWithAccountBtn.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
@@ -100,7 +101,7 @@ public class UserAccountActivity extends Activity {
         contactButtonNames.add("Terms and Conditions");
         contactButtonNames.add("Privacy");
 
-        adapter = new UserAccountRVAdapter(contactButtonNames, this);
+        adapter = new UserAccountRVAdapter(contactButtonNames, this, this);
         userAccountRVWithContactBtn = findViewById(R.id.userAccount_contact_RV);
         userAccountRVWithContactBtn.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
@@ -113,13 +114,12 @@ public class UserAccountActivity extends Activity {
         List<String> ackButtonNames = new ArrayList<>();
         ackButtonNames.add("Acknowledgements");
 
-        adapter = new UserAccountRVAdapter(ackButtonNames, this);
+        adapter = new UserAccountRVAdapter(ackButtonNames, this, this);
         userAccountRVWithAckBtn = findViewById(R.id.userAccount_ack_RV);
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 
         userAccountRVWithAckBtn.setLayoutManager(layoutManager);
         userAccountRVWithAckBtn.setAdapter(adapter);
         userAccountRVWithAckBtn.setHasFixedSize(true);
-
     }
 }

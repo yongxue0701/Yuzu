@@ -16,7 +16,7 @@
         app:itemBackground="@color/colorWhite"
         app:itemIconTint="@color/bottom_navigation_bar_background"
         app:itemTextColor="@color/bottom_navigation_bar_background"
-        app:menu="@menu/bottom_navigation" />
+        app:menu="@menu/bottom_navigation_menu_item" />
 
     <ImageView
         android:id="@+id/map_pin_1_IV"
