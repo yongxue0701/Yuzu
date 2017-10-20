@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sg.edu.nus.learnandroid.LoginActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/login_SV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/login_username_ET"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/login_username_ET"
+                android:inputType="text"
+                app:layout_marginTopPercent="45%"
+                app:layout_widthPercent="50%" />
+
+            <EditText
+                android:id="@+id/login_pwd_ET"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_username_ET"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/login_pwd_ET"
+                android:inputType="text"
+                app:layout_marginTopPercent="2%"
+                app:layout_widthPercent="50%" />
+
+            <Button
+                android:id="@+id/login_login_Btn"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_pwd_ET"
+                android:layout_centerHorizontal="true"
+                android:text="@string/login_login_btn"
+                app:layout_marginTopPercent="4%"
+                app:layout_widthPercent="50%" />
+
+            <LinearLayout
+                android:id="@+id/login_signUp_LL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/login_login_Btn"
+                android:layout_below="@+id/login_login_Btn"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/login_signUp_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_signUp_TV" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/login_needHelp_LL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/login_login_Btn"
+                android:layout_below="@+id/login_login_Btn"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/login_needHelp_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_needHelp_TV" />
+
+            </LinearLayout>
+        </android.support.percent.PercentRelativeLayout>
+    </ScrollView>
+</android.support.percent.PercentRelativeLayout>

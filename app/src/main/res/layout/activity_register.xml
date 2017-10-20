@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sg.edu.nus.learnandroid.RegisterActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/register_SV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/register_title_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_title_TV"
+                android:textSize="30sp"
+                app:layout_marginLeftPercent="5%"
+                app:layout_marginTopPercent="4%" />
+
+            <EditText
+                android:id="@+id/register_username_ET"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_title_TV"
+                android:hint="@string/register_username_ET"
+                android:inputType="text"
+                app:layout_marginLeftPercent="5%"
+                app:layout_marginTopPercent="2%"
+                app:layout_widthPercent="50%" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/register_gender_RG"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_username_ET"
+                android:orientation="horizontal"
+                app:layout_marginLeftPercent="5%"
+                app:layout_marginTopPercent="2%">
+
+                <TextView
+                    android:id="@+id/register_titleInRG_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/register_titleInRG_TV"
+                    android:textSize="19sp" />
+
+                <RadioButton
+                    android:id="@+id/register_male_RB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_male_RB" />
+
+                <RadioButton
+                    android:id="@+id/register_female_RB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_female_RB" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/register_email_ET"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_gender_RG"
+                android:hint="@string/register_email_ET"
+                android:inputType="textEmailAddress"
+                app:layout_marginLeftPercent="5%"
+                app:layout_marginTopPercent="2%"
+                app:layout_widthPercent="50%" />
+
+            <EditText
+                android:id="@+id/register_pwd_ET"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_email_ET"
+                android:hint="@string/register_pwd_ET"
+                android:inputType="text"
+                app:layout_marginLeftPercent="5%"
+                app:layout_marginTopPercent="2%"
+                app:layout_widthPercent="50%" />
+
+            <EditText
+                android:id="@+id/register_confirmPwd_ET"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_pwd_ET"
+                android:hint="@string/register_confirmPwd_ET"
+                android:inputType="text"
+                app:layout_marginLeftPercent="5%"
+                app:layout_marginTopPercent="2%"
+                app:layout_widthPercent="50%" />
+
+            <Button
+                android:id="@+id/register_confirm_Btn"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_confirmPwd_ET"
+                android:text="@string/register_confirm_Btn"
+                app:layout_marginLeftPercent="5%"
+                app:layout_marginTopPercent="4%"
+                app:layout_widthPercent="30%" />
+
+            <Button
+                android:id="@+id/register_back_Btn"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_confirmPwd_ET"
+                android:layout_toEndOf="@id/register_confirm_Btn"
+                android:text="@string/register_back_Btn"
+                app:layout_marginLeftPercent="3%"
+                app:layout_marginTopPercent="4%"
+                app:layout_widthPercent="30%" />
+
+        </android.support.percent.PercentRelativeLayout>
+    </ScrollView>
+</android.support.percent.PercentRelativeLayout>

@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">LearnAndroid</string>
+    <string name="login_username_ET">Username</string>
+    <string name="login_pwd_ET">Password</string>
+    <string name="login_login_btn">Login</string>
+    <string name="login_signUp_btn">Sign up</string>
+    <string name="login_signUp_TV">Sign up</string>
+    <string name="login_needHelp_TV">Need Help?</string>
+    <string name="register_title_TV">Sign up</string>
+    <string name="register_username_ET">Username</string>
+    <string name="register_pwd_ET">Password</string>
+    <string name="register_confirmPwd_ET">Confirm Password</string>
+    <string name="register_email_ET">Email Address</string>
+    <string name="register_male_RB">Male</string>
+    <string name="register_female_RB">Female</string>
+    <string name="register_titleInRG_TV">Gender</string>
+    <string name="register_confirm_Btn">Confirm</string>
+    <string name="register_back_Btn">Back</string>
+    <string name="navigation_title_account">Me</string>
+    <string name="navigation_title_course">Courses</string>
+    <string name="navigation_title_forum">Forum</string>
 </resources>

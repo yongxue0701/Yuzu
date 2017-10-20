@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_title_course"
+        android:background="?attr/selectableItemBackground"
+        android:icon="@drawable/ic_lesson_black_36dp"
+        android:title="@string/navigation_title_course" />
+
+    <item
+        android:id="@+id/navigation_title_forum"
+        android:background="?attr/selectableItemBackground"
+        android:icon="@drawable/ic_forum_black_24dp"
+        android:title="@string/navigation_title_forum" />
+
+    <item
+        android:id="@+id/navigation_title_account"
+        android:background="?attr/selectableItemBackground"
+        android:icon="@drawable/ic_account_black_24dp"
+        android:title="@string/navigation_title_account" />
+
+</menu>
