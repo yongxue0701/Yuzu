@@ -24,11 +24,11 @@ public class LoginActivity extends Activity {
 
         userAccountDB = new UserAccountDB(this);
 
-        Button loginBtn = (Button) findViewById(R.id.login_login_Btn);
+        Button loginBtn = findViewById(R.id.login_login_Btn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                usernameET = (EditText) findViewById(R.id.login_username_ET);
-                pwdET = (EditText) findViewById(R.id.login_pwd_ET);
+                usernameET = findViewById(R.id.login_username_ET);
+                pwdET = findViewById(R.id.login_pwd_ET);
 
                 String username = usernameET.getText().toString();
                 String pwd = pwdET.getText().toString();
@@ -52,7 +52,7 @@ public class LoginActivity extends Activity {
             }
         });
 
-        LinearLayout registerLL = (LinearLayout) findViewById(R.id.login_signUp_LL);
+        LinearLayout registerLL = findViewById(R.id.login_signUp_LL);
         registerLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +62,7 @@ public class LoginActivity extends Activity {
             }
         });
 
-        LinearLayout needHelpLL = (LinearLayout) findViewById(R.id.login_needHelp_LL);
+        LinearLayout needHelpLL = findViewById(R.id.login_needHelp_LL);
         needHelpLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

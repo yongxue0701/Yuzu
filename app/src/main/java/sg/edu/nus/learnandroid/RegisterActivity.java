@@ -36,33 +36,33 @@ public class RegisterActivity extends Activity {
 
         userAccountDB = new UserAccountDB(this);
 
-        RadioGroup genderRadioGroup = (RadioGroup) findViewById(R.id.register_gender_RG);
+        RadioGroup genderRadioGroup = findViewById(R.id.register_gender_RG);
         genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                genderRG = (RadioGroup) findViewById(R.id.register_gender_RG);
-                genderRB = (RadioButton) findViewById(genderRG.getCheckedRadioButtonId());
+                genderRG = findViewById(R.id.register_gender_RG);
+                genderRB = findViewById(genderRG.getCheckedRadioButtonId());
                 gender = genderRB.getText().toString();
             }
         });
 
-        Button confirmBtn = (Button) findViewById(R.id.register_confirm_Btn);
+        Button confirmBtn = findViewById(R.id.register_confirm_Btn);
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
                 boolean allDone = true;
 
-                usernameET = (EditText) findViewById(R.id.register_username_ET);
-                pwdET = (EditText) findViewById(R.id.register_pwd_ET);
-                confirmPwdET = (EditText) findViewById(R.id.register_confirmPwd_ET);
-                emailET = (EditText) findViewById(R.id.register_email_ET);
+                usernameET = findViewById(R.id.register_username_ET);
+                pwdET = findViewById(R.id.register_pwd_ET);
+                confirmPwdET = findViewById(R.id.register_confirmPwd_ET);
+                emailET = findViewById(R.id.register_email_ET);
 
                 username = usernameET.getText().toString();
                 pwd = pwdET.getText().toString();
                 confirmPwd = confirmPwdET.getText().toString();
                 email = emailET.getText().toString();
 
-                genderRG = (RadioGroup) findViewById(R.id.register_gender_RG);
+                genderRG = findViewById(R.id.register_gender_RG);
 
                 if (username.isEmpty() || username == null) {
                     usernameET.setError("Please enter your username!");
@@ -93,7 +93,7 @@ public class RegisterActivity extends Activity {
                     allDone = false;
                 }
 
-                if (allDone == true) {
+                if (allDone) {
                     userAccountDB.open();
                     userAccountDB.insertRecord(username, pwd, email, gender);
                     userAccountDB.close();
@@ -105,7 +105,7 @@ public class RegisterActivity extends Activity {
             }
         });
 
-        Button backBtn = (Button) findViewById(R.id.register_back_Btn);
+        Button backBtn = findViewById(R.id.register_back_Btn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 finish();
@@ -118,17 +118,16 @@ public class RegisterActivity extends Activity {
         userAccountDB.open();
         Cursor mCursor = userAccountDB.getRecordByUsername(username);
 
-
-        if (mCursor != null) {
-            mCursor.close();
-            userAccountDB.close();
-
-            return true;
-        } else {
+        if (mCursor.getCount() == 0) {
             mCursor.close();
             userAccountDB.close();
 
             return false;
+        } else {
+            mCursor.close();
+            userAccountDB.close();
+
+            return true;
         }
     }
 }

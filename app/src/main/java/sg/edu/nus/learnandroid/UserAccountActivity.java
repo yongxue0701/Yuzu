@@ -28,7 +28,7 @@ public class UserAccountActivity extends Activity {
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_user_account);
 
-        usernameTV = (TextView) findViewById(R.id.userAccount_userName_TV);
+        usernameTV = findViewById(R.id.userAccount_userName_TV);
         usernameTV.setText("Yongxue");
 
         List<String> buttonNames = new ArrayList<>();
@@ -36,7 +36,7 @@ public class UserAccountActivity extends Activity {
         buttonNames.add("Logout");
 
         adapter = new UserAccountRVAdapter(buttonNames, this);
-        userAccountButtonRV = (RecyclerView) findViewById(R.id.userAccount_RV);
+        userAccountButtonRV = findViewById(R.id.userAccount_RV);
         userAccountButtonRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 
@@ -44,7 +44,7 @@ public class UserAccountActivity extends Activity {
         userAccountButtonRV.setAdapter(adapter);
         userAccountButtonRV.setHasFixedSize(true);
 
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.userAccount_bottom_navigation);
+        bottomNavigationView = findViewById(R.id.userAccount_bottom_navigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
