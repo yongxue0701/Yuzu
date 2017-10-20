@@ -27,4 +27,9 @@ public class MainActivity extends Activity {
         Intent myIntent = new Intent(this, UserAccountActivity.class);
         startActivity(myIntent);
     }
+
+    public void onClick_GoToCourseMapActivity(View view) {
+        Intent myIntent = new Intent(this, CourseMapActivity.class);
+        startActivity(myIntent);
+    }
 }

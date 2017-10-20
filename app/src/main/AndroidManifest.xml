@@ -21,7 +21,7 @@
         <activity android:name=".CourseMapActivity" />
         <activity android:name=".UserAccountActivity" />
         <activity android:name=".NeedHelpActivity" />
-        <activity android:name=".ForumActivity"></activity>
+        <activity android:name=".ForumActivity" />
     </application>
 
 </manifest>

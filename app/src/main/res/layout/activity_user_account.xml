@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/colorWhite"
-        app:itemTextColor="@color/colorWhite"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:itemBackground="@color/colorWhite"
+        app:itemIconTint="@color/bottom_navigation_bar_background"
+        app:itemTextColor="@color/bottom_navigation_bar_background"
         app:menu="@menu/bottom_navigation" />
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,41 +23,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/userAccount_bottom_navigation"
+        android:background="@color/colorSuperLightGrey"
         android:fillViewport="true">
 
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/userAccount_userImage_FB"
-                android:layout_width="wrap_content"
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/userAccount_userImage_LL"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:clickable="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_account_black_24dp"
-                app:backgroundTint="@color/colorTransparent"
-                app:fabSize="normal"
-                app:layout_marginTopPercent="7%" />
+                android:background="@color/colorWhite">
 
-            <TextView
-                android:id="@+id/userAccount_userName_TV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/userAccount_userImage_FB"
-                android:layout_centerHorizontal="true"
-                android:textSize="15sp"
-                app:layout_marginTopPercent="1.5%" />
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/userAccount_userImage_FB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:clickable="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_account_black_24dp"
+                    app:backgroundTint="@color/colorTransparent"
+                    app:fabSize="normal"
+                    app:layout_marginTopPercent="7%" />
+
+                <TextView
+                    android:id="@+id/userAccount_userName_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userAccount_userImage_FB"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="15sp"
+                    app:layout_marginBottomPercent="3%"
+                    app:layout_marginTopPercent="1.5%" />
+
+            </android.support.percent.PercentRelativeLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/userAccount_RV"
-                android:layout_height="match_parent"
-                android:layout_below="@id/userAccount_userName_TV"
+                android:id="@+id/userAccount_account_RV"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userAccount_userImage_LL"
                 android:layout_centerHorizontal="true"
+                android:background="@color/colorWhite"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:scrollbars="vertical"
-                app:layout_marginTopPercent="5%"
-                app:layout_widthPercent="90%" />
+                app:layout_marginTopPercent="2.5%"
+                app:layout_widthPercent="100%" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/userAccount_contact_RV"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userAccount_account_RV"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorWhite"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scrollbars="vertical"
+                app:layout_marginTopPercent="2.5%"
+                app:layout_widthPercent="100%" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/userAccount_ack_RV"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userAccount_contact_RV"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorWhite"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scrollbars="vertical"
+                app:layout_marginTopPercent="2.5%"
+                app:layout_widthPercent="100%" />
 
         </android.support.percent.PercentRelativeLayout>
     </ScrollView>

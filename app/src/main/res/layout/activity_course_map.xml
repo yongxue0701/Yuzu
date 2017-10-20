@@ -7,15 +7,16 @@
     android:background="@drawable/course_map"
     tools:context="sg.edu.nus.learnandroid.CourseMapActivity">
 
-    <!--<android.support.design.widget.BottomNavigationView-->
-    <!--android:id="@+id/courseMap_bottom_navigation"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--app:itemBackground="@color/colorPrimary"-->
-    <!--app:itemIconTint="@color/colorWhite"-->
-    <!--app:itemTextColor="@color/colorWhite"-->
-    <!--app:menu="@menu/bottom_navigation" />-->
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/courseMap_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:itemBackground="@color/colorWhite"
+        app:itemIconTint="@color/bottom_navigation_bar_background"
+        app:itemTextColor="@color/bottom_navigation_bar_background"
+        app:menu="@menu/bottom_navigation" />
 
     <ImageView
         android:id="@+id/map_pin_1_IV"
@@ -39,9 +40,9 @@
         android:id="@+id/map_pin_3_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_map_pin_red_1"
         app:layout_marginStartPercent="30%"
-        app:layout_marginTopPercent="51%"
-        android:src="@drawable/ic_map_pin_red_1" />
+        app:layout_marginTopPercent="51%" />
 
     <!--<ImageView-->
     <!--android:id="@+id/map_pin_4_IV"-->

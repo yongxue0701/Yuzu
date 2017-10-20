@@ -24,7 +24,7 @@ public class LoginActivity extends Activity {
 
         userAccountDB = new UserAccountDB(this);
 
-        Button loginBtn = findViewById(R.id.login_login_Btn);
+        Button loginBtn = (Button) findViewById(R.id.login_login_Btn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 usernameET = findViewById(R.id.login_username_ET);

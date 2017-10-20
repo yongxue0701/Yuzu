@@ -34,9 +34,9 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
 
         public ViewHolder(View itemView) {
             super(itemView);
-            buttonName = (TextView) itemView.findViewById(R.id.userAccount_buttonName_TV);
-            buttonIcon = (ImageView) itemView.findViewById(R.id.userAccount_buttonIcon_IV);
-            buttonPRL = (PercentRelativeLayout) itemView.findViewById(R.id.user_account_recyclerview_PRL);
+            buttonName = itemView.findViewById(R.id.userAccount_buttonName_TV);
+            buttonIcon = itemView.findViewById(R.id.userAccount_buttonIcon_IV);
+            buttonPRL = itemView.findViewById(R.id.user_account_recyclerview_PRL);
         }
     }
 
@@ -60,6 +60,17 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(context, "Hello I am edit profile", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            viewHolder.buttonIcon.setImageResource(R.drawable.ic_forum_black_24dp);
+        }
+
+        if (buttonName.equals("Feedback")) {
+            viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "Hello I am feedback", Toast.LENGTH_SHORT).show();
                 }
             });
 
