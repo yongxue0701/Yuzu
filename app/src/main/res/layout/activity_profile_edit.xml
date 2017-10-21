@@ -20,13 +20,13 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/profile_edit_RV"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:background="@color/colorWhite"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:scrollbars="vertical"
-                app:layout_widthPercent="100%" />
+                android:scrollbars="vertical" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/profile_edit_change_password_RV"

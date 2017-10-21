@@ -26,8 +26,7 @@ public class ProfileEditActivity extends Activity {
         profileEditItemView.add(new ItemView("Photo", "Img"));
         profileEditItemView.add(new ItemView("Username", "ET"));
         profileEditItemView.add(new ItemView("Email", "ET"));
-        profileEditItemView.add(new ItemView("Gender", "Btn"));
-        profileEditItemView.add(new ItemView("Birthday", "Btn"));
+        profileEditItemView.add(new ItemView("Gender", "BtnWithText"));
 
         adapter = new ProfileEditRVAdapter(profileEditItemView, this, this);
         profileEditRV = findViewById(R.id.profile_edit_RV);

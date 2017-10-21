@@ -134,7 +134,7 @@ public class UserAccountDB {
                 username + "='" + userName + "'", null);
     }
 
-    public Cursor getRecordByIsLogin(boolean islogin) throws SQLException {
+    public Cursor getRecordByIsLogin(int islogin) throws SQLException {
         Cursor mCursor = db.query(
 
                 UserAccountDBHelper.tableName,
