@@ -86,7 +86,7 @@ public class UserAccountActivity extends Activity {
         accountButtonNames.add("Achievements");
         accountButtonNames.add("Logout");
 
-        adapter = new UserAccountRVAdapter(accountButtonNames, this, this);
+        adapter =  new UserAccountRVAdapter(accountButtonNames, this, this);
         userAccountRVWithAccountBtn = findViewById(R.id.userAccount_account_RV);
         userAccountRVWithAccountBtn.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);

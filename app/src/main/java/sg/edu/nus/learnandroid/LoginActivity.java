@@ -41,6 +41,7 @@ public class LoginActivity extends Activity {
                         String pwdFromDB = mCursor.getString(mCursor.getColumnIndex("password"));
 
                         if (pwdFromDB.equals(pwd)) {
+                            userAccountDB.updateIsLoginByUsername(username, true);
                             Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
                             startActivity(myIntent);
                             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);

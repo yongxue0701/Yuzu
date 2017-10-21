@@ -27,6 +27,7 @@ public class RegisterActivity extends Activity {
     private String confirmPwd;
     private String email;
     private String gender;
+    private boolean isLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class RegisterActivity extends Activity {
                 pwd = pwdET.getText().toString();
                 confirmPwd = confirmPwdET.getText().toString();
                 email = emailET.getText().toString();
+                isLogin = false;
 
                 genderRG = findViewById(R.id.register_gender_RG);
 
@@ -94,8 +96,9 @@ public class RegisterActivity extends Activity {
                 }
 
                 if (allDone) {
+                    Toast.makeText(getApplicationContext(), "HELLO", Toast.LENGTH_SHORT).show();
                     userAccountDB.open();
-                    userAccountDB.insertRecord(username, pwd, email, gender);
+                    userAccountDB.insertRecord(username, pwd, email, gender, isLogin);
                     userAccountDB.close();
 
                     Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);

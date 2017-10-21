@@ -6,6 +6,10 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.isLogin;
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.userId;
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.username;
+
 /**
  * Created by Yongxue on 16/10/17.
  */
@@ -30,32 +34,36 @@ public class UserAccountDB {
         userAccountDBHelper.close();
     }
 
-    public void insertRecord(String username, String password, String email, String gender) {
+    public void insertRecord(String username, String password, String email,
+                             String gender, boolean isLogin) {
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(UserAccountDBHelper.username, username);
         initialValues.put(UserAccountDBHelper.password, password);
         initialValues.put(UserAccountDBHelper.email, email);
         initialValues.put(UserAccountDBHelper.gender, gender);
+        initialValues.put(UserAccountDBHelper.isLogin, isLogin);
 
         db.insert(UserAccountDBHelper.tableName, null, initialValues);
     }
 
     public void deleteRecord(String columnNameToBeDeleted) {
-        db.delete(UserAccountDBHelper.tableName, UserAccountDBHelper.userId +
+        db.delete(UserAccountDBHelper.tableName, userId +
                 "=" + columnNameToBeDeleted, null);
     }
 
-    public void updateRecord(String userId, String username, String password, String email, String gender) {
+    public void updateAllRecordsById(String id, String username, String password, String email,
+                                     String gender, boolean isLogin) {
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(UserAccountDBHelper.username, username);
         initialValues.put(UserAccountDBHelper.password, password);
         initialValues.put(UserAccountDBHelper.email, email);
         initialValues.put(UserAccountDBHelper.gender, gender);
+        initialValues.put(UserAccountDBHelper.isLogin, isLogin);
 
         db.update(UserAccountDBHelper.tableName, initialValues,
-                UserAccountDBHelper.userId + "=" + userId, null);
+                userId + "=" + id, null);
     }
 
     public Cursor getAllRecords() {
@@ -68,7 +76,8 @@ public class UserAccountDB {
                         UserAccountDBHelper.username,
                         UserAccountDBHelper.password,
                         UserAccountDBHelper.email,
-                        UserAccountDBHelper.gender},
+                        UserAccountDBHelper.gender,
+                        UserAccountDBHelper.isLogin},
                 null, null, null, null, null);
     }
 
@@ -82,8 +91,9 @@ public class UserAccountDB {
                         UserAccountDBHelper.username,
                         UserAccountDBHelper.password,
                         UserAccountDBHelper.email,
-                        UserAccountDBHelper.gender},
-                UserAccountDBHelper.userId + "=" + id,
+                        UserAccountDBHelper.gender,
+                        UserAccountDBHelper.isLogin},
+                userId + "=" + id,
                 null, null, null, null, null);
 
         if (mCursor != null) {
@@ -103,8 +113,40 @@ public class UserAccountDB {
                         UserAccountDBHelper.username,
                         UserAccountDBHelper.password,
                         UserAccountDBHelper.email,
-                        UserAccountDBHelper.gender},
-                UserAccountDBHelper.username + "='" + userName + "'",
+                        UserAccountDBHelper.gender,
+                        UserAccountDBHelper.isLogin},
+                username + "='" + userName + "'",
+                null, null, null, null, null);
+
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+
+        return mCursor;
+    }
+
+    public void updateIsLoginByUsername(String userName, boolean isLogin) {
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(UserAccountDBHelper.isLogin, isLogin);
+
+        db.update(UserAccountDBHelper.tableName, initialValues,
+                username + "='" + userName + "'", null);
+    }
+
+    public Cursor getRecordByIsLogin(boolean islogin) throws SQLException {
+        Cursor mCursor = db.query(
+
+                UserAccountDBHelper.tableName,
+
+                new String[]{
+                        UserAccountDBHelper.userId,
+                        UserAccountDBHelper.username,
+                        UserAccountDBHelper.password,
+                        UserAccountDBHelper.email,
+                        UserAccountDBHelper.gender,
+                        UserAccountDBHelper.isLogin},
+                isLogin + "=" + islogin,
                 null, null, null, null, null);
 
         if (mCursor != null) {

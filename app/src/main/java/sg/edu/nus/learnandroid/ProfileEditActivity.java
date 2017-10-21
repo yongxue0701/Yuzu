@@ -8,6 +8,7 @@ public class ProfileEditActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_profile_edit);
     }
 }

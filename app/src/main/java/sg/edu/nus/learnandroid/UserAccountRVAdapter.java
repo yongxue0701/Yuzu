@@ -47,7 +47,7 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.user_account_recyclerview, parent, false);
+                .inflate(R.layout.user_account_recycler_view, parent, false);
         return new ViewHolder(view);
 
     }

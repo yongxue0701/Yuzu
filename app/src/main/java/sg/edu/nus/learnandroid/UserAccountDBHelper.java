@@ -19,6 +19,7 @@ public class UserAccountDBHelper extends SQLiteOpenHelper {
     public static final String password = "password";
     public static final String email = "email";
     public static final String gender = "gender";
+    public static final String isLogin = "isLogin";
 
     private static final String SQLite_CREATE =
             "CREATE TABLE " + tableName + "(" +
@@ -26,7 +27,8 @@ public class UserAccountDBHelper extends SQLiteOpenHelper {
                     + username + " TEXT NOT NULL," +
                     password + " TEXT NOT NULL," +
                     email + " TEXT NOT NULL," +
-                    gender + " TEXT NOT NULL)";
+                    gender + " TEXT NOT NULL," +
+                    isLogin + " TEXT NOT NULL)";
 
     private static final String SQLite_DELETE =
             "DROP TABLE IF EXISTS " + tableName;
