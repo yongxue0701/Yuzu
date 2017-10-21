@@ -12,6 +12,13 @@
         android:layout_height="60dp"
         android:background="?attr/selectableItemBackground">
 
+        <ImageView
+            android:id="@+id/userAccount_buttonIcon_IV"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_lesson_black_24dp" />
+
         <TextView
             android:id="@+id/userAccount_buttonName_TV"
             android:layout_width="wrap_content"
@@ -23,13 +30,6 @@
             android:paddingTop="18dp"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/userAccount_buttonIcon_IV"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_lesson_black_24dp" />
 
     </android.support.percent.PercentRelativeLayout>
 </RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/profile_edit_image_recyclerview_PRL"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/profileEdit_image_buttonName_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            app:layout_widthPercent="40%" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/profileEdit_image_userImage_FAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/profileEdit_image_buttonName_TV"
+            android:clickable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_account_black_24dp"
+            app:backgroundTint="@color/colorTransparent"
+            app:fabSize="normal"
+            app:layout_marginTopPercent="7%" />
+
+        <TextView
+            android:id="@+id/profileEdit_image_description_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/profileEdit_image_userImage_FAB"
+            android:paddingTop="25dp"
+            android:text="@string/profile_edit_image_rv_text"
+            android:textColor="@color/colorGrey"
+            android:textSize="12sp" />
+
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>

@@ -6,4 +6,41 @@
     android:layout_height="match_parent"
     tools:context="sg.edu.nus.learnandroid.ProfileEditActivity">
 
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/userAccount_SV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/userAccount_bottom_navigation"
+        android:background="@color/colorSuperLightGrey"
+        android:fillViewport="true">
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/profile_edit_RV"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorWhite"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scrollbars="vertical"
+                app:layout_widthPercent="100%" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/profile_edit_change_password_RV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_edit_RV"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorWhite"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scrollbars="vertical"
+                app:layout_marginTopPercent="2%"
+                app:layout_widthPercent="100%" />
+
+        </android.support.percent.PercentRelativeLayout>
+    </ScrollView>
 </android.support.percent.PercentRelativeLayout>

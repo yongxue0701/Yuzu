@@ -19,4 +19,5 @@
     <string name="navigation_title_account">Me</string>
     <string name="navigation_title_course">Courses</string>
     <string name="navigation_title_forum">Forum</string>
+    <string name="profile_edit_image_rv_text">Tap to change (Optional）</string>
 </resources>

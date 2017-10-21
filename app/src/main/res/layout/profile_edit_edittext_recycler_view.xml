@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/profile_edit_edittext_recyclerview_PRL"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/profileEdit_edittext_buttonName_TV"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            app:layout_widthPercent="40%" />
+
+        <EditText
+            android:id="@+id/profileEdit_edittext_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/profileEdit_edittext_buttonName_TV"
+            android:background="@null"
+            android:inputType="text" />
+
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>
+

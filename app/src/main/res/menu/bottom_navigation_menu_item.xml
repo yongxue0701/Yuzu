@@ -4,7 +4,7 @@
     <item
         android:id="@+id/navigation_title_course"
         android:background="?attr/selectableItemBackground"
-        android:icon="@drawable/ic_lesson_black_36dp"
+        android:icon="@drawable/ic_lesson_black_24dp"
         android:title="@string/navigation_title_course" />
 
     <item

@@ -96,7 +96,6 @@ public class RegisterActivity extends Activity {
                 }
 
                 if (allDone) {
-                    Toast.makeText(getApplicationContext(), "HELLO", Toast.LENGTH_SHORT).show();
                     userAccountDB.open();
                     userAccountDB.insertRecord(username, pwd, email, gender, isLogin);
                     userAccountDB.close();
