@@ -4,5 +4,5 @@
     <dimen name="design_fab_size_mini" tools:override="true">30dp</dimen>
     <dimen name="design_bottom_navigation_text_size" tools:override="true">11sp</dimen>
     <dimen name="design_bottom_navigation_active_text_size" tools:override="true">11sp</dimen>
-    <dimen name="design_bottom_navigation_margin" tools:override="true">1dp</dimen>
+    <dimen name="design_bottom_navigation_margin" tools:override="true">3dp</dimen>
 </resources>

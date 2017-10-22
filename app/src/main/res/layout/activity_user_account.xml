@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="?attr/selectableItemBackground"
         app:itemBackground="@color/colorWhite"
         app:itemIconTint="@color/bottom_navigation_bar_background"
         app:itemTextColor="@color/bottom_navigation_bar_background"
@@ -33,7 +33,7 @@
             <android.support.percent.PercentRelativeLayout
                 android:id="@+id/userAccount_userImage_LL"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                app:layout_heightPercent="30%"
                 android:background="@color/colorWhite">
 
                 <android.support.design.widget.FloatingActionButton
@@ -46,7 +46,7 @@
                     android:src="@drawable/ic_account_black_24dp"
                     app:backgroundTint="@color/colorTransparent"
                     app:fabSize="normal"
-                    app:layout_marginTopPercent="7%" />
+                    app:layout_marginTopPercent="10%" />
 
                 <TextView
                     android:id="@+id/userAccount_userName_TV"
@@ -55,8 +55,8 @@
                     android:layout_below="@id/userAccount_userImage_FB"
                     android:layout_centerHorizontal="true"
                     android:textSize="15sp"
-                    app:layout_marginBottomPercent="3%"
-                    app:layout_marginTopPercent="1.5%" />
+                    android:text="123"
+                    app:layout_marginTopPercent="8%" />
 
             </android.support.percent.PercentRelativeLayout>
 

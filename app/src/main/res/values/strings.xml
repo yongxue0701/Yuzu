@@ -20,4 +20,7 @@
     <string name="navigation_title_course">Courses</string>
     <string name="navigation_title_forum">Forum</string>
     <string name="profile_edit_image_rv_text">Tap to change (Optional）</string>
+    <string name="gender_popup_null_TV">---</string>
+    <string name="gender_popup_male_TV">Male</string>
+    <string name="gender_popup_female_TV">Female</string>
 </resources>
