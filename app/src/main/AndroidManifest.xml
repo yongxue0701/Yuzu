@@ -23,7 +23,8 @@
         <activity android:name=".NeedHelpActivity" />
         <activity android:name=".ForumActivity" />
         <activity android:name=".ProfileEditActivity" />
-        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".CourseFragmentActivity"></activity>
     </application>
 
 </manifest>

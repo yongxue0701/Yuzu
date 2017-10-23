@@ -11,6 +11,7 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 public class CourseMapActivity extends Activity {
 
@@ -58,6 +59,16 @@ public class CourseMapActivity extends Activity {
                         break;
                 }
                 return false;
+            }
+        });
+
+        ImageView mapPinFourIV = (ImageView) findViewById(R.id.map_pin_4_IV);
+        mapPinFourIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
     }
