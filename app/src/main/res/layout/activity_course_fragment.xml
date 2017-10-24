@@ -8,4 +8,33 @@
     tools:context="sg.edu.nus.learnandroid.CourseFragmentActivity"
     tools:ignore="ContentDescription">
 
+    <ImageView
+        android:id="@+id/fragment_map_pin_1_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginEndPercent="42%"
+        app:layout_marginTopPercent="32%" />
+
+    <ImageView
+        android:id="@+id/fragment_map_pin_2_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginStartPercent="25%"
+        app:layout_marginTopPercent="68%" />
+
+    <ImageView
+        android:id="@+id/fragment_map_pin_3_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginStartPercent="73%"
+        app:layout_marginTopPercent="76%" />
+
 </android.support.percent.PercentRelativeLayout>

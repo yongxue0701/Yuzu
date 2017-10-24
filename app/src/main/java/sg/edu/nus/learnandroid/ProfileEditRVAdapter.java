@@ -1,6 +1,7 @@
 package sg.edu.nus.learnandroid;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +13,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -179,7 +182,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
                     buttonWithTextTypeViewHolder.buttonWithTextPRL.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            initiatePopupWindow(view);
+                            initiateDialog(view);
                         }
                     });
 
@@ -285,5 +288,27 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
 
             }
         });
+    }
+
+    private void initiateDialog(View view) {
+
+        final Dialog dialog = new Dialog(context, R.style.Theme_Dialog);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.gender_popup);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.BOTTOM);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        LinearLayout cancelLL = (LinearLayout) dialog.findViewById(R.id.cancel_textview_LL);
+        cancelLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 }

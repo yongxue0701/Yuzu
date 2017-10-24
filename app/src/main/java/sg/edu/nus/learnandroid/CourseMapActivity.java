@@ -62,7 +62,7 @@ public class CourseMapActivity extends Activity {
             }
         });
 
-        ImageView mapPinFourIV = (ImageView) findViewById(R.id.map_pin_4_IV);
+        ImageView mapPinFourIV = (ImageView) findViewById(R.id.course_map_pin_4_IV);
         mapPinFourIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

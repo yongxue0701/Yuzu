@@ -20,7 +20,7 @@
         app:menu="@menu/bottom_navigation_menu_item" />
 
     <ImageView
-        android:id="@+id/map_pin_1_IV"
+        android:id="@+id/course_map_pin_1_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -31,7 +31,7 @@
         app:layout_marginTopPercent="15%" />
 
     <ImageView
-        android:id="@+id/map_pin_2_IV"
+        android:id="@+id/course_map_pin_2_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
@@ -40,7 +40,7 @@
         app:layout_marginTopPercent="29%" />
 
     <ImageView
-        android:id="@+id/map_pin_3_IV"
+        android:id="@+id/course_map_pin_3_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
@@ -49,7 +49,7 @@
         app:layout_marginTopPercent="51%" />
 
     <ImageView
-        android:id="@+id/map_pin_4_IV"
+        android:id="@+id/course_map_pin_4_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
@@ -58,7 +58,7 @@
         app:layout_marginTopPercent="53%" />
 
     <ImageView
-        android:id="@+id/map_pin_5_IV"
+        android:id="@+id/course_map_pin_5_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
@@ -67,7 +67,7 @@
         app:layout_marginTopPercent="79%" />
 
     <ImageView
-        android:id="@+id/map_pin_6_IV"
+        android:id="@+id/course_map_pin_6_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
