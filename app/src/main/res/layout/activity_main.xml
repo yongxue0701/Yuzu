@@ -35,4 +35,6 @@
         android:onClick="onClick_GoToCourseMapActivity"
         android:text="Link to Course Map" />
 
+
+
 </LinearLayout>

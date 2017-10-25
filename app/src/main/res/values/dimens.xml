@@ -5,4 +5,9 @@
     <dimen name="design_bottom_navigation_text_size" tools:override="true">11sp</dimen>
     <dimen name="design_bottom_navigation_active_text_size" tools:override="true">11sp</dimen>
     <dimen name="design_bottom_navigation_margin" tools:override="true">3dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tablerow_horizontal_margin">8dp</dimen>
+    <dimen name="tablerow_vertical_margin">8dp</dimen>
 </resources>

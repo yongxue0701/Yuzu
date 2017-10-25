@@ -32,4 +32,5 @@ public class MainActivity extends Activity {
         Intent myIntent = new Intent(this, CourseMapActivity.class);
         startActivity(myIntent);
     }
+
 }
