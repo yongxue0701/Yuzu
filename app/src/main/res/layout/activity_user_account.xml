@@ -55,7 +55,6 @@
                     android:layout_below="@id/userAccount_userImage_FB"
                     android:layout_centerHorizontal="true"
                     android:textSize="15sp"
-                    android:text="123"
                     app:layout_marginTopPercent="8%" />
 
             </android.support.percent.PercentRelativeLayout>

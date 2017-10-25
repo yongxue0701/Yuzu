@@ -20,57 +20,59 @@
         app:menu="@menu/bottom_navigation_menu_item" />
 
     <ImageView
-        android:id="@+id/map_pin_1_IV"
+        android:id="@+id/course_map_pin_1_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_map_pin_red_1"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_dark_grey_1"
         app:layout_marginEndPercent="36%"
         app:layout_marginTopPercent="15%" />
 
     <ImageView
-        android:id="@+id/map_pin_2_IV"
+        android:id="@+id/course_map_pin_2_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_map_pin_red_1"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_dark_grey_1"
         app:layout_marginStartPercent="29%"
         app:layout_marginTopPercent="29%" />
 
     <ImageView
-        android:id="@+id/map_pin_3_IV"
+        android:id="@+id/course_map_pin_3_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_map_pin_red_1"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_dark_grey_1"
         app:layout_marginStartPercent="30%"
         app:layout_marginTopPercent="51%" />
 
-    <!--<ImageView-->
-    <!--android:id="@+id/map_pin_4_IV"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignEnd="@+id/map_pin_1_IV"-->
-    <!--android:layout_below="@+id/map_pin_3_IV"-->
-    <!--android:layout_marginEnd="14dp"-->
-    <!--android:src="@drawable/ic_map_pin_red_1" />-->
+    <ImageView
+        android:id="@+id/course_map_pin_4_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_dark_grey_1"
+        app:layout_marginStartPercent="49%"
+        app:layout_marginTopPercent="53%" />
 
-    <!--<ImageView-->
-    <!--android:id="@+id/map_pin_5_IV"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_alignStart="@+id/map_pin_1_IV"-->
-    <!--android:layout_marginBottom="90dp"-->
-    <!--android:layout_marginStart="20dp"-->
-    <!--android:src="@drawable/ic_map_pin_red_1" />-->
+    <ImageView
+        android:id="@+id/course_map_pin_5_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_dark_grey_1"
+        app:layout_marginStartPercent="60%"
+        app:layout_marginTopPercent="79%" />
 
-    <!--<ImageView-->
-    <!--android:id="@+id/map_pin_6_IV"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignEnd="@+id/map_pin_2_IV"-->
-    <!--android:layout_alignTop="@+id/map_pin_5_IV"-->
-    <!--android:layout_marginEnd="20dp"-->
-    <!--android:src="@drawable/ic_map_pin_red_1" />-->
+    <ImageView
+        android:id="@+id/course_map_pin_6_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_dark_grey_1"
+        app:layout_marginStartPercent="23%"
+        app:layout_marginTopPercent="78%" />
 
 </android.support.percent.PercentRelativeLayout>
