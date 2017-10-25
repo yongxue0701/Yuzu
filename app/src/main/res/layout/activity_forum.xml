@@ -11,7 +11,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sharing Your Thoughts"
-        android:onClick="onClick_GoToForumActivity" />
+        android:onClick="onClick_GoToForumActivity"
+        android:text="Sharing Your Thoughts" />
 
 </LinearLayout>

@@ -12,17 +12,18 @@ import com.facebook.CallbackManager;
 
 public class ForumActivity extends Activity {
 
-        private CallbackManager callbackManager;
-        private AccessTokenTracker accessTokenTracker;
-        private AccessToken accessToken ;
-        private final static String TAG = LoginActivity.class.getName().toString();
+    private CallbackManager callbackManager;
+    private AccessTokenTracker accessTokenTracker;
+    private AccessToken accessToken;
+    private final static String TAG = LoginActivity.class.getName().toString();
 
     Button bt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
-        bt=(Button)findViewById(R.id.button);
+        bt = (Button) findViewById(R.id.button);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
