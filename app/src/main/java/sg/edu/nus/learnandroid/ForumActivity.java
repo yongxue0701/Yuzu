@@ -23,8 +23,8 @@ import java.io.IOException;
 public class ForumActivity extends Activity {
     private LikeView btnLike;
     private ShareDialog shareDialog;
-    private int PICK_IMAGE_REQUEST=1;
-    private int PICK_VIDEO_REQUEST=2;
+    private int PICK_IMAGE_REQUEST = 1;
+    private int PICK_VIDEO_REQUEST = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +72,8 @@ public class ForumActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode==RESULT_OK) {
-            if (requestCode==PICK_IMAGE_REQUEST && data!=null && data.getData()!=null) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == PICK_IMAGE_REQUEST && data != null && data.getData() != null) {
 
                 Bitmap image = null;
                 try {
@@ -92,7 +92,7 @@ public class ForumActivity extends Activity {
 
                     shareDialog.show(sharePhotoContent);
                 }
-            }else if(requestCode==PICK_VIDEO_REQUEST && data!=null && data.getData()!=null){
+            } else if (requestCode == PICK_VIDEO_REQUEST && data != null && data.getData() != null) {
 
                 ShareVideo shareVideo = new ShareVideo.Builder()
                         .setLocalUrl(data.getData())
@@ -107,8 +107,4 @@ public class ForumActivity extends Activity {
         }
 
     }
-
-
-
-
 }
