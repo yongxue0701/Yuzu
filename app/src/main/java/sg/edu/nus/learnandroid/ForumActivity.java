@@ -37,7 +37,7 @@ public class ForumActivity extends Activity {
 
 //        Linke Button
         btnLike = (LikeView) findViewById(R.id.btnLike);
-        btnLike.setObjectIdAndType("https://www.facebook.com/androidlift", LikeView.ObjectType.PAGE);
+        btnLike.setObjectIdAndType("https://www.facebook.com/Learnandroidwithus-854183284756525/", LikeView.ObjectType.PAGE);
 
         shareDialog = new ShareDialog(this);  // intialize facebook shareDialog.
     }
@@ -46,9 +46,7 @@ public class ForumActivity extends Activity {
 
         if (ShareDialog.canShow(ShareLinkContent.class)) {
             ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                    .setContentTitle("Androidlift")
-                    .setContentDescription("Androidlift blog")
-                    .setContentUrl(Uri.parse("http://androidlift.info"))
+                    .setContentUrl(Uri.parse("https://developer.android.com/index.html?hl=zh-cn"))
                     .build();
 
             shareDialog.show(linkContent);
