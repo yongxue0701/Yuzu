@@ -2,6 +2,7 @@ package sg.edu.nus.learnandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ public class LoginActivity extends Activity {
 
     private EditText usernameET;
     private EditText pwdET;
+
+    public static final String MY_SHAREDPREF_NAME = "UserInforSharedPref";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,23 @@ public class LoginActivity extends Activity {
 
                         if (pwdFromDB.equals(pwd)) {
                             userAccountDB.updateIsLoginByUsername(username, true);
+
+                            SharedPreferences.Editor editor = getSharedPreferences(MY_SHAREDPREF_NAME,
+                                    MODE_PRIVATE).edit();
+
+                            editor.putString("username", mCursor.getString(mCursor.getColumnIndex("username")));
+                            editor.putString("password", mCursor.getString(mCursor.getColumnIndex("password")));
+                            editor.putString("email", mCursor.getString(mCursor.getColumnIndex("email")));
+                            editor.putString("gender", mCursor.getString(mCursor.getColumnIndex("gender")));
+                            editor.commit();
+
                             Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
                             startActivity(myIntent);
                             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                         }
                     } while (mCursor.moveToNext());
                 }
+
                 mCursor.close();
                 userAccountDB.close();
             }

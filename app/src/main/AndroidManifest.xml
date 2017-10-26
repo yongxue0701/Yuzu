@@ -30,9 +30,9 @@
         <activity android:name=".ForumActivity" />
         <activity android:name=".ProfileEditActivity" />
         <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".CourseFragmentActivity"/>
-        <activity android:name=".FragmentConceptActivity"/>
-        <activity android:name=".ForumDisplayActivity"/>
+        <activity android:name=".CourseFragmentActivity" />
+        <activity android:name=".FragmentConceptActivity" />
+        <activity android:name=".ForumDisplayActivity" />
 
         <provider
             android:name="com.facebook.FacebookContentProvider"

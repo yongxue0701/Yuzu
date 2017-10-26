@@ -155,4 +155,15 @@ public class UserAccountDB {
 
         return mCursor;
     }
+
+    public void updateSomeRecordsByUsername(String userName, String email, String gender) {
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(UserAccountDBHelper.username, userName);
+        initialValues.put(UserAccountDBHelper.email, email);
+        initialValues.put(UserAccountDBHelper.gender, gender);
+
+        db.update(UserAccountDBHelper.tableName, initialValues,
+                username + "='" + userName + "'", null);
+    }
 }

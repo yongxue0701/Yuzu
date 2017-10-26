@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.percent.PercentRelativeLayout;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +25,13 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Yongxue on 21/10/17.
@@ -34,6 +42,8 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
     private Context context;
     private Activity activity;
     private List<ItemView> editProfileList;
+
+    public static final String MY_SHAREDPREF_NAME = "UserInforSharedPref";
 
     public ProfileEditRVAdapter(List<ItemView> editProfileList, Context context, Activity activity) {
         this.editProfileList = editProfileList;
@@ -122,6 +132,9 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
         ItemView itemView = editProfileList.get(position);
         UserAccountDB userAccountDB = new UserAccountDB(context);
 
+        final SharedPreferences.Editor editor = context.getSharedPreferences(MY_SHAREDPREF_NAME,
+                MODE_PRIVATE).edit();
+
         if (itemView != null) {
             switch (viewHolder.getItemViewType()) {
 
@@ -142,7 +155,48 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
 
                         mCursor.close();
                         userAccountDB.close();
+
+                        editTextTypeViewHolder.buttonNameContentET.addTextChangedListener(new TextWatcher() {
+                            // Set up timer for edit time, save the data after 1 second
+                            Date lastTypeTime = null;
+                            EditTextTypeViewHolder editTextTypeViewHolder = (EditTextTypeViewHolder) viewHolder;
+
+                            @Override
+                            public void afterTextChanged(Editable editable) {
+
+                            }
+
+                            @Override
+                            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                                lastTypeTime = new Date();
+                            }
+
+                            @Override
+                            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                                Timer t = new Timer();
+                                TimerTask tt = new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        Date myRunTime = new Date();
+
+                                        if ((lastTypeTime.getTime() + 1000) <= myRunTime.getTime()) {
+                                            activity.runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    Log.d("<tag>", "typing finished!!!");
+                                                    editor.putString("username", editTextTypeViewHolder.buttonNameContentET.getText().toString());
+                                                    editor.commit();
+                                                }
+                                            });
+                                        }
+                                    }
+                                };
+                                t.schedule(tt, 1000);
+                            }
+                        });
                     }
+
                     if (itemView.getViewName().equals("Email")) {
                         userAccountDB.open();
                         Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
@@ -156,35 +210,76 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
 
                         mCursor.close();
                         userAccountDB.close();
+
+                        editTextTypeViewHolder.buttonNameContentET.addTextChangedListener(new TextWatcher() {
+                            // Set up timer for edit time, save the data after 1 second
+                            Date lastTypeTime = null;
+                            EditTextTypeViewHolder editTextTypeViewHolder = (EditTextTypeViewHolder) viewHolder;
+
+                            @Override
+                            public void afterTextChanged(Editable editable) {
+
+                            }
+
+                            @Override
+                            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                                lastTypeTime = new Date();
+                            }
+
+                            @Override
+                            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                                Timer t = new Timer();
+                                TimerTask tt = new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        Date myRunTime = new Date();
+
+                                        if ((lastTypeTime.getTime() + 1000) <= myRunTime.getTime()) {
+                                            activity.runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    Log.d("<tag>", "typing finished!!!");
+                                                    editor.putString("email", editTextTypeViewHolder.buttonNameContentET.getText().toString());
+                                                    editor.commit();
+                                                }
+                                            });
+                                        }
+                                    }
+                                };
+                                t.schedule(tt, 1000);
+                            }
+                        });
                     }
 
                     break;
 
                 case 1:
-                    ButtonWithTextTypeViewHolder buttonWithTextTypeViewHolder = (ButtonWithTextTypeViewHolder) viewHolder;
+                    final ButtonWithTextTypeViewHolder buttonWithTextTypeViewHolder = (ButtonWithTextTypeViewHolder) viewHolder;
                     buttonWithTextTypeViewHolder.buttonNameButtonWithTextTV.setText(itemView.getViewName());
 
                     if (itemView.getViewName().equals("Gender")) {
+
                         userAccountDB.open();
                         Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
 
                         if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
                             do {
-                                String username = mCursor.getString(mCursor.getColumnIndex("gender"));
-                                buttonWithTextTypeViewHolder.buttonNameContentTV.setText(username);
+                                String gender = mCursor.getString(mCursor.getColumnIndex("gender"));
+                                buttonWithTextTypeViewHolder.buttonNameContentTV.setText(gender);
                             } while (mCursor.moveToNext());
                         }
 
                         mCursor.close();
                         userAccountDB.close();
-                    }
 
-                    buttonWithTextTypeViewHolder.buttonWithTextPRL.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            initiateDialog(view);
-                        }
-                    });
+                        buttonWithTextTypeViewHolder.buttonWithTextPRL.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View myView) {
+                                initiateDialog(myView);
+                            }
+                        });
+                    }
 
                     break;
 
@@ -290,7 +385,10 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
         });
     }
 
-    private void initiateDialog(View view) {
+    private void initiateDialog(final View genderView) {
+
+        final SharedPreferences.Editor editor = context.getSharedPreferences(MY_SHAREDPREF_NAME,
+                MODE_PRIVATE).edit();
 
         final Dialog dialog = new Dialog(context, R.style.Theme_Dialog);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -310,5 +408,47 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
         });
 
         dialog.show();
+
+        final TextView genderPopupNullTV = (TextView) dialog.findViewById(R.id.gender_popup_null_TV);
+        genderPopupNullTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView genderTextView = (TextView) genderView.findViewById(R.id.profileEdit_btnWithText_content_TV);
+                genderTextView.setText("");
+
+                editor.putString("gender", "");
+                editor.commit();
+
+                dialog.dismiss();
+            }
+        });
+
+        final TextView genderPopupMaleTV = (TextView) dialog.findViewById(R.id.gender_popup_male_TV);
+        genderPopupMaleTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView genderTextView = (TextView) genderView.findViewById(R.id.profileEdit_btnWithText_content_TV);
+                genderTextView.setText("Male");
+
+                editor.putString("gender", "Male");
+                editor.commit();
+
+                dialog.dismiss();
+            }
+        });
+
+        final TextView genderPopupFemaleTV = (TextView) dialog.findViewById(R.id.gender_popup_female_TV);
+        genderPopupFemaleTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView genderTextView = (TextView) genderView.findViewById(R.id.profileEdit_btnWithText_content_TV);
+                genderTextView.setText("Female");
+
+                editor.putString("gender", "Female");
+                editor.commit();
+
+                dialog.dismiss();
+            }
+        });
     }
 }
