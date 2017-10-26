@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
@@ -29,10 +27,6 @@ public class ForumActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Initialize the SDK before executing any other operations,
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
-
         setContentView(R.layout.activity_forum);
 
 //        Linke Button
