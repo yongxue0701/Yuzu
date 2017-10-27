@@ -1,13 +1,19 @@
 package sg.edu.nus.learnandroid;
 
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,7 +53,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                initiateDialog(view);
             }
         });
 
@@ -106,6 +112,36 @@ public class ProfileEditActivity extends AppCompatActivity {
 
                 mCursor.close();
                 userAccountDB.close();
+            }
+        });
+    }
+
+    private void initiateDialog(View view) {
+
+        final Dialog dialog = new Dialog(ProfileEditActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.cancel_btn_popup);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_VERTICAL);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+
+        Button cancelBtn = (Button) dialog.findViewById(R.id.cancel_btn_popup_cancel_btn);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        Button yesBtn = (Button) dialog.findViewById(R.id.cancel_btn_popup_yes_btn);
+        yesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

@@ -12,9 +12,15 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme_Dialog" parent="android:Theme.Holo.Dialog">
+    <style name="Theme_Dialog_Profile_Gender" parent="android:Theme.Holo.Dialog">
         <item name="android:windowMinWidthMajor">100%</item>
         <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Theme_Dialog_Cancel_Btn" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowMinWidthMajor">85%</item>
+        <item name="android:windowMinWidthMinor">85%</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
 

@@ -390,7 +390,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
         final SharedPreferences.Editor editor = context.getSharedPreferences(MY_SHAREDPREF_NAME,
                 MODE_PRIVATE).edit();
 
-        final Dialog dialog = new Dialog(context, R.style.Theme_Dialog);
+        final Dialog dialog = new Dialog(context, R.style.Theme_Dialog_Profile_Gender);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.gender_popup);
 
