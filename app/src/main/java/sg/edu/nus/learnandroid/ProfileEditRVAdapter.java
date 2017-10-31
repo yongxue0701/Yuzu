@@ -180,7 +180,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
                                     public void run() {
                                         Date myRunTime = new Date();
 
-                                        if ((lastTypeTime.getTime() + 1000) <= myRunTime.getTime()) {
+                                        if ((lastTypeTime.getTime() + 800) <= myRunTime.getTime()) {
                                             activity.runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run() {
@@ -192,7 +192,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
                                         }
                                     }
                                 };
-                                t.schedule(tt, 1000);
+                                t.schedule(tt, 800);
                             }
                         });
                     }
@@ -235,7 +235,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
                                     public void run() {
                                         Date myRunTime = new Date();
 
-                                        if ((lastTypeTime.getTime() + 1000) <= myRunTime.getTime()) {
+                                        if ((lastTypeTime.getTime() + 800) <= myRunTime.getTime()) {
                                             activity.runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run() {
@@ -247,7 +247,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
                                         }
                                     }
                                 };
-                                t.schedule(tt, 1000);
+                                t.schedule(tt, 800);
                             }
                         });
                     }

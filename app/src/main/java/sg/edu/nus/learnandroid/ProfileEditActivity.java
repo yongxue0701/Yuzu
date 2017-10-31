@@ -1,6 +1,7 @@
 package sg.edu.nus.learnandroid;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
@@ -10,7 +11,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -99,19 +102,33 @@ public class ProfileEditActivity extends AppCompatActivity {
 
                 if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
                     do {
+
                         String username = prefs.getString("username", "default value");
                         String email = prefs.getString("email", "default value");
                         String gender = prefs.getString("gender", "default value");
 
 //                        userAccountDB.updateSomeRecordsByUsername(username, email, gender);
+                        Toast.makeText(getApplicationContext(), username + " " + email + " " + gender, Toast.LENGTH_SHORT).show();
 
-                        Toast.makeText(getApplicationContext(), username + " username "
-                                + email + " email " + gender + " gender ", Toast.LENGTH_LONG).show();
                     } while (mCursor.moveToNext());
                 }
 
                 mCursor.close();
                 userAccountDB.close();
+
+                LayoutInflater inflater = (LayoutInflater)
+                        getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View layout = inflater.inflate(R.layout.profile_edit_success_toast, (ViewGroup)
+                        findViewById(R.id.profile_edit_success_toast_PRL));
+
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, -200);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout);
+
+                toast.show();
+
+                finish();
             }
         });
     }
@@ -141,8 +158,32 @@ public class ProfileEditActivity extends AppCompatActivity {
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                discardChanges();
                 finish();
             }
         });
+    }
+
+    private void discardChanges() {
+        userAccountDB.open();
+        Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
+
+        if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
+            do {
+
+                SharedPreferences.Editor editor = getSharedPreferences(MY_SHAREDPREF_NAME,
+                        MODE_PRIVATE).edit();
+
+                editor.putString("username", mCursor.getString(mCursor.getColumnIndex("username")));
+                editor.putString("password", mCursor.getString(mCursor.getColumnIndex("password")));
+                editor.putString("email", mCursor.getString(mCursor.getColumnIndex("email")));
+                editor.putString("gender", mCursor.getString(mCursor.getColumnIndex("gender")));
+                editor.commit();
+
+            } while (mCursor.moveToNext());
+        }
+
+        mCursor.close();
+        userAccountDB.close();
     }
 }
