@@ -3,17 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splashscreen" >
-    /// Change Background
+    // Change Background
 
     <TextView
+        android:id="@+id/splash_bottom_TV"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:textSize="12dp"
-        android:textColor="#454545"
+        android:textSize="14sp"
+        android:textColor="@color/colorGrey"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:text="Learn Android Company right  (C) 2017" />
-    //// change sitweb or invesible
+        android:text="@string/splash_bottom_TV" />
+    // change sitweb or invesible
 
 </RelativeLayout>
