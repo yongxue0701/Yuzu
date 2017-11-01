@@ -58,7 +58,7 @@ public class CourseFragmentActivity extends AppCompatActivity {
         mapPinOneIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentIntroductionActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }

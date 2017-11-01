@@ -27,6 +27,7 @@
     <string name="gender_popup_cancel_TV">Cancel</string>
     <string name="facebook_app_id">1574771352590790</string>
     <string name="action_bar_done">Done</string>
+    <string name="action_bar_next">Next</string>
     <string name="cancel_btn_title_TV">
         Are you sure you want to discard changes to your edits?
     </string>

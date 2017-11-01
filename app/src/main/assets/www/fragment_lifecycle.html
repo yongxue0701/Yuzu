@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fragmentsCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Fragment Life Cycle</h2>
+
+        <div>
+            <p>
+                Android fragments have their own life cycle very similar to an android activity.
+                This section briefs different stages of its life cycle.
+            </p>
+        </div>
+
+        <img src="file:///android_res/drawable/fragment_lifecycle.jpg" height="550" width="350">
+
+        <div>
+            <p>
+                Here is the list of methods which you can to override in your fragment class
+            </p>
+        </div>
+
+        <div>
+            <p>
+                •&emsp;<b>onAttach()</b> The fragment instance is associated with an activity instance.
+                The fragment and the activity is not fully initialized.
+                Typically you get in this method a reference to the activity which uses the fragment
+                for further initialization work.&ensp;<br/>
+                •&emsp;<b>onCreate()</b> The system calls this method when creating the fragment.
+                You should initialize essential components of the fragment that you want to
+                retain when the fragment is paused or stopped, then resumed.&ensp;<br/>
+                •&emsp;<b>onCreateView()</b> The system calls this callback when it's time for the fragment
+                to draw its user interface for the first time. To draw a UI for your fragment,
+                you must return a View component from this method that is the root of your
+                fragment's layout. You can return null if the fragment does not provide a UI.&ensp;<br/>
+                •&emsp;<b>onActivityCreated()</b> The onActivityCreated() is called after the onCreateView()
+                method when the host activity is created. Activity and fragment instance have been
+                created as well as the view hierarchy of the activity. At this point, view can
+                be accessed with the findViewById() method. example. In this method you can instantiate
+                objects which require a Context object.&ensp;<br/>
+                •&emsp;<b>onStart()</b> The onStart() method is called once the fragment gets visible.&ensp;<br/>
+                •&emsp;<b>onResume()</b> Fragment becomes active.&ensp;<br/>
+                •&emsp;<b>onPause()</b> The system calls this method as the first indication that the user is
+                leaving the fragment. This is usually where you should commit any changes that should
+                be persisted beyond the current user session.&ensp;<br/>
+                •&emsp;<b>onStop()</b> Fragment going to be stopped by calling onStop().&ensp;<br/>
+                •&emsp;<b>onDestroyView()</b> Fragment view will destroy after call this method.&ensp;<br/>
+                •&emsp;<b>onDestroy()</b> called to do final clean up of the fragment's state
+                but Not guaranteed to be called by the Android platform.&ensp;<br/>
+            </p>
+        </div>
+    </body>
+</html>
