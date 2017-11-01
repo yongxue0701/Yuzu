@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
@@ -21,6 +22,7 @@ import java.io.IOException;
 public class ForumActivity extends Activity {
     private LikeView btnLike;
     private ShareDialog shareDialog;
+    private ImageButton btnSharePhotos;
     private int PICK_IMAGE_REQUEST = 1;
     private int PICK_VIDEO_REQUEST = 2;
 
@@ -29,9 +31,11 @@ public class ForumActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
-//        Linke Button
+        //  Like Button
         btnLike = (LikeView) findViewById(R.id.btnLike);
         btnLike.setObjectIdAndType("https://www.facebook.com/Learnandroidwithus-854183284756525/", LikeView.ObjectType.PAGE);
+
+
 
         shareDialog = new ShareDialog(this);  // intialize facebook shareDialog.
     }
@@ -47,12 +51,13 @@ public class ForumActivity extends Activity {
         }
     }
 
-    public void sharePhotos(View view) {
+        public void sharePhotos (View view){
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
+
 
     public void shareVideo(View view) {
 

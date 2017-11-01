@@ -5,59 +5,154 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context="sg.edu.nus.learnandroid.ForumActivity">
 
-    <com.facebook.share.widget.LikeView
-        android:text="Like Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:background="@color/colorPrimary"
-        android:textColor="#fff"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:id="@+id/btnLike" />
 
-    <Button
-        android:text="Share Links"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="shareLinks"
-        android:textAllCaps="false"
-        android:background="@color/colorPrimary"
-        android:textColor="#fff"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+     <TextView
+         android:id="@+id/forum_title_TV"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/forum_title_TV"
+         android:paddingLeft="10dp"
+         android:paddingRight="10dp"
+         android:textSize="28sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        android:layout_below="@+id/linearLayout1" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/android"/>
+        <Button
+            android:id="@+id/forum_fb_btn"
+            android:text="@string/forum_fb_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginTop="15dp"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/forum_middle_TV"
+            android:text="@string/forum_middle_TV"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+
+        <com.facebook.share.widget.LikeView
+            android:text="Like Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:id="@+id/btnLike" />
+
+        <Button
+            android:text="Share"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".9"
+            android:onClick="shareLinks"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:id="@+id/btnShareLinks" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout3"
         android:layout_marginTop="10dp"
-        android:id="@+id/btnShareLinks" />
+        android:baselineAligned="false">
 
-    <Button
-        android:text="Share Photos"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/forum_bottom_TV"
+            android:text="@string/forum_bottom_TV"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+
+        <ImageButton
+            android:id="@+id/btnSharePhotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="sharePhotos"
+            android:textAllCaps="false"
+            android:background="@color/colorWhite"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/sharephotos" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="sharePhotos"
-        android:textAllCaps="false"
-        android:background="@color/colorPrimary"
-        android:textColor="#fff"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout4"
         android:layout_marginTop="10dp"
-        android:id="@+id/btnSharePhotos" />
+        android:baselineAligned="false">
 
-    <Button
-        android:text="Share Videos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="shareVideo"
-        android:textAllCaps="false"
-        android:background="@color/colorPrimary"
-        android:textColor="#fff"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/btnShareVideos" />
+        <TextView
+            android:id="@+id/forum_end_TV"
+            android:text="@string/forum_end_TV"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
 
+        <ImageButton
+            android:id="@+id/btnShareVideos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="shareVideo"
+            android:textAllCaps="false"
+            android:background="@color/colorWhite"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/sharevideos" />
+    </LinearLayout>
 
 
 </LinearLayout>
