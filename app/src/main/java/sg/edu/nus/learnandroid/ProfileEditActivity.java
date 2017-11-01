@@ -107,8 +107,7 @@ public class ProfileEditActivity extends AppCompatActivity {
                         String email = prefs.getString("email", "default value");
                         String gender = prefs.getString("gender", "default value");
 
-//                        userAccountDB.updateSomeRecordsByUsername(username, email, gender);
-                        Toast.makeText(getApplicationContext(), username + " " + email + " " + gender, Toast.LENGTH_SHORT).show();
+                        userAccountDB.updateSomeRecordsByUsername(username, email, gender);
 
                     } while (mCursor.moveToNext());
                 }

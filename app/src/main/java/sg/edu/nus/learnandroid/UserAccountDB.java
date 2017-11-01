@@ -157,6 +157,10 @@ public class UserAccountDB {
     }
 
     public void updateSomeRecordsByUsername(String userName, String email, String gender) {
+
+        Cursor mCursor = getRecordByIsLogin(1);
+        String usernameFromDB = mCursor.getString(mCursor.getColumnIndex("username"));
+
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(UserAccountDBHelper.username, userName);
@@ -164,6 +168,6 @@ public class UserAccountDB {
         initialValues.put(UserAccountDBHelper.gender, gender);
 
         db.update(UserAccountDBHelper.tableName, initialValues,
-                username + "='" + userName + "'", null);
+                username + "='" + usernameFromDB + "'", null);
     }
 }
