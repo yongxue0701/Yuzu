@@ -37,4 +37,9 @@
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
     <string name="profile_edit_success_toast_content_TV">Profile Updated!</string>
     <string name="splash_bottom_TV">Learn Android Company right  (C) 2017</string>
+    <string name="forum_title_TV">Having questions to ask?</string>
+    <string name="forum_fb_btn">Click here to join our Facebook Group</string>
+    <string name="forum_middle_TV">Do me a favor! Recommend to your friends</string>
+    <string name="forum_bottom_TV">Screen shot problems and click rightside</string>
+    <string name="forum_end_TV">Video problems and click rightside</string>
 </resources>
