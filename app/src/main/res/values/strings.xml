@@ -37,4 +37,5 @@
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
     <string name="profile_edit_success_toast_content_TV">Profile Updated!</string>
+    <string name="splash_bottom_TV">Learn Android Company right  (C) 2017</string>
 </resources>
