@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splashscreen" >
-    // Change Background
+    <!--Change Background-->
 
     <TextView
         android:id="@+id/splash_bottom_TV"
@@ -15,6 +15,6 @@
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:text="@string/splash_bottom_TV" />
-    // change sitweb or invesible
+    <!--Change sitweb or invesible-->
 
 </RelativeLayout>
