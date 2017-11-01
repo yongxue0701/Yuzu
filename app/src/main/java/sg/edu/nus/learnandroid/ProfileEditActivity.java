@@ -1,7 +1,6 @@
 package sg.edu.nus.learnandroid;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
@@ -11,9 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -107,7 +104,7 @@ public class ProfileEditActivity extends AppCompatActivity {
                         String email = prefs.getString("email", "default value");
                         String gender = prefs.getString("gender", "default value");
 
-//                        userAccountDB.updateSomeRecordsByUsername(username, email, gender);
+                        userAccountDB.updateSomeRecordsByUsername(username, email, gender);
                         Toast.makeText(getApplicationContext(), username + " " + email + " " + gender, Toast.LENGTH_SHORT).show();
 
                     } while (mCursor.moveToNext());
@@ -116,19 +113,19 @@ public class ProfileEditActivity extends AppCompatActivity {
                 mCursor.close();
                 userAccountDB.close();
 
-                LayoutInflater inflater = (LayoutInflater)
-                        getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View layout = inflater.inflate(R.layout.profile_edit_success_toast, (ViewGroup)
-                        findViewById(R.id.profile_edit_success_toast_PRL));
-
-                Toast toast = new Toast(getApplicationContext());
-                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, -200);
-                toast.setDuration(Toast.LENGTH_LONG);
-                toast.setView(layout);
-
-                toast.show();
-
-                finish();
+//                LayoutInflater inflater = (LayoutInflater)
+//                        getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//                View layout = inflater.inflate(R.layout.profile_edit_success_toast, (ViewGroup)
+//                        findViewById(R.id.profile_edit_success_toast_PRL));
+//
+//                Toast toast = new Toast(getApplicationContext());
+//                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, -200);
+//                toast.setDuration(Toast.LENGTH_LONG);
+//                toast.setView(layout);
+//
+//                toast.show();
+//
+//                finish();
             }
         });
     }
