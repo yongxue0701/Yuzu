@@ -50,4 +50,14 @@
     <string name="btnShareVideos">Videos</string>
     <string name="forum_img1_btn">Android</string>
     <string name="forum_img2_btn">Info</string>
+    <string name="forum_display_TV1">Don\'t limit yourself!</string>
+    <string name="forum_display_TV2">News</string>
+    <string name="submit_quiz_popup_cancel_btn">Cancel</string>
+    <string name="submit_quiz_popup_yes_btn">Yes, I\'m sure</string>
+    <string name="one_question_unanswered">
+         "There is 1 question that you didn't answer. Are you sure you want to submit your quiz?"
+    </string>
+    <string name="some_questions_unanswered">
+         "Are you sure you want to submit your quiz?"
+    </string>
 </resources>
