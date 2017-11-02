@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fragmentsCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Quiz</h2>
+
+        <form>
+            <div>
+                <p>
+                    Q1. What is true about a Fragment?
+                </p>
+
+                <div id="q1_choices">
+                    <input type="radio" name="q1" value="q1a">&emsp;I can use a Fragment without Activity.&ensp;<br/>
+                    <input type="radio" name="q1" value="q1b">&emsp;A fragment can have multiple activities.&ensp;<br/>
+                    <input type="radio" name="q1" value="q1c">&emsp;An activity can contain multiple fragments.&ensp;<br/>
+                    <input type="radio" name="q1" value="q1d">&emsp;A fragment designed in one activity can't
+                    be reused in other activity.&ensp;<br/>
+                </div>
+            </div>
+
+            <div>
+                <p>
+                    Q2. When activity is moved to stopped state, then what will happen to the life cycle
+                    of a fragment which is in that activity?
+                </p>
+
+                <div id=q2_choices>
+                    <input type="radio" name="q2" value="q2a">&emsp;Fragments life cycle is not
+                    dependent on activity's. So there won't be any effect
+                    for fragment life cycle.&ensp;<br/>
+                    <input type="radio" name="q2" value="q2b">&emsp;The first option is true because
+                    fragments are independent modules designed for better space usage.&ensp;<br/>
+                    <input type="radio" name="q2" value="q2c">&emsp;Fragments will be moved to onStop.&ensp;<br/>
+                    <input type="radio" name="q2" value="q2d">&emsp;Both fragments will be destroyed
+                    and recreated when activity reaches onResume again.&ensp;<br/>
+                </div>
+            </div>
+
+            <button id="submit_btn" type="button">Submit</button>
+        </form>
+    </body>
+</html>

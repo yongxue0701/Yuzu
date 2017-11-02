@@ -1,5 +1,29 @@
 
 p{
-    text-align:justify;
+    text-align: justify;
+    line-height: 200%;
+}
+
+#submit_btn{
+    border: none;
+    background-color: #00897B;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    font-size:16px;
+    display: inline-block;
+    border-radius: 10px;
+    position:relative;
+    margin-top: 5%;
+    width: 100%;
+}
+
+#q1_choices{
+    text-align: justify;
+    line-height: 200%;
+}
+
+#q2_choices{
+    text-align: justify;
     line-height: 200%;
 }
