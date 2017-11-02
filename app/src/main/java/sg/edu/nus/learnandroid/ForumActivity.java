@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
@@ -23,7 +23,8 @@ import java.io.IOException;
 public class ForumActivity extends Activity {
     private LikeView btnLike;
     private ShareDialog shareDialog;
-    private ImageButton btnSharePhotos;
+    private ImageButton btnImg1;
+    private ImageButton btnImg2;
     private int PICK_IMAGE_REQUEST = 1;
     private int PICK_VIDEO_REQUEST = 2;
 
@@ -32,7 +33,28 @@ public class ForumActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
-        ImageView image = (ImageView) findViewById(R.id.forum_img1);
+        btnImg1 = (ImageButton) findViewById(R.id.forum_img1_btn);
+        btnImg1.setImageResource(R.drawable.android);
+
+        btnImg1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(ForumActivity.this, ForumDisplayActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        btnImg2 = (ImageButton) findViewById(R.id.forum_img2_btn);
+        btnImg2.setImageResource(R.drawable.info);
+
+        btnImg2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Click Top Android image",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
         //  Like Button
@@ -56,12 +78,14 @@ public class ForumActivity extends Activity {
         }
     }
 
-        public void sharePhotos (View view){
+
+    public void sharePhotos (View view){
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
+
 
 
     public void shareVideo(View view) {
