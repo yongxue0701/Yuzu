@@ -6,4 +6,44 @@
     android:layout_height="match_parent"
     tools:context="sg.edu.nus.learnandroid.ForumDisplayActivity">
 
+    <ImageView
+        android:id="@+id/forum_display_img1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/forum_display_img2"
+        app:layout_constraintLeft_toLeftOf="@+id/forum_display_img2"
+        app:srcCompat="@drawable/climb"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <ImageView
+        android:id="@+id/forum_display_img2"
+        android:layout_width="0dp"
+        android:layout_height="87dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/overlay"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="189dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/forum_display_TV1"
+        android:layout_width="309dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/forum_display_TV1"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/forum_display_img2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/forum_display_img2"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 </android.support.constraint.ConstraintLayout>
