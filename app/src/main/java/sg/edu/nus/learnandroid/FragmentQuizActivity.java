@@ -2,6 +2,7 @@ package sg.edu.nus.learnandroid;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +16,19 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FragmentQuizActivity extends AppCompatActivity {
+
+    UserAccountDB userAccountDB;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_quiz);
+
+        userAccountDB = new UserAccountDB(this);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -64,16 +71,13 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
         @JavascriptInterface
         public void getQuizAnsFromWebView(String[] answers, int counts) {
-
-            initiateSubmitQuizDialog(counts);
-
-            String[] correctAns = {"c", "c"};
+            initiateSubmitQuizDialog(answers, counts);
         }
     }
 
-    private void initiateSubmitQuizDialog(int counts) {
+    private void initiateSubmitQuizDialog(final String[] answers, final int counts) {
 
-        final Dialog dialog = new Dialog(FragmentQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog = new Dialog(FragmentQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.submit_quiz_popup);
 
@@ -107,10 +111,50 @@ public class FragmentQuizActivity extends AppCompatActivity {
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
+                calculatePoints(answers, counts);
                 Intent myIntent = new Intent(getApplicationContext(), FragmentQuizResultsActivity.class);
                 startActivity(myIntent);
             }
         });
+    }
 
+    private void calculatePoints(String[] answers, int counts) {
+
+        int points = 0;
+        String[] correctAns = {"c", "c"};
+
+        for (int i = 0; i < correctAns.length; i++) {
+            if (answers[i].equals(correctAns[i])) {
+                points = points + 1;
+            }
+        }
+
+        userAccountDB.open();
+        Cursor pointsCursor = userAccountDB.getRecordByIsLogin(1);
+
+        int totalPtsFromDB = 0;
+        int finalPoints = 0;
+        int fragmentConceptQuizPtsFromDB = 0;
+
+        if (pointsCursor != null && pointsCursor.moveToFirst() && (pointsCursor.getCount() == 1)) {
+            do {
+                totalPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("points")));
+                fragmentConceptQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("fragmentConceptQuizPts")));
+            } while (pointsCursor.moveToNext());
+        }
+
+        pointsCursor.close();
+
+        if (fragmentConceptQuizPtsFromDB == 0) {
+            finalPoints = totalPtsFromDB + points;
+        } else {
+            finalPoints = totalPtsFromDB - fragmentConceptQuizPtsFromDB + points;
+        }
+
+        Toast.makeText(getApplicationContext(), "finalPoints " + finalPoints + "quizPoints " + points, Toast.LENGTH_LONG).show();
+        userAccountDB.updatePointsByIsLogin(1, finalPoints);
+        userAccountDB.updateFragmentConceptQuizPtsByIsLogin(1, points);
+        userAccountDB.close();
     }
 }

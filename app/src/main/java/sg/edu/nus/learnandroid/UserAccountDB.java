@@ -6,7 +6,12 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.email;
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.fragmentConceptQuizPts;
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.gender;
 import static sg.edu.nus.learnandroid.UserAccountDBHelper.isLogin;
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.password;
+import static sg.edu.nus.learnandroid.UserAccountDBHelper.points;
 import static sg.edu.nus.learnandroid.UserAccountDBHelper.userId;
 import static sg.edu.nus.learnandroid.UserAccountDBHelper.username;
 
@@ -34,15 +39,18 @@ public class UserAccountDB {
         userAccountDBHelper.close();
     }
 
-    public void insertRecord(String username, String password, String email,
-                             String gender, boolean isLogin) {
+    public void insertRecord(String _username, String _password, String _email,
+                             String _gender, boolean _isLogin, String _points,
+                             String _fragmentConceptQuizPts) {
         ContentValues initialValues = new ContentValues();
 
-        initialValues.put(UserAccountDBHelper.username, username);
-        initialValues.put(UserAccountDBHelper.password, password);
-        initialValues.put(UserAccountDBHelper.email, email);
-        initialValues.put(UserAccountDBHelper.gender, gender);
-        initialValues.put(UserAccountDBHelper.isLogin, isLogin);
+        initialValues.put(username, _username);
+        initialValues.put(password, _password);
+        initialValues.put(email, _email);
+        initialValues.put(gender, _gender);
+        initialValues.put(isLogin, _isLogin);
+        initialValues.put(points, _points);
+        initialValues.put(fragmentConceptQuizPts, _fragmentConceptQuizPts);
 
         db.insert(UserAccountDBHelper.tableName, null, initialValues);
     }
@@ -52,18 +60,18 @@ public class UserAccountDB {
                 "=" + columnNameToBeDeleted, null);
     }
 
-    public void updateAllRecordsById(String id, String username, String password, String email,
-                                     String gender, boolean isLogin) {
+    public void updateAllRecordsById(String _id, String _username, String _password, String _email,
+                                     String _gender, boolean _isLogin) {
         ContentValues initialValues = new ContentValues();
 
-        initialValues.put(UserAccountDBHelper.username, username);
-        initialValues.put(UserAccountDBHelper.password, password);
-        initialValues.put(UserAccountDBHelper.email, email);
-        initialValues.put(UserAccountDBHelper.gender, gender);
-        initialValues.put(UserAccountDBHelper.isLogin, isLogin);
+        initialValues.put(username, _username);
+        initialValues.put(password, _password);
+        initialValues.put(email, _email);
+        initialValues.put(gender, _gender);
+        initialValues.put(isLogin, _isLogin);
 
         db.update(UserAccountDBHelper.tableName, initialValues,
-                userId + "=" + id, null);
+                userId + "=" + _id, null);
     }
 
     public Cursor getAllRecords() {
@@ -72,12 +80,14 @@ public class UserAccountDB {
                 UserAccountDBHelper.tableName,
 
                 new String[]{
-                        UserAccountDBHelper.userId,
-                        UserAccountDBHelper.username,
-                        UserAccountDBHelper.password,
-                        UserAccountDBHelper.email,
-                        UserAccountDBHelper.gender,
-                        UserAccountDBHelper.isLogin},
+                        userId,
+                        username,
+                        password,
+                        email,
+                        gender,
+                        isLogin,
+                        points,
+                        fragmentConceptQuizPts},
                 null, null, null, null, null);
     }
 
@@ -87,12 +97,14 @@ public class UserAccountDB {
                 UserAccountDBHelper.tableName,
 
                 new String[]{
-                        UserAccountDBHelper.userId,
-                        UserAccountDBHelper.username,
-                        UserAccountDBHelper.password,
-                        UserAccountDBHelper.email,
-                        UserAccountDBHelper.gender,
-                        UserAccountDBHelper.isLogin},
+                        userId,
+                        username,
+                        password,
+                        email,
+                        gender,
+                        isLogin,
+                        points,
+                        fragmentConceptQuizPts},
                 userId + "=" + id,
                 null, null, null, null, null);
 
@@ -103,19 +115,21 @@ public class UserAccountDB {
         return mCursor;
     }
 
-    public Cursor getRecordByUsername(String userName) throws SQLException {
+    public Cursor getRecordByUsername(String _username) throws SQLException {
         Cursor mCursor = db.query(
 
                 UserAccountDBHelper.tableName,
 
                 new String[]{
-                        UserAccountDBHelper.userId,
-                        UserAccountDBHelper.username,
-                        UserAccountDBHelper.password,
-                        UserAccountDBHelper.email,
-                        UserAccountDBHelper.gender,
-                        UserAccountDBHelper.isLogin},
-                username + "='" + userName + "'",
+                        userId,
+                        username,
+                        password,
+                        email,
+                        gender,
+                        isLogin,
+                        points,
+                        fragmentConceptQuizPts},
+                username + "='" + _username + "'",
                 null, null, null, null, null);
 
         if (mCursor != null) {
@@ -125,28 +139,30 @@ public class UserAccountDB {
         return mCursor;
     }
 
-    public void updateIsLoginByUsername(String userName, boolean isLogin) {
+    public void updateIsLoginByUsername(String _username, boolean _isLogin) {
         ContentValues initialValues = new ContentValues();
 
-        initialValues.put(UserAccountDBHelper.isLogin, isLogin);
+        initialValues.put(isLogin, _isLogin);
 
         db.update(UserAccountDBHelper.tableName, initialValues,
-                username + "='" + userName + "'", null);
+                username + "='" + _username + "'", null);
     }
 
-    public Cursor getRecordByIsLogin(int islogin) throws SQLException {
+    public Cursor getRecordByIsLogin(int _isLogin) throws SQLException {
         Cursor mCursor = db.query(
 
                 UserAccountDBHelper.tableName,
 
                 new String[]{
-                        UserAccountDBHelper.userId,
-                        UserAccountDBHelper.username,
-                        UserAccountDBHelper.password,
-                        UserAccountDBHelper.email,
-                        UserAccountDBHelper.gender,
-                        UserAccountDBHelper.isLogin},
-                isLogin + "=" + islogin,
+                        userId,
+                        username,
+                        password,
+                        email,
+                        gender,
+                        isLogin,
+                        points,
+                        fragmentConceptQuizPts},
+                isLogin + "=" + _isLogin,
                 null, null, null, null, null);
 
         if (mCursor != null) {
@@ -156,18 +172,38 @@ public class UserAccountDB {
         return mCursor;
     }
 
-    public void updateSomeRecordsByUsername(String userName, String email, String gender) {
+    public void updateSomeRecordsByUsername(String _username, String _email, String _gender) {
 
         Cursor mCursor = getRecordByIsLogin(1);
         String usernameFromDB = mCursor.getString(mCursor.getColumnIndex("username"));
 
         ContentValues initialValues = new ContentValues();
 
-        initialValues.put(UserAccountDBHelper.username, userName);
-        initialValues.put(UserAccountDBHelper.email, email);
-        initialValues.put(UserAccountDBHelper.gender, gender);
+        initialValues.put(username, _username);
+        initialValues.put(email, _email);
+        initialValues.put(gender, _gender);
 
         db.update(UserAccountDBHelper.tableName, initialValues,
                 username + "='" + usernameFromDB + "'", null);
+    }
+
+    public void updatePointsByIsLogin(int _isLogin, int _points) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(points, _points);
+
+        db.update(UserAccountDBHelper.tableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
+
+    public void updateFragmentConceptQuizPtsByIsLogin(int _isLogin, int _fragmentConceptQuizPts) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(fragmentConceptQuizPts, _fragmentConceptQuizPts);
+
+        db.update(UserAccountDBHelper.tableName, initialValues,
+                isLogin + "=" + _isLogin, null);
     }
 }
