@@ -63,7 +63,6 @@
             android:textSize="18sp"/>
 
         <com.facebook.share.widget.LikeView
-            android:text="@string/btnLike"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
@@ -74,7 +73,6 @@
             android:id="@+id/btnLike" />
 
         <Button
-            android:text="@string/btnShareLinks"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".9"
