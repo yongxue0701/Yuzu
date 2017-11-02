@@ -41,9 +41,13 @@
     <string name="forum_title_TV">Having questions to ask?</string>
     <string name="forum_fb_btn">Click here to join our Facebook Group</string>
     <string name="forum_middle_TV">Do me a favor! Recommend to your friends</string>
-    <string name="forum_bottom_TV">Screen shot problems and click rightside</string>
+    <string name="forum_bottom_TV">Shot problems and click rightside</string>
     <string name="forum_end_TV">Video problems and click rightside</string>
+    <string name="forum_tip_TV">More intersesting Info!</string>
     <string name="btnLike">Like</string>
     <string name="btnShareLinks">Share Links</string>
-    <string name="forum_img1">Android</string>
+    <string name="btnSharePhotos">Photos</string>
+    <string name="btnShareVideos">Videos</string>
+    <string name="forum_img1_btn">Android</string>
+    <string name="forum_img2_btn">Info</string>
 </resources>

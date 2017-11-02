@@ -29,8 +29,8 @@
         android:layout_marginTop="15dp"
         android:layout_below="@+id/linearLayout1" >
 
-        <ImageView
-            android:id="@+id/forum_img1"
+        <ImageButton
+            android:id="@+id/forum_img1_btn"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:layout_weight="0.5"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/linearLayout2"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/forum_middle_TV"
@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_weight=".9"
             android:onClick="shareLinks"
+            android:layout_marginRight="5dp"
             android:textAllCaps="false"
             android:background="@color/colorPrimary"
             android:textColor="@color/colorWhite"
@@ -92,26 +93,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/linearLayout3"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="18dp">
 
         <TextView
             android:id="@+id/forum_bottom_TV"
             android:text="@string/forum_bottom_TV"
             android:layout_width="0dp"
-            android:layout_weight="10"
+            android:layout_weight="5"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:textSize="18sp"/>
 
-        <ImageButton
+        <Button
             android:id="@+id/btnSharePhotos"
-            android:layout_width="wrap_content"
+            android:text="@string/btnSharePhotos"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".5"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
             android:onClick="sharePhotos"
             android:textAllCaps="false"
-            android:background="@color/colorWhite"
-            app:srcCompat="@drawable/sharephotos" />
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary" />
     </LinearLayout>
 
     <LinearLayout
@@ -120,25 +123,55 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/linearLayout4"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/forum_end_TV"
             android:text="@string/forum_end_TV"
             android:layout_width="0dp"
-            android:layout_weight="10"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnShareVideos"
+            android:text="@string/btnShareVideos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:textAllCaps="false"
+            android:onClick="shareVideo"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout5"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/forum_tip_TV"
+            android:text="@string/forum_tip_TV"
+            android:layout_width="0dp"
+            android:layout_weight="5"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:textSize="18sp"/>
 
         <ImageButton
-            android:id="@+id/btnShareVideos"
-            android:layout_width="wrap_content"
+            android:id="@+id/forum_img2_btn"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".5"
-            android:onClick="shareVideo"
-            android:background="@color/colorWhite"
-            app:srcCompat="@drawable/sharevideos" />
+            android:layout_weight="1"
+            app:srcCompat="@drawable/info"/>
+
+
     </LinearLayout>
 
 
