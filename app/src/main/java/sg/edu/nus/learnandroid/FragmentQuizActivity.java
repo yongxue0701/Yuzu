@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FragmentQuizActivity extends AppCompatActivity {
 
@@ -45,8 +47,28 @@ public class FragmentQuizActivity extends AppCompatActivity {
         });
 
         WebView webView = (WebView) findViewById(R.id.fragment_quiz_webview);
+        JavaScriptInterface myJavaScriptInterface = new JavaScriptInterface(this, webView);
+
         webView.getSettings().setJavaScriptEnabled(true);
+        WebView.setWebContentsDebuggingEnabled(true);
+        webView.addJavascriptInterface(myJavaScriptInterface, "MyHandler");
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/fragment_quiz.html");
+    }
+
+    public class JavaScriptInterface {
+
+        private FragmentQuizActivity parentActivity;
+        private WebView webView;
+
+        public JavaScriptInterface(FragmentQuizActivity fragmentQuizActivity, WebView mWebView) {
+            parentActivity = fragmentQuizActivity;
+            webView = mWebView;
+        }
+
+        @JavascriptInterface
+        public void getDataFromWebView(String[] answers) {
+            Toast.makeText(getApplicationContext(), answers[0] + " " + answers[1] + " ", Toast.LENGTH_LONG).show();
+        }
     }
 }
