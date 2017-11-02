@@ -6,35 +6,21 @@
     android:background="@color/colorWhite">
 
     <android.support.percent.PercentRelativeLayout
-        android:id="@+id/cancel_btn_popup_PRL"
+        android:id="@+id/submit_quiz_popup_PRL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
 
         <TextView
-            android:id="@+id/cancel_btn_popup_title_TV"
+            android:id="@+id/submit_quiz_popup_title_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/cancel_btn_title_TV"
             android:textAlignment="center"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_marginEndPercent="6%"
-            app:layout_marginStartPercent="6%"
-            app:layout_marginTopPercent="3%" />
-
-        <TextView
-            android:id="@+id/cancel_btn_popup_content_TV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cancel_btn_popup_title_TV"
-            android:layout_centerHorizontal="true"
-            android:text="@string/cancel_btn_content_TV"
-            android:textAlignment="center"
-            android:textColor="@color/colorBlack"
             app:layout_marginBottomPercent="3%"
             app:layout_marginEndPercent="6%"
             app:layout_marginStartPercent="6%"
@@ -45,25 +31,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cancel_btn_popup_PRL"
+        android:layout_below="@+id/submit_quiz_popup_PRL"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/cancel_btn_popup_cancel_btn"
+            android:id="@+id/submit_quiz_popup_cancel_btn"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@drawable/text_view_with_border"
-            android:text="@string/cancel_btn_popup_cancel_btn"
+            android:text="@string/submit_quiz_popup_cancel_btn"
             android:textColor="@color/colorDarkGreen" />
 
         <Button
-            android:id="@+id/cancel_btn_popup_yes_btn"
+            android:id="@+id/submit_quiz_popup_yes_btn"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@drawable/text_view_with_border"
-            android:text="@string/cancel_btn_popup_yes_btn"
+            android:text="@string/submit_quiz_popup_yes_btn"
             android:textColor="@color/colorDarkGreen" />
 
     </LinearLayout>

@@ -13,6 +13,7 @@ public class ForumDisplayActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum_display);
 
+
         IV1 = (ImageView) findViewById(R.id.forum_display_img1);
         IV1.setImageResource(R.drawable.climb);
 

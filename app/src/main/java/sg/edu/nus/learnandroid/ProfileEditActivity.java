@@ -139,7 +139,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.cancel_btn_popup);
 
         Window dialogWindow = dialog.getWindow();
-        dialogWindow.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_VERTICAL);
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
         dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
