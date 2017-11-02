@@ -30,6 +30,7 @@
         android:layout_below="@+id/linearLayout1" >
 
         <ImageView
+            android:id="@+id/forum_img1"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:layout_weight="0.5"
