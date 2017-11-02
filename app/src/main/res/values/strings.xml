@@ -46,4 +46,12 @@
     <string name="btnLike">Like</string>
     <string name="btnShareLinks">Share Links</string>
     <string name="forum_img1">Android</string>
+    <string name="submit_quiz_popup_cancel_btn">Cancel</string>
+    <string name="submit_quiz_popup_yes_btn">Yes, I\'m sure</string>
+    <string name="one_question_unanswered">
+        "There is 1 question that you didn't answer. Are you sure you want to submit your quiz?"
+    </string>
+    <string name="some_questions_unanswered">
+        "Are you sure you want to submit your quiz?"
+    </string>
 </resources>

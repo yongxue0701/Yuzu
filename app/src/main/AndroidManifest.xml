@@ -58,7 +58,8 @@
         <activity android:name=".ForumActivity" />
         <activity android:name=".FragmentLifeCycleActivity" />
         <activity android:name=".FragmentTypesActivity" />
-        <activity android:name=".FragmentQuizActivity"></activity>
+        <activity android:name=".FragmentQuizActivity" />
+        <activity android:name=".FragmentQuizResultsActivity"></activity>
     </application>
 
 </manifest>
