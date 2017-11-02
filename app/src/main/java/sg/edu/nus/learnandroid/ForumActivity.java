@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
@@ -31,6 +32,9 @@ public class ForumActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
+        ImageView image = (ImageView) findViewById(R.id.forum_img1);
+
+
         //  Like Button
         btnLike = (LikeView) findViewById(R.id.btnLike);
         btnLike.setObjectIdAndType("https://www.facebook.com/Learnandroidwithus-854183284756525/", LikeView.ObjectType.PAGE);
@@ -39,6 +43,7 @@ public class ForumActivity extends Activity {
 
         shareDialog = new ShareDialog(this);  // intialize facebook shareDialog.
     }
+
 
     public void shareLinks(View view) {
 
