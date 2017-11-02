@@ -11,16 +11,13 @@
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_height="wrap_content">
      <TextView
          android:id="@+id/forum_title_TV"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:text="@string/forum_title_TV"
-         android:paddingLeft="10dp"
-         android:paddingRight="10dp"
+         android:layout_marginLeft="5dp"
          android:textSize="28sp"/>
     </LinearLayout>
 
@@ -28,8 +25,8 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:orientation="vertical"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/linearLayout1" >
 
         <ImageView
@@ -53,10 +50,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/linearLayout2"
-        android:layout_marginTop="15dp"
-        android:baselineAligned="false">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/forum_middle_TV"
@@ -64,29 +59,29 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
             android:textSize="18sp"/>
 
         <com.facebook.share.widget.LikeView
-            android:text="Like Button"
+            android:text="@string/btnLike"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
             android:textAllCaps="false"
             android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="12dp"
             android:id="@+id/btnLike" />
 
         <Button
-            android:text="Share"
+            android:text="@string/btnShareLinks"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".9"
             android:onClick="shareLinks"
             android:textAllCaps="false"
             android:background="@color/colorPrimary"
-            android:textColor="#fff"
+            android:textColor="@color/colorWhite"
             android:id="@+id/btnShareLinks" />
     </LinearLayout>
 
@@ -95,30 +90,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/linearLayout3"
-        android:layout_marginTop="10dp"
-        android:baselineAligned="false">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/forum_bottom_TV"
             android:text="@string/forum_bottom_TV"
             android:layout_width="0dp"
-            android:layout_weight="5"
+            android:layout_weight="10"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
             android:textSize="18sp"/>
 
         <ImageButton
             android:id="@+id/btnSharePhotos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight=".5"
             android:onClick="sharePhotos"
             android:textAllCaps="false"
             android:background="@color/colorWhite"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/sharephotos" />
     </LinearLayout>
 
@@ -127,30 +118,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/linearLayout4"
-        android:layout_marginTop="10dp"
-        android:baselineAligned="false">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/forum_end_TV"
             android:text="@string/forum_end_TV"
             android:layout_width="0dp"
-            android:layout_weight="5"
+            android:layout_weight="10"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
             android:textSize="18sp"/>
 
         <ImageButton
             android:id="@+id/btnShareVideos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight=".5"
             android:onClick="shareVideo"
-            android:textAllCaps="false"
             android:background="@color/colorWhite"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/sharevideos" />
     </LinearLayout>
 
