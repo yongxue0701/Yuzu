@@ -50,7 +50,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) view.findViewById(R.id.action_bar_title_with_donebtn);
-        actionBarTitleTV.setText("Profile Edit");
+        actionBarTitleTV.setText(R.string.action_bar_title_profile_edit);
 
         ImageView backBtnIV = (ImageView) view.findViewById(R.id.action_bar_back_with_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {

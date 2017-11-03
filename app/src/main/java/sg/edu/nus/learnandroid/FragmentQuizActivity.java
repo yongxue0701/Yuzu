@@ -2,6 +2,7 @@ package sg.edu.nus.learnandroid;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,12 +17,13 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FragmentQuizActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;
     Dialog dialog;
+
+    public static final String MY_SHAREDPREF_NAME = "FragmentQuizAnsSharedPref";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +56,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
         webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
-        webView.addJavascriptInterface(myJavaScriptInterface, "MyHandler");
+        webView.addJavascriptInterface(myJavaScriptInterface, "FragmentQuiz");
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/fragment_quiz.html");
     }
@@ -71,6 +73,13 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
         @JavascriptInterface
         public void getQuizAnsFromWebView(String[] answers, int counts) {
+            SharedPreferences.Editor editor = getSharedPreferences(MY_SHAREDPREF_NAME,
+                    MODE_PRIVATE).edit();
+
+            editor.putString("q1",answers[0]);
+            editor.putString("q2",answers[1]);
+            editor.commit();
+
             initiateSubmitQuizDialog(answers, counts);
         }
     }
@@ -140,7 +149,8 @@ public class FragmentQuizActivity extends AppCompatActivity {
         if (pointsCursor != null && pointsCursor.moveToFirst() && (pointsCursor.getCount() == 1)) {
             do {
                 totalPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("points")));
-                fragmentConceptQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("fragmentConceptQuizPts")));
+                fragmentConceptQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor
+                        .getColumnIndex("fragmentConceptQuizPts")));
             } while (pointsCursor.moveToNext());
         }
 
@@ -151,8 +161,9 @@ public class FragmentQuizActivity extends AppCompatActivity {
         } else {
             finalPoints = totalPtsFromDB - fragmentConceptQuizPtsFromDB + points;
         }
-
-        Toast.makeText(getApplicationContext(), "finalPoints " + finalPoints + "quizPoints " + points, Toast.LENGTH_LONG).show();
+//
+//        Toast.makeText(getApplicationContext(), "finalPoints " + finalPoints
+//                + "quizPoints " + points, Toast.LENGTH_LONG).show();
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateFragmentConceptQuizPtsByIsLogin(1, points);
         userAccountDB.close();

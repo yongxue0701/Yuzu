@@ -59,7 +59,9 @@
         <activity android:name=".FragmentLifeCycleActivity" />
         <activity android:name=".FragmentTypesActivity" />
         <activity android:name=".FragmentQuizActivity" />
-        <activity android:name=".FragmentQuizResultsActivity"></activity>
+        <activity android:name=".FragmentQuizResultsActivity" />
+        <activity android:name=".FragmentInfo" />
+        <activity android:name=".FragmentQuizInfoActivity"></activity>
     </application>
 
 </manifest>

@@ -27,3 +27,15 @@ p{
     text-align: justify;
     line-height: 200%;
 }
+
+#fragments_info_title{
+    text-align: justify;
+    line-height: 200%;
+    margin:20px;
+}
+
+#fragments_info_content{
+    text-align: justify;
+    line-height: 200%;
+    margin:20px;
+}

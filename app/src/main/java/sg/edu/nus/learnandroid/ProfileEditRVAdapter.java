@@ -428,7 +428,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View view) {
                 TextView genderTextView = (TextView) genderView.findViewById(R.id.profileEdit_btnWithText_content_TV);
-                genderTextView.setText("Male");
+                genderTextView.setText(R.string.gender_text_view_male);
 
                 editor.putString("gender", "Male");
                 editor.commit();
@@ -442,7 +442,7 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View view) {
                 TextView genderTextView = (TextView) genderView.findViewById(R.id.profileEdit_btnWithText_content_TV);
-                genderTextView.setText("Female");
+                genderTextView.setText(R.string.gender_text_view_female);
 
                 editor.putString("gender", "Female");
                 editor.commit();

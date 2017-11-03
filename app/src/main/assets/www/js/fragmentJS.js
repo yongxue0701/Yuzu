@@ -20,5 +20,5 @@ function onClick_Submit() {
     }
 
     var answers = [ansQ1,ansQ2];
-    MyHandler.getQuizAnsFromWebView(answers,counts);
+    FragmentQuiz.getQuizAnsFromWebView(answers,counts);
 }
