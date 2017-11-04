@@ -18,15 +18,15 @@ public class FragmentQuizInfoActivity extends AppCompatActivity {
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
+        getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
 
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();
 
-        TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
+        TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
         actionBarTitleTV.setText(R.string.course_fragments);
 
-        ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
+        ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
