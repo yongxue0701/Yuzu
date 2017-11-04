@@ -48,7 +48,8 @@ public class CourseFragmentActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
+                startActivity(myIntent);
             }
         });
 
@@ -57,7 +58,7 @@ public class CourseFragmentActivity extends AppCompatActivity {
         mapPinOneIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), FragmentInfo.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentInfoActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }

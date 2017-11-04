@@ -47,7 +47,8 @@ public class FragmentQuizActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(), FragmentQuizInfoActivity.class);
+                startActivity(myIntent);
             }
         });
 
@@ -165,5 +166,39 @@ public class FragmentQuizActivity extends AppCompatActivity {
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateFragmentConceptQuizPtsByIsLogin(1, points);
         userAccountDB.close();
+    }
+
+    private void initiateCancelQuizDialog() {
+
+        dialog = new Dialog(FragmentQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.submit_quiz_popup);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        TextView title = (TextView) dialogWindow.findViewById(R.id.submit_quiz_popup_title_TV);
+
+        dialog.show();
+
+        Button cancelBtn = (Button) dialog.findViewById(R.id.submit_quiz_popup_cancel_btn);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        Button yesBtn = (Button) dialog.findViewById(R.id.submit_quiz_popup_yes_btn);
+        yesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Intent myIntent = new Intent(getApplicationContext(), FragmentQuizResultsActivity.class);
+                startActivity(myIntent);
+            }
+        });
     }
 }

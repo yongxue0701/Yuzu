@@ -1,5 +1,6 @@
 package sg.edu.nus.learnandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentInfo extends AppCompatActivity {
+public class FragmentInfoActivity extends AppCompatActivity {
 
     private FragmentInfoRVAdapter adapter;
     private RecyclerView fragmentInfoRV;
@@ -40,7 +41,8 @@ public class FragmentInfo extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
+                startActivity(myIntent);
             }
         });
 
