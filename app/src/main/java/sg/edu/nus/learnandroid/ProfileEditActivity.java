@@ -42,11 +42,9 @@ public class ProfileEditActivity extends AppCompatActivity {
         userAccountDB = new UserAccountDB(this);
 
         // Set up custom action bar with back button and done button
-        if (getActionBar() != null && getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setDisplayShowCustomEnabled(true);
-            getSupportActionBar().setCustomView(R.layout.action_bar_with_donebtn);
-        }
+        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_with_donebtn);
 
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();

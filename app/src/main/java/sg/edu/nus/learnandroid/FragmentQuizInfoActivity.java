@@ -21,18 +21,14 @@ public class FragmentQuizInfoActivity extends AppCompatActivity {
         userAccountDB = new UserAccountDB(this);
 
         // Set up custom action bar with back button
-        if (getActionBar() != null && getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setDisplayShowCustomEnabled(true);
-            getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
-        }
-
-        // Set up the back button and title on action bar
-        View view = getSupportActionBar().getCustomView();
+        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
         actionBarTitleTV.setText(R.string.course_fragments);
 
+        // Set up the back button and title on action bar
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +37,7 @@ public class FragmentQuizInfoActivity extends AppCompatActivity {
             }
         });
 
+        // Set onclick function for submit button
         Button submitBtn = (Button) findViewById(R.id.fragment_quiz_info_submit_btn);
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -34,11 +34,9 @@ public class CourseFragmentActivity extends AppCompatActivity {
 //        getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         // Set up custom action bar with back button
-        if (getActionBar() != null && getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setDisplayShowCustomEnabled(true);
-            getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
-        }
+        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
 
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();
@@ -53,7 +51,6 @@ public class CourseFragmentActivity extends AppCompatActivity {
                 finish();
             }
         });
-
 
         // Start a new activity for the first image view
         ImageView mapPinOneIV = (ImageView) findViewById(R.id.fragment_map_pin_1_IV);

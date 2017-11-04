@@ -26,11 +26,9 @@ public class FragmentInfo extends AppCompatActivity {
         setContentView(R.layout.activity_fragment_info);
 
         // Set up custom action bar with back button
-        if (getActionBar() != null && getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setDisplayShowCustomEnabled(true);
-            getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
-        }
+        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
 
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();
@@ -45,6 +43,7 @@ public class FragmentInfo extends AppCompatActivity {
                 finish();
             }
         });
+
 
         WebView webView = (WebView) findViewById(R.id.fragment_info_background_info_webview);
         webView.getSettings().setJavaScriptEnabled(true);
