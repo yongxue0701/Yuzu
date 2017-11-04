@@ -28,7 +28,12 @@ function displayResult() {
     var answer = FragmentQuizResults.returnQuizAnsToWebView();
     var answers = answer.split(",");
 
-    document.getElementById("q1"+answers[0]).checked = true;
-    document.getElementById("q2"+answers[1]).checked = true;
+    if(answers[0] != "empty") {
+        document.getElementById("q1"+answers[0]).checked = true;
+    }
+
+    if(answers[1] != "empty") {
+        document.getElementById("q2"+answers[1]).checked = true;
+    }
 
 }
