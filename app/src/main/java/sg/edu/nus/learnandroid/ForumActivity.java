@@ -56,17 +56,15 @@ public class ForumActivity extends Activity {
         });
 
 
-
         //  Like Button
         btnLike = (LikeView) findViewById(R.id.btnLike);
         btnLike.setObjectIdAndType("https://www.facebook.com/Learnandroidwithus-854183284756525/", LikeView.ObjectType.PAGE);
 
 
-
         shareDialog = new ShareDialog(this);  // intialize facebook shareDialog.
     }
 
-    public void onClick_GoToFBPage(View view){
+    public void onClick_GoToFBPage(View view) {
 
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Learnandroidwithus-854183284756525/"));
         startActivity(myIntent);
@@ -85,13 +83,12 @@ public class ForumActivity extends Activity {
     }
 
 
-    public void sharePhotos (View view){
+    public void sharePhotos(View view) {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
-
 
 
     public void shareVideo(View view) {
