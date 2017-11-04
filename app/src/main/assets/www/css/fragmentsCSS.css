@@ -39,3 +39,9 @@ p{
     line-height: 200%;
     margin:20px;
 }
+
+#quiz_results{
+    font-weight: bold;
+    margin-top: -15px;
+    color: #EF5350;
+}

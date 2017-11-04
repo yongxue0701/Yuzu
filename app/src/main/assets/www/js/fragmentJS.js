@@ -33,6 +33,19 @@ function displayResult() {
     var img_q1 = document.getElementById("q1_explain_img");
     var img_q2 = document.getElementById("q2_explain_img");
 
+    var points = 0;
+    for(var j = 0;j < correctAns.length;j++) {
+        if(answers[j] == correctAns[j]) {
+            points = points + 1;
+        }
+    }
+
+    if (points == 1 || points == 0) {
+        document.getElementById("quiz_results").innerHTML = "Your Score: " + points + " point";
+    } else if (points > 1) {
+        document.getElementById("quiz_results").innerHTML = "Your Score: " + points + " points";
+    }
+
     for(var i = 1;i <= 2; i++) {
         document.getElementById("q"+i+"a").disabled = true;
         document.getElementById("q"+i+"b").disabled = true;
