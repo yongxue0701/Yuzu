@@ -35,6 +35,11 @@
         android:onClick="onClick_GoToCourseMapActivity"
         android:text="Link to Course Map" />
 
-
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick_GoToFragmentQuizActivity"
+        android:text="Link to Fragment Quiz" />
 
 </LinearLayout>
