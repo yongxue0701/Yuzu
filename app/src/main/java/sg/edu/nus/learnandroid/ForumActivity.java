@@ -66,12 +66,18 @@ public class ForumActivity extends Activity {
         shareDialog = new ShareDialog(this);  // intialize facebook shareDialog.
     }
 
+    public void onClick_GoToFBPage(View view){
+
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Learnandroidwithus-854183284756525/"));
+        startActivity(myIntent);
+    }
+
 
     public void shareLinks(View view) {
 
         if (ShareDialog.canShow(ShareLinkContent.class)) {
             ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                    .setContentUrl(Uri.parse("https://developer.android.com/index.html?hl=zh-cn"))
+                    .setContentUrl(Uri.parse("https://www.facebook.com/Learnandroidwithus-854183284756525/"))
                     .build();
 
             shareDialog.show(linkContent);
