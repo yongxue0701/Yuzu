@@ -53,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:background="@drawable/text_view_with_border"
+            android:background="@drawable/border_line"
             android:text="@string/cancel_btn_popup_cancel_btn"
             android:textColor="@color/colorDarkGreen" />
 
@@ -62,7 +62,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:background="@drawable/text_view_with_border"
+            android:background="@drawable/border_line"
             android:text="@string/cancel_btn_popup_yes_btn"
             android:textColor="@color/colorDarkGreen" />
 

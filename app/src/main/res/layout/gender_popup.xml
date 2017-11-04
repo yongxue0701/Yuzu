@@ -16,7 +16,7 @@
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/gender_popup_SV"
             android:layout_width="match_parent"
-            android:background="@drawable/text_view_with_border"
+            android:background="@drawable/border_line"
             android:fillViewport="true"
             android:scrollbars="none"
             app:layout_heightPercent="14%"

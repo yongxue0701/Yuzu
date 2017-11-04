@@ -63,4 +63,9 @@
     <string name="gender_text_view_male">Male</string>
     <string name="gender_text_view_female">Female</string>
     <string name="action_bar_title_profile_edit">Profile Edit</string>
+    <string name="fragment_quiz_info_title_TV">Practice Questions on Fragments</string>
+    <string name="fragment_quiz_info_questionNum_TV">2 questions</string>
+    <string name="fragment_quiz_info_score_label_TV">Your Score</string>
+    <string name="fragment_quiz_info_attempts_label_TV">Attempts</string>
+    <string name="fragment_quiz_info_attempts_content_TV">Multiple</string>
 </resources>

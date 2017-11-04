@@ -55,7 +55,7 @@ public class FragmentInfo extends AppCompatActivity {
         accountButtonNames.add("Introduction of Fragments");
         accountButtonNames.add("Fragment Life Cycle");
         accountButtonNames.add("Types of Fragments");
-        accountButtonNames.add("Assignment");
+        accountButtonNames.add("Quiz");
 
         adapter = new FragmentInfoRVAdapter(accountButtonNames, this, this);
         fragmentInfoRV = (RecyclerView) findViewById(R.id.fragment_info_RV);

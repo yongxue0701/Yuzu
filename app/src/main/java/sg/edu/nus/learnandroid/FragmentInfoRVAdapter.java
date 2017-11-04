@@ -97,7 +97,7 @@ public class FragmentInfoRVAdapter extends RecyclerView.Adapter<FragmentInfoRVAd
             viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
         }
 
-        if (buttonName.equals("Assignment")) {
+        if (buttonName.equals("Quiz")) {
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
