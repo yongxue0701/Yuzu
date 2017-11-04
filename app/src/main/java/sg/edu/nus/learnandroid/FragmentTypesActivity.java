@@ -25,7 +25,7 @@ public class FragmentTypesActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_nextbtn);
-        actionBarTitleTV.setText("Fragments");
+        actionBarTitleTV.setText(R.string.course_fragments);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_with_nextbtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {

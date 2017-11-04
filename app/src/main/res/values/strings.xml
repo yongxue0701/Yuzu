@@ -68,4 +68,5 @@
     <string name="fragment_quiz_info_score_label_TV">Your Score</string>
     <string name="fragment_quiz_info_attempts_label_TV">Attempts</string>
     <string name="fragment_quiz_info_attempts_content_TV">Multiple</string>
+    <string name="course_fragments">Fragments</string>
 </resources>

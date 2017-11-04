@@ -24,7 +24,7 @@ public class FragmentQuizInfoActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText("Fragments");
+        actionBarTitleTV.setText(R.string.course_fragments);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
