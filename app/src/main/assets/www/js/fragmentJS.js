@@ -22,3 +22,13 @@ function onClick_Submit() {
     var answers = [ansQ1,ansQ2];
     FragmentQuiz.getQuizAnsFromWebView(answers,counts);
 }
+
+function displayResult() {
+
+    var answer = FragmentQuizResults.returnQuizAnsToWebView();
+    var answers = answer.split(",");
+
+    document.getElementById("q1"+answers[0]).checked = true;
+    document.getElementById("q2"+answers[1]).checked = true;
+
+}

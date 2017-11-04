@@ -161,9 +161,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
         } else {
             finalPoints = totalPtsFromDB - fragmentConceptQuizPtsFromDB + points;
         }
-//
-//        Toast.makeText(getApplicationContext(), "finalPoints " + finalPoints
-//                + "quizPoints " + points, Toast.LENGTH_LONG).show();
+
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateFragmentConceptQuizPtsByIsLogin(1, points);
         userAccountDB.close();

@@ -1,5 +1,6 @@
 package sg.edu.nus.learnandroid;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -60,9 +61,17 @@ public class FragmentQuizResultsActivity extends AppCompatActivity {
 
         @JavascriptInterface
         public String returnQuizAnsToWebView() {
-            Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_LONG).show();
 
-            return "hi I am a string";
+            Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_LONG).show();
+            SharedPreferences prefs = getSharedPreferences(MY_SHAREDPREF_NAME,
+                    MODE_PRIVATE);
+
+            String q1 = prefs.getString("q1", "default value");
+            String q2 = prefs.getString("q2", "default value");
+
+            Toast.makeText(getApplicationContext(), q1 + " " + q2 + " ", Toast.LENGTH_LONG).show();
+
+            return q1 + "," + q2;
         }
     }
 }
