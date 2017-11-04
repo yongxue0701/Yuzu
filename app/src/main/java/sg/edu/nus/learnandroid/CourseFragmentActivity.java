@@ -34,9 +34,11 @@ public class CourseFragmentActivity extends AppCompatActivity {
 //        getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         // Set up custom action bar with back button
-        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
+        if (getActionBar() != null && getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setDisplayShowCustomEnabled(true);
+            getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
+        }
 
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();

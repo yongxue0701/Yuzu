@@ -16,9 +16,11 @@ public class FragmentTypesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fragment_types);
 
         // Set up custom action bar with back button
-        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
+        if (getActionBar() != null && getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setDisplayShowCustomEnabled(true);
+            getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
+        }
 
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();

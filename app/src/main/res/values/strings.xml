@@ -69,4 +69,7 @@
     <string name="fragment_quiz_info_attempts_label_TV">Attempts</string>
     <string name="fragment_quiz_info_attempts_content_TV">Multiple</string>
     <string name="course_fragments">Fragments</string>
+    <string name="fragment_quiz_info_score_incomplete">Incomplete</string>
+    <string name="fragment_quiz_info_submitbtn_start">Start</string>
+    <string name="fragment_quiz_info_submitbtn_retake">Retake</string>
 </resources>
