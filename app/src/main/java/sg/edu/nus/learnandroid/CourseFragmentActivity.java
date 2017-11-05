@@ -53,12 +53,23 @@ public class CourseFragmentActivity extends AppCompatActivity {
             }
         });
 
-        // Start a new activity for the first image view
-        ImageView mapPinOneIV = (ImageView) findViewById(R.id.fragment_map_pin_1_IV);
-        mapPinOneIV.setOnClickListener(new View.OnClickListener() {
+        // Start a new activity for the image view of fragment concept
+        ImageView fragmentConceptIV = (ImageView) findViewById(R.id.fragment_map_pin_concept_IV);
+        fragmentConceptIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), FragmentInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptInfoActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+
+        // Start a new activity for the image view of fragment concept
+        ImageView staticFragmentIV = (ImageView) findViewById(R.id.fragment_map_pin_static_IV);
+        staticFragmentIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), StaticFragmentInfoActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }

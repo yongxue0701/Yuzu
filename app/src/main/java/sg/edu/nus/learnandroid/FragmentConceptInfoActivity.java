@@ -15,16 +15,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentInfoActivity extends AppCompatActivity {
+public class FragmentConceptInfoActivity extends AppCompatActivity {
 
-    private FragmentInfoRVAdapter adapter;
+    private FragmentConceptInfoRVAdapter adapter;
     private RecyclerView fragmentInfoRV;
     private LinearLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_info);
+        setContentView(R.layout.activity_fragment_concept_info);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -60,7 +60,7 @@ public class FragmentInfoActivity extends AppCompatActivity {
         accountButtonNames.add("Types of Fragments");
         accountButtonNames.add("Quiz");
 
-        adapter = new FragmentInfoRVAdapter(accountButtonNames, this, this);
+        adapter = new FragmentConceptInfoRVAdapter(accountButtonNames, this, this);
         fragmentInfoRV = (RecyclerView) findViewById(R.id.fragment_info_RV);
         fragmentInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);

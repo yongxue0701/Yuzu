@@ -17,13 +17,13 @@ import java.util.List;
  * Created by Yongxue on 3/11/17.
  */
 
-public class FragmentInfoRVAdapter extends RecyclerView.Adapter<FragmentInfoRVAdapter.ViewHolder> {
+public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentConceptInfoRVAdapter.ViewHolder> {
 
     private List<String> fragmentInfoListButtons;
     private Context context;
     private Activity activity;
 
-    public FragmentInfoRVAdapter(List<String> fragmentInfoListButtons, Context context, Activity activity) {
+    public FragmentConceptInfoRVAdapter(List<String> fragmentInfoListButtons, Context context, Activity activity) {
         this.fragmentInfoListButtons = fragmentInfoListButtons;
         this.context = context;
         this.activity = activity;
@@ -101,7 +101,7 @@ public class FragmentInfoRVAdapter extends RecyclerView.Adapter<FragmentInfoRVAd
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), FragmentQuizInfoActivity.class);
+                    Intent editProfileIntent = new Intent(view.getContext(), FragmentConceptQuizInfoActivity.class);
                     context.startActivity(editProfileIntent);
                     activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 }

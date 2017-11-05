@@ -11,14 +11,14 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class FragmentQuizResultsActivity extends AppCompatActivity {
+public class FragmentConceptQuizResultsActivity extends AppCompatActivity {
 
     public static final String MY_SHAREDPREF_NAME = "FragmentQuizAnsSharedPref";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_quiz_results);
+        setContentView(R.layout.activity_fragment_concept_quiz_results);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -35,7 +35,7 @@ public class FragmentQuizResultsActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), FragmentQuizInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptQuizInfoActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -52,11 +52,11 @@ public class FragmentQuizResultsActivity extends AppCompatActivity {
 
     public class JavaScriptInterface {
 
-        private FragmentQuizResultsActivity parentActivity;
+        private FragmentConceptQuizResultsActivity parentActivity;
         private WebView webView;
 
-        public JavaScriptInterface(FragmentQuizResultsActivity fragmentQuizResultsActivity, WebView mWebView) {
-            parentActivity = fragmentQuizResultsActivity;
+        public JavaScriptInterface(FragmentConceptQuizResultsActivity fragmentConceptQuizResultsActivity, WebView mWebView) {
+            parentActivity = fragmentConceptQuizResultsActivity;
             webView = mWebView;
         }
 

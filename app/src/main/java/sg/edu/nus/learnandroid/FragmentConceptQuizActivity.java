@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class FragmentQuizActivity extends AppCompatActivity {
+public class FragmentConceptQuizActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;
     Dialog dialog;
@@ -28,7 +28,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_quiz);
+        setContentView(R.layout.activity_fragment_concept_quiz);
 
         userAccountDB = new UserAccountDB(this);
 
@@ -63,11 +63,11 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
     public class JavaScriptInterface {
 
-        private FragmentQuizActivity parentActivity;
+        private FragmentConceptQuizActivity parentActivity;
         private WebView webView;
 
-        public JavaScriptInterface(FragmentQuizActivity fragmentQuizActivity, WebView mWebView) {
-            parentActivity = fragmentQuizActivity;
+        public JavaScriptInterface(FragmentConceptQuizActivity fragmentConceptQuizActivity, WebView mWebView) {
+            parentActivity = fragmentConceptQuizActivity;
             webView = mWebView;
         }
 
@@ -89,7 +89,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
     private void initiateSubmitQuizDialog(final String[] answers, final int counts) {
 
-        dialog = new Dialog(FragmentQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog = new Dialog(FragmentConceptQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.submit_quiz_popup);
 
@@ -125,7 +125,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 dialog.dismiss();
                 calculatePoints(answers, counts);
-                Intent myIntent = new Intent(getApplicationContext(), FragmentQuizResultsActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptQuizResultsActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -172,7 +172,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
     private void initiateCancelQuizDialog() {
 
-        dialog = new Dialog(FragmentQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog = new Dialog(FragmentConceptQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.cancel_quiz_popup);
 
@@ -191,7 +191,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                Intent myIntent = new Intent(getApplicationContext(), FragmentQuizInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptQuizInfoActivity.class);
                 startActivity(myIntent);
             }
         });

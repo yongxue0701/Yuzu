@@ -9,7 +9,7 @@
     tools:ignore="ContentDescription">
 
     <ImageView
-        android:id="@+id/fragment_map_pin_1_IV"
+        android:id="@+id/fragment_map_pin_concept_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -20,7 +20,7 @@
         app:layout_marginTopPercent="32%" />
 
     <ImageView
-        android:id="@+id/fragment_map_pin_2_IV"
+        android:id="@+id/fragment_map_pin_static_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"

@@ -9,14 +9,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class FragmentQuizInfoActivity extends AppCompatActivity {
+public class FragmentConceptQuizInfoActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_quiz_info);
+        setContentView(R.layout.activity_fragment_concept_quiz_info);
 
         userAccountDB = new UserAccountDB(this);
 
@@ -33,7 +33,7 @@ public class FragmentQuizInfoActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), FragmentInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptInfoActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -43,7 +43,7 @@ public class FragmentQuizInfoActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), FragmentQuizActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptQuizActivity.class);
                 startActivity(myIntent);
             }
         });

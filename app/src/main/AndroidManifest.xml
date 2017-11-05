@@ -58,10 +58,11 @@
         <activity android:name=".ForumActivity" />
         <activity android:name=".FragmentLifeCycleActivity" />
         <activity android:name=".FragmentTypesActivity" />
-        <activity android:name=".FragmentQuizActivity" />
-        <activity android:name=".FragmentQuizResultsActivity" />
-        <activity android:name=".FragmentInfoActivity" />
-        <activity android:name=".FragmentQuizInfoActivity" />
+        <activity android:name=".FragmentConceptQuizActivity" />
+        <activity android:name=".FragmentConceptQuizResultsActivity" />
+        <activity android:name=".FragmentConceptInfoActivity" />
+        <activity android:name=".FragmentConceptQuizInfoActivity" />
+        <activity android:name=".StaticFragmentInfoActivity"></activity>
     </application>
 
 </manifest>

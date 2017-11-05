@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
     }
 
     public void onClick_GoToFragmentQuizActivity(View view) {
-        Intent myIntent = new Intent(this, FragmentQuizInfoActivity.class);
+        Intent myIntent = new Intent(this, FragmentConceptQuizInfoActivity.class);
         startActivity(myIntent);
     }
 
