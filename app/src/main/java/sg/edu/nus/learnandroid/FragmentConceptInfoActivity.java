@@ -11,9 +11,12 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Created by Yongxue
+ */
 
 public class FragmentConceptInfoActivity extends AppCompatActivity {
 
@@ -46,7 +49,6 @@ public class FragmentConceptInfoActivity extends AppCompatActivity {
             }
         });
 
-
         WebView webView = (WebView) findViewById(R.id.fragment_info_background_info_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
@@ -54,13 +56,13 @@ public class FragmentConceptInfoActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/fragment_concept_info.html");
 
         // Set up recycler view with account buttons
-        List<String> accountButtonNames = new ArrayList<>();
-        accountButtonNames.add("Introduction of Fragments");
-        accountButtonNames.add("Fragment Life Cycle");
-        accountButtonNames.add("Types of Fragments");
-        accountButtonNames.add("Quiz");
+        List<String> fragmentConceptButtonNames = new ArrayList<>();
+        fragmentConceptButtonNames.add("Introduction of Fragments");
+        fragmentConceptButtonNames.add("Fragment Life Cycle");
+        fragmentConceptButtonNames.add("Types of Fragments");
+        fragmentConceptButtonNames.add("Quiz");
 
-        adapter = new FragmentConceptInfoRVAdapter(accountButtonNames, this, this);
+        adapter = new FragmentConceptInfoRVAdapter(fragmentConceptButtonNames, this, this);
         fragmentInfoRV = (RecyclerView) findViewById(R.id.fragment_info_RV);
         fragmentInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);

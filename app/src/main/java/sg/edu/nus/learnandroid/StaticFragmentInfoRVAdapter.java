@@ -14,17 +14,17 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Yongxue on 3/11/17.
+ * Created by Yongxue on 5/11/17.
  */
 
-public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentConceptInfoRVAdapter.ViewHolder> {
+public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFragmentInfoRVAdapter.ViewHolder> {
 
-    private List<String> fragmentConceptInfoListButtons;
+    private List<String> staticFragmentInfoListButtons;
     private Context context;
     private Activity activity;
 
-    public FragmentConceptInfoRVAdapter(List<String> fragmentConceptInfoListButtons, Context context, Activity activity) {
-        this.fragmentConceptInfoListButtons = fragmentConceptInfoListButtons;
+    public StaticFragmentInfoRVAdapter(List<String> staticFragmentInfoListButtons, Context context, Activity activity) {
+        this.staticFragmentInfoListButtons = staticFragmentInfoListButtons;
         this.context = context;
         this.activity = activity;
     }
@@ -37,9 +37,9 @@ public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentC
 
         public ViewHolder(View itemView) {
             super(itemView);
-            buttonNameTV = itemView.findViewById(R.id.fragment_concept_info_buttonName_TV);
-            buttonIconIV = itemView.findViewById(R.id.fragment_concept_info_buttonIcon_IV);
-            buttonPRL = itemView.findViewById(R.id.fragment_concept_info_recyclerview_PRL);
+            buttonNameTV = itemView.findViewById(R.id.static_fragment_info_buttonName_TV);
+            buttonIconIV = itemView.findViewById(R.id.static_fragment_info_buttonIcon_IV);
+            buttonPRL = itemView.findViewById(R.id.static_fragment_info_recyclerview_PRL);
         }
     }
 
@@ -53,8 +53,7 @@ public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentC
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-
-        String buttonName = fragmentConceptInfoListButtons.get(position);
+        String buttonName = staticFragmentInfoListButtons.get(position);
 
         viewHolder.buttonNameTV.setText(buttonName);
 
@@ -113,6 +112,6 @@ public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentC
 
     @Override
     public int getItemCount() {
-        return fragmentConceptInfoListButtons.size();
+        return staticFragmentInfoListButtons.size();
     }
 }

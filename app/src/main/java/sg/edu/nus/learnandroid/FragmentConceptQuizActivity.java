@@ -18,6 +18,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * Created by Yongxue
+ */
+
 public class FragmentConceptQuizActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;

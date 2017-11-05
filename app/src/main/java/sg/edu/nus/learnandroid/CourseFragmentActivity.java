@@ -9,8 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
-
 import java.util.ArrayList;
+
+/**
+ * Created by Yongxue
+ */
 
 public class CourseFragmentActivity extends AppCompatActivity {
 

@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+/**
+ * Created by Yongxue
+ */
+
 public class LoginActivity extends Activity {
 
     UserAccountDB userAccountDB;

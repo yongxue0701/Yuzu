@@ -13,6 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+/**
+ * Created by Yongxue
+ */
+
 public class CourseMapActivity extends Activity {
 
     private BottomNavigationView bottomNavigationView;

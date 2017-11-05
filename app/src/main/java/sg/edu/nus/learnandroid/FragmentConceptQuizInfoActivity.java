@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * Created by Yongxue
+ */
+
 public class FragmentConceptQuizInfoActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;

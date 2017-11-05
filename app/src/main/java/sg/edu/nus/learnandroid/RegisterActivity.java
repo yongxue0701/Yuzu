@@ -11,6 +11,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+/**
+ * Created by Yongxue
+ */
+
 public class RegisterActivity extends Activity {
 
     UserAccountDB userAccountDB;
