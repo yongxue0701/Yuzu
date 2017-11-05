@@ -21,10 +21,7 @@ import com.facebook.share.widget.ShareDialog;
 import java.io.IOException;
 
 public class ForumActivity extends Activity {
-    private LikeView btnLike;
     private ShareDialog shareDialog;
-    private ImageButton btnImg1;
-    private ImageButton btnImg2;
     private int PICK_IMAGE_REQUEST = 1;
     private int PICK_VIDEO_REQUEST = 2;
 
@@ -33,7 +30,8 @@ public class ForumActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
-        btnImg1 = (ImageButton) findViewById(R.id.forum_img1_btn);
+        // android img click
+        ImageButton btnImg1 = (ImageButton) findViewById(R.id.forum_android_img_btn);
         btnImg1.setImageResource(R.drawable.android);
 
         btnImg1.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +42,8 @@ public class ForumActivity extends Activity {
             }
         });
 
-        btnImg2 = (ImageButton) findViewById(R.id.forum_img2_btn);
+        //info icon click
+        ImageButton btnImg2 = (ImageButton) findViewById(R.id.forum_info_img_btn);
         btnImg2.setImageResource(R.drawable.info);
 
         btnImg2.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +56,7 @@ public class ForumActivity extends Activity {
 
 
         //  Like Button
-        btnLike = (LikeView) findViewById(R.id.btnLike);
+        LikeView btnLike = (LikeView) findViewById(R.id.btnLike);
         btnLike.setObjectIdAndType("https://www.facebook.com/Learnandroidwithus-854183284756525/", LikeView.ObjectType.PAGE);
 
 
