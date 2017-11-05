@@ -47,7 +47,7 @@ public class FragmentConceptQuizResultsActivity extends AppCompatActivity {
         WebView.setWebContentsDebuggingEnabled(true);
         webView.addJavascriptInterface(myJavaScriptInterface, "FragmentQuizResults");
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/fragment_quiz_result.html");
+        webView.loadUrl("file:///android_asset/www/fragment_concept_quiz_result.html");
     }
 
     public class JavaScriptInterface {

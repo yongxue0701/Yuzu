@@ -1,5 +1,5 @@
 
-function onClick_Submit() {
+function onClick_Submit_concept() {
 
     var ansQ1 = "empty";
     var ansQ2 = "empty";
@@ -46,7 +46,7 @@ function onClick_Submit() {
     FragmentQuiz.getQuizAnsFromWebView(answers,counts);
 }
 
-function displayResult() {
+function displayResult_concept() {
 
     var answer = FragmentQuizResults.returnQuizAnsToWebView();
     var answers = answer.split(",");

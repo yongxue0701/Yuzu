@@ -51,7 +51,7 @@ public class FragmentConceptInfoActivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/fragment_info.html");
+        webView.loadUrl("file:///android_asset/www/fragment_concept_info.html");
 
         // Set up recycler view with account buttons
         List<String> accountButtonNames = new ArrayList<>();
