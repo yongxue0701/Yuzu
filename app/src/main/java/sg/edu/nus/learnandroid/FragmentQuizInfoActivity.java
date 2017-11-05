@@ -56,12 +56,11 @@ public class FragmentQuizInfoActivity extends AppCompatActivity {
             do {
                 int fragmentQuizPts = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("fragmentConceptQuizPts")));
 
-                if (fragmentQuizPts == 0) {
-                    scoreTV.setText(R.string.fragment_quiz_info_score_incomplete);
-                    submitBtn.setText(R.string.fragment_quiz_info_submitbtn_start);
+                if (fragmentQuizPts == 1 || fragmentQuizPts == 0) {
+                    scoreTV.setText(fragmentQuizPts + "/5 point");
+
                 } else if (fragmentQuizPts > 0) {
-                    scoreTV.setText(fragmentQuizPts + "/2 points");
-                    submitBtn.setText(R.string.fragment_quiz_info_submitbtn_retake);
+                    scoreTV.setText(fragmentQuizPts + "/5 points");
                 }
             } while (mCursor.moveToNext());
         }

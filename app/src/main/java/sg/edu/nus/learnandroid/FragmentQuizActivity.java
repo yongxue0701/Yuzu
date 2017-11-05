@@ -78,6 +78,9 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
             editor.putString("q1", answers[0]);
             editor.putString("q2", answers[1]);
+            editor.putString("q3", answers[2]);
+            editor.putString("q4", answers[3]);
+            editor.putString("q5", answers[4]);
             editor.commit();
 
             initiateSubmitQuizDialog(answers, counts);
@@ -99,10 +102,10 @@ public class FragmentQuizActivity extends AppCompatActivity {
 
         TextView title = (TextView) dialogWindow.findViewById(R.id.submit_quiz_popup_title_TV);
 
-        if ((2 - counts) == 1) {
+        if ((5 - counts) == 1) {
             title.setText(R.string.one_question_unanswered);
-        } else if (counts != 2 && (2 - counts) != 1) {
-            title.setText("There are " + (2 - counts) + " questions that you didn't answer. "
+        } else if (counts != 5 && (5 - counts) != 1) {
+            title.setText("There are " + (5 - counts) + " questions that you didn't answer. "
                     + "Are you sure you want to submit your quiz?");
         } else {
             title.setText(R.string.some_questions_unanswered);
@@ -131,7 +134,7 @@ public class FragmentQuizActivity extends AppCompatActivity {
     private void calculatePoints(String[] answers, int counts) {
 
         int points = 0;
-        String[] correctAns = {"c", "c"};
+        String[] correctAns = {"c", "c", "b", "b", "d"};
 
         for (int i = 0; i < correctAns.length; i++) {
             if (answers[i].equals(correctAns[i])) {

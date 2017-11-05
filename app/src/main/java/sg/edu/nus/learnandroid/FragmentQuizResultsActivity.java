@@ -68,8 +68,11 @@ public class FragmentQuizResultsActivity extends AppCompatActivity {
 
             String q1 = prefs.getString("q1", "default value");
             String q2 = prefs.getString("q2", "default value");
+            String q3 = prefs.getString("q3", "default value");
+            String q4 = prefs.getString("q4", "default value");
+            String q5 = prefs.getString("q5", "default value");
 
-            return q1 + "," + q2;
+            return q1 + "," + q2 + "," + q3 + "," + q4 + "," + q5;
         }
     }
 }

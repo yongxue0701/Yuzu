@@ -61,7 +61,7 @@
         <activity android:name=".FragmentQuizActivity" />
         <activity android:name=".FragmentQuizResultsActivity" />
         <activity android:name=".FragmentInfoActivity" />
-        <activity android:name=".FragmentQuizInfoActivity"></activity>
+        <activity android:name=".FragmentQuizInfoActivity" />
     </application>
 
 </manifest>
