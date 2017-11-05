@@ -81,4 +81,9 @@
     <string name="fragment_quiz_info_score_incomplete">Incomplete</string>
     <string name="fragment_quiz_info_submitbtn_start">Start</string>
     <string name="fragment_quiz_info_submitbtn_retake">Retake</string>
+    <string name="cancel_quiz_popup_leave_btn">Leave</string>
+    <string name="cancel_quiz_popup_stay_btn">Stay</string>
+    <string name="cancel_quiz_popup_title_TV">
+        Are you sure you want to leave this quiz? Your process won\'t be saved.
+    </string>
 </resources>

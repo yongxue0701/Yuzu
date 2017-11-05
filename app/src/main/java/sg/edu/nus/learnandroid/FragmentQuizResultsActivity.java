@@ -1,5 +1,6 @@
 package sg.edu.nus.learnandroid;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +10,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FragmentQuizResultsActivity extends AppCompatActivity {
 
@@ -35,7 +35,8 @@ public class FragmentQuizResultsActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(), FragmentQuizInfoActivity.class);
+                startActivity(myIntent);
             }
         });
 
@@ -62,14 +63,11 @@ public class FragmentQuizResultsActivity extends AppCompatActivity {
         @JavascriptInterface
         public String returnQuizAnsToWebView() {
 
-            Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_LONG).show();
             SharedPreferences prefs = getSharedPreferences(MY_SHAREDPREF_NAME,
                     MODE_PRIVATE);
 
             String q1 = prefs.getString("q1", "default value");
             String q2 = prefs.getString("q2", "default value");
-
-            Toast.makeText(getApplicationContext(), q1 + " " + q2 + " ", Toast.LENGTH_LONG).show();
 
             return q1 + "," + q2;
         }

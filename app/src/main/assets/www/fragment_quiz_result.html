@@ -11,7 +11,8 @@
         <h2>Quiz Results</h2>
 
         <form>
-            <!--<button id="submit_btn" type="button" onclick="displayResult()">Submit</button>-->
+
+            <p id="quiz_results"></p>
 
             <div>
                 <p>
@@ -25,6 +26,16 @@
                     <input type="radio" id="q1d" name="q1" value="d">&emsp;A fragment designed in one activity can't
                     be reused in other activity.&ensp;<br/>
                 </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q1_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q1_explain_p"
+                   style="padding-left:10px;padding-right:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
             </div>
 
             <div>
@@ -43,6 +54,16 @@
                     <input type="radio" id="q2d" name="q2" value="d">&emsp;Both fragments will be destroyed
                     and recreated when activity reaches onResume again.&ensp;<br/>
                 </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q2_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q2_explain_p"
+                   style="padding-left:10px;padding-right:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
             </div>
         </form>
     </body>

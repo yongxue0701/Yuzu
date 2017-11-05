@@ -7,19 +7,19 @@
     android:orientation="vertical"
     tools:context="sg.edu.nus.learnandroid.ForumActivity">
 
-
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-     <TextView
-         android:id="@+id/forum_title_TV"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="@string/forum_title_TV"
-         android:textColor="@color/colorWhite"
-         android:textSize="28sp"
-         android:background="@color/cardview_dark_background"/>
+
+        <TextView
+            android:id="@+id/forum_title_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background"
+            android:text="@string/forum_title_TV"
+            android:textColor="@color/colorWhite"
+            android:textSize="28sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -34,132 +34,131 @@
             android:layout_height="230dp"
             android:layout_weight="0.5"
             android:contentDescription="@string/forum_img1_btn"
-            app:srcCompat="@drawable/android"/>
+            app:srcCompat="@drawable/android" />
+
         <Button
             android:id="@+id/forum_fb_btn"
-            android:text="@string/forum_fb_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="onClick_GoToFBPage"/>
+            android:onClick="onClick_GoToFBPage"
+            android:text="@string/forum_fb_btn" />
 
     </LinearLayout>
-
-
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/forum_middle_TV"
-            android:text="@string/forum_middle_TV"
             android:layout_width="0dp"
-            android:layout_weight="3"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:textSize="18sp"/>
+            android:layout_weight="3"
+            android:text="@string/forum_middle_TV"
+            android:textSize="18sp" />
 
         <com.facebook.share.widget.LikeView
-            android:text="@string/btnLike"
+            android:id="@+id/btnLike"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            android:textAllCaps="false"
-            android:background="@color/colorPrimary"
-            android:textColor="@color/colorWhite"
             android:layout_marginTop="12dp"
-            android:id="@+id/btnLike" />
+            android:layout_weight="1.2"
+            android:background="@color/colorPrimary"
+            android:text="@string/btnLike"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite" />
 
         <Button
+            android:id="@+id/btnShareLinks"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".9"
-            android:onClick="shareLinks"
             android:layout_marginEnd="5dp"
-            android:textAllCaps="false"
-            android:text="@string/btnShareLinks"
+            android:layout_weight=".9"
             android:background="@color/colorPrimary"
-            android:textColor="@color/colorWhite"
-            android:id="@+id/btnShareLinks" />
+            android:onClick="shareLinks"
+            android:text="@string/btnShareLinks"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="18dp">
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/forum_bottom_TV"
-            android:text="@string/forum_bottom_TV"
             android:layout_width="0dp"
-            android:layout_weight="5"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:textSize="18sp"/>
+            android:layout_weight="5"
+            android:text="@string/forum_bottom_TV"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnSharePhotos"
-            android:text="@string/btnSharePhotos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:onClick="sharePhotos"
+            android:text="@string/btnSharePhotos"
             android:textAllCaps="false"
-            android:textColor="@color/colorWhite"
-            android:background="@color/colorPrimary" />
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/forum_end_TV"
-            android:text="@string/forum_end_TV"
             android:layout_width="0dp"
-            android:layout_weight="5"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:textSize="18sp"/>
+            android:layout_weight="5"
+            android:text="@string/forum_end_TV"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnShareVideos"
-            android:text="@string/btnShareVideos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginEnd="5dp"
-            android:textAllCaps="false"
-            android:onClick="shareVideo"
+            android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:textColor="@color/colorWhite"/>
+            android:onClick="shareVideo"
+            android:text="@string/btnShareVideos"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/forum_tip_TV"
-            android:text="@string/forum_tip_TV"
             android:layout_width="0dp"
-            android:layout_weight="5"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:textSize="18sp"/>
+            android:layout_weight="5"
+            android:text="@string/forum_tip_TV"
+            android:textSize="18sp" />
 
         <ImageButton
             android:id="@+id/forum_img2_btn"
@@ -167,10 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/forum_img2_btn"
-            app:srcCompat="@drawable/info"/>
-
+            app:srcCompat="@drawable/info" />
 
     </LinearLayout>
-
-
 </LinearLayout>

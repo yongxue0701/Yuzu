@@ -16,26 +16,23 @@ public class FragmentLifeCycleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fragment_life_cycle);
 
         // Set up custom action bar with back button
-        if (getActionBar() != null && getSupportActionBar() != null) {
+        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
 
-            getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setDisplayShowCustomEnabled(true);
-            getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
+        // Set up the back button and title on action bar
+        View view = getSupportActionBar().getCustomView();
 
-            // Set up the back button and title on action bar
-            View view = getSupportActionBar().getCustomView();
+        TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
+        actionBarTitleTV.setText(R.string.course_fragments);
 
-            TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
-            actionBarTitleTV.setText(R.string.course_fragments);
-
-            ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
-            backBtnIV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    finish();
-                }
-            });
-        }
+        ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
+        backBtnIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         WebView webView = (WebView) findViewById(R.id.fragment_lifecycle_webview);
         webView.getSettings().setJavaScriptEnabled(true);
