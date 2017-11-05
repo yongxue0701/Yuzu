@@ -62,7 +62,9 @@
         <activity android:name=".FragmentConceptQuizResultsActivity" />
         <activity android:name=".FragmentConceptInfoActivity" />
         <activity android:name=".FragmentConceptQuizInfoActivity" />
-        <activity android:name=".StaticFragmentInfoActivity"></activity>
+        <activity android:name=".StaticFragmentInfoActivity" />
+        <activity android:name=".StaticFragmentIntroActivity" />
+        <activity android:name=".StaticFragmentExampleActivity"></activity>
     </application>
 
 </manifest>

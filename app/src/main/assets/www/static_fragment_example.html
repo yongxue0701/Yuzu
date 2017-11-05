@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fragmentsCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Example of Defining Fragment Statically</h2>
+
+        <p>
+            Adding two fragments in activity_main.xml.
+        </p>
+
+        <h3>activity_main.xml</h3>
+
+        <p id="static_fragment_code_1">
+            &lt;LinearLayout<br/>
+            &emsp;&emsp;xmlns:android="http://schemas.<br/>
+            &emsp;&emsp;android.com/apk/res/android"<br/>
+            &emsp;&emsp;xmlns:tools="http://schemas.android.<br/>
+            &emsp;&emsp;com/tools"<br/>
+            &emsp;&emsp;android:id="@+id/LinearLayout1"<br/>
+            &emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;android:layout_height="match_parent"<br/>
+            &emsp;&emsp;android:orientation="horizontal"&emsp;&gt;<br/><br/>
+
+            &emsp;&emsp;&lt;fragment<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="@+id/fragment1"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:name="YourFragmentName1"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_weight="1"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="0dp"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height=<br/>
+            &emsp;&emsp;&emsp;&emsp;"match_parent"/&gt;;&ensp;<br/><br/>
+
+            &emsp;&emsp;&lt;fragment<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="@+id/fragment2"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:name="YourFragmentName2"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_weight="1"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="0dp"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height=<br/>
+            &emsp;&emsp;&emsp;&emsp;"match_parent"/&gt;;&ensp;<br/>
+
+            &lt;/LinearLayout&gt;
+        </p>
+
+        <p>
+            Now, you can create Fragment1.java and Fragment2.java which have their own UI.
+            Fragment will contribute its UI by using its own layout.
+        </p>
+
+        <h3>Fragment1.xml</h3>
+
+        <p id="static_fragment_code_2">
+            &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
+            &lt;LinearLayout<br/>
+            &emsp;&emsp;xmlns:android="http://schemas.<br/>
+            &emsp;&emsp;android.com/apk/res/android"<br/>
+            &emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;android:layout_height="match_parent"<br/>
+            &emsp;&emsp;android:orientation="vertical" &gt;<br/><br/>
+
+            &emsp;&emsp;&lt;TextView<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="@+id/textView1"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:text="I m fragment ONE"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:gravity="center"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:background="#5eff6a"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:textAppearance="<br/>
+            &emsp;&emsp;&emsp;&emsp;?android:attr/textAppearanceLarge" /&gt;<br/>
+
+            &lt;/LinearLayout&gt;
+        </p>
+
+        <h3>Fragment2.xml</h3>
+
+        <p id="static_fragment_code_3">
+            &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
+            &lt;LinearLayout<br/>
+            &emsp;&emsp;xmlns:android="http://schemas.<br/>
+            &emsp;&emsp;android.com/apk/res/android"<br/>
+            &emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;android:layout_height="match_parent"<br/>
+            &emsp;&emsp;android:orientation="vertical" &gt;<br/><br/>
+
+            &emsp;&emsp;&lt;TextView<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="@+id/textView1"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:text="I m fragment TWO"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:gravity="center"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:background="#ff9e5e"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:textAppearance="<br/>
+            &emsp;&emsp;&emsp;&emsp;?android:attr/textAppearanceLarge" /&gt;<br/>
+
+            &lt;/LinearLayout&gt;
+        </p>
+
+        <p>
+            After you have defined it this way, don’t try to replace, delete, etc.
+            with a FragmentTransaction! You obtain a reference to the fragment
+            in Java using the FragmentManager.
+        </p>
+
+        <h3>Fragment1.java</h3>
+
+        <p id="static_fragment_code_4">
+            package com.example.staticfragments;<br/><br/>
+
+            import android.annotation.SuppressLint;<br/>
+            import android.app.Fragment;<br/>
+            import android.os.Bundle;<br/>
+            import android.view.LayoutInflater;<br/>
+            import android.view.View;<br/>
+            import android.view.ViewGroup;<br/><br/>
+
+            public class Fragment1 extends Fragment {<br/>
+            &emsp;&emsp;public View onCreateView(<br/>
+            &emsp;&emsp;LayoutInflater inflater, ViewGroup vg, <br/>
+            &emsp;&emsp;Bundle savedInstanceState) {<br/>
+            &emsp;&emsp;&emsp;&emsp;return inflater.inflate<br/>
+            &emsp;&emsp;&emsp;&emsp;(R.layout.fragment1, vg,false);<br/>
+            &emsp;&emsp;}<br/>
+            }
+        </p>
+
+        <h3>Fragment2.java</h3>
+
+        <p id="static_fragment_code_5">
+            package com.example.staticfragments;<br/><br/>
+
+            import android.annotation.SuppressLint;<br/>
+            import android.app.Fragment;<br/>
+            import android.os.Bundle;<br/>
+            import android.view.LayoutInflater;<br/>
+            import android.view.View;<br/>
+            import android.view.ViewGroup;<br/><br/>
+
+            public class Fragment2 extends Fragment {<br/>
+            &emsp;&emsp;public View onCreateView(<br/>
+            &emsp;&emsp;LayoutInflater inflater, ViewGroup vg, <br/>
+            &emsp;&emsp;Bundle savedInstanceState) {<br/>
+            &emsp;&emsp;&emsp;&emsp;return inflater.inflate<br/>
+            &emsp;&emsp;&emsp;&emsp;(R.layout.fragment2, vg,false);<br/>
+            &emsp;&emsp;}<br/>
+            }
+        </p>
+    </body>
+</html>

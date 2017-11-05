@@ -38,4 +38,14 @@ public class MainActivity extends Activity {
         startActivity(myIntent);
     }
 
+    public void onClick_GoToStaticFragmentActivity(View view) {
+        Intent myIntent = new Intent(this, StaticFragmentIntroActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onClick_GoToStaticFragmentExampleActivity(View view) {
+        Intent myIntent = new Intent(this, StaticFragmentExampleActivity.class);
+        startActivity(myIntent);
+    }
+
 }

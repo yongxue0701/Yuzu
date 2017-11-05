@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fragmentsCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Define Fragments Statically</h2>
+
+        <p>
+            There are two ways to add Fragments to an Activity, either static
+            fragments or Dynamic fragments. Adding fragments statically via XML is the
+            preferred method when your UI won’t vary drastically. You can use these XML
+            fragments and leverage the resource system to build UIs that fit multiple
+            form factors without worrying about managing the state of all the fragments
+            in your application.
+        </p>
+
+        <p>
+            We will see how to add Static Fragments to an Activity, by Declare the Fragment
+            as &lt;fragment&gt; a element inside the activity’s layout file.
+        </p>
+
+        <h3>Steps:</h3>
+
+        <p>
+            •&emsp;Create MainActivity.java file and extends Activity.&ensp;<br/>
+            •&emsp;Create Fragment1.java and Fragment2.java which extends the Fragment Class.<br/>
+            •&emsp;Create the respective layouts for Fragment1 and Fragment2.<br/>
+            •&emsp;Override onCreate() method in Fragment1.java and Fragment2.java,
+            and inflate the Fragment layouts (R.id.Fragment1 and R.id.Fragment2)
+            using LayoutInflater Class object and by passing the ViewGroup argument
+            which is the activity in which the fragment will be embedded.<br/>
+        </p>
+    </body>
+</html>

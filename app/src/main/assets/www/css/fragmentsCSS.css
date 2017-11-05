@@ -60,3 +60,17 @@ p{
     margin-top: -15px;
     color: #EF5350;
 }
+
+#static_fragment_code_1,
+#static_fragment_code_2,
+#static_fragment_code_3,
+#static_fragment_code_4,
+#static_fragment_code_5{
+    text-align: left;
+    line-height: 200%;
+    background-color: #E0E0E0;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
