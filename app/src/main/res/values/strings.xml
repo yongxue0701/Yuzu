@@ -48,17 +48,19 @@
     <string name="btnShareLinks">Share Links</string>
     <string name="btnSharePhotos">Photos</string>
     <string name="btnShareVideos">Videos</string>
-    <string name="forum_img1_btn">Android</string>
-    <string name="forum_img2_btn">Info</string>
-    <string name="forum_display_TV1">Don\'t limit yourself!</string>
-    <string name="forum_display_TV2">Best 3 webs for beginner</string>
-    <string name="forum_display_TV3"><a href="https://developer.android.com/training/index.html">DEVELOPER</a></string>
-    <string name="forum_display_TV4"><a href="http://androidlift.info">ANDROIDLIFT</a></string>
-    <string name="forum_display_TV5"><a href="http://www.vogella.com/tutorials/android.html">VOGELLA</a></string>
-    <string name="forum_display_TV6">Close to new tendency</string>
-    <string name="forum_display_TV7"><a href="https://medium.cobeisfresh.com/5-reasons-why-google-supporting-the-kotlin-programming-language-for-android-is-the-best-news-ever-e4c84be05382">KOTLIN</a></string>
-    <string name="forum_display_TV8"><a href="https://www.androidauthority.com/google-still-doesnt-want-sell-smartphones-heres-810729/">GOOGLE</a></string>
-    <string name="forum_display_TV9"><a href="https://android-developers.googleblog.com/2017/10/android-studio-30.html">APPNEWS</a></string>
+    <string name="forum_android_img_btn">Android</string>
+    <string name="forum_info_img_btn">Info</string>
+    <string name="forum_display_slogan_TV">Don\'t limit yourself!</string>
+    <string name="forum_display_web_TV">Best 3 webs for beginner</string>
+    <string name="forum_display_climb_IV">Climb</string>
+    <string name="forum_display_overlay_IV">Overlay</string>
+    <string name="forum_display_developer_TV"><a href="https://developer.android.com/training/index.html">DEVELOPER</a></string>
+    <string name="forum_display_androidlift_TV"><a href="http://androidlift.info">ANDROIDLIFT</a></string>
+    <string name="forum_display_vogella_TV"><a href="http://www.vogella.com/tutorials/android.html">VOGELLA</a></string>
+    <string name="forum_display_news_TV">Close to new tendency</string>
+    <string name="forum_display_kotlin_TV"><a href="https://medium.cobeisfresh.com/5-reasons-why-google-supporting-the-kotlin-programming-language-for-android-is-the-best-news-ever-e4c84be05382">KOTLIN</a></string>
+    <string name="forum_display_google_TV"><a href="https://www.androidauthority.com/google-still-doesnt-want-sell-smartphones-heres-810729/">GOOGLE</a></string>
+    <string name="forum_display_appnews_TV"><a href="https://android-developers.googleblog.com/2017/10/android-studio-30.html">APPNEWS</a></string>
     <string name="submit_quiz_popup_cancel_btn">Cancel</string>
     <string name="submit_quiz_popup_yes_btn">Yes, I\'m sure</string>
     <string name="one_question_unanswered">
