@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/forum_display_img1"
+        android:contentDescription="@string/forum_display_img1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="9dp"
@@ -20,6 +21,7 @@
 
     <ImageView
         android:id="@+id/forum_display_img2"
+        android:contentDescription="@string/forum_display_img2"
         android:layout_width="0dp"
         android:layout_height="87dp"
         android:scaleType="centerCrop"
@@ -80,7 +82,6 @@
         android:layout_marginEnd="21dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/forum_display_TV2"
-        android:layout_marginRight="0dp"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView

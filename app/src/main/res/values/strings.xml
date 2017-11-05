@@ -52,6 +52,8 @@
     <string name="forum_img2_btn">Info</string>
     <string name="forum_display_TV1">Don\'t limit yourself!</string>
     <string name="forum_display_TV2">Best 3 webs for beginner</string>
+    <string name="forum_display_img1">Climb</string>
+    <string name="forum_display_img2">Overlay</string>
     <string name="forum_display_TV3"><a href="https://developer.android.com/training/index.html">DEVELOPER</a></string>
     <string name="forum_display_TV4"><a href="http://androidlift.info">ANDROIDLIFT</a></string>
     <string name="forum_display_TV5"><a href="http://www.vogella.com/tutorials/android.html">VOGELLA</a></string>
