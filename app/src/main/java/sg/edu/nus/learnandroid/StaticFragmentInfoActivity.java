@@ -49,21 +49,20 @@ public class StaticFragmentInfoActivity extends AppCompatActivity {
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.fragment_info_background_info_webview);
+        WebView webView = (WebView) findViewById(R.id.static_fragment_info_background_info_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/fragment_concept_info.html");
+        webView.loadUrl("file:///android_asset/www/static_fragment_info.html");
 
         // Set up recycler view with account buttons
         List<String> staticFragmentButtonNames = new ArrayList<>();
-        staticFragmentButtonNames.add("Introduction of Fragments");
-        staticFragmentButtonNames.add("Fragment Life Cycle");
-        staticFragmentButtonNames.add("Types of Fragments");
+        staticFragmentButtonNames.add("Introduction");
+        staticFragmentButtonNames.add("Example");
         staticFragmentButtonNames.add("Quiz");
 
         adapter = new StaticFragmentInfoRVAdapter(staticFragmentButtonNames, this, this);
-        fragmentInfoRV = (RecyclerView) findViewById(R.id.fragment_info_RV);
+        fragmentInfoRV = (RecyclerView) findViewById(R.id.static_fragment_info_RV);
         fragmentInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 

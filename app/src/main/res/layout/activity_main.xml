@@ -49,11 +49,4 @@
         android:onClick="onClick_GoToStaticFragmentActivity"
         android:text="Link to Static Fragment" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClick_GoToStaticFragmentExampleActivity"
-        android:text="Link to Static Fragment Example" />
-
 </LinearLayout>

@@ -46,7 +46,7 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_concept_info_recycler_view, parent, false);
+                .inflate(R.layout.static_fragment_info_recycler_view, parent, false);
         return new ViewHolder(view);
 
     }
@@ -57,11 +57,11 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
 
         viewHolder.buttonNameTV.setText(buttonName);
 
-        if (buttonName.equals("Introduction of Fragments")) {
+        if (buttonName.equals("Introduction")) {
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), FragmentIntroductionActivity.class);
+                    Intent editProfileIntent = new Intent(view.getContext(), StaticFragmentIntroActivity.class);
                     context.startActivity(editProfileIntent);
                     activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 }
@@ -70,24 +70,11 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
             viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
         }
 
-        if (buttonName.equals("Fragment Life Cycle")) {
+        if (buttonName.equals("Example")) {
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), FragmentLifeCycleActivity.class);
-                    context.startActivity(editProfileIntent);
-                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-                }
-            });
-
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
-        }
-
-        if (buttonName.equals("Types of Fragments")) {
-            viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), FragmentTypesActivity.class);
+                    Intent editProfileIntent = new Intent(view.getContext(), StaticFragmentExampleActivity.class);
                     context.startActivity(editProfileIntent);
                     activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 }
@@ -100,7 +87,7 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), FragmentConceptQuizInfoActivity.class);
+                    Intent editProfileIntent = new Intent(view.getContext(), StaticFragmentQuizActivity.class);
                     context.startActivity(editProfileIntent);
                     activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 }

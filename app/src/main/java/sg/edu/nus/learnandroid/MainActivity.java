@@ -39,12 +39,7 @@ public class MainActivity extends Activity {
     }
 
     public void onClick_GoToStaticFragmentActivity(View view) {
-        Intent myIntent = new Intent(this, StaticFragmentIntroActivity.class);
-        startActivity(myIntent);
-    }
-
-    public void onClick_GoToStaticFragmentExampleActivity(View view) {
-        Intent myIntent = new Intent(this, StaticFragmentExampleActivity.class);
+        Intent myIntent = new Intent(this, StaticFragmentInfoActivity.class);
         startActivity(myIntent);
     }
 
