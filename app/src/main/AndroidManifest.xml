@@ -65,7 +65,9 @@
         <activity android:name=".StaticFragmentInfoActivity" />
         <activity android:name=".StaticFragmentIntroActivity" />
         <activity android:name=".StaticFragmentExampleActivity" />
-        <activity android:name=".StaticFragmentQuizActivity"></activity>
+        <activity android:name=".StaticFragmentQuizActivity" />
+        <activity android:name=".StaticFragmentQuizResultsActivity" />
+        <activity android:name=".StaticFragmentQuizInfoActivity"></activity>
     </application>
 
 </manifest>

@@ -34,6 +34,7 @@ public class RegisterActivity extends Activity {
     private boolean isLogin;
     private int points;
     private int fragmentConceptQuizPts;
+    private int staticFragmentQuizPts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public class RegisterActivity extends Activity {
                 isLogin = false;
                 points = 0;
                 fragmentConceptQuizPts = 0;
+                staticFragmentQuizPts = 0;
 
                 genderRG = findViewById(R.id.register_gender_RG);
 
@@ -106,7 +108,8 @@ public class RegisterActivity extends Activity {
                 if (allDone) {
                     userAccountDB.open();
                     userAccountDB.insertRecord(username, pwd, email, gender, isLogin,
-                            String.valueOf(points), String.valueOf(fragmentConceptQuizPts));
+                            String.valueOf(points), String.valueOf(fragmentConceptQuizPts),
+                            String.valueOf(staticFragmentQuizPts));
                     userAccountDB.close();
 
                     Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);

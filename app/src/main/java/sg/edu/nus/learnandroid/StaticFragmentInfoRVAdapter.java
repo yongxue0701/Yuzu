@@ -87,7 +87,7 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), StaticFragmentQuizActivity.class);
+                    Intent editProfileIntent = new Intent(view.getContext(), StaticFragmentQuizInfoActivity.class);
                     context.startActivity(editProfileIntent);
                     activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 }

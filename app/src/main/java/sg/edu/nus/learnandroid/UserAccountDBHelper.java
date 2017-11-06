@@ -22,6 +22,7 @@ public class UserAccountDBHelper extends SQLiteOpenHelper {
     public static final String isLogin = "isLogin";
     public static final String points = "points";
     public static final String fragmentConceptQuizPts = "fragmentConceptQuizPts";
+    public static final String staticFragmentQuizPts = "staticFragmentQuizPts";
 
     private static final String SQLite_CREATE =
             "CREATE TABLE " + tableName + "(" +
@@ -32,7 +33,8 @@ public class UserAccountDBHelper extends SQLiteOpenHelper {
                     gender + " TEXT NOT NULL," +
                     isLogin + " TEXT NOT NULL," +
                     points + " TEXT NOT NULL," +
-                    fragmentConceptQuizPts + " TEXT NOT NULL)";
+                    fragmentConceptQuizPts + " TEXT NOT NULL," +
+                    staticFragmentQuizPts + " TEXT NOT NULL)";
 
     private static final String SQLite_DELETE =
             "DROP TABLE IF EXISTS " + tableName;
