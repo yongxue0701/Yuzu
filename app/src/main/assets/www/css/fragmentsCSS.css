@@ -30,7 +30,9 @@ p{
 #fragments_info_title,
 #fragments_info_content,
 #static_fragment_info_title,
-#static_fragment_info_content{
+#static_fragment_info_content,
+#dynamic_fragment_info_title,
+#dynamic_fragment_info_content{
     text-align: justify;
     line-height: 200%;
     margin:20px;

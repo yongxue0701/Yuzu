@@ -18,6 +18,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * Created by Yongxue
+ */
+
 public class StaticFragmentQuizActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;

@@ -33,13 +33,8 @@ public class MainActivity extends Activity {
         startActivity(myIntent);
     }
 
-    public void onClick_GoToFragmentQuizActivity(View view) {
-        Intent myIntent = new Intent(this, FragmentConceptQuizInfoActivity.class);
-        startActivity(myIntent);
-    }
-
-    public void onClick_GoToStaticFragmentActivity(View view) {
-        Intent myIntent = new Intent(this, StaticFragmentInfoActivity.class);
+    public void onClick_GoToDynamicFragmentActivity(View view) {
+        Intent myIntent = new Intent(this, DynamicFragmentInfoActivity.class);
         startActivity(myIntent);
     }
 

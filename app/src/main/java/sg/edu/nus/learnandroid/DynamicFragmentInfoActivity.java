@@ -11,6 +11,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,16 +19,16 @@ import java.util.List;
  * Created by Yongxue
  */
 
-public class StaticFragmentInfoActivity extends AppCompatActivity {
+public class DynamicFragmentInfoActivity extends AppCompatActivity {
 
-    private StaticFragmentInfoRVAdapter adapter;
-    private RecyclerView staticFragmentInfoRV;
+    private DynamicFragmentInfoRVAdapter adapter;
+    private RecyclerView dynamicFragmentInfoRV;
     private LinearLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_static_fragment_info);
+        setContentView(R.layout.activity_dynamic_fragment_info);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -49,25 +50,25 @@ public class StaticFragmentInfoActivity extends AppCompatActivity {
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.static_fragment_info_background_info_webview);
+        WebView webView = (WebView) findViewById(R.id.dynamic_fragment_info_background_info_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/static_fragment_info.html");
+        webView.loadUrl("file:///android_asset/www/dynamic_fragment_info.html");
 
         // Set up recycler view with account buttons
-        List<String> staticFragmentButtonNames = new ArrayList<>();
-        staticFragmentButtonNames.add("Introduction");
-        staticFragmentButtonNames.add("Example");
-        staticFragmentButtonNames.add("Quiz");
+        List<String> dynamicFragmentButtonNames = new ArrayList<>();
+        dynamicFragmentButtonNames.add("Introduction");
+        dynamicFragmentButtonNames.add("Example");
+        dynamicFragmentButtonNames.add("Quiz");
 
-        adapter = new StaticFragmentInfoRVAdapter(staticFragmentButtonNames, this, this);
-        staticFragmentInfoRV = (RecyclerView) findViewById(R.id.static_fragment_info_RV);
-        staticFragmentInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
+        adapter = new DynamicFragmentInfoRVAdapter(dynamicFragmentButtonNames, this, this);
+        dynamicFragmentInfoRV = (RecyclerView) findViewById(R.id.dynamic_fragment_info_RV);
+        dynamicFragmentInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 
-        staticFragmentInfoRV.setLayoutManager(layoutManager);
-        staticFragmentInfoRV.setAdapter(adapter);
-        staticFragmentInfoRV.setHasFixedSize(true);
+        dynamicFragmentInfoRV.setLayoutManager(layoutManager);
+        dynamicFragmentInfoRV.setAdapter(adapter);
+        dynamicFragmentInfoRV.setHasFixedSize(true);
     }
 }

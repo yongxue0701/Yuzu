@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fragmentsCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Define Fragments Dynamically</h2>
+
+        <p>
+            Real power of Fragments comes to the action when at the runtime your program
+            decides which Fragment to display based on the screen orientation.
+            Many a times you need a scenario when you want to display different
+            user interface when screen changes its orientation from portrait to
+            land­scape. We can customize the UI at the runtime using Fragments.
+            Say for example you activity looks good and fills the entire screen when
+            opened in mobile but when opened in tablet which has the bigger screen size
+            than phones then your activity does not fill the screen and may appear less
+            attractive, in these cases you can display more con­tent but manipulating with the Fragments.
+        </p>
+
+        <h3>How Would It Work:</h3>
+
+        <p>
+            •&emsp;First thing you need FragmentManager, Now using FragmentManager
+            instance get FragmentTransaction instance.&ensp;<br/>
+            •&emsp;Using FragmentTransaction instance you can perform fragment
+            transactions which means you can add, remove and replace the fragments.&ensp;<br/>
+            •&emsp;In the example below Fragment changes when device changes it orientation.
+            Fragment1 will be displayed when device is in portrait mode and Fragment2
+            will be displayed when device is in the land­scape mode.&ensp;<br/>
+            •&emsp;So now we just need to know the orientation of the device.
+            That you can get by int displaymode = getResources().getConfiguration().orientation;&ensp;<br/>
+            •&emsp;If display­mode = 1, then device is in portrait mode. Otherwise, it’s in land­scape mode.&ensp;<br/>
+        </p>
+    </body>
+</html>

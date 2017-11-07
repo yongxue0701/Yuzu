@@ -77,6 +77,17 @@ public class CourseFragmentActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
+
+        // Start a new activity for the image view of fragment concept
+        ImageView dynamicFragmentIV = (ImageView) findViewById(R.id.fragment_map_pin_dynamic_IV);
+        staticFragmentIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
     }
 
 //    @Override
