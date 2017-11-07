@@ -6,12 +6,20 @@
     android:layout_height="match_parent"
     tools:context="sg.edu.nus.learnandroid.FragmentConceptInfoActivity">
 
+    <ImageView
+        android:id="@+id/fragment_concept_loading_anim"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        app:layout_marginTopPercent="35%" />
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragment_info_SV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorSuperLightGrey"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:visibility="invisible">
 
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"

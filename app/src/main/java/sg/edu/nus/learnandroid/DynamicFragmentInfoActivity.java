@@ -1,7 +1,9 @@
 package sg.edu.nus.learnandroid;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -24,11 +27,26 @@ public class DynamicFragmentInfoActivity extends AppCompatActivity {
     private DynamicFragmentInfoRVAdapter adapter;
     private RecyclerView dynamicFragmentInfoRV;
     private LinearLayoutManager layoutManager;
+    private ImageView loadingAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dynamic_fragment_info);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ScrollView dynamicFragmentInfoSV = (ScrollView) findViewById(R.id.dynamic_fragment_info_SV);
+                dynamicFragmentInfoSV.setVisibility(View.VISIBLE);
+            }
+        }, 2000);
+
+        loadingAnim = (ImageView) findViewById(R.id.dynamic_fragment_loading_anim);
+        loadingAnim.setBackgroundResource(R.drawable.spinning_globe_grey);
+        AnimationDrawable frameAnimation = (AnimationDrawable) loadingAnim.getBackground();
+        frameAnimation.start();
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
