@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
+
 import java.util.ArrayList;
 
 /**
@@ -22,20 +23,6 @@ public class CourseFragmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_fragment);
 
-//        centerTitle();
-
-        // Set up action bar with back button
-//        getSupportActionBar().setDisplayShowCustomEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowTitleEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setTitle("Fragments        ");
-
-        // Set up color of back arrow icon
-//        final Drawable upArrow = ContextCompat.getDrawable(this, R.drawable.abc_ic_ab_back_material);
-//        upArrow.setColorFilter(ContextCompat.getColor(this, R.color.colorWhite), PorterDuff.Mode.SRC_ATOP);
-//        getSupportActionBar().setHomeAsUpIndicator(upArrow);
-
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
@@ -45,7 +32,7 @@ public class CourseFragmentActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) view.findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText("Fragments");
+        actionBarTitleTV.setText(R.string.course_fragments);
 
         ImageView backBtnIV = (ImageView) view.findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +40,7 @@ public class CourseFragmentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
 
@@ -67,7 +55,7 @@ public class CourseFragmentActivity extends AppCompatActivity {
             }
         });
 
-        // Start a new activity for the image view of fragment concept
+        // Start a new activity for the image view of static fragment
         ImageView staticFragmentIV = (ImageView) findViewById(R.id.fragment_map_pin_static_IV);
         staticFragmentIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +66,7 @@ public class CourseFragmentActivity extends AppCompatActivity {
             }
         });
 
-        // Start a new activity for the image view of fragment concept
+        // Start a new activity for the image view of dynamic fragment
         ImageView dynamicFragmentIV = (ImageView) findViewById(R.id.fragment_map_pin_dynamic_IV);
         dynamicFragmentIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,12 +77,6 @@ public class CourseFragmentActivity extends AppCompatActivity {
             }
         });
     }
-
-//    @Override
-//    public boolean onSupportNavigateUp() {
-//        finish();
-//        return true;
-//    }
 
     // To center the title on action bar
     private void centerTitle() {

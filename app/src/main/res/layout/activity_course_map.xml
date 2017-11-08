@@ -27,8 +27,8 @@
         android:layout_alignParentTop="true"
         android:background="?attr/selectableItemBackground"
         android:src="@drawable/ic_map_pin_dark_grey_1"
-        app:layout_marginEndPercent="36%"
-        app:layout_marginTopPercent="15%" />
+        app:layout_marginEndPercent="45%"
+        app:layout_marginTopPercent="19%" />
 
     <ImageView
         android:id="@+id/course_map_pin_2_IV"

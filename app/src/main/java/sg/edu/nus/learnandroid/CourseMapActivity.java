@@ -66,6 +66,16 @@ public class CourseMapActivity extends Activity {
             }
         });
 
+        ImageView mapPinOneIV = (ImageView) findViewById(R.id.course_map_pin_1_IV);
+        mapPinOneIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), CourseUserInterfaceActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+
         ImageView mapPinFourIV = (ImageView) findViewById(R.id.course_map_pin_4_IV);
         mapPinFourIV.setOnClickListener(new View.OnClickListener() {
             @Override

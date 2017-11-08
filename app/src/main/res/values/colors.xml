@@ -16,4 +16,5 @@
     <color name="colorWeChatBlue">#1D88EB</color>
     <color name="colorRed">#EF5350</color>
     <color name="colorDarkGreen">#00897B</color>
+    <color name="colorSuperDarkGreen">#00695C</color>
 </resources>

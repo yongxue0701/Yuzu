@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/course_map_usa"
+    tools:context="sg.edu.nus.learnandroid.CourseUserInterfaceActivity"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/ui_map_pin_introduction_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginEndPercent="35%"
+        app:layout_marginTopPercent="20%" />
+
+    <ImageView
+        android:id="@+id/ui_map_pin_layout_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginStartPercent="35%"
+        app:layout_marginTopPercent="42%" />
+
+    <ImageView
+        android:id="@+id/ui_map_pin_components_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginStartPercent="53%"
+        app:layout_marginTopPercent="57%" />
+
+    <ImageView
+        android:id="@+id/ui_map_pin_onclick_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginStartPercent="59%"
+        app:layout_marginTopPercent="73%" />
+
+</android.support.percent.PercentRelativeLayout>

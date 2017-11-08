@@ -86,6 +86,8 @@
     <string name="quiz_info_attempts_content_TV">Multiple</string>
 
     <string name="course_fragments">Fragments</string>
+    <string name="course_user_interface">User Interface</string>
+
     <string name="fragment_quiz_info_submitbtn_start">Start</string>
     <string name="cancel_quiz_popup_leave_btn">Leave</string>
     <string name="cancel_quiz_popup_stay_btn">Stay</string>
