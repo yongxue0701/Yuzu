@@ -28,15 +28,11 @@
     <string name="facebook_app_id">1574771352590790</string>
     <string name="action_bar_done">Done</string>
     <string name="action_bar_next">Next</string>
-    <string name="cancel_btn_title_TV">
-        Are you sure you want to discard changes to your edits?
-    </string>
-    <string name="cancel_btn_content_TV">
-        Changes to photos &amp; details will not be saved.
-    </string>
-    <string name="cancel_btn_popup_cancel_btn">Cancel</string>
-    <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
+
     <string name="profile_edit_success_toast_content_TV">Profile Updated!</string>
+    <string name="feedback_submit_success_toast_content_TV">Submitted!</string>
+
+
     <string name="splash_bottom_TV">Learn Android Company right ⓒ 2017</string>
     <string name="forum_title_TV">Having questions to ask?</string>
     <string name="forum_fb_btn">Click here to join our Facebook Group</string>
@@ -61,17 +57,12 @@
     <string name="forum_display_kotlin_TV"><a href="https://medium.cobeisfresh.com/5-reasons-why-google-supporting-the-kotlin-programming-language-for-android-is-the-best-news-ever-e4c84be05382">KOTLIN</a></string>
     <string name="forum_display_google_TV"><a href="https://www.androidauthority.com/google-still-doesnt-want-sell-smartphones-heres-810729/">GOOGLE</a></string>
     <string name="forum_display_appnews_TV"><a href="https://android-developers.googleblog.com/2017/10/android-studio-30.html">APPNEWS</a></string>
-    <string name="submit_quiz_popup_cancel_btn">Cancel</string>
-    <string name="submit_quiz_popup_yes_btn">Yes, I\'m sure</string>
-    <string name="one_question_unanswered">
-         "There is 1 question that you didn't answer. Are you sure you want to submit your quiz?"
-    </string>
-    <string name="some_questions_unanswered">
-         "Are you sure you want to submit your quiz?"
-    </string>
+
     <string name="gender_text_view_male">Male</string>
     <string name="gender_text_view_female">Female</string>
+
     <string name="action_bar_title_profile_edit">Profile Edit</string>
+    <string name="action_bar_title_user_feedback">Feedback</string>
 
     <string name="fragment_quiz_info_title_TV">Practice Questions on Fragments</string>
     <string name="static_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Statically</string>
@@ -88,10 +79,40 @@
     <string name="course_fragments">Fragments</string>
     <string name="course_user_interface">User Interface</string>
 
+    <string name="cancel_btn_popup_cancel_btn">Cancel</string>
+    <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
+    <string name="submit_quiz_popup_cancel_btn">Cancel</string>
+    <string name="submit_quiz_popup_yes_btn">Yes, I\'m sure</string>
     <string name="fragment_quiz_info_submitbtn_start">Start</string>
     <string name="cancel_quiz_popup_leave_btn">Leave</string>
     <string name="cancel_quiz_popup_stay_btn">Stay</string>
+    <string name="cancel_feedback_popup_no_btn">No</string>
+    <string name="cancel_feedback_popup_yes_btn">Yes</string>
+
+    <string name="cancel_btn_title_TV">
+        Are you sure you want to discard changes to your edits?
+    </string>
+    <string name="cancel_btn_content_TV">
+        Changes to photos &amp; details will not be saved.
+    </string>
+    <string name="one_question_unanswered">
+         "There is 1 question that you didn't answer. Are you sure you want to submit your quiz?"
+    </string>
+    <string name="some_questions_unanswered">
+         "Are you sure you want to submit your quiz?"
+    </string>
     <string name="cancel_quiz_popup_title_TV">
         Are you sure you want to leave this quiz? Your process won\'t be saved.
     </string>
+    <string name="cancel_feedback_popup_title_TV">
+        Are you sure you want to discard your feedback?
+    </string>
+    <string name="submit_feedback_popup_title_TV">
+        Are you sure you want to submit your feedback?
+    </string>
+
+    <string name="feedback_title_ET"><font size="15">Title</font></string>
+    <string name="feedback_content_ET"><font size="15">Please provide us your feedback.</font></string>
+    <string name="feedback_contact_detail_label_TV">Contact Details</string>
+    <string name="feedback_contact_detail_content_ET"><font size="15">Please leave your email address</font></string>
 </resources>

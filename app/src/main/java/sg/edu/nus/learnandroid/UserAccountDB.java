@@ -6,16 +6,16 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.dynamicFragmentQuizPts;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.email;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.fragmentConceptQuizPts;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.gender;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.isLogin;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.password;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.points;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.staticFragmentQuizPts;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.userId;
-import static sg.edu.nus.learnandroid.UserAccountDBHelper.username;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.dynamicFragmentQuizPts;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.email;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.fragmentConceptQuizPts;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.gender;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.isLogin;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.password;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.points;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.staticFragmentQuizPts;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.userId;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.username;
 
 /**
  * Created by Yongxue on 16/10/17.
@@ -23,13 +23,13 @@ import static sg.edu.nus.learnandroid.UserAccountDBHelper.username;
 
 public class UserAccountDB {
 
-    UserAccountDBHelper userAccountDBHelper;
+    LearnAndroidDBHelper userAccountDBHelper;
     SQLiteDatabase db;
     final Context context;
 
     public UserAccountDB(Context ctx) {
         this.context = ctx;
-        userAccountDBHelper = new UserAccountDBHelper(this.context);
+        userAccountDBHelper = new LearnAndroidDBHelper(this.context);
     }
 
     public UserAccountDB open() {
@@ -57,18 +57,18 @@ public class UserAccountDB {
         initialValues.put(staticFragmentQuizPts, _staticFragmentQuizPts);
         initialValues.put(dynamicFragmentQuizPts, _dynamicFragmentQuizPts);
 
-        db.insert(UserAccountDBHelper.tableName, null, initialValues);
+        db.insert(LearnAndroidDBHelper.userAccountTableName, null, initialValues);
     }
 
     public void deleteRecord(String columnNameToBeDeleted) {
-        db.delete(UserAccountDBHelper.tableName, userId +
+        db.delete(LearnAndroidDBHelper.userAccountTableName, userId +
                 "=" + columnNameToBeDeleted, null);
     }
 
     public Cursor getRecordByUsername(String _username) throws SQLException {
         Cursor mCursor = db.query(
 
-                UserAccountDBHelper.tableName,
+                LearnAndroidDBHelper.userAccountTableName,
 
                 new String[]{
                         userId,
@@ -96,14 +96,14 @@ public class UserAccountDB {
 
         initialValues.put(isLogin, _isLogin);
 
-        db.update(UserAccountDBHelper.tableName, initialValues,
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 username + "='" + _username + "'", null);
     }
 
     public Cursor getRecordByIsLogin(int _isLogin) throws SQLException {
         Cursor mCursor = db.query(
 
-                UserAccountDBHelper.tableName,
+                LearnAndroidDBHelper.userAccountTableName,
 
                 new String[]{
                         userId,
@@ -137,7 +137,7 @@ public class UserAccountDB {
         initialValues.put(email, _email);
         initialValues.put(gender, _gender);
 
-        db.update(UserAccountDBHelper.tableName, initialValues,
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 username + "='" + usernameFromDB + "'", null);
     }
 
@@ -147,7 +147,7 @@ public class UserAccountDB {
 
         initialValues.put(points, _points);
 
-        db.update(UserAccountDBHelper.tableName, initialValues,
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);
     }
 
@@ -157,7 +157,7 @@ public class UserAccountDB {
 
         initialValues.put(fragmentConceptQuizPts, _fragmentConceptQuizPts);
 
-        db.update(UserAccountDBHelper.tableName, initialValues,
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);
     }
 
@@ -167,7 +167,7 @@ public class UserAccountDB {
 
         initialValues.put(staticFragmentQuizPts, _staticFragmentQuizPts);
 
-        db.update(UserAccountDBHelper.tableName, initialValues,
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);
     }
 
@@ -177,7 +177,7 @@ public class UserAccountDB {
 
         initialValues.put(dynamicFragmentQuizPts, _dynamicFragmentQuizPts);
 
-        db.update(UserAccountDBHelper.tableName, initialValues,
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);
     }
 }

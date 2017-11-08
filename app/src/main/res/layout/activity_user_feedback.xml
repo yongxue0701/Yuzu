@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSuperLightGrey"
+    tools:context="sg.edu.nus.learnandroid.UserFeedbackActivity">
+
+    <EditText
+        android:id="@+id/feedback_title_ET"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:hint="@string/feedback_title_ET"
+        android:inputType="text"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        app:layout_heightPercent="8%"
+        app:layout_marginTopPercent="2%" />
+
+    <EditText
+        android:id="@+id/feedback_content_ET"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/feedback_title_ET"
+        android:background="@color/colorWhite"
+        android:gravity="top"
+        android:hint="@string/feedback_content_ET"
+        android:inputType="text"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        app:layout_heightPercent="30%"
+        app:layout_marginTopPercent="2%" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/feedback_content_ET"
+        android:layout_marginTop="11dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%"
+        app:layout_marginTopPercent="2%">
+
+        <TextView
+            android:id="@+id/feedback_contact_detail_label_TV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingEnd="0dp"
+            android:paddingStart="-10dp"
+            android:text="@string/feedback_contact_detail_label_TV"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/feedback_contact_detail_content_ET"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:hint="@string/feedback_contact_detail_content_ET"
+            android:inputType="textEmailAddress"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp" />
+    </LinearLayout>
+</android.support.percent.PercentRelativeLayout>

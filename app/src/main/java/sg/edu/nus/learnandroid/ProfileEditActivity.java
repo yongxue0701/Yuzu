@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,8 +121,8 @@ public class ProfileEditActivity extends AppCompatActivity {
 
                 LayoutInflater inflater = (LayoutInflater)
                         getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View layout = inflater.inflate(R.layout.profile_edit_success_toast, (ViewGroup)
-                        findViewById(R.id.profile_edit_success_toast_PRL));
+                View layout = inflater.inflate(R.layout.successful_message_toast, (ViewGroup)
+                        findViewById(R.id.successful_message_toast_PRL));
 
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, -200);
@@ -129,6 +130,9 @@ public class ProfileEditActivity extends AppCompatActivity {
                 toast.setView(layout);
 
                 toast.show();
+
+                TextView successContent = (TextView) layout.findViewById(R.id.successful_message_toast_content_TV);
+                successContent.setText(R.string.profile_edit_success_toast_content_TV);
 
                 finish();
             }

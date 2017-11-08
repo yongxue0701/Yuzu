@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/cancel_feedback_popup_PRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/cancel_feedback_popup_title_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/cancel_feedback_popup_title_TV"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_marginBottomPercent="3%"
+            app:layout_marginEndPercent="6%"
+            app:layout_marginStartPercent="6%"
+            app:layout_marginTopPercent="3%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cancel_feedback_popup_PRL"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_feedback_popup_no_btn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_line"
+            android:text="@string/cancel_feedback_popup_no_btn"
+            android:textColor="@color/colorXiaoMiGreen" />
+
+        <Button
+            android:id="@+id/cancel_feedback_popup_yes_btn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_line"
+            android:text="@string/cancel_feedback_popup_yes_btn"
+            android:textColor="@color/colorXiaoMiGreen" />
+
+    </LinearLayout>
+</android.support.percent.PercentRelativeLayout>

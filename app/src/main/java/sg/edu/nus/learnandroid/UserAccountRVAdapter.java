@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -76,7 +75,9 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, "Hello I am feedback", Toast.LENGTH_SHORT).show();
+                    Intent editProfileIntent = new Intent(view.getContext(), UserFeedbackActivity.class);
+                    context.startActivity(editProfileIntent);
+                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 }
             });
 

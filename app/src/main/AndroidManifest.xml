@@ -78,7 +78,8 @@
         <activity android:name=".AndroidIntroductionActivity" />
         <activity android:name=".UserInterfaceLayoutActivity" />
         <activity android:name=".UserInterfaceElementsActivity" />
-        <activity android:name=".UserInterfaceOnClickActivity"></activity>
+        <activity android:name=".UserInterfaceOnClickActivity" />
+        <activity android:name=".UserFeedbackActivity"></activity>
     </application>
 
 </manifest>
