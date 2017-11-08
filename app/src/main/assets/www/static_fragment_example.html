@@ -15,7 +15,7 @@
 
         <h3>activity_main.xml</h3>
 
-        <p id="static_fragment_code_1">
+        <p id="first_code">
             &lt;LinearLayout<br/>
             &emsp;&emsp;xmlns:android="http://schemas.<br/>
             &emsp;&emsp;android.com/apk/res/android"<br/>
@@ -27,7 +27,7 @@
             &emsp;&emsp;android:orientation="horizontal"&emsp;&gt;<br/><br/>
 
             &emsp;&emsp;&lt;fragment<br/>
-            &emsp;&emsp;&emsp;&emsp;android:id="@+id/fragment1"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="<b>@+id/fragment1"</b>&ensp;<br/>
             &emsp;&emsp;&emsp;&emsp;android:name="YourFragmentName1"&ensp;<br/>
             &emsp;&emsp;&emsp;&emsp;android:layout_weight="1"<br/>
             &emsp;&emsp;&emsp;&emsp;android:layout_width="0dp"&ensp;<br/>
@@ -35,7 +35,7 @@
             &emsp;&emsp;&emsp;&emsp;"match_parent"/&gt;;&ensp;<br/><br/>
 
             &emsp;&emsp;&lt;fragment<br/>
-            &emsp;&emsp;&emsp;&emsp;android:id="@+id/fragment2"&ensp;<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="<b>@+id/fragment2"</b>&ensp;<br/>
             &emsp;&emsp;&emsp;&emsp;android:name="YourFragmentName2"&ensp;<br/>
             &emsp;&emsp;&emsp;&emsp;android:layout_weight="1"<br/>
             &emsp;&emsp;&emsp;&emsp;android:layout_width="0dp"&ensp;<br/>
@@ -52,7 +52,7 @@
 
         <h3>Fragment1.xml</h3>
 
-        <p id="static_fragment_code_2">
+        <p id="second_code">
             &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
             &lt;LinearLayout<br/>
             &emsp;&emsp;xmlns:android="http://schemas.<br/>
@@ -76,7 +76,7 @@
 
         <h3>Fragment2.xml</h3>
 
-        <p id="static_fragment_code_3">
+        <p id="third_code">
             &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
             &lt;LinearLayout<br/>
             &emsp;&emsp;xmlns:android="http://schemas.<br/>
@@ -106,7 +106,7 @@
 
         <h3>Fragment1.java</h3>
 
-        <p id="static_fragment_code_4">
+        <p id="fourth_code">
             package com.example.staticfragments;<br/><br/>
 
             import android.annotation.SuppressLint;<br/>
@@ -121,14 +121,14 @@
             &emsp;&emsp;LayoutInflater inflater, ViewGroup vg, <br/>
             &emsp;&emsp;Bundle savedInstanceState) {<br/>
             &emsp;&emsp;&emsp;&emsp;return inflater.inflate<br/>
-            &emsp;&emsp;&emsp;&emsp;(R.layout.fragment1, vg,false);<br/>
+            &emsp;&emsp;&emsp;&emsp;(R.layout.<b>fragment1</b>, vg,false);<br/>
             &emsp;&emsp;}<br/>
             }
         </p>
 
         <h3>Fragment2.java</h3>
 
-        <p id="static_fragment_code_5">
+        <p id="fifth_code">
             package com.example.staticfragments;<br/><br/>
 
             import android.annotation.SuppressLint;<br/>
@@ -143,7 +143,7 @@
             &emsp;&emsp;LayoutInflater inflater, ViewGroup vg, <br/>
             &emsp;&emsp;Bundle savedInstanceState) {<br/>
             &emsp;&emsp;&emsp;&emsp;return inflater.inflate<br/>
-            &emsp;&emsp;&emsp;&emsp;(R.layout.fragment2, vg,false);<br/>
+            &emsp;&emsp;&emsp;&emsp;(R.layout.<b>fragment2</b>, vg,false);<br/>
             &emsp;&emsp;}<br/>
             }
         </p>

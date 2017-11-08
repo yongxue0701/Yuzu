@@ -1,9 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="sg.edu.nus.learnandroid.DynamicFragmentQuizInfoActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_line"
+        app:layout_marginEndPercent="4%"
+        app:layout_marginStartPercent="4%"
+        app:layout_marginTopPercent="10%">
+
+        <TextView
+            android:id="@+id/dynamic_fragment_quiz_info_title_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dynamic_fragment_quiz_info_title_TV"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_marginStartPercent="4%"
+            app:layout_marginTopPercent="5%" />
+
+        <TextView
+            android:id="@+id/dynamic_fragment_quiz_info_questionNum_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dynamic_fragment_quiz_info_title_TV"
+            android:text="@string/dynamic_fragment_quiz_info_questionNum_TV"
+            android:textSize="14sp"
+            app:layout_marginStartPercent="4%"
+            app:layout_marginTopPercent="1.5%" />
+
+        <LinearLayout
+            android:id="@+id/dynamic_fragment_info_score_LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dynamic_fragment_quiz_info_questionNum_TV"
+            android:orientation="horizontal"
+            app:layout_marginStartPercent="4%"
+            app:layout_marginTopPercent="10%">
+
+            <TextView
+                android:id="@+id/dynamic_fragment_quiz_info_score_label_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/quiz_info_score_label_TV"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dynamic_fragment_quiz_info_score_content_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dynamic_fragment_info_attempts_LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dynamic_fragment_info_score_LL"
+            android:orientation="horizontal"
+            app:layout_marginStartPercent="4%"
+            app:layout_marginTopPercent="2%">
+
+            <TextView
+                android:id="@+id/dynamic_fragment_quiz_info_attempts_label_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/quiz_info_attempts_label_TV"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dynamic_fragment_quiz_info_attempts_content_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/quiz_info_attempts_content_TV"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/dynamic_fragment_quiz_info_submit_btn"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/dynamic_fragment_info_attempts_LL"
+            android:layout_below="@+id/dynamic_fragment_info_attempts_LL"
+            android:background="@drawable/button_shape"
+            android:text="@string/fragment_quiz_info_submitbtn_start"
+            android:textColor="@color/colorWhite"
+            app:layout_marginBottomPercent="4%"
+            app:layout_marginTopPercent="7%" />
+
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>

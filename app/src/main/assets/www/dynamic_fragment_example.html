@@ -8,5 +8,189 @@
 
     <body>
         <h2>Example of Defining Fragment Dynamically</h2>
+
+        <p>
+            Create two layout files, activity_1.xml and activity_1_land.xml.<br/>
+            Create two Fragment java files, Fragment1.java and Fragment2.java.<br/>
+        </p>
+
+        <h3>activity_1.xml</h3>
+
+        <p id="first_code">
+            &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
+            &lt;LinearLayout xmlns:android="http://<br/>
+            &emsp;&emsp;schemas.android.com/apk/res/android"<br/>
+            &emsp;&emsp;xmlns:app="http://schemas.android.com/<br/>
+            &emsp;&emsp;apk/res-auto"<br/>
+            &emsp;&emsp;xmlns:tools="http://schemas.android.com/<br/>
+            &emsp;&emsp;tools"<br/>
+            &emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;android:layout_height="match_parent"&gt;<br/><br/>
+
+            &emsp;&emsp;&lt;FrameLayout<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="<b>@+id/frameLayout1</b>"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height<br/>
+            &emsp;&emsp;&emsp;&emsp;="wrap_content" /&gt;<br/>
+            &lt;/LinearLayout&gt;
+        </p>
+
+        <h3>activity_1_land.xml</h3>
+
+        <p id="second_code">
+            &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
+            &lt;LinearLayout xmlns:android="http://<br/>
+            &emsp;&emsp;schemas.android.com/apk/res/android"<br/>
+            &emsp;&emsp;xmlns:app="http://schemas.android.com/<br/>
+            &emsp;&emsp;apk/res-auto"<br/>
+            &emsp;&emsp;xmlns:tools="http://schemas.android.com/<br/>
+            &emsp;&emsp;tools"<br/>
+            &emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;android:layout_height="match_parent"&gt;<br/><br/>
+
+            &emsp;&emsp;&lt;FrameLayout<br/>
+            &emsp;&emsp;&emsp;&emsp;android:id="<b>@+id/frameLayout2</b>"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height=<br/>
+            &emsp;&emsp;&emsp;&emsp;"wrap_content" /&gt;<br/>
+            &lt;/LinearLayout&gt;
+        </p>
+
+        <h3>fragment_fragment1.xml</h3>
+
+        <p id="third_code">
+            &lt;FrameLayout xmlns:android="http://<br/>
+            &emsp;&emsp;schemas.android.com/apk/res/android"<br/>
+            &emsp;&emsp;xmlns:tools="http://schemas.android.com/<br/>
+            &emsp;&emsp;tools"<br/>
+            &emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;android:layout_height="match_parent"&gt;<br/><br/>
+
+            &emsp;&emsp;&lt;TextView<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:text="<b>Fragment1</b>"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:textSize="40sp" /&gt;<br/>
+            &lt;/FrameLayout&gt;<br/>
+        </p>
+
+        <h3>fragment_fragment2.xml</h3>
+
+        <p id="fourth_code">
+            &lt;FrameLayout xmlns:android="http://<br/>
+            &emsp;&emsp;schemas.android.com/apk/res/android"<br/>
+            &emsp;&emsp;xmlns:tools="http://schemas.android.com/<br/>
+            &emsp;&emsp;tools"<br/>
+            &emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;android:layout_height="match_parent"&gt;<br/><br/>
+
+            &emsp;&emsp;&lt;TextView<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_width="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:layout_height="match_parent"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:text="<b>Fragment2</b>"<br/>
+            &emsp;&emsp;&emsp;&emsp;android:textSize="40sp" /&gt;<br/>
+            &lt;/FrameLayout&gt;<br/>
+        </p>
+
+        <h3>Fragment1.java</h3>
+
+        <p id="fifth_code">
+            import android.os.Bundle;<br/>
+            import android.app.Fragment;<br/>
+            import android.view.LayoutInflater;<br/>
+            import android.view.View;<br/>
+            import android.view.ViewGroup;<br/>
+
+            public class Fragment1 extends Fragment {<br/><br/>
+            &emsp;&emsp;public Fragment1() {<br/>
+            &emsp;&emsp;&emsp;&emsp;// Required empty public constructor<br/>
+            &emsp;&emsp;}<br/><br/>
+
+            &emsp;&emsp;@Override<br/>
+            &emsp;&emsp;public View onCreateView(<br/>
+            &emsp;&emsp;LayoutInflater inflater, <br/>
+            &emsp;&emsp;ViewGroup container, <br/>
+            &emsp;&emsp;Bundle savedInstanceState) {<br/>
+            &emsp;&emsp;&emsp;&emsp;// Inflate the layout for this fragment<br/>
+            &emsp;&emsp;&emsp;&emsp;return inflater.inflate(R.layout<br/>
+            &emsp;&emsp;&emsp;&emsp;.<b>fragment_fragment1</b>, container, false);<br/>
+            &emsp;&emsp;}<br/>
+            }<br/>
+        </p>
+
+        <h3>Fragment2.java</h3>
+
+        <p id="sixth_code">
+            import android.os.Bundle;<br/>
+            import android.app.Fragment;<br/>
+            import android.view.LayoutInflater;<br/>
+            import android.view.View;<br/>
+            import android.view.ViewGroup;<br/>
+
+            public class Fragment2 extends Fragment {<br/><br/>
+            &emsp;&emsp;public Fragment2() {<br/>
+            &emsp;&emsp;&emsp;&emsp;// Required empty public constructor<br/>
+            &emsp;&emsp;}<br/><br/>
+
+            &emsp;&emsp;@Override<br/>
+            &emsp;&emsp;public View onCreateView(<br/>
+            &emsp;&emsp;LayoutInflater inflater, <br/>
+            &emsp;&emsp;ViewGroup container, <br/>
+            &emsp;&emsp;Bundle savedInstanceState) {<br/>
+            &emsp;&emsp;&emsp;&emsp;// Inflate the layout for this fragment<br/>
+            &emsp;&emsp;&emsp;&emsp;return inflater.inflate(R.layout<br/>
+            &emsp;&emsp;&emsp;&emsp;.<b>fragment_fragment2</b>, container, false);<br/>
+            &emsp;&emsp;}<br/>
+            }<br/>
+        </p>
+
+        <p>
+            In onCreate() of Activity1.java, add the following after the
+            default codes.
+        </p>
+
+        <p id="seventh_code">
+            FragmentManager fragmentManager<br/>
+            = getFragmentManager();<br/>
+            FragmentTransaction fragmentTransaction;<br/>
+
+            <b>if</b> (getResources().getConfiguration()<br/>
+            .orientation == Configuration<br/>
+            .<b>ORIENTATION_LANDSCAPE</b>) {<br/>
+            &emsp;&emsp;setContentView(R.layout.activity_1_land);<br/><br/>
+
+            &emsp;&emsp;fragmentTransaction<br/>
+            &emsp;&emsp;= fragmentManager.beginTransaction();<br/>
+            &emsp;&emsp;Fragment fragment1 = new Fragment1();<br/>
+            &emsp;&emsp;fragmentTransaction<br/>
+            &emsp;&emsp;.add(R.id.<b>frameLayout1</b>, fragment1);<br/>
+            &emsp;&emsp;fragmentTransaction.commit();<br/><br/>
+
+            &emsp;&emsp;fragmentTransaction =<br/>
+            &emsp;&emsp;fragmentManager.beginTransaction();<br/>
+            &emsp;&emsp;Fragment fragment2 = new Fragment2();<br/>
+            &emsp;&emsp;fragmentTransaction<br/>
+            &emsp;&emsp;.add(R.id.<b>frameLayout2</b>, fragment2);<br/>
+            &emsp;&emsp;fragmentTransaction.commit();<br/>
+            &emsp;&emsp;} <br/>
+            <b>else if</b> (getResources().getConfiguration()<br/>
+            &emsp;&emsp;.orientation == Configuration<br/>
+            &emsp;&emsp;.<b>ORIENTATION_PORTRAIT</b>) {<br/>
+            &emsp;&emsp;setContentView(R.layout.activity_1);<br/><br/>
+            &emsp;&emsp;fragmentTransaction =<br/>
+            &emsp;&emsp;fragmentManager.beginTransaction();<br/>
+            &emsp;&emsp;Fragment fragment1 = new Fragment1();<br/>
+            &emsp;&emsp;fragmentTransaction<br/>
+            &emsp;&emsp;.add(R.id.<b>frameLayout1</b>, fragment1);<br/>
+            &emsp;&emsp;fragmentTransaction.commit();<br/>
+            }
+        </p>
+
+        <p>
+            <b>Note:</b> FragmentTransaction.commit() finishes off a transaction, so
+            need to call fragmentManager.beginTransaction() before
+            you can use it to add a new fragment and commit the
+            addition.
+        </p>
     </body>
 </html>

@@ -72,13 +72,19 @@
     <string name="gender_text_view_male">Male</string>
     <string name="gender_text_view_female">Female</string>
     <string name="action_bar_title_profile_edit">Profile Edit</string>
+
     <string name="fragment_quiz_info_title_TV">Practice Questions on Fragments</string>
     <string name="static_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Statically</string>
+    <string name="dynamic_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Dynamically</string>
+
     <string name="fragment_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
     <string name="static_fragment_quiz_info_questionNum_TV">2 questions, 1 point per question</string>
-    <string name="fragment_quiz_info_score_label_TV">Your Score</string>
-    <string name="fragment_quiz_info_attempts_label_TV">Attempts</string>
-    <string name="fragment_quiz_info_attempts_content_TV">Multiple</string>
+    <string name="dynamic_fragment_quiz_info_questionNum_TV">3 questions, 1 point per question</string>
+
+    <string name="quiz_info_score_label_TV">Your Score</string>
+    <string name="quiz_info_attempts_label_TV">Attempts</string>
+    <string name="quiz_info_attempts_content_TV">Multiple</string>
+
     <string name="course_fragments">Fragments</string>
     <string name="fragment_quiz_info_submitbtn_start">Start</string>
     <string name="cancel_quiz_popup_leave_btn">Leave</string>

@@ -49,7 +49,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/fragment_quiz_info_score_label_TV"
+                android:text="@string/quiz_info_score_label_TV"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -76,7 +76,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/fragment_quiz_info_attempts_label_TV"
+                android:text="@string/quiz_info_attempts_label_TV"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -86,7 +86,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/fragment_quiz_info_attempts_content_TV"
+                android:text="@string/quiz_info_attempts_content_TV"
                 android:textColor="@color/colorBlack" />
         </LinearLayout>
 
