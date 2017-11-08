@@ -41,7 +41,7 @@
             android:layout_weight="1"
             android:background="@drawable/border_line"
             android:text="@string/cancel_quiz_popup_leave_btn"
-            android:textColor="@color/colorDarkGreen" />
+            android:textColor="@color/colorXiaoMiGreen" />
 
         <Button
             android:id="@+id/cancel_quiz_popup_stay_btn"
@@ -50,7 +50,7 @@
             android:layout_weight="1"
             android:background="@drawable/border_line"
             android:text="@string/cancel_quiz_popup_stay_btn"
-            android:textColor="@color/colorDarkGreen" />
+            android:textColor="@color/colorXiaoMiGreen" />
 
     </LinearLayout>
 </android.support.percent.PercentRelativeLayout>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/userInterfaceCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Introduction of Android UI Basic Elements</h2>
+
+        <p>
+            <b>Buttons</b><br/>
+            A button consists of text or an icon (or both text and an icon) that communicates
+            what action occurs when the user touches it.
+        </p>
+    
+        <img src="file:///android_res/drawable/button_types.png" height="40" width="200">
+
+        <p>
+            Depending on whether you want a button with text, an icon, or both,
+            you can create the button in your layout in three ways:
+        </p>
+
+        <div>
+            <p>
+                •&emsp;With text, using the Button class:
+            </p>
+
+            <p id="first_code">
+                &lt;Button<br/>
+                &emsp;&emsp;android:layout_width="wrap_content"<br/>
+                &emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;android:text="@string/button_text"<br/>
+                &emsp;&emsp;... /&gt;
+            </p>
+        </div>
+
+        <div>
+            <p>
+                •&emsp;With an icon, using the ImageButton class:
+            </p>
+
+            <p id="second_code">
+                &lt;ImageButton<br/>
+                &emsp;&emsp;android:layout_width="wrap_content"<br/>
+                &emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;android:src="@drawable/button_icon"<br/>
+                &emsp;&emsp;... /&gt;
+            </p>
+        </div>
+
+        <div>
+            <p>
+                •&emsp;With text and an icon, using the Button
+                class with the android:drawableLeft attribute:
+            </p>
+
+            <p id="third_code">
+                &lt;Button<br/>
+                &emsp;&emsp;android:layout_width="wrap_content"<br/>
+                &emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;android:text="@string/button_text"<br/>
+                &emsp;&emsp;android:drawableLeft<br/>
+                &emsp;&emsp;="@drawable/button_icon"<br/>
+                &emsp;&emsp;... /&gt;
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <b>TextView</b><br/>
+                A TextView displays text to the user and optionally allows them to edit it.
+                A TextView is a complete text editor, however the basic
+                class is configured to not allow editing.
+            </p>
+
+            <p id="fourth_code">
+                &lt;TextView<br/>
+                &emsp;&emsp;android:id="@+id/text_view_id"<br/>
+                &emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;android:layout_width="wrap_content"<br/>
+                &emsp;&emsp;android:text="@string/hello"/&gt;
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <b>EditText</b><br/>
+                A EditText is an overlay over TextView that configures itself to be editable.
+                It is the predefined subclass of TextView that includes rich editing capabilities.
+            </p>
+
+            <p id="fifth_code">
+                &lt;EditText<br/>
+                &emsp;&emsp;android:id="@+id/plain_text_input"<br/>
+                &emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;android:layout_width="match_parent"<br/>
+                &emsp;&emsp;android:inputType="text"/&gt;
+            </p>
+        </div>
+    </body>
+</html>

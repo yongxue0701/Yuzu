@@ -12,12 +12,12 @@ import android.widget.TextView;
  * Created by Yongxue
  */
 
-public class AndroidIntroductionActivity extends AppCompatActivity {
+public class UserInterfaceElementsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_android_introduction);
+        setContentView(R.layout.activity_user_interface_elements);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -38,9 +38,9 @@ public class AndroidIntroductionActivity extends AppCompatActivity {
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.ui_android_introduction_webview);
+        WebView webView = (WebView) findViewById(R.id.ui_components_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/ui_android_introduction.html");
+        webView.loadUrl("file:///android_asset/www/ui_elements.html");
     }
 }

@@ -29,7 +29,7 @@
         app:layout_marginTopPercent="42%" />
 
     <ImageView
-        android:id="@+id/ui_map_pin_components_IV"
+        android:id="@+id/ui_map_pin_elements_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"

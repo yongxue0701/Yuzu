@@ -60,5 +60,27 @@ public class CourseUserInterfaceActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
+
+        // Start a new activity for the image view of ui elements
+        ImageView uiElementsIV = (ImageView) findViewById(R.id.ui_map_pin_elements_IV);
+        uiElementsIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), UserInterfaceElementsActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+
+        // Start a new activity for the image view of ui elements
+        ImageView uiOnClickIV = (ImageView) findViewById(R.id.ui_map_pin_onclick_IV);
+        uiOnClickIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), UserInterfaceElementsActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
     }
 }

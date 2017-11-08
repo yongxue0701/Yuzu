@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/userInterfaceCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Introduction of Android UI Layouts</h2>
+
+        <p>
+            Considering the fact that available space on mobile screen is small, UI design of
+            mobile application is very important. For Android each screen follows one or more layout.
+            Layouts are like container that holds various view or layouts. Placing of views on the
+            screen depends on the layout selected.
+        </p>
+
+        <p>
+            You will be introduced the following basic layouts:<br/>
+            •&emsp;Linear Layout<br/>
+            •&emsp;Table Layout<br/>
+            •&emsp;Absolute Layout<br/>
+            •&emsp;Relative Layout<br/>
+            •&emsp;Frame Layout<br/>
+        </p>
+
+        <div>
+            <p>
+                <b>1. Linear Layout</b><br/>
+                Linear Layout is the simplest layout. As the name suggest views are place in the
+                linear flow one after the other. However we can specify the orientation of linear
+                flow i.e. horizontally or vertically.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <b>2. Table Layout</b><br/>
+                This layout places the view/components in tabular format.<br/>
+                Examples:
+            </p>
+
+            <p id="first_code">
+                &lt;TableLayout<br/>
+                &emsp;&emsp;android:id="@+id/TableLayout"<br/>
+                &emsp;&emsp;android:layout_width="match_content"<br/>
+                &emsp;&emsp;android:layout_height="match_content"<br/>
+                &emsp;&emsp;xmlns:android="http://schemas.android<br/>
+                &emsp;&emsp;.com/apk/res/android"&gt;<br/>
+                &emsp;&emsp;&lt;TableRow<br/>
+                &emsp;&emsp;&emsp;&emsp;android:id="@+id/TableRow1"&gt;<br/>
+                &emsp;&emsp;&emsp;&emsp;&lt;TextView<br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;android:id="@+id/TextView1"<br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;android:text="First Name:"<br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;android:width="100px" /&gt;<br/>
+                &emsp;&emsp;&emsp;&emsp;&lt;EditText<br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;android:id="@+id/EditText1"<br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;android:width="220px" /&gt;<br/>
+                &emsp;&emsp;&lt;/TableRow&gt;<br/>
+                &lt;/TableLayout&gt;
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <b>3. Relative Layout</b><br/>
+                This layout is the flexible layout of all. This layout allows placing of the
+                components relative to other component or layout.<br/>
+                Examples:
+            </p>
+
+            <p id="second_code">
+                &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
+                &lt;RelativeLayout<br/>
+                &emsp;&emsp;android:id="@+id/RelativeLayout1"<br/>
+                &emsp;&emsp;android:layout_width="match_content"<br/>
+                &emsp;&emsp;android:layout_height="match_content"<br/>
+                &emsp;&emsp;xmlns:android="http://schemas.android<br/>
+                &emsp;&emsp;.com/apk/res/android"&gt;<br/>
+
+                &emsp;&emsp;&lt;TextView<br/>
+                &emsp;&emsp;&emsp;&emsp;android:id="@+id/TextView1"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_width="wrap_content"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:text="First Name:"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:width="100px" /&gt;<br/>
+
+                &emsp;&emsp;&lt;EditText<br/>
+                &emsp;&emsp;&emsp;&emsp;android:id="@+id/EditText1"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_width="220px"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_toRightOf<br/>
+                &emsp;&emsp;&emsp;&emsp;="@+id/TextView1"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_below<br/>
+                &emsp;&emsp;&emsp;&emsp;="@+id/RelativeLayout1" /&gt;<br/>
+                &lt;/RelativeLayout/&gt;
+            </p>
+
+            <p>
+                EditText1 has attributes android:layout_toRightOf = ”@+id/TextView1″
+                and android:layout_below = ”@+id/RelativeLayout1” which will place Edit
+                Text next to Text View (First Name).
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <b>4. Absolute Layout</b><br/>
+                This layout is used for placing views at the exact
+                location on the screen using x and y co-ordinates. As shown below in the XML,
+                for both EditText and Button x and y coordinates have been specified
+                via android:layout_x and android:layout_y respectively.<br/>
+                Examples:
+            </p>
+
+            <p id="third_code">
+                &lt;?xml version="1.0" encoding="utf-8"?&gt;<br/>
+                &lt;AbsoluteLayout<br/>
+                &emsp;&emsp;android:id="@+id/AbsoluteLayout1"<br/>
+                &emsp;&emsp;android:layout_width="fill_parent"<br/>
+                &emsp;&emsp;android:layout_height="fill_parent"<br/>
+                &emsp;&emsp;xmlns:android="http://schemas.android<br/>
+                &emsp;&emsp;.com/apk/res/android"&gt;<br/>
+
+                &emsp;&emsp;&lt;EditText<br/>
+                &emsp;&emsp;&emsp;&emsp;android:id="@+id/EditText1"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_width="200px"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_x="12px"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_y="12px" /&gt;<br/>
+
+                &emsp;&emsp;&lt;Button<br/>
+                &emsp;&emsp;&emsp;&emsp;android:text="Search"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:id="@+id/Button1"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_width="100px"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_x="220px"<br/>
+                &emsp;&emsp;&emsp;&emsp;android:layout_y="12px" /&gt;<br/>
+                &lt;/AbsoluteLayout>
+            </p>
+        </div>
+    </body>
+</html>
