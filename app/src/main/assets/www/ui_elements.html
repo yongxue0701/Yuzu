@@ -24,7 +24,7 @@
 
         <div>
             <p>
-                •&emsp;With text, using the Button class:
+                •&emsp;With <b>text</b>, using the Button class:
             </p>
 
             <p id="first_code">
@@ -38,7 +38,7 @@
 
         <div>
             <p>
-                •&emsp;With an icon, using the ImageButton class:
+                •&emsp;With an <b>icon</b>, using the ImageButton class:
             </p>
 
             <p id="second_code">
@@ -52,7 +52,7 @@
 
         <div>
             <p>
-                •&emsp;With text and an icon, using the Button
+                •&emsp;With <b>text and an icon</b>, using the Button
                 class with the android:drawableLeft attribute:
             </p>
 
@@ -69,13 +69,45 @@
 
         <div>
             <p>
-                <b>TextView</b><br/>
+                When the user <b>clicks a button</b>, the Button object receives an <b>on-click event</b>.<br/><br/>
+                To define the click event handler for a button, add the android:onClick attribute
+                to the &lt;Button&gt; element in your XML layout. The value for this attribute must
+                be the name of the method you want to call in response to a click event.
+                The Activity hosting the layout must then implement the corresponding method.<br/><br/>
+                For example, here's a layout with <b>a button using android:onClick:</b><br/>
+            </p>
+
+            <p id="fourth_code">
+                &lt;Button<br/>
+                &emsp;&emsp;android:id="@+id/button_send"<br/>
+                &emsp;&emsp;android:layout_width="wrap_content"<br/>
+                &emsp;&emsp;android:layout_height="wrap_content"<br/>
+                &emsp;&emsp;android:text="@string/button_send"<br/>
+                &emsp;&emsp;android:onClick="sendMessage" /&gt;
+            </p>
+
+            <p>
+                Within the Activity that hosts this layout,
+                the following method handles the click event:
+            </p>
+
+            <p id="fifth_code">
+                /** Called when the user touches the button */<br/>
+                public void sendMessage(View view) {<br/>
+                // Do something in response to button click<br/>
+                }<br/>
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <br/><b>TextView</b><br/>
                 A TextView displays text to the user and optionally allows them to edit it.
                 A TextView is a complete text editor, however the basic
                 class is configured to not allow editing.
             </p>
 
-            <p id="fourth_code">
+            <p id="sixth_code">
                 &lt;TextView<br/>
                 &emsp;&emsp;android:id="@+id/text_view_id"<br/>
                 &emsp;&emsp;android:layout_height="wrap_content"<br/>
@@ -86,12 +118,12 @@
 
         <div>
             <p>
-                <b>EditText</b><br/>
+                <br/><b>EditText</b><br/>
                 A EditText is an overlay over TextView that configures itself to be editable.
                 It is the predefined subclass of TextView that includes rich editing capabilities.
             </p>
 
-            <p id="fifth_code">
+            <p id="seventh_code">
                 &lt;EditText<br/>
                 &emsp;&emsp;android:id="@+id/plain_text_input"<br/>
                 &emsp;&emsp;android:layout_height="wrap_content"<br/>
