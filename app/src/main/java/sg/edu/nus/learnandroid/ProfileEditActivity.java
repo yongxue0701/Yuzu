@@ -67,7 +67,7 @@ public class ProfileEditActivity extends AppCompatActivity {
 
         // Set up recycler view
         List<ItemView> profileEditItemView = new ArrayList<>();
-        profileEditItemView.add(new ItemView("Photo", "Img"));
+//        profileEditItemView.add(new ItemView("Photo", "Img"));
         profileEditItemView.add(new ItemView("Username", "ET"));
         profileEditItemView.add(new ItemView("Email", "ET"));
         profileEditItemView.add(new ItemView("Gender", "BtnWithText"));

@@ -116,7 +116,7 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
 
         final Dialog dialog = new Dialog(activity, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.submit_quiz_popup);
+        dialog.setContentView(R.layout.submit_popup);
 
         Window dialogWindow = dialog.getWindow();
         dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
@@ -125,10 +125,10 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
 
         dialog.show();
 
-        TextView title = (TextView) dialogWindow.findViewById(R.id.submit_quiz_popup_title_TV);
+        TextView title = (TextView) dialogWindow.findViewById(R.id.submit_popup_title_TV);
         title.setText(R.string.logout_popup_title_TV);
 
-        Button cancelBtn = (Button) dialog.findViewById(R.id.submit_quiz_popup_cancel_btn);
+        Button cancelBtn = (Button) dialog.findViewById(R.id.submit_popup_cancel_btn);
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,7 +136,7 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
             }
         });
 
-        Button yesBtn = (Button) dialog.findViewById(R.id.submit_quiz_popup_yes_btn);
+        Button yesBtn = (Button) dialog.findViewById(R.id.submit_popup_yes_btn);
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

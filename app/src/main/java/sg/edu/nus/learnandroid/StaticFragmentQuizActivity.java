@@ -128,7 +128,7 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
 
         dialog = new Dialog(StaticFragmentQuizActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.submit_quiz_popup);
+        dialog.setContentView(R.layout.submit_popup);
 
         Window dialogWindow = dialog.getWindow();
         dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
@@ -137,7 +137,7 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
 
         dialog.show();
 
-        TextView title = (TextView) dialogWindow.findViewById(R.id.submit_quiz_popup_title_TV);
+        TextView title = (TextView) dialogWindow.findViewById(R.id.submit_popup_title_TV);
 
         if ((2 - counts) == 1) {
             title.setText(R.string.one_question_unanswered);
@@ -148,7 +148,7 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
             title.setText(R.string.some_questions_unanswered);
         }
 
-        Button cancelBtn = (Button) dialog.findViewById(R.id.submit_quiz_popup_cancel_btn);
+        Button cancelBtn = (Button) dialog.findViewById(R.id.submit_popup_cancel_btn);
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,7 +156,7 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
             }
         });
 
-        Button yesBtn = (Button) dialog.findViewById(R.id.submit_quiz_popup_yes_btn);
+        Button yesBtn = (Button) dialog.findViewById(R.id.submit_popup_yes_btn);
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

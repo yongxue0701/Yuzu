@@ -31,7 +31,7 @@
 
     <string name="profile_edit_success_toast_content_TV">Profile Updated!</string>
     <string name="feedback_submit_success_toast_content_TV">Submitted!</string>
-
+    <string name="update_password_success_toast_content_TV">Updated!</string>
 
     <string name="splash_bottom_TV">Learn Android Company right ⓒ 2017</string>
     <string name="forum_title_TV">Having questions to ask?</string>
@@ -81,8 +81,8 @@
 
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
-    <string name="submit_quiz_popup_cancel_btn">Cancel</string>
-    <string name="submit_quiz_popup_yes_btn">Yes, I\'m sure</string>
+    <string name="submit_popup_cancel_btn">Cancel</string>
+    <string name="submit_popup_yes_btn">Yes, I\'m sure</string>
     <string name="fragment_quiz_info_submitbtn_start">Start</string>
     <string name="cancel_quiz_popup_leave_btn">Leave</string>
     <string name="cancel_quiz_popup_stay_btn">Stay</string>
@@ -93,7 +93,7 @@
         Are you sure you want to discard changes to your edits?
     </string>
     <string name="cancel_btn_content_TV">
-        Changes to photos &amp; details will not be saved.
+        Changes to details will not be saved.
     </string>
     <string name="one_question_unanswered">
          "There is 1 question that you didn't answer. Are you sure you want to submit your quiz?"
@@ -113,9 +113,15 @@
     <string name="logout_popup_title_TV">
         Are you sure you want to logout?
     </string>
+    <string name="discard_change_password_popup_title_TV">
+        Are you sure you want to discard your changes?
+    </string>
 
     <string name="feedback_title_ET"><font size="15">Title</font></string>
     <string name="feedback_content_ET"><font size="15">Please provide us your feedback.</font></string>
     <string name="feedback_contact_detail_label_TV">Contact Details</string>
     <string name="feedback_contact_detail_content_ET"><font size="15">Please leave your email address</font></string>
+    <string name="current_password_ET"><font size="15">Current Password</font></string>
+    <string name="new_password_ET"><font size="15">New Password</font></string>
+    <string name="confirm_new_password_ET"><font size="15">Confirm Passwords</font></string>
 </resources>

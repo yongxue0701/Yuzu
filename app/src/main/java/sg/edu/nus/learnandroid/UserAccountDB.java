@@ -180,4 +180,14 @@ public class UserAccountDB {
         db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);
     }
+
+    public void updatePasswordByIsLogin(int _isLogin, String _password) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(password, _password);
+
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
 }
