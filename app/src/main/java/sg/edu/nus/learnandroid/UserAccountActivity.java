@@ -15,6 +15,7 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -86,7 +87,8 @@ public class UserAccountActivity extends Activity {
             }
         });
 
-        usernameTV = findViewById(R.id.userAccount_userName_TV);
+        usernameTV = (TextView) findViewById(R.id.userAccount_userName_TV);
+        ImageView userImage = (ImageView) findViewById(R.id.userAccount_userImage_IV);
 
         userAccountDB.open();
         Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
@@ -94,7 +96,15 @@ public class UserAccountActivity extends Activity {
         if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
             do {
                 String username = mCursor.getString(mCursor.getColumnIndex("username"));
+                String gender = mCursor.getString(mCursor.getColumnIndex("gender"));
+
                 usernameTV.setText(username);
+
+                if (gender.equals("Female")) {
+                    userImage.setImageResource(R.drawable.female);
+                } else if (gender.equals("Male")) {
+                    userImage.setImageResource(R.drawable.male);
+                }
 
             } while (mCursor.moveToNext());
         }
@@ -121,7 +131,7 @@ public class UserAccountActivity extends Activity {
         List<String> contactButtonNames = new ArrayList<>();
         contactButtonNames.add("Feedback");
         contactButtonNames.add("Terms and Conditions");
-        contactButtonNames.add("Privacy");
+        contactButtonNames.add("Privacy Policy");
 
         adapter = new UserAccountRVAdapter(contactButtonNames, this, this);
         userAccountRVWithContactBtn = findViewById(R.id.userAccount_contact_RV);

@@ -37,23 +37,23 @@
                     android:textSize="18sp"
                     app:layout_heightPercent="100%" />
 
-                <TextView
-                    android:id="@+id/gender_popup_null_TV"
-                    android:layout_width="match_parent"
-                    android:layout_below="@+id/gender_popup_title_TV"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:paddingTop="4dp"
-                    android:text="@string/gender_popup_null_TV"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="18sp"
-                    app:layout_heightPercent="100%" />
+                <!--<TextView-->
+                    <!--android:id="@+id/gender_popup_null_TV"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_below="@+id/gender_popup_title_TV"-->
+                    <!--android:background="?attr/selectableItemBackground"-->
+                    <!--android:clickable="true"-->
+                    <!--android:paddingTop="4dp"-->
+                    <!--android:text="@string/gender_popup_null_TV"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="18sp"-->
+                    <!--app:layout_heightPercent="100%" />-->
 
                 <TextView
                     android:id="@+id/gender_popup_male_TV"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/gender_popup_null_TV"
+                    android:layout_below="@+id/gender_popup_title_TV"
                     android:background="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:paddingTop="4dp"

@@ -24,7 +24,7 @@ public class PrivacyActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
-        actionBarTitleTV.setText(R.string.course_fragments);
+        actionBarTitleTV.setText(R.string.privacy_policy);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,7 @@ package sg.edu.nus.learnandroid;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
@@ -135,7 +136,8 @@ public class ProfileEditActivity extends AppCompatActivity {
                 TextView successContent = (TextView) layout.findViewById(R.id.successful_message_toast_content_TV);
                 successContent.setText(R.string.profile_edit_success_toast_content_TV);
 
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(), UserAccountActivity.class);
+                startActivity(myIntent);
             }
         });
     }

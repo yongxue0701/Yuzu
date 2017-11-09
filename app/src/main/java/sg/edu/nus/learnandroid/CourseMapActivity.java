@@ -1,23 +1,24 @@
 package sg.edu.nus.learnandroid;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Yongxue
  */
 
-public class CourseMapActivity extends Activity {
+public class CourseMapActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationMenuView bottomNavigationMenuView;
@@ -65,6 +66,17 @@ public class CourseMapActivity extends Activity {
                 return false;
             }
         });
+
+        // Set up custom action bar with back button
+        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_only_has_title);
+
+        // Set up the back button and title on action bar
+        View view = getSupportActionBar().getCustomView();
+
+        TextView actionBarTitleTV = (TextView) view.findViewById(R.id.action_bar_only_has_title_title);
+        actionBarTitleTV.setText(R.string.action_bar_title_course_map);
 
         ImageView mapPinOneIV = (ImageView) findViewById(R.id.course_map_pin_1_IV);
         mapPinOneIV.setOnClickListener(new View.OnClickListener() {

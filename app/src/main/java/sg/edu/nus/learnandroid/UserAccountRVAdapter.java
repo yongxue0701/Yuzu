@@ -77,7 +77,18 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.profile_edit);
+        }
+
+        if (buttonName.equals("Achievements")) {
+            viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
+            viewHolder.buttonIconIV.setImageResource(R.drawable.achievements);
         }
 
         if (buttonName.equals("Logout")) {
@@ -88,7 +99,7 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.logout);
         }
 
         if (buttonName.equals("Feedback")) {
@@ -101,7 +112,7 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.feedback);
         }
 
         if (buttonName.equals("Terms and Conditions")) {
@@ -114,10 +125,10 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.terms_and_conditions);
         }
 
-        if (buttonName.equals("Privacy")) {
+        if (buttonName.equals("Privacy Policy")) {
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -127,7 +138,20 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.privacy);
+        }
+
+        if (buttonName.equals("Acknowledgements")) {
+            viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent editProfileIntent = new Intent(view.getContext(), PrivacyActivity.class);
+                    context.startActivity(editProfileIntent);
+                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                }
+            });
+
+            viewHolder.buttonIconIV.setImageResource(R.drawable.acknowledgement);
         }
     }
 

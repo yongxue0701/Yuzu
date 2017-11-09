@@ -360,13 +360,13 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
             }
         });
 
-        TextView genderPopupNullTV = (TextView) popupView.findViewById(R.id.gender_popup_null_TV);
-        genderPopupNullTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        TextView genderPopupNullTV = (TextView) popupView.findViewById(R.id.gender_popup_null_TV);
+//        genderPopupNullTV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
         TextView genderPopupMaleTV = (TextView) popupView.findViewById(R.id.gender_popup_male_TV);
         genderPopupMaleTV.setOnClickListener(new View.OnClickListener() {
@@ -409,19 +409,19 @@ public class ProfileEditRVAdapter extends RecyclerView.Adapter {
 
         dialog.show();
 
-        final TextView genderPopupNullTV = (TextView) dialog.findViewById(R.id.gender_popup_null_TV);
-        genderPopupNullTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TextView genderTextView = (TextView) genderView.findViewById(R.id.profileEdit_btnWithText_content_TV);
-                genderTextView.setText("");
-
-                editor.putString("gender", "");
-                editor.commit();
-
-                dialog.dismiss();
-            }
-        });
+//        final TextView genderPopupNullTV = (TextView) dialog.findViewById(R.id.gender_popup_null_TV);
+//        genderPopupNullTV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                TextView genderTextView = (TextView) genderView.findViewById(R.id.profileEdit_btnWithText_content_TV);
+//                genderTextView.setText("");
+//
+//                editor.putString("gender", "");
+//                editor.commit();
+//
+//                dialog.dismiss();
+//            }
+//        });
 
         final TextView genderPopupMaleTV = (TextView) dialog.findViewById(R.id.gender_popup_male_TV);
         genderPopupMaleTV.setOnClickListener(new View.OnClickListener() {

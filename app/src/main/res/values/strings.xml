@@ -61,9 +61,14 @@
     <string name="gender_text_view_male">Male</string>
     <string name="gender_text_view_female">Female</string>
 
-    <string name="action_bar_title_profile_edit">Profile Edit</string>
-    <string name="action_bar_title_user_feedback">Feedback</string>
-    <string name="action_bar_title_share_to_fb">Post To Facebook</string>
+    <string name="action_bar_title_profile_edit"><font size="20">Profile Edit</font></string>
+    <string name="action_bar_title_user_feedback"><font size="20">Feedback</font></string>
+    <string name="action_bar_title_share_to_fb"><font size="20">Post To Facebook</font></string>
+    <string name="action_bar_title_course_map"><font size="20">Course Map</font></string>
+    <string name="course_fragments"><font size="20">Fragments</font></string>
+    <string name="course_user_interface"><font size="20">User Interface</font></string>
+    <string name="terms_and_conditions"><font size="20">Terms and Conditions</font></string>
+    <string name="privacy_policy"><font size="20">Privacy Policy</font></string>
 
     <string name="fragment_quiz_info_title_TV">Practice Questions on Fragments</string>
     <string name="static_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Statically</string>
@@ -76,9 +81,6 @@
     <string name="quiz_info_score_label_TV">Your Score</string>
     <string name="quiz_info_attempts_label_TV">Attempts</string>
     <string name="quiz_info_attempts_content_TV">Multiple</string>
-
-    <string name="course_fragments">Fragments</string>
-    <string name="course_user_interface">User Interface</string>
 
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
