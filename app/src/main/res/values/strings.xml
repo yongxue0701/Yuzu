@@ -63,6 +63,7 @@
 
     <string name="action_bar_title_profile_edit">Profile Edit</string>
     <string name="action_bar_title_user_feedback">Feedback</string>
+    <string name="action_bar_title_share_to_fb">Post To Facebook</string>
 
     <string name="fragment_quiz_info_title_TV">Practice Questions on Fragments</string>
     <string name="static_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Statically</string>

@@ -103,6 +103,32 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
 
             viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
         }
+
+        if (buttonName.equals("Terms and Conditions")) {
+            viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent editProfileIntent = new Intent(view.getContext(), TermsAndConditionsActivity.class);
+                    context.startActivity(editProfileIntent);
+                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                }
+            });
+
+            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+        }
+
+        if (buttonName.equals("Privacy")) {
+            viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent editProfileIntent = new Intent(view.getContext(), PrivacyActivity.class);
+                    context.startActivity(editProfileIntent);
+                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                }
+            });
+
+            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+        }
     }
 
     @Override

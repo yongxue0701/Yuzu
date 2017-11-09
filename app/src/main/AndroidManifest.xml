@@ -79,7 +79,10 @@
         <activity android:name=".UserInterfaceLayoutActivity" />
         <activity android:name=".UserInterfaceElementsActivity" />
         <activity android:name=".UserInterfaceOnClickActivity" />
-        <activity android:name=".UserFeedbackActivity"></activity>
+        <activity android:name=".UserFeedbackActivity" />
+        <activity android:name=".Forum2Activity" />
+        <activity android:name=".TermsAndConditionsActivity" />
+        <activity android:name=".PrivacyActivity"></activity>
     </application>
 
 </manifest>

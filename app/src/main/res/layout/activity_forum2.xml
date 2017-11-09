@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sg.edu.nus.learnandroid.Forum2Activity"
+    tools:ignore="ContentDescription">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/forum_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/selectableItemBackground"
+        app:itemBackground="@color/colorWhite"
+        app:itemIconTint="@color/bottom_navigation_bar_background"
+        app:itemTextColor="@color/bottom_navigation_bar_background"
+        app:menu="@menu/bottom_navigation_menu_item" />
+
+</android.support.percent.PercentRelativeLayout>

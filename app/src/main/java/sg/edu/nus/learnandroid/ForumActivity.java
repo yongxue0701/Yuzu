@@ -54,7 +54,6 @@ public class ForumActivity extends Activity {
             }
         });
 
-
         //  Like Button
         LikeView btnLike = (LikeView) findViewById(R.id.btnLike);
         btnLike.setObjectIdAndType("https://www.facebook.com/Learnandroidwithus-854183284756525/", LikeView.ObjectType.PAGE);

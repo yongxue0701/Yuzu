@@ -41,4 +41,11 @@
         android:layout_height="wrap_content"
         android:onClick="onClick_GoToDynamicFragmentActivity"
         android:text="Link to Dynamic Fragment" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick_GoToForumActivity"
+        android:text="Link to Forum" />
 </LinearLayout>

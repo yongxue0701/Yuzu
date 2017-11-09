@@ -38,4 +38,9 @@ public class MainActivity extends Activity {
         startActivity(myIntent);
     }
 
+    public void onClick_GoToForumActivity(View view) {
+        Intent myIntent = new Intent(this, Forum2Activity.class);
+        startActivity(myIntent);
+    }
+
 }
