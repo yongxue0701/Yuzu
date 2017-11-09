@@ -153,6 +153,10 @@ public class UserFeedbackActivity extends AppCompatActivity {
             allDone = false;
             feedbackContactET.setError("Please provide your email address!");
         }
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(feedbackContactET.getText().toString()).matches()) {
+            Toast.makeText(getApplicationContext(), "Your email address is invalid!", Toast.LENGTH_SHORT).show();
+            allDone = false;
+        }
         if (allDone) {
 
             feedbackDB.open();

@@ -59,7 +59,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1.7"
             android:background="@android:color/transparent"
-            android:gravity="center"
             android:hint="@string/feedback_contact_detail_content_ET"
             android:inputType="textEmailAddress"
             android:paddingEnd="10dp"

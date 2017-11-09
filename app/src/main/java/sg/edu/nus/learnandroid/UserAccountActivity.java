@@ -2,6 +2,7 @@ package sg.edu.nus.learnandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,11 +35,15 @@ public class UserAccountActivity extends Activity {
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationMenuView bottomNavigationMenuView;
 
+    UserAccountDB userAccountDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_user_account);
+
+        userAccountDB = new UserAccountDB(this);
 
         // Set up bottom navigation view
         bottomNavigationView = findViewById(R.id.userAccount_bottom_navigation);
@@ -81,7 +87,20 @@ public class UserAccountActivity extends Activity {
         });
 
         usernameTV = findViewById(R.id.userAccount_userName_TV);
-        usernameTV.setText("Yongxue");
+
+        userAccountDB.open();
+        Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
+
+        if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
+            do {
+                String username = mCursor.getString(mCursor.getColumnIndex("username"));
+                usernameTV.setText(username);
+
+            } while (mCursor.moveToNext());
+        }
+
+        mCursor.close();
+        userAccountDB.close();
 
         // Set up recycler view with account buttons
         List<String> accountButtonNames = new ArrayList<>();

@@ -35,6 +35,7 @@ public class ProfileEditActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
 
     UserAccountDB userAccountDB;
+
     public static final String MY_SHAREDPREF_NAME = "UserInforSharedPref";
 
     @Override

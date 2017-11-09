@@ -110,6 +110,9 @@
     <string name="submit_feedback_popup_title_TV">
         Are you sure you want to submit your feedback?
     </string>
+    <string name="logout_popup_title_TV">
+        Are you sure you want to logout?
+    </string>
 
     <string name="feedback_title_ET"><font size="15">Title</font></string>
     <string name="feedback_content_ET"><font size="15">Please provide us your feedback.</font></string>
