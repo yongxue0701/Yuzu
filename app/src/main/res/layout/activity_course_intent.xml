@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/course_map_south_america"
+    tools:context="sg.edu.nus.learnandroid.CourseIntentActivity"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/activity_map_pin_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginEndPercent="45%"
+        app:layout_marginTopPercent="22%" />
+
+    <ImageView
+        android:id="@+id/intent_map_pin_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginEndPercent="52%"
+        app:layout_marginTopPercent="58%" />
+
+</android.support.percent.PercentRelativeLayout>

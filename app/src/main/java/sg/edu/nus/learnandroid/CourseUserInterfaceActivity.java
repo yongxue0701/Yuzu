@@ -72,7 +72,7 @@ public class CourseUserInterfaceActivity extends AppCompatActivity {
             }
         });
 
-        // Start a new activity for the image view of ui elements
+        // Start a new activity for the image view of onclick listener
         ImageView uiOnClickIV = (ImageView) findViewById(R.id.ui_map_pin_onclick_IV);
         uiOnClickIV.setOnClickListener(new View.OnClickListener() {
             @Override
