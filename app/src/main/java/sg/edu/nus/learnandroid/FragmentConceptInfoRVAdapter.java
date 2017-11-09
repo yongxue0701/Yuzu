@@ -68,7 +68,7 @@ public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentC
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.introduction);
         }
 
         if (buttonName.equals("Fragment Life Cycle")) {
@@ -81,7 +81,7 @@ public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentC
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.cycle);
         }
 
         if (buttonName.equals("Types of Fragments")) {
@@ -94,7 +94,7 @@ public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentC
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.type);
         }
 
         if (buttonName.equals("Quiz")) {
@@ -107,7 +107,7 @@ public class FragmentConceptInfoRVAdapter extends RecyclerView.Adapter<FragmentC
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.quiz);
         }
     }
 

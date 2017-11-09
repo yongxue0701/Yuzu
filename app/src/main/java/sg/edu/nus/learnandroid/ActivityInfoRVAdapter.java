@@ -67,7 +67,7 @@ public class ActivityInfoRVAdapter extends RecyclerView.Adapter<ActivityInfoRVAd
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.introduction);
         }
 
         if (buttonName.equals("Activity Life Cycle")) {
@@ -80,7 +80,7 @@ public class ActivityInfoRVAdapter extends RecyclerView.Adapter<ActivityInfoRVAd
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.cycle);
         }
 
         if (buttonName.equals("Quiz")) {
@@ -93,7 +93,7 @@ public class ActivityInfoRVAdapter extends RecyclerView.Adapter<ActivityInfoRVAd
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.quiz);
         }
     }
 

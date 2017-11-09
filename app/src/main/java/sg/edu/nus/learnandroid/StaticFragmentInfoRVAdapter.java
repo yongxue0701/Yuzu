@@ -67,7 +67,7 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.introduction);
         }
 
         if (buttonName.equals("Example")) {
@@ -80,7 +80,7 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.example);
         }
 
         if (buttonName.equals("Quiz")) {
@@ -93,7 +93,7 @@ public class StaticFragmentInfoRVAdapter extends RecyclerView.Adapter<StaticFrag
                 }
             });
 
-            viewHolder.buttonIconIV.setImageResource(R.drawable.ic_forum_black_24dp);
+            viewHolder.buttonIconIV.setImageResource(R.drawable.quiz);
         }
     }
 
