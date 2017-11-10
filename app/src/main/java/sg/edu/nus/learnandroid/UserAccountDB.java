@@ -12,6 +12,7 @@ import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.email;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.fragmentConceptQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.gender;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.isLogin;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.newUser;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.password;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.points;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.staticFragmentQuizPts;
@@ -43,7 +44,7 @@ public class UserAccountDB {
     }
 
     public void insertRecord(String _username, String _password, String _email,
-                             String _gender, boolean _isLogin, String _points,
+                             String _gender, boolean _isLogin, boolean _newUser, String _points,
                              String _fragmentConceptQuizPts, String _staticFragmentQuizPts,
                              String _dynamicFragmentQuizPts, String _androidActivityQuizPts) {
         ContentValues initialValues = new ContentValues();
@@ -53,6 +54,7 @@ public class UserAccountDB {
         initialValues.put(email, _email);
         initialValues.put(gender, _gender);
         initialValues.put(isLogin, _isLogin);
+        initialValues.put(newUser, _newUser);
         initialValues.put(points, _points);
         initialValues.put(fragmentConceptQuizPts, _fragmentConceptQuizPts);
         initialValues.put(staticFragmentQuizPts, _staticFragmentQuizPts);
@@ -79,6 +81,7 @@ public class UserAccountDB {
                         email,
                         gender,
                         isLogin,
+                        newUser,
                         points,
                         fragmentConceptQuizPts,
                         staticFragmentQuizPts,
@@ -115,6 +118,7 @@ public class UserAccountDB {
                         email,
                         gender,
                         isLogin,
+                        newUser,
                         points,
                         fragmentConceptQuizPts,
                         staticFragmentQuizPts,
@@ -200,6 +204,16 @@ public class UserAccountDB {
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(password, _password);
+
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
+
+    public void updateUserStatusByIsLogin(int _isLogin, int _newUser) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(newUser, _newUser);
 
         db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);

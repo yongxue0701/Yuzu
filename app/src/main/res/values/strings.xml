@@ -16,9 +16,11 @@
     <string name="register_titleInRG_TV">Gender</string>
     <string name="register_confirm_Btn">Confirm</string>
     <string name="register_back_Btn">Back</string>
+
     <string name="navigation_title_account">Me</string>
     <string name="navigation_title_course">Courses</string>
     <string name="navigation_title_forum">Forum</string>
+
     <string name="profile_edit_image_rv_text">Tap to change (Optional）</string>
     <string name="gender_popup_null_TV">---</string>
     <string name="gender_popup_male_TV">Male</string>
@@ -63,7 +65,7 @@
 
     <string name="action_bar_title_profile_edit"><font size="20">Profile Edit</font></string>
     <string name="action_bar_title_user_feedback"><font size="20">Feedback</font></string>
-    <string name="action_bar_title_share_to_fb"><font size="20">Post To Facebook</font></string>
+    <string name="action_bar_title_explore"><font size="20">Explore</font></string>
     <string name="action_bar_title_course_map"><font size="20">Course Map</font></string>
     <string name="course_fragments"><font size="20">Fragments</font></string>
     <string name="course_user_interface"><font size="20">User Interface</font></string>
@@ -128,4 +130,7 @@
     <string name="current_password_ET"><font size="15">Current Password</font></string>
     <string name="new_password_ET"><font size="15">New Password</font></string>
     <string name="confirm_new_password_ET"><font size="15">Confirm Passwords</font></string>
+
+    <string name="background_image_references_TV">Background Image References</string>
+    <string name="acknowledgements_references_TV">References</string>
 </resources>

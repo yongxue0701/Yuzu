@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
     }
 
     public void onClick_GoToForumActivity(View view) {
-        Intent myIntent = new Intent(this, Forum2Activity.class);
+        Intent myIntent = new Intent(this, ExploreActivity.class);
         startActivity(myIntent);
     }
 

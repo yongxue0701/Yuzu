@@ -76,8 +76,8 @@ public class UserAccountActivity extends Activity {
                         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
                         break;
-                    case R.id.navigation_title_forum:
-                        myIntent = new Intent(getApplicationContext(), ForumActivity.class);
+                    case R.id.navigation_title_explore:
+                        myIntent = new Intent(getApplicationContext(), ExploreActivity.class);
                         startActivity(myIntent);
                         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 

@@ -32,6 +32,7 @@ public class RegisterActivity extends Activity {
     private String email;
     private String gender;
     private boolean isLogin;
+    private boolean newUser;
     private int points;
     private int fragmentConceptQuizPts;
     private int staticFragmentQuizPts;
@@ -72,6 +73,7 @@ public class RegisterActivity extends Activity {
                 confirmPwd = confirmPwdET.getText().toString();
                 email = emailET.getText().toString();
                 isLogin = false;
+                newUser = true;
                 points = 0;
                 fragmentConceptQuizPts = 0;
                 staticFragmentQuizPts = 0;
@@ -111,7 +113,7 @@ public class RegisterActivity extends Activity {
 
                 if (allDone) {
                     userAccountDB.open();
-                    userAccountDB.insertRecord(username, pwd, email, gender, isLogin,
+                    userAccountDB.insertRecord(username, pwd, email, gender, isLogin, newUser,
                             String.valueOf(points), String.valueOf(fragmentConceptQuizPts),
                             String.valueOf(staticFragmentQuizPts), String.valueOf(dynamicFragmentQuizPts),
                             String.valueOf(androidActivityQuizPts));

@@ -50,14 +50,12 @@
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CourseFragmentActivity" />
         <activity android:name=".FragmentIntroductionActivity" />
-        <activity android:name=".ForumDisplayActivity" />
 
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider1574771352590790"
             android:exported="true" />
 
-        <activity android:name=".ForumActivity" />
         <activity android:name=".FragmentLifeCycleActivity" />
         <activity android:name=".FragmentTypesActivity" />
         <activity android:name=".FragmentConceptQuizActivity" />
@@ -82,7 +80,7 @@
         <activity android:name=".UserInterfaceElementsActivity" />
         <activity android:name=".UserInterfaceOnClickActivity" />
         <activity android:name=".UserFeedbackActivity" />
-        <activity android:name=".Forum2Activity" />
+        <activity android:name=".ExploreActivity" />
         <activity android:name=".TermsAndConditionsActivity" />
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".CourseIntentActivity" />
@@ -92,7 +90,8 @@
         <activity android:name=".AndroidActivityLifeCycleActivity" />
         <activity android:name=".AndroidActivityQuizInfoActivity" />
         <activity android:name=".AndroidActivityQuizActivity" />
-        <activity android:name=".AndroidActivityQuizResultsActivity"></activity>
+        <activity android:name=".AndroidActivityQuizResultsActivity" />
+        <activity android:name=".AcknowledgementsActivity"></activity>
     </application>
 
 </manifest>

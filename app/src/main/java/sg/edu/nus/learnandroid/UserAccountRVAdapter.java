@@ -145,7 +145,7 @@ public class UserAccountRVAdapter extends RecyclerView.Adapter<UserAccountRVAdap
             viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), PrivacyActivity.class);
+                    Intent editProfileIntent = new Intent(view.getContext(), AcknowledgementsActivity.class);
                     context.startActivity(editProfileIntent);
                     activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 }

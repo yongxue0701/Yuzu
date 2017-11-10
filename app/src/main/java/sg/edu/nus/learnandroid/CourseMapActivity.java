@@ -1,6 +1,8 @@
 package sg.edu.nus.learnandroid;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -8,9 +10,14 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +35,8 @@ public class CourseMapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_course_map);
+
+//        initiateBeginnerTipDialog();
 
         // Set up bottom navigation view
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.courseMap_bottom_navigation);
@@ -56,8 +65,8 @@ public class CourseMapActivity extends AppCompatActivity {
                         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
                         break;
-                    case R.id.navigation_title_forum:
-                        myIntent = new Intent(getApplicationContext(), ForumActivity.class);
+                    case R.id.navigation_title_explore:
+                        myIntent = new Intent(getApplicationContext(), ExploreActivity.class);
                         startActivity(myIntent);
                         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
@@ -105,6 +114,35 @@ public class CourseMapActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+    }
+
+    private void initiateBeginnerTipDialog() {
+
+        final Dialog dialog = new Dialog(CourseMapActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.beginner_tips_popup);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+
+        WebView webView = (WebView) dialogWindow.findViewById(R.id.beginner_tips_content_webview);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/www/beginner_tips.html");
+
+        ImageView nextIV = (ImageView) dialogWindow.findViewById(R.id.beginner_tips_arrow_to_right_IV);
+        nextIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
             }
         });
     }

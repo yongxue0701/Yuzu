@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSuperLightGrey"
+    tools:context="sg.edu.nus.learnandroid.AcknowledgementsActivity">
+
+    <TextView
+        android:id="@+id/acknowledgements_references_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/acknowledgements_references_TV"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_marginStartPercent="4%"
+        app:layout_marginTopPercent="5%" />
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/background_image_references_PRL"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        app:layout_heightPercent="8%"
+        app:layout_marginTopPercent="10%">
+
+        <TextView
+            android:id="@+id/background_image_references_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/background_image_references_TV"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_marginStartPercent="4%" />
+
+        <ImageView
+            android:id="@+id/acknowledgements_arrow_IV"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_right_super_light_gray"
+            app:layout_marginEndPercent="2%"
+            app:layout_marginStartPercent="4%" />
+
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>

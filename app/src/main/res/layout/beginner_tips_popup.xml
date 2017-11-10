@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="@drawable/dialog_background">
+
+    <ImageView
+        android:id="@+id/beginner_tips_guider_IV"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/guider"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginEndPercent="6%"
+        app:layout_marginStartPercent="4%" />
+
+    <WebView
+        android:id="@+id/beginner_tips_content_webview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-10dp"
+        android:layout_toEndOf="@+id/beginner_tips_guider_IV"
+        app:layout_marginEndPercent="3%"
+        app:layout_marginTopPercent="4%" />
+
+    <ImageView
+        android:id="@+id/beginner_tips_arrow_to_right_IV"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_right_arrow"
+        app:layout_marginEndPercent="3%"
+        app:layout_marginTopPercent="10%" />
+
+</android.support.percent.PercentRelativeLayout>

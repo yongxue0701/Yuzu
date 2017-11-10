@@ -1,6 +1,7 @@
 package sg.edu.nus.learnandroid;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -11,20 +12,29 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.TextView;
 
-public class Forum2Activity extends AppCompatActivity {
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 
+public class ExploreActivity extends AppCompatActivity {
+
+    private ShareDialog shareDialog;
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationMenuView bottomNavigationMenuView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forum2);
+        setContentView(R.layout.activity_explore);
+
+        shareDialog = new ShareDialog(this);  // intialize facebook shareDialog.
 
         // Set up bottom navigation view
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.forum_bottom_navigation);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.explore_bottom_navigation);
 
         // Change icon size of bottom navigation bar
         bottomNavigationMenuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(0);
@@ -70,6 +80,44 @@ public class Forum2Activity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) view.findViewById(R.id.action_bar_only_has_title_title);
-        actionBarTitleTV.setText(R.string.action_bar_title_share_to_fb);
+        actionBarTitleTV.setText(R.string.action_bar_title_explore);
+
+        WebView webView = (WebView) findViewById(R.id.explore_webview);
+        ExploreActivity.JavaScriptInterface myJavaScriptInterface =
+                new ExploreActivity.JavaScriptInterface(this, webView);
+
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.addJavascriptInterface(myJavaScriptInterface, "Explore");
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/www/explore.html");
+    }
+
+    public class JavaScriptInterface {
+
+        private ExploreActivity parentActivity;
+        private WebView webView;
+
+        public JavaScriptInterface(ExploreActivity exploreActivity, WebView mWebView) {
+            parentActivity = exploreActivity;
+            webView = mWebView;
+        }
+
+        @JavascriptInterface
+        public void shareToPrivateAccounts() {
+            if (ShareDialog.canShow(ShareLinkContent.class)) {
+                ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                        .setContentUrl(Uri.parse("https://www.facebook.com/Learnandroidwithus-854183284756525/"))
+                        .build();
+
+                shareDialog.show(linkContent);
+            }
+        }
+
+        @JavascriptInterface
+        public void joinFBGroup() {
+            Intent myIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://www.facebook.com/Learnandroidwithus-854183284756525/"));
+            parentActivity.startActivity(myIntent);
+        }
     }
 }
