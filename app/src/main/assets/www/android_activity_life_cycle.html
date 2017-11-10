@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/activityAndIntentCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Activity Life Cycle</h2>
+
+        <p>
+            As you have seen, an activity is simply a screen or user interface in an Android
+            application—either a full screen or a floating window that a user interacts with.
+            An Android app is made up of different activities that interact with the user as
+            well as one another. For example, a simple calculator would use one single activity.
+            If you enhanced the calculator app to switch between a simple version and a
+            scientific version, you would then use two activities.<br/><br/>
+            Every Android application runs inside its own process. Processes are started and
+            stopped to run an application and also can be killed to conserve memory and
+            resources. Activities, in turn, are run inside the main UI thread of the
+            application’s process.<br/><br/>
+            Once an activity is launched, it goes through a lifecycle, a term that refers
+            to the steps the activity progresses through as the user (and OS) interacts
+            with it. There are specific method callbacks that let you react to the changes
+            during the activity lifecycle.
+        </p>
+
+        <p>
+            <br/><b>The activity life cycle has four states.</b><br/>
+            •&emsp;When the activity is on the foreground of the application, it is the <b>running</b>
+            activity. Only one activity can be in the running state at a given time.<br/>
+            •&emsp;If the activity loses focus but remains visible (because a smaller
+            activity appears on top), the activity is <b>paused</b>.<br/>
+            •&emsp;If the activity is completely covered by another running activity, the original
+            activity is <b>stopped</b>. When an activity stops, you will lose any state and will
+            need to re-create the current state of the user interface when the activity
+            is restarted.<br/>
+            •&emsp;While the activity is paused or stopped, the system can <b>kill</b> it if it
+            needs to reclaim memory. The user can <b>restart</b> the activity.<br/>
+        </p>
+
+        <p>
+            <br/><b>This section briefs different stages of activity life cycle.</b>
+        </p>
+        <img src="file:///android_res/drawable/activity_life_cycle.png" height="550" width="350">
+
+        <p>
+            While the application moves through the different states, the android.app.Activity
+            lifecycle methods (or callbacks) get called by the system. These callbacks are
+            as follows.<br/><br/>
+            •&emsp;<b>onCreate</b>(Bundle savedInstanceState) is called when the activity is created for the
+            first time. You should initialize data, create an initial view, or reclaim the
+            activity’s frozen state if previously saved (this is covered later). The onCreate
+            callback is always followed by onStart.<br/>
+            •&emsp;<b>onStart()</b> is called when the activity is becoming visible. This is an ideal place
+            to write code that affects the UI of the application, such as an event that deals
+            with user interaction. This callback is normally followed by onResume but could be
+            followed by onStop if the activity becomes hidden.<br/>
+            •&emsp;<b>onResume()</b> is called when the activity is running in the foreground and the user
+            can interact with it. It is followed by onPause.<br/>
+            •&emsp;<b>onPause()</b> is called when another activity comes to the foreground. The implementation
+            needs to be quick, because the other activity cannot run until this method returns.
+            The onPause callback is followed by onResume if the activity returns to the foreground,
+            or by onStop if the activity becomes invisible.<br/>
+            •&emsp;<b>onStop()</b> is called when the activity is invisible to the user; either a new activity
+            has started, an existing activity has resumed, or this activity is getting destroyed.
+            The onStop callback is followed by onRestart if the activity returns to the
+            foreground.<br/>
+            •&emsp;<b>onRestart()</b> is called when the activity is being restarted, as when the activity is
+            returning to the foreground. It is always followed by onStart.<br/>
+            •&emsp;<b>onDestroy()</b> is called by the system before the activity is destroyed, either because
+            the activity is finishing or because the system is reclaiming the memory the
+            activity is using.<br/>
+        </p>
+    </body>
+</html>

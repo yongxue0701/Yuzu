@@ -22,9 +22,9 @@ import java.util.List;
  * Created by Yongxue
  */
 
-public class ActivityInfoActivity extends AppCompatActivity {
+public class AndroidActivityInfoActivity extends AppCompatActivity {
 
-    private ActivityInfoRVAdapter adapter;
+    private AndroidActivityInfoRVAdapter adapter;
     private RecyclerView androidActivityInfoRV;
     private LinearLayoutManager layoutManager;
     private ImageView loadingAnim;
@@ -32,7 +32,7 @@ public class ActivityInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_info);
+        setContentView(R.layout.activity_android_activity_info);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -80,7 +80,7 @@ public class ActivityInfoActivity extends AppCompatActivity {
         androidActivityButtonNames.add("Activity Life Cycle");
         androidActivityButtonNames.add("Quiz");
 
-        adapter = new ActivityInfoRVAdapter(androidActivityButtonNames, this, this);
+        adapter = new AndroidActivityInfoRVAdapter(androidActivityButtonNames, this, this);
         androidActivityInfoRV = (RecyclerView) findViewById(R.id.android_activity_info_RV);
         androidActivityInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);

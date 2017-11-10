@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/activityAndIntentCSS.css" type="text/css" media="all"/>
+        <script type="text/javascript" src="js/activityAndIntentJS.js"></script>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body onload="displayResult_android_activity()">
+        <h2>Quiz Results</h2>
+
+        <form>
+
+            <p id="quiz_results"></p>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q1.&emsp;In Activity's onCreate() function, what is the purpose of super.onCreate()?
+                </p>
+
+                <div id="q1_choices">
+                    <input type="radio" id="q1a" name="q1" value="a">&emsp;It gives permission to use your phone screen.&ensp;<br/>
+                    <input type="radio" id="q1b" name="q1" value="b">&emsp;It calls super class constructor.&ensp;<br/>
+                    <input type="radio" id="q1c" name="q1" value="c">&emsp;It does nothing, simply a return statement will be there in super class.&ensp;<br/>
+                    <input type="radio" id="q1d" name="q1" value="d">&emsp;It will create graphical window for sub class.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q1_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q1_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q2.&emsp;What is the mandatory activity life cycle function that will get called in
+                    case of configuration changes?
+                </p>
+
+                <div id="q2_choices">
+                    <input type="radio" id="q2a" name="q2" value="a">&emsp;onStop()&ensp;<br/>
+                    <input type="radio" id="q2b" name="q2" value="b">&emsp;onPause()&ensp;<br/>
+                    <input type="radio" id="q2c" name="q2" value="c">&emsp;onSaveInstanceState()&ensp;<br/>
+                    <input type="radio" id="q2d" name="q2" value="d">&emsp;Both 2 and 3&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q2_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q2_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q3.&emsp;Can I save all my database table updates in onStop() of activity? If not explain why and
+                    also explain where I should save database tables?
+                </p>
+
+                <div id="q3_choices">
+                    <input type="radio" id="q3a" name="q3" value="a">&emsp;Yes, we can.&ensp;<br/>
+                    <input type="radio" id="q3b" name="q3" value="b">&emsp;No, save it in onSaveInstanceState().&ensp;<br/>
+                    <input type="radio" id="q3c" name="q3" value="c">&emsp;No, because onStop() will never be called.&ensp;<br/>
+                    <input type="radio" id="q3d" name="q3" value="d">&emsp;No, because onStop() may not be called in some situations.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q3_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q3_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q4.&emsp;What to do in onRestart() of an activity?
+                </p>
+
+                <div id="q4_choices">
+                    <input type="radio" id="q4a" name="q4" value="a">&emsp;Load your xml layout file.&ensp;<br/>
+                    <input type="radio" id="q4b" name="q4" value="b">&emsp;If any UI changes happened while it is in invisible state, updated it in this function.&ensp;<br/>
+                    <input type="radio" id="q4c" name="q4" value="c">&emsp;If any UI changes happened while it is in running state, updated it in this function.&ensp;<br/>
+                    <input type="radio" id="q4d" name="q4" value="d">&emsp;Used to reload all UI resources in case of activity recreation which happens in case of configuration changes.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q4_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q4_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q5.&emsp;When activity is destroyed, will it be in memory or moved out of it?
+                </p>
+
+                <div id="q5_choices">
+                    <input type="radio" id="q5a" name="q5" value="a">&emsp;Yes, all destroyed apps will be removed from memory.&ensp;<br/>
+                    <input type="radio" id="q5b" name="q5" value="b">&emsp;Yes, all destroyed apps will be removed from memory only after some time.&ensp;<br/>
+                    <input type="radio" id="q5c" name="q5" value="c">&emsp;A destroyed application will be removed from memory if it is not frequently visited by user.&ensp;<br/>
+                    <input type="radio" id="q5d" name="q5" value="d">&emsp;Option 3 is true because, if user is visiting an app frequently, then it has to be loaded many times.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q5_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q5_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+        </form>
+    </body>
+</html>

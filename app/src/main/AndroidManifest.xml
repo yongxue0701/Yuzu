@@ -33,11 +33,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
@@ -84,11 +86,13 @@
         <activity android:name=".TermsAndConditionsActivity" />
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".CourseIntentActivity" />
-        <activity android:name=".ActivityInfoActivity" />
+        <activity android:name=".AndroidActivityInfoActivity" />
         <activity android:name=".IntentInfoActivity" />
         <activity android:name=".AndroidActivityIntroActivity" />
         <activity android:name=".AndroidActivityLifeCycleActivity" />
-        <activity android:name=".AndroidActivityQuizInfoActivity"></activity>
+        <activity android:name=".AndroidActivityQuizInfoActivity" />
+        <activity android:name=".AndroidActivityQuizActivity" />
+        <activity android:name=".AndroidActivityQuizResultsActivity"></activity>
     </application>
 
 </manifest>

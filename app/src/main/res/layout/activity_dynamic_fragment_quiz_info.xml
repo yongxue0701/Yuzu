@@ -97,7 +97,7 @@
             android:layout_alignStart="@+id/dynamic_fragment_info_attempts_LL"
             android:layout_below="@+id/dynamic_fragment_info_attempts_LL"
             android:background="@drawable/button_shape"
-            android:text="@string/fragment_quiz_info_submitbtn_start"
+            android:text="@string/quiz_info_submitbtn_start"
             android:textColor="@color/colorWhite"
             app:layout_marginBottomPercent="4%"
             app:layout_marginTopPercent="7%" />

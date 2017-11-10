@@ -17,13 +17,13 @@ import java.util.List;
  * Created by Yongxue on 10/11/17.
  */
 
-public class ActivityInfoRVAdapter extends RecyclerView.Adapter<ActivityInfoRVAdapter.ViewHolder> {
+public class AndroidActivityInfoRVAdapter extends RecyclerView.Adapter<AndroidActivityInfoRVAdapter.ViewHolder> {
 
     private List<String> androidActivityButtonNames;
     private Context context;
     private Activity activity;
 
-    public ActivityInfoRVAdapter(List<String> androidActivityButtonNames, Context context, Activity activity) {
+    public AndroidActivityInfoRVAdapter(List<String> androidActivityButtonNames, Context context, Activity activity) {
         this.androidActivityButtonNames = androidActivityButtonNames;
         this.context = context;
         this.activity = activity;

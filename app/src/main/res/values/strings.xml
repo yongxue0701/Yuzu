@@ -82,12 +82,12 @@
     <string name="quiz_info_score_label_TV">Your Score</string>
     <string name="quiz_info_attempts_label_TV">Attempts</string>
     <string name="quiz_info_attempts_content_TV">Multiple</string>
+    <string name="quiz_info_submitbtn_start">Start</string>
 
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
     <string name="submit_popup_cancel_btn">Cancel</string>
     <string name="submit_popup_yes_btn">Yes, I\'m sure</string>
-    <string name="fragment_quiz_info_submitbtn_start">Start</string>
     <string name="cancel_quiz_popup_leave_btn">Leave</string>
     <string name="cancel_quiz_popup_stay_btn">Stay</string>
     <string name="cancel_feedback_popup_no_btn">No</string>

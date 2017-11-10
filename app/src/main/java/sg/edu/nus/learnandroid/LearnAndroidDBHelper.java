@@ -25,6 +25,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
     public static final String fragmentConceptQuizPts = "fragmentConceptQuizPts";
     public static final String staticFragmentQuizPts = "staticFragmentQuizPts";
     public static final String dynamicFragmentQuizPts = "dynamicFragmentQuizPts";
+    public static final String androidActivityQuizPts = "androidActivityQuizPts";
 
     public static final String feedbackTitle = "feedbackTitle";
     public static final String feedbackDate = "feedbackDate";
@@ -42,7 +43,8 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
                     points + " TEXT NOT NULL," +
                     fragmentConceptQuizPts + " TEXT NOT NULL," +
                     staticFragmentQuizPts + " TEXT NOT NULL," +
-                    dynamicFragmentQuizPts + " TEXT NOT NULL)";
+                    dynamicFragmentQuizPts + " TEXT NOT NULL," +
+                    androidActivityQuizPts + " TEXT NOT NULL)";
 
     private static final String SQLite_CREATE_FEEDBACK =
             "CREATE TABLE " + feedbackTableName + "(" +

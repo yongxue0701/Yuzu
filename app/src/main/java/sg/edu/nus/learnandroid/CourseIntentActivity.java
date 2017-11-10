@@ -44,7 +44,7 @@ public class CourseIntentActivity extends AppCompatActivity {
         androidActivityIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), ActivityInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), AndroidActivityInfoActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
