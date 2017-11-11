@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LearnAndroid</string>
+    <string name="app_name">AndroidMaster</string>
     <string name="login_username_ET">Username</string>
     <string name="login_pwd_ET">Password</string>
     <string name="login_login_btn">Login</string>
