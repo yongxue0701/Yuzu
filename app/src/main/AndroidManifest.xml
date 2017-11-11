@@ -96,7 +96,9 @@
         <activity android:name=".UserInterfaceQuizActivity" />
         <activity android:name=".UserInterfaceQuizResultsActivity" />
         <activity android:name=".IntentIntroActivity" />
-        <activity android:name=".IntentQuizInfoActivity"></activity>
+        <activity android:name=".IntentQuizInfoActivity" />
+        <activity android:name=".IntentQuizActivity" />
+        <activity android:name=".IntentQuizResultsActivity"></activity>
     </application>
 
 </manifest>

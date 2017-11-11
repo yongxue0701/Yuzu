@@ -11,6 +11,7 @@ import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.dynamicFragmentQuizPt
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.email;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.fragmentConceptQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.gender;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.intentQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.isLogin;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.newUser;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.password;
@@ -49,7 +50,7 @@ public class UserAccountDB {
                              String _gender, boolean _isLogin, boolean _newUser, boolean _uiCoursePassed,
                              String _points, String _fragmentConceptQuizPts, String _staticFragmentQuizPts,
                              String _dynamicFragmentQuizPts, String _androidActivityQuizPts,
-                             String _userInterfaceQuizPts) {
+                             String _userInterfaceQuizPts, String _intentQuizPts) {
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(username, _username);
@@ -62,6 +63,7 @@ public class UserAccountDB {
         initialValues.put(points, _points);
         initialValues.put(userInterfaceQuizPts, _userInterfaceQuizPts);
         initialValues.put(androidActivityQuizPts, _androidActivityQuizPts);
+        initialValues.put(intentQuizPts, _intentQuizPts);
         initialValues.put(fragmentConceptQuizPts, _fragmentConceptQuizPts);
         initialValues.put(staticFragmentQuizPts, _staticFragmentQuizPts);
         initialValues.put(dynamicFragmentQuizPts, _dynamicFragmentQuizPts);
@@ -91,6 +93,7 @@ public class UserAccountDB {
                         points,
                         userInterfaceQuizPts,
                         androidActivityQuizPts,
+                        intentQuizPts,
                         fragmentConceptQuizPts,
                         staticFragmentQuizPts,
                         dynamicFragmentQuizPts},
@@ -130,6 +133,7 @@ public class UserAccountDB {
                         points,
                         userInterfaceQuizPts,
                         androidActivityQuizPts,
+                        intentQuizPts,
                         fragmentConceptQuizPts,
                         staticFragmentQuizPts,
                         dynamicFragmentQuizPts},
@@ -243,6 +247,16 @@ public class UserAccountDB {
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(uiCoursePassed, _uiCoursePassed);
+
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
+
+    public void updateIntentQuizPtsByIsLogin(int _isLogin, int _intentQuizPts) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(intentQuizPts, _intentQuizPts);
 
         db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);

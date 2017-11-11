@@ -38,20 +38,6 @@ public class FragmentIntroductionActivity extends AppCompatActivity {
             }
         });
 
-//        // Webview content hard code
-//        String title = "Fragments";
-//        String data = "•" + "&emsp;" + "A Fragment represents a behavior " +
-//                "or a portion of user interface in an Activity.&ensp;<br/>" +
-//                "•" + "&emsp;" + "Fragments are re-usable components hosted by an Activity.&ensp;<br/>" +
-//                "•" + "&emsp;" + "Fragments do not subclass Context. " +
-//                "Use context.getActivity() to get the hosting activity.&ensp;<br/>" +
-//                "•" + "&emsp;" + "Fragments should not communicate with each other directly. " +
-//                "They should communicate through the host activity.&ensp;<br/>";
-//
-//        WebView webView = (WebView) findViewById(R.id.fragment_concept_webview);
-//        webView.loadData("<h1>" + title + "</h1>" + "<p style=\"text-align: justify\" \"margin:50dp\">" +
-//                data + "</p>", "text/html", "utf-8");
-
         WebView webView = (WebView) findViewById(R.id.fragment_introduction_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());

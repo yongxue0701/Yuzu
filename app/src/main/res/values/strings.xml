@@ -56,12 +56,14 @@
     <string name="dynamic_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Dynamically</string>
     <string name="ui_quiz_info_title_TV">Practice Questions on User Interface</string>
     <string name="android_activity_quiz_info_title_TV">Practice Questions on Android Activities</string>
+    <string name="intent_quiz_info_title_TV">Practice Questions on Intent</string>
 
     <string name="fragment_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
     <string name="static_fragment_quiz_info_questionNum_TV">2 questions, 1 point per question</string>
     <string name="dynamic_fragment_quiz_info_questionNum_TV">3 questions, 1 point per question</string>
     <string name="ui_quiz_info_questionNum_TV">4 questions, 1 point per question</string>
     <string name="android_activity_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
+    <string name="intent_quiz_info_questionNum_TV">2 questions, 1 point per question</string>
 
     <string name="quiz_info_score_label_TV">Your Score</string>
     <string name="quiz_info_attempts_label_TV">Attempts</string>
@@ -74,6 +76,7 @@
     <string name="android_activity_quiz_info_to_pass_content_TV">80% or higher</string>
     <string name="fragment_quiz_info_to_pass_content_TV">80% or higher</string>
     <string name="static_fragment_quiz_info_to_pass_content_TV">100%</string>
+    <string name="intent_quiz_info_to_pass_content_TV">100%</string>
 
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>

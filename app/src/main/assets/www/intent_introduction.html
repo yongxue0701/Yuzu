@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/activityAndIntentCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Introduction of Fragments</h2>
+
+        <p>
+            An Intent is a messaging object you can use to request an action from another
+            app component. Although intents facilitate communication between components
+            in several ways, there are three fundamental use cases:
+        </p>
+
+        <p>
+            •&emsp;<b>Starting an activity</b><br/>
+            An Activity represents a single screen in an app. You can start a new instance of
+            an Activity by passing an Intent to startActivity(). The Intent describes the
+            activity to start and carries any necessary data.<br/><
+            If you want to receive a result from the activity when it finishes, call
+            startActivityForResult(). Your activity receives the result as a separate
+            Intent object in your activity's onActivityResult() callback.<br/>
+        </p>
+
+        <p>
+            •&emsp;<b>Starting a service</b><br/>
+            A Service is a component that performs operations in the background without a
+            user interface. With Android 5.0 (API level 21) and later, you can start a
+            service with JobScheduler.<br/>
+            For versions earlier than Android 5.0 (API level 21), you can start a
+            service by using methods of the Service class. You can start a service
+            to perform a one-time operation (such as downloading a file) by passing
+            an Intent to startService(). The Intent describes the service to
+            start and carries any necessary data.<br/>
+            If the service is designed with a client-server interface, you can bind
+            to the service from another component by passing an Intent to bindService().<br/>
+        </p>
+
+        <p>
+            •&emsp;<b>Delivering a broadcast</b><br/>
+            A broadcast is a message that any app can receive. The system delivers various
+            broadcasts for system events, such as when the system boots up or the device
+            starts charging. You can deliver a broadcast to other apps by passing an Intent
+            to sendBroadcast() or sendOrderedBroadcast(). It will be introduced
+            in the next course in details.<br/>
+            <br/><b>Example of starting an activity:</b>
+        </p>
+
+        <p id="first_code">
+            Intent myIntent = new Intent(getApplicationContext(), Act1.class);<br/>
+            startActivity(myIntent);<br/>
+        </p>
+    </body>
+</html>

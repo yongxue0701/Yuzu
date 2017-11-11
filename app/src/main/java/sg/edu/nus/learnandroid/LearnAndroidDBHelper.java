@@ -29,6 +29,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
     public static final String dynamicFragmentQuizPts = "dynamicFragmentQuizPts";
     public static final String androidActivityQuizPts = "androidActivityQuizPts";
     public static final String userInterfaceQuizPts = "userInterfaceQuizPts";
+    public static final String intentQuizPts = "intentQuizPts";
 
     public static final String feedbackTitle = "feedbackTitle";
     public static final String feedbackDate = "feedbackDate";
@@ -48,6 +49,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
                     points + " TEXT NOT NULL," +
                     userInterfaceQuizPts + " TEXT NOT NULL," +
                     androidActivityQuizPts + " TEXT NOT NULL," +
+                    intentQuizPts + " TEXT NOT NULL," +
                     fragmentConceptQuizPts + " TEXT NOT NULL," +
                     staticFragmentQuizPts + " TEXT NOT NULL," +
                     dynamicFragmentQuizPts + " TEXT NOT NULL)";
