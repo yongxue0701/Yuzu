@@ -69,7 +69,6 @@ public class DynamicFragmentInfoActivity extends AppCompatActivity {
         });
 
         WebView webView = (WebView) findViewById(R.id.dynamic_fragment_info_webview);
-        webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/dynamic_fragment_info.html");

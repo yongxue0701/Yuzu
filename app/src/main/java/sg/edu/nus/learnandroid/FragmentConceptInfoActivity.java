@@ -68,8 +68,7 @@ public class FragmentConceptInfoActivity extends AppCompatActivity {
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.fragment_info_background_info_webview);
-        webView.getSettings().setJavaScriptEnabled(true);
+        WebView webView = (WebView) findViewById(R.id.fragment_info_webview);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/fragment_concept_info.html");

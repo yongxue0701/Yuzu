@@ -43,14 +43,18 @@ public class CourseMapActivity extends AppCompatActivity {
         userAccountDB.open();
         Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
 
+        int uiCoursePassedFromDB = -1;
+
         if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
             do {
                 int newUser = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("newUser")));
+                uiCoursePassedFromDB = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("uiCoursePassed")));
                 if (newUser == 1) {
                     initiateBeginnerTipOneDialog();
                 }
             } while (mCursor.moveToNext());
         }
+
         mCursor.close();
         userAccountDB.close();
 
@@ -132,6 +136,19 @@ public class CourseMapActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
+
+//        if (uiCoursePassedFromDB == 1) {
+//            ImageView mapPinTwoIV = (ImageView) findViewById(R.id.course_map_pin_2_IV);
+//            mapPinTwoIV.setImageResource(R.drawable.ic_map_pin_red_1);
+//            mapPinTwoIV.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent myIntent = new Intent(getApplicationContext(), CourseIntentActivity.class);
+//                    startActivity(myIntent);
+//                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+//                }
+//            });
+//        }
     }
 
     private void initiateBeginnerTipOneDialog() {

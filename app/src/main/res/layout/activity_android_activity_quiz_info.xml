@@ -90,12 +90,40 @@
                 android:textColor="@color/colorBlack" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/android_activity_quiz_info_to_pass_LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/android_activity_info_attempts_LL"
+            android:orientation="horizontal"
+            app:layout_marginStartPercent="4%"
+            app:layout_marginTopPercent="2%">
+
+            <TextView
+                android:id="@+id/android_activity_quiz_info_to_pass_label_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/quiz_info_to_pass_label_TV"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/android_activity_quiz_info_to_pass_content_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/android_activity_quiz_info_to_pass_content_TV"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/android_activity_quiz_info_submit_btn"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_alignStart="@+id/android_activity_info_attempts_LL"
-            android:layout_below="@+id/android_activity_info_attempts_LL"
+            android:layout_alignStart="@+id/android_activity_quiz_info_to_pass_LL"
+            android:layout_below="@+id/android_activity_quiz_info_to_pass_LL"
             android:background="@drawable/button_shape"
             android:text="@string/quiz_info_submitbtn_start"
             android:textColor="@color/colorWhite"

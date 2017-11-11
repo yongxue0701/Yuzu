@@ -5,7 +5,9 @@ p{
 }
 
 #android_activity_info_title,
-#android_activity_info_content{
+#android_activity_info_content,
+#fragments_info_title,
+#fragments_info_content{
     text-align: justify;
     line-height: 200%;
     margin:20px;
@@ -37,7 +39,7 @@ p{
 
 #submit_btn{
     border: none;
-    background-color: #00897B;
+    background-color: #14A892;
     color: white;
     padding: 15px 28px;
     text-align: center;

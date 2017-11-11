@@ -69,7 +69,6 @@ public class AndroidActivityInfoActivity extends AppCompatActivity {
         });
 
         WebView webView = (WebView) findViewById(R.id.android_activity_info_webview);
-        webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/android_activity_info.html");

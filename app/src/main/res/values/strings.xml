@@ -36,29 +36,6 @@
     <string name="update_password_success_toast_content_TV">Updated!</string>
 
     <string name="splash_bottom_TV">Learn Android Company right ⓒ 2017</string>
-    <string name="forum_title_TV">Having questions to ask?</string>
-    <string name="forum_fb_btn">Click here to join our Facebook Group</string>
-    <string name="forum_middle_TV">Do me a favor! Recommend to your friends</string>
-    <string name="forum_bottom_TV">Shot problems and click rightside</string>
-    <string name="forum_end_TV">Video problems and click rightside</string>
-    <string name="forum_tip_TV">More intersesting Info!</string>
-    <string name="btnLike">Like</string>
-    <string name="btnShareLinks">Share Links</string>
-    <string name="btnSharePhotos">Photos</string>
-    <string name="btnShareVideos">Videos</string>
-    <string name="forum_android_img_btn">Android</string>
-    <string name="forum_info_img_btn">Info</string>
-    <string name="forum_display_slogan_TV">Don\'t limit yourself!</string>
-    <string name="forum_display_web_TV">Best 3 webs for beginner</string>
-    <string name="forum_display_climb_IV">Climb</string>
-    <string name="forum_display_overlay_IV">Overlay</string>
-    <string name="forum_display_developer_TV"><a href="https://developer.android.com/training/index.html">DEVELOPER</a></string>
-    <string name="forum_display_androidlift_TV"><a href="http://androidlift.info">ANDROIDLIFT</a></string>
-    <string name="forum_display_vogella_TV"><a href="http://www.vogella.com/tutorials/android.html">VOGELLA</a></string>
-    <string name="forum_display_news_TV">Close to new tendency</string>
-    <string name="forum_display_kotlin_TV"><a href="https://medium.cobeisfresh.com/5-reasons-why-google-supporting-the-kotlin-programming-language-for-android-is-the-best-news-ever-e4c84be05382">KOTLIN</a></string>
-    <string name="forum_display_google_TV"><a href="https://www.androidauthority.com/google-still-doesnt-want-sell-smartphones-heres-810729/">GOOGLE</a></string>
-    <string name="forum_display_appnews_TV"><a href="https://android-developers.googleblog.com/2017/10/android-studio-30.html">APPNEWS</a></string>
 
     <string name="gender_text_view_male">Male</string>
     <string name="gender_text_view_female">Female</string>
@@ -92,8 +69,11 @@
     <string name="quiz_info_submitbtn_start">Start</string>
     <string name="quiz_info_to_pass_label_TV">To Pass</string>
 
-    <string name="ui_quiz_info_to_pass_content_TV">100%</string>
-    <string name="dynamic_fragment_quiz_info_to_pass_content_TV">100%</string>
+    <string name="ui_quiz_info_to_pass_content_TV">70% or higher</string>
+    <string name="dynamic_fragment_quiz_info_to_pass_content_TV">60% or higher</string>
+    <string name="android_activity_quiz_info_to_pass_content_TV">80% or higher</string>
+    <string name="fragment_quiz_info_to_pass_content_TV">80% or higher</string>
+    <string name="static_fragment_quiz_info_to_pass_content_TV">100%</string>
 
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>

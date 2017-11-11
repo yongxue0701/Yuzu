@@ -69,7 +69,6 @@ public class StaticFragmentInfoActivity extends AppCompatActivity {
         });
 
         WebView webView = (WebView) findViewById(R.id.static_fragment_info_background_info_webview);
-        webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/static_fragment_info.html");

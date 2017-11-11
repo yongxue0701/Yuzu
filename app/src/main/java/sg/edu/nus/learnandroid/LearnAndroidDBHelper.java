@@ -22,6 +22,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
     public static final String gender = "gender";
     public static final String isLogin = "isLogin";
     public static final String newUser = "newUser";
+    public static final String uiCoursePassed = "uiCoursePassed";
     public static final String points = "points";
     public static final String fragmentConceptQuizPts = "fragmentConceptQuizPts";
     public static final String staticFragmentQuizPts = "staticFragmentQuizPts";
@@ -43,6 +44,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
                     gender + " TEXT NOT NULL," +
                     isLogin + " TEXT NOT NULL," +
                     newUser + " TEXT NOT NULL," +
+                    uiCoursePassed + " TEXT NOT NULL," +
                     points + " TEXT NOT NULL," +
                     userInterfaceQuizPts + " TEXT NOT NULL," +
                     androidActivityQuizPts + " TEXT NOT NULL," +

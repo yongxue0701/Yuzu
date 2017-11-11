@@ -94,7 +94,9 @@
         <activity android:name=".AcknowledgementsActivity" />
         <activity android:name=".AchievementsActivity" />
         <activity android:name=".UserInterfaceQuizActivity" />
-        <activity android:name=".UserInterfaceQuizResultsActivity"></activity>
+        <activity android:name=".UserInterfaceQuizResultsActivity" />
+        <activity android:name=".IntentIntroActivity" />
+        <activity android:name=".IntentQuizInfoActivity"></activity>
     </application>
 
 </manifest>

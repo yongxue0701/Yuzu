@@ -187,16 +187,22 @@ public class UserInterfaceQuizActivity extends AppCompatActivity {
         int totalPtsFromDB = 0;
         int finalPoints = 0;
         int userInterfaceQuizPtsFromDB = 0;
+        int uiCoursePassedFromDB = -1;
 
         if (pointsCursor != null && pointsCursor.moveToFirst() && (pointsCursor.getCount() == 1)) {
             do {
                 totalPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("points")));
                 userInterfaceQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor
                         .getColumnIndex("userInterfaceQuizPts")));
+                uiCoursePassedFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("uiCoursePassed")));
             } while (pointsCursor.moveToNext());
         }
 
-        pointsCursor.close();
+        if (uiCoursePassedFromDB == 0) {
+            if (points == 4) {
+                userAccountDB.updateUICoursePassedByIsLogin(1, 1);
+            }
+        }
 
         if (userInterfaceQuizPtsFromDB == 0) {
             finalPoints = totalPtsFromDB + points;
@@ -207,5 +213,6 @@ public class UserInterfaceQuizActivity extends AppCompatActivity {
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateUserInterfaceQuizPtsByIsLogin(1, points);
         userAccountDB.close();
+        pointsCursor.close();
     }
 }
