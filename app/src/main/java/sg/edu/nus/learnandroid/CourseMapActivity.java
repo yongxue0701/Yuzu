@@ -2,6 +2,7 @@ package sg.edu.nus.learnandroid;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -30,13 +31,28 @@ public class CourseMapActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationMenuView bottomNavigationMenuView;
 
+    UserAccountDB userAccountDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_course_map);
 
-//        initiateBeginnerTipDialog();
+        userAccountDB = new UserAccountDB(this);
+        userAccountDB.open();
+        Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
+
+        if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
+            do {
+                int newUser = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("newUser")));
+                if (newUser == 1) {
+                    initiateBeginnerTipOneDialog();
+                }
+            } while (mCursor.moveToNext());
+        }
+        mCursor.close();
+        userAccountDB.close();
 
         // Set up bottom navigation view
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.courseMap_bottom_navigation);
@@ -118,7 +134,7 @@ public class CourseMapActivity extends AppCompatActivity {
         });
     }
 
-    private void initiateBeginnerTipDialog() {
+    private void initiateBeginnerTipOneDialog() {
 
         final Dialog dialog = new Dialog(CourseMapActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -134,15 +150,112 @@ public class CourseMapActivity extends AppCompatActivity {
         dialog.show();
 
         WebView webView = (WebView) dialogWindow.findViewById(R.id.beginner_tips_content_webview);
-        webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/beginner_tips.html");
+        webView.loadUrl("file:///android_asset/www/beginner_tips_one.html");
 
         ImageView nextIV = (ImageView) dialogWindow.findViewById(R.id.beginner_tips_arrow_to_right_IV);
         nextIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                initiateBeginnerTipTwoDialog();
+            }
+        });
+    }
+
+    private void initiateBeginnerTipTwoDialog() {
+
+        final Dialog dialog = new Dialog(CourseMapActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.beginner_tips_popup);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+
+        WebView webView = (WebView) dialogWindow.findViewById(R.id.beginner_tips_content_webview);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/www/beginner_tips_two.html");
+
+        ImageView nextIV = (ImageView) dialogWindow.findViewById(R.id.beginner_tips_arrow_to_right_IV);
+        nextIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                initiateBeginnerTipThreeDialog();
+            }
+        });
+    }
+
+    private void initiateBeginnerTipThreeDialog() {
+
+        final Dialog dialog = new Dialog(CourseMapActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.beginner_tips_popup);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+
+        WebView webView = (WebView) dialogWindow.findViewById(R.id.beginner_tips_content_webview);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/www/beginner_tips_three.html");
+
+        ImageView nextIV = (ImageView) dialogWindow.findViewById(R.id.beginner_tips_arrow_to_right_IV);
+        nextIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                initiateBeginnerTipFourDialog();
+            }
+        });
+    }
+
+    private void initiateBeginnerTipFourDialog() {
+
+        final Dialog dialog = new Dialog(CourseMapActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.beginner_tips_popup);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+
+        WebView webView = (WebView) dialogWindow.findViewById(R.id.beginner_tips_content_webview);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/www/beginner_tips_four.html");
+
+        ImageView nextIV = (ImageView) dialogWindow.findViewById(R.id.beginner_tips_arrow_to_right_IV);
+        nextIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+
+                userAccountDB.open();
+                Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
+
+                if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
+                    do {
+                        userAccountDB.updateUserStatusByIsLogin(1, 0);
+                    } while (mCursor.moveToNext());
+                }
+                mCursor.close();
+                userAccountDB.close();
             }
         });
     }

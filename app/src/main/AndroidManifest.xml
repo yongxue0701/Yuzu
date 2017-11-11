@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_android"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_android"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -78,7 +78,7 @@
         <activity android:name=".AndroidIntroductionActivity" />
         <activity android:name=".UserInterfaceLayoutActivity" />
         <activity android:name=".UserInterfaceElementsActivity" />
-        <activity android:name=".UserInterfaceOnClickActivity" />
+        <activity android:name=".UserInterfaceQuizInfoActivity" />
         <activity android:name=".UserFeedbackActivity" />
         <activity android:name=".ExploreActivity" />
         <activity android:name=".TermsAndConditionsActivity" />
@@ -91,7 +91,10 @@
         <activity android:name=".AndroidActivityQuizInfoActivity" />
         <activity android:name=".AndroidActivityQuizActivity" />
         <activity android:name=".AndroidActivityQuizResultsActivity" />
-        <activity android:name=".AcknowledgementsActivity"></activity>
+        <activity android:name=".AcknowledgementsActivity" />
+        <activity android:name=".AchievementsActivity" />
+        <activity android:name=".UserInterfaceQuizActivity" />
+        <activity android:name=".UserInterfaceQuizResultsActivity"></activity>
     </application>
 
 </manifest>

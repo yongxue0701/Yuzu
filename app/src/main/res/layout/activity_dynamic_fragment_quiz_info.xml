@@ -36,7 +36,7 @@
             app:layout_marginTopPercent="1.5%" />
 
         <LinearLayout
-            android:id="@+id/dynamic_fragment_info_score_LL"
+            android:id="@+id/dynamic_fragment_quiz_info_score_LL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/dynamic_fragment_quiz_info_questionNum_TV"
@@ -63,10 +63,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/dynamic_fragment_info_attempts_LL"
+            android:id="@+id/dynamic_fragment_quiz_info_attempts_LL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dynamic_fragment_info_score_LL"
+            android:layout_below="@+id/dynamic_fragment_quiz_info_score_LL"
             android:orientation="horizontal"
             app:layout_marginStartPercent="4%"
             app:layout_marginTopPercent="2%">
@@ -94,8 +94,8 @@
             android:id="@+id/dynamic_fragment_quiz_info_submit_btn"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_alignStart="@+id/dynamic_fragment_info_attempts_LL"
-            android:layout_below="@+id/dynamic_fragment_info_attempts_LL"
+            android:layout_alignStart="@+id/dynamic_fragment_quiz_info_attempts_LL"
+            android:layout_below="@+id/dynamic_fragment_quiz_info_attempts_LL"
             android:background="@drawable/button_shape"
             android:text="@string/quiz_info_submitbtn_start"
             android:textColor="@color/colorWhite"

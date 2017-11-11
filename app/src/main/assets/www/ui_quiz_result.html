@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/userInterfaceCSS.css" type="text/css" media="all"/>
+        <script type="text/javascript" src="js/userInterfaceJS.js"></script>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body onload="displayResult_user_interface()">
+        <h2>Quiz Results</h2>
+
+        <form>
+            <p id="quiz_results"></p>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q1.&emsp;What is the difference between px, dp, dip and dpi?
+                </p>
+
+                <div id="q1_choices">
+                    <input type="radio" name="q1" value="a">&emsp;px - pixels,dp - density pixels, dip - density independent pixels, sp - scale independent pixels&ensp;<br/>
+                    <input type="radio" name="q1" value="b">&emsp;px - pixels,dp - density pics, dip - density independent pics, sp - scale independent pixels&ensp;<br/>
+                    <input type="radio" name="q1" value="c">&emsp;px - pixels,dp - density independent pixels, dip - density independent pixels, sp - scale independent pixels&ensp;<br/>
+                    <input type="radio" name="q1" value="d">&emsp;px - pixels,dp - density independent pics, dip - density independent pics, sp - scale independent pixels&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q1_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q1_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q2.&emsp;What is android:gravity attribute in the view tag?
+                </p>
+
+                <div id="q2_choices">
+                    <input type="radio" name="q2" value="a">&emsp;It is to align the view either right/center/top/bottom in its parent layout.&ensp;<br/>
+                    <input type="radio" name="q2" value="b">&emsp;It is to align the view content either right/center/top/bottom with in that view.&ensp;<br/>
+                    <input type="radio" name="q2" value="c">&emsp;It is to align the parent layout of the view either right/center/top/bottom.&ensp;<br/>
+                    <input type="radio" name="q2" value="d">&emsp;It is to weigh the view with respect to other views in that layout.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q2_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q2_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q3.&emsp;What is the difference between linear layout and relative layout?
+                </p>
+
+                <div id="q3_choices">
+                    <input type="radio" name="q3" value="a">&emsp;Linear Layout - arranges elements in either horizontal or vertical fashion. Relative Layout - arranges elements in relative to each other.&ensp;<br/>
+                    <input type="radio" name="q3" value="b">&emsp;Linear Layout - arranges elements in only vertical fashion. Relative Layout - arranges elements in relative to each other.&ensp;<br/>
+                    <input type="radio" name="q3" value="c">&emsp;Linear Layout - arranges elements in either absolute fashion. Relative Layout - arranges elements in relative to other layouts.&ensp;<br/>
+                    <input type="radio" name="q3" value="d">&emsp;Linear Layout - arranges elements in either horizontal or vertical fashion. Relative Layout - arranges elements in stack base architecture (piled up).&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q3_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q3_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q4.&emsp;Which of the following are the layouts available in android?<br/>
+                    i.&emsp;FrameLayout
+                    ii.&emsp;TableLayout
+                    iii.&emsp;LinearLayout
+                    iv.&emsp;RelativeLayout
+                </p>
+
+                <div id="q4_choices">
+                    <input type="radio" name="q4" value="a">&emsp;i&ensp;<br/>
+                    <input type="radio" name="q4" value="b">&emsp;i,ii&ensp;<br/>
+                    <input type="radio" name="q4" value="c">&emsp;i,ii,iii&ensp;<br/>
+                    <input type="radio" name="q4" value="d">&emsp;all&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q4_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q4_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+        </form>
+    </body>
+</html>

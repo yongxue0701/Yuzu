@@ -131,5 +131,27 @@
                 &emsp;&emsp;android:inputType="text"/&gt;
             </p>
         </div>
+
+        <div>
+            <p>
+                <br/><b>Introduction of OnClickListener</b><br/>
+                If you want to make a TextView, ImageView or any view clickable, You can declare
+                the click event handler programmatically. To declare the event handler
+                programmatically, create an View.OnClickListener object and assign
+                it to the button by calling setOnClickListener (View.OnClickListener).<br/>
+                <b>For example:</b>
+            </p>
+
+            <p id="eighth_code">
+                Button button = (Button) findViewById(<br/>
+                R.id.button_send);<br/>
+                button.setOnClickListener(<br/>
+                new View.OnClickListener() {<br/>
+                &emsp;&emsp;public void onClick(View v) {<br/>
+                &emsp;&emsp;&emsp;&emsp;// Do something<br/>
+                &emsp;&emsp;}<br/>
+                });
+            </p>
+        </div>
     </body>
 </html>

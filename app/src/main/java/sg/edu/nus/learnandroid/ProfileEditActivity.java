@@ -168,7 +168,8 @@ public class ProfileEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 discardChanges();
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(),UserAccountActivity.class);
+                startActivity(myIntent);
             }
         });
     }

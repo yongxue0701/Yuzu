@@ -16,33 +16,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/register_title_TV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_title_TV"
-                android:textSize="30sp"
-                app:layout_marginLeftPercent="5%"
-                app:layout_marginTopPercent="4%" />
+            <!--<TextView-->
+            <!--android:id="@+id/register_title_TV"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/register_title_TV"-->
+            <!--android:textSize="30sp"-->
+            <!--app:layout_marginLeftPercent="5%"-->
+            <!--app:layout_marginTopPercent="4%" />-->
 
             <EditText
                 android:id="@+id/register_username_ET"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/register_title_TV"
+                android:layout_centerHorizontal="true"
                 android:hint="@string/register_username_ET"
                 android:inputType="text"
                 app:layout_marginLeftPercent="5%"
-                app:layout_marginTopPercent="2%"
-                app:layout_widthPercent="50%" />
+                app:layout_marginTopPercent="35%"
+                app:layout_widthPercent="85%" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/register_gender_RG"
-                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/register_username_ET"
+                android:layout_centerHorizontal="true"
                 android:orientation="horizontal"
                 app:layout_marginLeftPercent="5%"
-                app:layout_marginTopPercent="2%">
+                app:layout_marginTopPercent="2%"
+                app:layout_widthPercent="85%">
 
                 <TextView
                     android:id="@+id/register_titleInRG_TV"
@@ -72,50 +73,60 @@
                 android:id="@+id/register_email_ET"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/register_gender_RG"
+                android:layout_centerHorizontal="true"
                 android:hint="@string/register_email_ET"
                 android:inputType="textEmailAddress"
                 app:layout_marginLeftPercent="5%"
                 app:layout_marginTopPercent="2%"
-                app:layout_widthPercent="50%" />
+                app:layout_widthPercent="85%" />
 
             <EditText
                 android:id="@+id/register_pwd_ET"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/register_email_ET"
+                android:layout_centerHorizontal="true"
                 android:hint="@string/register_pwd_ET"
                 android:inputType="text"
                 app:layout_marginLeftPercent="5%"
                 app:layout_marginTopPercent="2%"
-                app:layout_widthPercent="50%" />
+                app:layout_widthPercent="85%" />
 
             <EditText
                 android:id="@+id/register_confirmPwd_ET"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/register_pwd_ET"
+                android:layout_centerHorizontal="true"
                 android:hint="@string/register_confirmPwd_ET"
                 android:inputType="text"
                 app:layout_marginLeftPercent="5%"
                 app:layout_marginTopPercent="2%"
-                app:layout_widthPercent="50%" />
+                app:layout_widthPercent="85%" />
 
-            <Button
-                android:id="@+id/register_confirm_Btn"
+            <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_below="@id/register_confirmPwd_ET"
-                android:text="@string/register_confirm_Btn"
-                app:layout_marginLeftPercent="5%"
-                app:layout_marginTopPercent="4%"
-                app:layout_widthPercent="30%" />
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                app:layout_marginTopPercent="6%"
+                app:layout_widthPercent="85%">
 
-            <Button
-                android:id="@+id/register_back_Btn"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/register_confirmPwd_ET"
-                android:layout_toEndOf="@id/register_confirm_Btn"
-                android:text="@string/register_back_Btn"
-                app:layout_marginLeftPercent="3%"
-                app:layout_marginTopPercent="4%"
-                app:layout_widthPercent="30%" />
+                <Button
+                    android:id="@+id/register_confirm_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape"
+                    android:text="@string/register_confirm_Btn" />
+
+                <Button
+                    android:id="@+id/register_back_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape"
+                    android:text="@string/register_back_Btn" />
+            </LinearLayout>
 
         </android.support.percent.PercentRelativeLayout>
     </ScrollView>

@@ -1,12 +1,12 @@
 package sg.edu.nus.learnandroid;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +25,7 @@ import java.util.List;
  * Created by Yongxue
  */
 
-public class UserAccountActivity extends Activity {
+public class UserAccountActivity extends AppCompatActivity {
 
     private TextView usernameTV;
     private RecyclerView userAccountRVWithAccountBtn;
@@ -46,8 +46,19 @@ public class UserAccountActivity extends Activity {
 
         userAccountDB = new UserAccountDB(this);
 
+        // Set up custom action bar with back button
+        getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_only_has_title);
+
+        // Set up the back button and title on action bar
+        View view = getSupportActionBar().getCustomView();
+
+        TextView actionBarTitleTV = (TextView) view.findViewById(R.id.action_bar_only_has_title_title);
+        actionBarTitleTV.setText(R.string.action_bar_title_account);
+
         // Set up bottom navigation view
-        bottomNavigationView = findViewById(R.id.userAccount_bottom_navigation);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.userAccount_bottom_navigation);
 
         // Change icon size of bottom navigation bar
         bottomNavigationMenuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(0);
@@ -134,7 +145,7 @@ public class UserAccountActivity extends Activity {
         contactButtonNames.add("Privacy Policy");
 
         adapter = new UserAccountRVAdapter(contactButtonNames, this, this);
-        userAccountRVWithContactBtn = findViewById(R.id.userAccount_contact_RV);
+        userAccountRVWithContactBtn = (RecyclerView) findViewById(R.id.userAccount_contact_RV);
         userAccountRVWithContactBtn.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 
@@ -147,7 +158,7 @@ public class UserAccountActivity extends Activity {
         ackButtonNames.add("Acknowledgements");
 
         adapter = new UserAccountRVAdapter(ackButtonNames, this, this);
-        userAccountRVWithAckBtn = findViewById(R.id.userAccount_ack_RV);
+        userAccountRVWithAckBtn = (RecyclerView) findViewById(R.id.userAccount_ack_RV);
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 
         userAccountRVWithAckBtn.setLayoutManager(layoutManager);

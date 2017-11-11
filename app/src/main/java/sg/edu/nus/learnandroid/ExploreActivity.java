@@ -20,6 +20,10 @@ import android.widget.TextView;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareDialog;
 
+/**
+ * Created by Yongxue
+ */
+
 public class ExploreActivity extends AppCompatActivity {
 
     private ShareDialog shareDialog;

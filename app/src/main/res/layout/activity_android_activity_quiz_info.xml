@@ -18,7 +18,7 @@
             android:id="@+id/android_activity_quiz_info_title_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fragment_quiz_info_title_TV"
+            android:text="@string/android_activity_quiz_info_title_TV"
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/android_activity_quiz_info_title_TV"
-            android:text="@string/fragment_quiz_info_questionNum_TV"
+            android:text="@string/android_activity_quiz_info_questionNum_TV"
             android:textSize="14sp"
             app:layout_marginStartPercent="4%"
             app:layout_marginTopPercent="1.5%" />

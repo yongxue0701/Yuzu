@@ -77,7 +77,7 @@ public class CourseUserInterfaceActivity extends AppCompatActivity {
         uiOnClickIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), UserInterfaceOnClickActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), UserInterfaceQuizInfoActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
