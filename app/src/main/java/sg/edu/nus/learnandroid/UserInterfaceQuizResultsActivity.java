@@ -39,7 +39,7 @@ public class UserInterfaceQuizResultsActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), StaticFragmentQuizInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), CourseUserInterfaceActivity.class);
                 startActivity(myIntent);
             }
         });

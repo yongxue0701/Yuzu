@@ -40,7 +40,7 @@ public class AndroidActivityQuizResultsActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), AndroidActivityQuizInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), AndroidActivityInfoActivity.class);
                 startActivity(myIntent);
             }
         });

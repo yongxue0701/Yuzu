@@ -39,7 +39,7 @@ public class DynamicFragmentQuizResultsActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentQuizInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
                 startActivity(myIntent);
             }
         });

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/bottom_navigation_border"
         app:itemBackground="@color/colorWhite"
         app:itemIconTint="@color/bottom_navigation_bar_background"
         app:itemTextColor="@color/bottom_navigation_bar_background"
@@ -26,7 +26,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:background="?attr/selectableItemBackground"
-        android:src="@drawable/ic_map_pin_dark_grey_1"
+        android:src="@drawable/ic_map_pin_red_1"
         app:layout_marginEndPercent="45%"
         app:layout_marginTopPercent="19%" />
 

@@ -39,7 +39,7 @@ public class FragmentConceptQuizResultsActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptQuizInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), FragmentConceptInfoActivity.class);
                 startActivity(myIntent);
             }
         });

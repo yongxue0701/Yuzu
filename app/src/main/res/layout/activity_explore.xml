@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSuperLightGrey"
+    android:background="@color/colorWhite"
     tools:context="sg.edu.nus.learnandroid.ExploreActivity"
     tools:ignore="ContentDescription">
 
@@ -13,11 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/bottom_navigation_border"
         app:itemBackground="@color/colorWhite"
         app:itemIconTint="@color/bottom_navigation_bar_background"
         app:itemTextColor="@color/bottom_navigation_bar_background"
         app:menu="@menu/bottom_navigation_menu_item" />
+
+    <ImageView
+        android:id="@+id/explore_loading_anim"
+        android:layout_centerHorizontal="true"
+        app:layout_heightPercent="20%"
+        app:layout_marginTopPercent="35%"
+        app:layout_widthPercent="30%" />
 
     <WebView
         android:id="@+id/explore_webview"
@@ -27,6 +34,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="80dp"
         android:background="@color/colorWhite"
+        android:visibility="invisible"
         app:layout_marginTopPercent="2%" />
 
 </android.support.percent.PercentRelativeLayout>

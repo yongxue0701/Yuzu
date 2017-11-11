@@ -1,15 +1,30 @@
 
-#share_to_fb,
+#share_to_fb{
+    border: none;
+    background-color: #00897B;
+    color: white;
+    padding: 15px 28px;
+    font-size:16px;
+    float: left;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    position:relative;
+    margin-top: -2%;
+    width: 30%;
+}
+
 #join_fb_group{
     border: none;
     background-color: #00897B;
     color: white;
     padding: 15px 28px;
-    text-align: center;
     font-size:16px;
+    text-align: center;
+    float: right;
     display: inline-block;
     border-radius: 10px;
     position:relative;
     margin-top: -2%;
-    width: 45%;
+    width: 30%;
 }

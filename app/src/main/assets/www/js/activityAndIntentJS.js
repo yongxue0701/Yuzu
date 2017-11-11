@@ -73,9 +73,9 @@ function displayResult_android_activity() {
     }
 
     if (points == 1 || points == 0) {
-        document.getElementById("quiz_results").innerHTML = "Your Score: " + points + " point";
+        document.getElementById("quiz_results").innerHTML = "Your Score: " + points + "/5 point";
     } else if (points > 1) {
-        document.getElementById("quiz_results").innerHTML = "Your Score: " + points + " points";
+        document.getElementById("quiz_results").innerHTML = "Your Score: " + points + "/5 points";
     }
 
     for(var i = 1;i <= correctAns.length; i++) {

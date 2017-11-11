@@ -1,8 +1,10 @@
 package sg.edu.nus.learnandroid;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.share.model.ShareLinkContent;
@@ -29,11 +32,26 @@ public class ExploreActivity extends AppCompatActivity {
     private ShareDialog shareDialog;
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationMenuView bottomNavigationMenuView;
+    private ImageView loadingAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explore);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                WebView exploreWebView = (WebView) findViewById(R.id.explore_webview);
+                exploreWebView.setVisibility(View.VISIBLE);
+            }
+        }, 2000);
+
+        loadingAnim = (ImageView) findViewById(R.id.explore_loading_anim);
+        loadingAnim.setBackgroundResource(R.drawable.spinning_globe_grey);
+        AnimationDrawable frameAnimation = (AnimationDrawable) loadingAnim.getBackground();
+        frameAnimation.start();
 
         shareDialog = new ShareDialog(this);  // intialize facebook shareDialog.
 

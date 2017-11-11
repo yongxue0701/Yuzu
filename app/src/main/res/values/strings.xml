@@ -83,16 +83,17 @@
     <string name="fragment_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
     <string name="static_fragment_quiz_info_questionNum_TV">2 questions, 1 point per question</string>
     <string name="dynamic_fragment_quiz_info_questionNum_TV">3 questions, 1 point per question</string>
-    <string name="ui_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
+    <string name="ui_quiz_info_questionNum_TV">4 questions, 1 point per question</string>
     <string name="android_activity_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
 
     <string name="quiz_info_score_label_TV">Your Score</string>
     <string name="quiz_info_attempts_label_TV">Attempts</string>
     <string name="quiz_info_attempts_content_TV">Multiple</string>
     <string name="quiz_info_submitbtn_start">Start</string>
-    <string name="ui_quiz_info_to_pass_label_TV">To Pass</string>
+    <string name="quiz_info_to_pass_label_TV">To Pass</string>
 
-    <string name="ui_quiz_info_to_pass_content_TV">100% answered correctly</string>
+    <string name="ui_quiz_info_to_pass_content_TV">100%</string>
+    <string name="dynamic_fragment_quiz_info_to_pass_content_TV">100%</string>
 
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
