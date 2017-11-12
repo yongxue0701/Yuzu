@@ -12,12 +12,12 @@ import android.widget.TextView;
  * Created by Yongxue
  */
 
-public class IntentIntroActivity extends AppCompatActivity {
+public class SharedPrefIntroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intent_intro);
+        setContentView(R.layout.activity_shared_pref_intro);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);

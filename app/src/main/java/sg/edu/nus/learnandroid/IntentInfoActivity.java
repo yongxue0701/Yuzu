@@ -24,7 +24,7 @@ import java.util.List;
 
 public class IntentInfoActivity extends AppCompatActivity {
 
-    private IntentActivityInfoRVAdapter adapter;
+    private IntentInfoRVAdapter adapter;
     private RecyclerView intentInfoRV;
     private LinearLayoutManager layoutManager;
     private ImageView loadingAnim;
@@ -79,7 +79,7 @@ public class IntentInfoActivity extends AppCompatActivity {
         intentButtonNames.add("Introduction of Intent");
         intentButtonNames.add("Quiz");
 
-        adapter = new IntentActivityInfoRVAdapter(intentButtonNames, this, this);
+        adapter = new IntentInfoRVAdapter(intentButtonNames, this, this);
         intentInfoRV = (RecyclerView) findViewById(R.id.intent_info_RV);
         intentInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);

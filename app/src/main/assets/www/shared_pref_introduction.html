@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/passingDataCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Introduction of Shared Preferences</h2>
+
+        <p>
+            SharedPreferences is a simple way to read and write simple key-value pairs of data to
+            storage. If we go deep into understanding of word: shared means to distribute data
+            within and preference means something important or preferable, so SharedPreferences
+            data is shared and preferred data.<br/>
+            Shared Preference can be used to save primitive data
+            type: string, long, int, float and Boolean.
+        </p>
+
+        <p>
+            <b>What Is Preference File?</b><br/>
+            Before we begin explaining shared preference, it is important to understand
+            preference file.<br/>
+            A preference file is actually a xml file saved in internal memory of device.
+            Every application have some data stored in memory in a directory data/data/application
+            package name so whenever getSharedPreferences(String name,int mode) function
+            get called it validates the file that if it exists or it doesn't exist, then
+            a new xml is created with passed name.
+        </p>
+    </body>
+</html>

@@ -22,28 +22,28 @@ import java.util.List;
  * Created by Yongxue
  */
 
-public class StaticFragmentInfoActivity extends AppCompatActivity {
+public class SharedPrefInfoActivity extends AppCompatActivity {
 
-    private StaticFragmentInfoRVAdapter adapter;
-    private RecyclerView staticFragmentInfoRV;
+    private SharedPrefInfoRVAdapter adapter;
+    private RecyclerView sharePrefInfoRV;
     private LinearLayoutManager layoutManager;
     private ImageView loadingAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_static_fragment_info);
+        setContentView(R.layout.activity_shared_pref_info);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ScrollView staticFragmentInfoSV = (ScrollView) findViewById(R.id.static_fragment_info_SV);
-                staticFragmentInfoSV.setVisibility(View.VISIBLE);
+                ScrollView sharedPrefInfoSV = (ScrollView) findViewById(R.id.shared_pref_info_SV);
+                sharedPrefInfoSV.setVisibility(View.VISIBLE);
             }
         }, 2000);
 
-        loadingAnim = (ImageView) findViewById(R.id.static_fragment_loading_anim);
+        loadingAnim = (ImageView) findViewById(R.id.shared_pref_loading_anim);
         loadingAnim.setBackgroundResource(R.drawable.spinning_globe_grey);
         AnimationDrawable frameAnimation = (AnimationDrawable) loadingAnim.getBackground();
         frameAnimation.start();
@@ -57,35 +57,35 @@ public class StaticFragmentInfoActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText(R.string.course_fragments);
+        actionBarTitleTV.setText(R.string.course_passing_data);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), CoursePassingData.class);
                 startActivity(myIntent);
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.static_fragment_info_webview);
+        WebView webView = (WebView) findViewById(R.id.shared_pref_info_webview);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/static_fragment_info.html");
+        webView.loadUrl("file:///android_asset/www/shared_pref_info.html");
 
         // Set up recycler view with account buttons
-        List<String> staticFragmentButtonNames = new ArrayList<>();
-        staticFragmentButtonNames.add("Introduction");
-        staticFragmentButtonNames.add("Example");
-        staticFragmentButtonNames.add("Quiz");
+        List<String> sharedPrefButtonNames = new ArrayList<>();
+        sharedPrefButtonNames.add("Introduction");
+        sharedPrefButtonNames.add("Example");
+        sharedPrefButtonNames.add("Quiz");
 
-        adapter = new StaticFragmentInfoRVAdapter(staticFragmentButtonNames, this, this);
-        staticFragmentInfoRV = (RecyclerView) findViewById(R.id.static_fragment_info_RV);
-        staticFragmentInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
+        adapter = new SharedPrefInfoRVAdapter(sharedPrefButtonNames, this, this);
+        sharePrefInfoRV = (RecyclerView) findViewById(R.id.shared_pref_info_RV);
+        sharePrefInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 
-        staticFragmentInfoRV.setLayoutManager(layoutManager);
-        staticFragmentInfoRV.setAdapter(adapter);
-        staticFragmentInfoRV.setHasFixedSize(true);
+        sharePrefInfoRV.setLayoutManager(layoutManager);
+        sharePrefInfoRV.setAdapter(adapter);
+        sharePrefInfoRV.setHasFixedSize(true);
     }
 }

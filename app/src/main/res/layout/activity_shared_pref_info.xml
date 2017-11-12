@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sg.edu.nus.learnandroid.FragmentConceptInfoActivity">
+    tools:context="sg.edu.nus.learnandroid.SharedPrefInfoActivity">
 
     <ImageView
-        android:id="@+id/static_fragment_loading_anim"
+        android:id="@+id/shared_pref_loading_anim"
         android:layout_centerHorizontal="true"
         app:layout_heightPercent="20%"
         app:layout_marginTopPercent="35%"
         app:layout_widthPercent="30%" />
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/static_fragment_info_SV"
+        android:id="@+id/shared_pref_info_SV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorSuperLightGrey"
@@ -26,7 +26,7 @@
             android:layout_height="match_parent">
 
             <WebView
-                android:id="@+id/static_fragment_info_webview"
+                android:id="@+id/shared_pref_info_webview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -35,9 +35,9 @@
                 app:layout_marginTopPercent="2.5%" />
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/static_fragment_info_RV"
+                android:id="@+id/shared_pref_info_RV"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/static_fragment_info_webview"
+                android:layout_below="@id/shared_pref_info_webview"
                 android:layout_centerHorizontal="true"
                 android:background="@color/colorWhite"
                 android:paddingLeft="10dp"

@@ -6,8 +6,8 @@ p{
 
 #android_activity_info_title,
 #android_activity_info_content,
-#fragments_info_title,
-#fragments_info_content{
+#intent_info_title,
+#intent_info_content{
     text-align: justify;
     line-height: 200%;
     margin:20px;

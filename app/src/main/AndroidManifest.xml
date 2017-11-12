@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_android_logo"
+        android:icon="@mipmap/ic_launcher_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_android_logo"
+        android:roundIcon="@mipmap/ic_launcher_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -99,6 +99,12 @@
         <activity android:name=".IntentQuizInfoActivity" />
         <activity android:name=".IntentQuizActivity" />
         <activity android:name=".IntentQuizResultsActivity" />
+        <activity android:name=".CoursePassingData" />
+        <activity android:name=".BroadcastInfoActivity" />
+        <activity android:name=".SharedPrefInfoActivity" />
+        <activity android:name=".SharedPrefIntroActivity" />
+        <activity android:name=".SharedPrefQuizInfoActivity" />
+        <activity android:name=".SharedPrefExampleActivity"></activity>
     </application>
 
 </manifest>
