@@ -83,19 +83,6 @@ public class SharedPrefInfoRVAdapter extends RecyclerView.Adapter<SharedPrefInfo
 
             viewHolder.buttonIconIV.setImageResource(R.drawable.example);
         }
-
-        if (buttonName.equals("Quiz")) {
-            viewHolder.buttonPRL.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent editProfileIntent = new Intent(view.getContext(), SharedPrefQuizInfoActivity.class);
-                    context.startActivity(editProfileIntent);
-                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-                }
-            });
-
-            viewHolder.buttonIconIV.setImageResource(R.drawable.quiz);
-        }
     }
 
     @Override

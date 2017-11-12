@@ -41,6 +41,7 @@ public class RegisterActivity extends Activity {
     private int androidActivityQuizPts;
     private int userInterfaceQuizPts;
     private int intentQuizPts;
+    private int broadcastQuizPts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +86,7 @@ public class RegisterActivity extends Activity {
                 androidActivityQuizPts = 0;
                 userInterfaceQuizPts = 0;
                 intentQuizPts = 0;
+                broadcastQuizPts = 0;
 
                 genderRG = findViewById(R.id.register_gender_RG);
 
@@ -121,7 +123,7 @@ public class RegisterActivity extends Activity {
                     userAccountDB.open();
                     userAccountDB.insertRecord(username, pwd, email, gender, isLogin, newUser, uiCoursePassed,
                             String.valueOf(points), String.valueOf(userInterfaceQuizPts), String.valueOf(androidActivityQuizPts),
-                            String.valueOf(intentQuizPts), String.valueOf(fragmentConceptQuizPts),
+                            String.valueOf(intentQuizPts), String.valueOf(broadcastQuizPts), String.valueOf(fragmentConceptQuizPts),
                             String.valueOf(staticFragmentQuizPts), String.valueOf(dynamicFragmentQuizPts));
                     userAccountDB.close();
 

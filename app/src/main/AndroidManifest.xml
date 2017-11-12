@@ -103,8 +103,10 @@
         <activity android:name=".BroadcastInfoActivity" />
         <activity android:name=".SharedPrefInfoActivity" />
         <activity android:name=".SharedPrefIntroActivity" />
-        <activity android:name=".SharedPrefQuizInfoActivity" />
-        <activity android:name=".SharedPrefExampleActivity"></activity>
+        <activity android:name=".BroadcastQuizInfoActivity" />
+        <activity android:name=".SharedPrefExampleActivity" />
+        <activity android:name=".BroadcastQuizActivity" />
+        <activity android:name=".BroadcastQuizResultsActivity"></activity>
     </application>
 
 </manifest>

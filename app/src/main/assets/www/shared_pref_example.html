@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/passingDataCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Example of Shared Preferences</h2>
+
+        <div>
+            <h3>Write to Shared Preferences</h3>
+            <p>
+                To write to a shared preferences file, create a SharedPreferences.
+                Editor by calling edit() on your SharedPreferences. Pass the keys and values
+                you want to write with methods such as putInt() and putString().
+                Then call commit() to save the changes. <b>For example:</b><br/>
+            </p>
+            <p id="first_code">
+                public static final String NAME1 = "name1";<br/>
+                SharedPreferences.Editor editor = getSharedPreferences(NAME1, MODE_PRIVATE).edit();<br/><br/>
+
+                editor.putString("School", "NUS");<br/>
+                editor.commit();<br/>
+            </p>
+        </div>
+
+        <div>
+            <h3>Write to Shared Preferences</h3>
+            <p>
+                To retrieve values from a shared preferences file, call methods such as getInt()
+                and getString(), providing the key for the value you want, and optionally
+                a default value to return if the key isn't present. <b>For example:</b><br/>
+            </p>
+            <p id="second_code">
+                SharedPreferences prefs = getSharedPreferences(NAME1, <br/>
+                MODE_PRIVATE);<br/><br/>
+
+                String text = prefs.getString("School", null);<br/>
+                if ( text != null) {<br/>
+                &emsp;&emsp;String school = prefs<br/>
+                &emsp;&emsp;.getString("School", "default");<br/>
+                }
+            </p>
+        </div>
+    </body>
+</html>

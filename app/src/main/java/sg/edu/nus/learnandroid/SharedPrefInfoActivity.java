@@ -77,7 +77,6 @@ public class SharedPrefInfoActivity extends AppCompatActivity {
         List<String> sharedPrefButtonNames = new ArrayList<>();
         sharedPrefButtonNames.add("Introduction");
         sharedPrefButtonNames.add("Example");
-        sharedPrefButtonNames.add("Quiz");
 
         adapter = new SharedPrefInfoRVAdapter(sharedPrefButtonNames, this, this);
         sharePrefInfoRV = (RecyclerView) findViewById(R.id.shared_pref_info_RV);
