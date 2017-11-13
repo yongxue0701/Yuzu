@@ -43,6 +43,7 @@
                     android:inputType="text"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite"
+                    app:layout_marginEndPercent="4%"
                     app:layout_marginStartPercent="4%" />
 
             </android.support.percent.PercentRelativeLayout>
@@ -74,6 +75,7 @@
                     android:inputType="textPassword"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite"
+                    app:layout_marginEndPercent="4%"
                     app:layout_marginStartPercent="4%" />
 
             </android.support.percent.PercentRelativeLayout>

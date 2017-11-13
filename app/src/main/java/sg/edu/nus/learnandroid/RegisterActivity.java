@@ -127,6 +127,9 @@ public class RegisterActivity extends Activity {
                     Toast.makeText(getApplicationContext(), "The username is occupied!", Toast.LENGTH_SHORT).show();
                     allDone = false;
                 }
+                if (pwd.length() < 8) {
+                    pwdET.setError("You must have 8 characters in your password");
+                }
 
                 if (allDone) {
                     userAccountDB.open();

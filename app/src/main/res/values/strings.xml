@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidMaster</string>
+    <string name="app_name">Android Master</string>
     <string name="login_username_ET"><font size="18">Username</font></string>
     <string name="login_pwd_ET"><font size="18">Password</font></string>
     <string name="login_login_btn">Login</string>
