@@ -42,7 +42,6 @@ public class ProfileEditActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_profile_edit);
 
         userAccountDB = new UserAccountDB(this);
@@ -138,6 +137,7 @@ public class ProfileEditActivity extends AppCompatActivity {
 
                 Intent myIntent = new Intent(getApplicationContext(), UserAccountActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
     }
@@ -175,6 +175,7 @@ public class ProfileEditActivity extends AppCompatActivity {
                 discardChanges();
                 Intent myIntent = new Intent(getApplicationContext(), UserAccountActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
     }

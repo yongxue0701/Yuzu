@@ -85,7 +85,7 @@ public class ExploreActivity extends AppCompatActivity {
                     case R.id.navigation_title_course:
                         myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
                         startActivity(myIntent);
-                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
 
                         break;
                 }

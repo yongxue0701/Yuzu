@@ -41,7 +41,6 @@ public class UserAccountActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_user_account);
 
         userAccountDB = new UserAccountDB(this);
@@ -84,13 +83,13 @@ public class UserAccountActivity extends AppCompatActivity {
                     case R.id.navigation_title_course:
                         myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
                         startActivity(myIntent);
-                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
 
                         break;
                     case R.id.navigation_title_explore:
                         myIntent = new Intent(getApplicationContext(), ExploreActivity.class);
                         startActivity(myIntent);
-                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
 
                         break;
                 }
