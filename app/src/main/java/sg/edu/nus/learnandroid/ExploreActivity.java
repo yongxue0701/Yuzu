@@ -114,6 +114,11 @@ public class ExploreActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/explore.html");
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
     public class JavaScriptInterface {
 
         private ExploreActivity parentActivity;

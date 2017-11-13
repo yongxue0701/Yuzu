@@ -89,4 +89,10 @@ public class IntentInfoActivity extends AppCompatActivity {
         intentInfoRV.setAdapter(adapter);
         intentInfoRV.setHasFixedSize(true);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseIntentActivity.class);
+        startActivity(myIntent);
+    }
 }

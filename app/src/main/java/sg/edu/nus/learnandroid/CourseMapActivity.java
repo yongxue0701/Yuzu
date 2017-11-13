@@ -161,6 +161,11 @@ public class CourseMapActivity extends AppCompatActivity {
 //        }
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
     private void initiateBeginnerTipOneDialog() {
 
         final Dialog dialog = new Dialog(CourseMapActivity.this, R.style.Theme_Dialog_Cancel_Btn);

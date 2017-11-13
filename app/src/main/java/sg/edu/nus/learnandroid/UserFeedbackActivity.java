@@ -55,7 +55,7 @@ public class UserFeedbackActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initiateCancelDialog(view);
+                initiateCancelDialog();
             }
         });
 
@@ -68,7 +68,12 @@ public class UserFeedbackActivity extends AppCompatActivity {
         });
     }
 
-    private void initiateCancelDialog(View view) {
+    @Override
+    public void onBackPressed() {
+        initiateCancelDialog();
+    }
+
+    private void initiateCancelDialog() {
 
         final Dialog dialog = new Dialog(UserFeedbackActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

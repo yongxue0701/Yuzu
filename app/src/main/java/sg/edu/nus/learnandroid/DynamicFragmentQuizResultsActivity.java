@@ -55,6 +55,12 @@ public class DynamicFragmentQuizResultsActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/dynamic_fragment_quiz_result.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
+        startActivity(myIntent);
+    }
+
     public class JavaScriptInterface {
 
         private DynamicFragmentQuizResultsActivity parentActivity;

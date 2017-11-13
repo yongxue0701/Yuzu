@@ -53,7 +53,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initiateDialog(view);
+                initiateDialog();
             }
         });
 
@@ -66,7 +66,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
         });
     }
 
-    private void initiateDialog(View view) {
+    @Override
+    public void onBackPressed() {
+        initiateDialog();
+    }
+
+    private void initiateDialog() {
 
         final Dialog dialog = new Dialog(ChangePasswordActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

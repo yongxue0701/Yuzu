@@ -72,4 +72,10 @@ public class FragmentConceptQuizInfoActivity extends AppCompatActivity {
         mCursor.close();
         userAccountDB.close();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), FragmentConceptInfoActivity.class);
+        startActivity(myIntent);
+    }
 }

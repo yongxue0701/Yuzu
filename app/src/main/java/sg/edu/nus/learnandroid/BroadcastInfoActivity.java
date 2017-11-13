@@ -83,4 +83,10 @@ public class BroadcastInfoActivity extends AppCompatActivity {
         broadcastInfoRV.setAdapter(adapter);
         broadcastInfoRV.setHasFixedSize(true);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
+        startActivity(myIntent);
+    }
 }

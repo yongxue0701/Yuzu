@@ -88,4 +88,10 @@ public class DynamicFragmentInfoActivity extends AppCompatActivity {
         dynamicFragmentInfoRV.setAdapter(adapter);
         dynamicFragmentInfoRV.setHasFixedSize(true);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
+        startActivity(myIntent);
+    }
 }

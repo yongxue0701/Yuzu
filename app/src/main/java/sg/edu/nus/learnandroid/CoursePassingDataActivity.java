@@ -59,4 +59,11 @@ public class CoursePassingDataActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
+        startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+    }
 }

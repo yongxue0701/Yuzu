@@ -79,4 +79,10 @@ public class UserInterfaceQuizResultsActivity extends AppCompatActivity {
             return q1 + "," + q2 + "," + q3 + "," + q4;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseUserInterfaceActivity.class);
+        startActivity(myIntent);
+    }
 }

@@ -65,6 +65,11 @@ public class FragmentConceptQuizActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/fragment_concept_quiz.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        initiateCancelQuizDialog();
+    }
+
     public class JavaScriptInterface {
 
         private FragmentConceptQuizActivity parentActivity;

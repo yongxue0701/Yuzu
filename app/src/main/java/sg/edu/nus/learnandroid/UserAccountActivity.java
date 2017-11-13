@@ -165,4 +165,9 @@ public class UserAccountActivity extends AppCompatActivity {
         userAccountRVWithAckBtn.setAdapter(adapter);
         userAccountRVWithAckBtn.setHasFixedSize(true);
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

@@ -54,6 +54,12 @@ public class IntentQuizResultsActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/intent_quiz_result.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), IntentInfoActivity.class);
+        startActivity(myIntent);
+    }
+
     public class JavaScriptInterface {
 
         private IntentQuizResultsActivity parentActivity;

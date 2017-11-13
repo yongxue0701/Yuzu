@@ -72,4 +72,10 @@ public class StaticFragmentQuizInfoActivity extends AppCompatActivity {
         mCursor.close();
         userAccountDB.close();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), StaticFragmentInfoActivity.class);
+        startActivity(myIntent);
+    }
 }

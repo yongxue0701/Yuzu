@@ -72,4 +72,10 @@ public class UserInterfaceQuizInfoActivity extends AppCompatActivity {
         mCursor.close();
         userAccountDB.close();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseUserInterfaceActivity.class);
+        startActivity(myIntent);
+    }
 }

@@ -78,6 +78,13 @@ public class CourseFragmentActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
+        startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+    }
+
     // To center the title on action bar
     private void centerTitle() {
         ArrayList<View> textViews = new ArrayList<>();

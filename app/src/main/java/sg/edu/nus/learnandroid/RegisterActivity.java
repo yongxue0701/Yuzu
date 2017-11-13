@@ -137,10 +137,18 @@ public class RegisterActivity extends Activity {
         Button backBtn = findViewById(R.id.register_back_Btn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
     }
 
     private boolean checkUserDuplication(String username) {

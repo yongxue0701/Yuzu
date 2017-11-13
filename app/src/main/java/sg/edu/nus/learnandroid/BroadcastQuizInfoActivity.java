@@ -68,4 +68,10 @@ public class BroadcastQuizInfoActivity extends AppCompatActivity {
         mCursor.close();
         userAccountDB.close();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), BroadcastInfoActivity.class);
+        startActivity(myIntent);
+    }
 }

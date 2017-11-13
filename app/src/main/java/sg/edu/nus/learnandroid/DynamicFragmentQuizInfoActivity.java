@@ -72,4 +72,9 @@ public class DynamicFragmentQuizInfoActivity extends AppCompatActivity {
         mCursor.close();
         userAccountDB.close();
     }
+
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
+        startActivity(myIntent);
+    }
 }

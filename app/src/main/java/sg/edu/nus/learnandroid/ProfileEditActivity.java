@@ -62,7 +62,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initiateDialog(view);
+                initiateDialog();
             }
         });
 
@@ -142,7 +142,12 @@ public class ProfileEditActivity extends AppCompatActivity {
         });
     }
 
-    private void initiateDialog(View view) {
+    @Override
+    public void onBackPressed() {
+        initiateDialog();
+    }
+
+    private void initiateDialog() {
 
         final Dialog dialog = new Dialog(ProfileEditActivity.this, R.style.Theme_Dialog_Cancel_Btn);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -168,7 +173,7 @@ public class ProfileEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 discardChanges();
-                Intent myIntent = new Intent(getApplicationContext(),UserAccountActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), UserAccountActivity.class);
                 startActivity(myIntent);
             }
         });

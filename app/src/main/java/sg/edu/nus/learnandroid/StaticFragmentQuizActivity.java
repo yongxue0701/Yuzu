@@ -66,6 +66,11 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/static_fragment_quiz.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        initiateCancelQuizDialog();
+    }
+
     public class JavaScriptInterface {
 
         private StaticFragmentQuizActivity parentActivity;

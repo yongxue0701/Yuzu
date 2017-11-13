@@ -54,6 +54,12 @@ public class FragmentConceptQuizResultsActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/fragment_concept_quiz_result.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), FragmentConceptInfoActivity.class);
+        startActivity(myIntent);
+    }
+
     public class JavaScriptInterface {
 
         private FragmentConceptQuizResultsActivity parentActivity;

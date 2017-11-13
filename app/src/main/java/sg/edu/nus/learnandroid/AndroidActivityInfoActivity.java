@@ -65,6 +65,7 @@ public class AndroidActivityInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), CourseIntentActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
 
@@ -87,5 +88,12 @@ public class AndroidActivityInfoActivity extends AppCompatActivity {
         androidActivityInfoRV.setLayoutManager(layoutManager);
         androidActivityInfoRV.setAdapter(adapter);
         androidActivityInfoRV.setHasFixedSize(true);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseIntentActivity.class);
+        startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
     }
 }

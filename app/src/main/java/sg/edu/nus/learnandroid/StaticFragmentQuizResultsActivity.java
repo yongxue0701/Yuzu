@@ -55,6 +55,12 @@ public class StaticFragmentQuizResultsActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/static_fragment_quiz_result.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), StaticFragmentInfoActivity.class);
+        startActivity(myIntent);
+    }
+
     public class JavaScriptInterface {
 
         private StaticFragmentQuizResultsActivity parentActivity;

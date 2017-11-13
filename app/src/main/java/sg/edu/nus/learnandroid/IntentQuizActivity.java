@@ -65,6 +65,11 @@ public class IntentQuizActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/intent_quiz.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        initiateCancelQuizDialog();
+    }
+
     public class JavaScriptInterface {
 
         private IntentQuizActivity parentActivity;

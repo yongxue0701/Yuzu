@@ -65,6 +65,11 @@ public class BroadcastQuizActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/www/broadcast_quiz.html");
     }
 
+    @Override
+    public void onBackPressed() {
+        initiateCancelQuizDialog();
+    }
+
     public class JavaScriptInterface {
 
         private BroadcastQuizActivity parentActivity;

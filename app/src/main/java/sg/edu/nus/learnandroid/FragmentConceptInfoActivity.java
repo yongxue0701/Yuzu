@@ -89,4 +89,10 @@ public class FragmentConceptInfoActivity extends AppCompatActivity {
         fragmentInfoRV.setAdapter(adapter);
         fragmentInfoRV.setHasFixedSize(true);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
+        startActivity(myIntent);
+    }
 }

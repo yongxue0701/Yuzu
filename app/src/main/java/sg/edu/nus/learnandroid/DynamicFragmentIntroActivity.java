@@ -1,5 +1,6 @@
 package sg.edu.nus.learnandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -34,7 +35,8 @@ public class DynamicFragmentIntroActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
+                startActivity(myIntent);
             }
         });
 
@@ -42,5 +44,11 @@ public class DynamicFragmentIntroActivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/dynamic_fragment_introduction.html");
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
+        startActivity(myIntent);
     }
 }
