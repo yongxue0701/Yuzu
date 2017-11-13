@@ -39,6 +39,7 @@ public class DynamicFragmentQuizInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
 
@@ -76,5 +77,6 @@ public class DynamicFragmentQuizInfoActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent myIntent = new Intent(getApplicationContext(), DynamicFragmentInfoActivity.class);
         startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }

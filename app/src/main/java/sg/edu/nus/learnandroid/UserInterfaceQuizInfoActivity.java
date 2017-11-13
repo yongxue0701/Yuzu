@@ -39,6 +39,7 @@ public class UserInterfaceQuizInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), CourseUserInterfaceActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
 
@@ -49,6 +50,7 @@ public class UserInterfaceQuizInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), UserInterfaceQuizActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
 
@@ -77,5 +79,6 @@ public class UserInterfaceQuizInfoActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent myIntent = new Intent(getApplicationContext(), CourseUserInterfaceActivity.class);
         startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }

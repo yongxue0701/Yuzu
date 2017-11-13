@@ -37,7 +37,6 @@ public class AndroidActivityLifeCycleActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), AndroidActivityInfoActivity.class);
                 startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
 
@@ -51,6 +50,5 @@ public class AndroidActivityLifeCycleActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent myIntent = new Intent(getApplicationContext(), AndroidActivityInfoActivity.class);
         startActivity(myIntent);
-        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
     }
 }

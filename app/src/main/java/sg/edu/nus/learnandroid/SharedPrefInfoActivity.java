@@ -65,7 +65,7 @@ public class SharedPrefInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
                 startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
 
@@ -93,6 +93,6 @@ public class SharedPrefInfoActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
         startActivity(myIntent);
-        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }
