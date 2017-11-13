@@ -204,8 +204,9 @@ public class UserInterfaceQuizActivity extends AppCompatActivity {
         }
 
         if (uiCoursePassedFromDB == 0) {
-            if (points == 4) {
-                userAccountDB.updateUICoursePassedByIsLogin(1, 1);
+            if (points >= 3) {
+                uiCoursePassedFromDB = uiCoursePassedFromDB + 1;
+                userAccountDB.updateUICoursePassedByIsLogin(1, uiCoursePassedFromDB);
             }
         }
 

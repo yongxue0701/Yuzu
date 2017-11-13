@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:src="@drawable/ic_map_pin_red_1"
+        android:src="@drawable/ic_map_pin_grey_1"
         app:layout_marginStartPercent="29%"
         app:layout_marginTopPercent="29%" />
 
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:src="@drawable/ic_map_pin_red_1"
+        android:src="@drawable/ic_map_pin_grey_1"
         app:layout_marginStartPercent="30%"
         app:layout_marginTopPercent="51%" />
 
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:src="@drawable/ic_map_pin_red_1"
+        android:src="@drawable/ic_map_pin_grey_1"
         app:layout_marginStartPercent="49%"
         app:layout_marginTopPercent="53%" />
 

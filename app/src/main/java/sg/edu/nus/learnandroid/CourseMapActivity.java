@@ -30,8 +30,12 @@ public class CourseMapActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationMenuView bottomNavigationMenuView;
+    private ImageView mapPinTwoIV;
+    private ImageView mapPinThreeIV;
+    private ImageView mapPinFourIV;
 
     UserAccountDB userAccountDB;
+    int uiCoursePassedFromDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +45,6 @@ public class CourseMapActivity extends AppCompatActivity {
         userAccountDB = new UserAccountDB(this);
         userAccountDB.open();
         Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
-
-        int uiCoursePassedFromDB = -1;
 
         if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
             do {
@@ -116,17 +118,22 @@ public class CourseMapActivity extends AppCompatActivity {
             }
         });
 
-        ImageView mapPinTwoIV = (ImageView) findViewById(R.id.course_map_pin_2_IV);
+        mapPinTwoIV = (ImageView) findViewById(R.id.course_map_pin_2_IV);
         mapPinTwoIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CourseIntentActivity.class);
-                startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+                if (uiCoursePassedFromDB == 1) {
+                    Intent myIntent = new Intent(getApplicationContext(), CourseIntentActivity.class);
+                    startActivity(myIntent);
+                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else if (uiCoursePassedFromDB == 0) {
+                    initiateLockedCourseDialog();
+                }
             }
         });
 
-        ImageView mapPinThreeIV = (ImageView) findViewById(R.id.course_map_pin_3_IV);
+        mapPinThreeIV = (ImageView) findViewById(R.id.course_map_pin_3_IV);
         mapPinThreeIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,7 +143,7 @@ public class CourseMapActivity extends AppCompatActivity {
             }
         });
 
-        ImageView mapPinFourIV = (ImageView) findViewById(R.id.course_map_pin_4_IV);
+        mapPinFourIV = (ImageView) findViewById(R.id.course_map_pin_4_IV);
         mapPinFourIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -146,23 +153,42 @@ public class CourseMapActivity extends AppCompatActivity {
             }
         });
 
-//        if (uiCoursePassedFromDB == 1) {
-//            ImageView mapPinTwoIV = (ImageView) findViewById(R.id.course_map_pin_2_IV);
-//            mapPinTwoIV.setImageResource(R.drawable.ic_map_pin_red_1);
-//            mapPinTwoIV.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent myIntent = new Intent(getApplicationContext(), CourseIntentActivity.class);
-//                    startActivity(myIntent);
-//                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-//                }
-//            });
-//        }
+        if (uiCoursePassedFromDB == 1) {
+            mapPinTwoIV.setImageResource(R.drawable.ic_map_pin_red_1);
+        }
     }
 
     @Override
     public void onBackPressed() {
 
+    }
+
+    private void initiateLockedCourseDialog() {
+
+        final Dialog dialog = new Dialog(CourseMapActivity.this, R.style.Theme_Dialog_Cancel_Btn);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.beginner_tips_popup);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER_VERTICAL);
+        dialogWindow.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogWindow.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+
+        WebView webView = (WebView) dialogWindow.findViewById(R.id.beginner_tips_content_webview);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/www/locked_course.html");
+
+        ImageView nextIV = (ImageView) dialogWindow.findViewById(R.id.beginner_tips_arrow_to_right_IV);
+        nextIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
     private void initiateBeginnerTipOneDialog() {

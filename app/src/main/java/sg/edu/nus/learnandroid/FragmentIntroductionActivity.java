@@ -23,20 +23,21 @@ public class FragmentIntroductionActivity extends AppCompatActivity {
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_with_crossbtn);
+        getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
 
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();
 
-        TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
+        TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
         actionBarTitleTV.setText(R.string.course_fragments);
 
-        ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
+        ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), FragmentConceptInfoActivity.class);
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
 
@@ -50,5 +51,6 @@ public class FragmentIntroductionActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent myIntent = new Intent(getApplicationContext(), FragmentConceptInfoActivity.class);
         startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }

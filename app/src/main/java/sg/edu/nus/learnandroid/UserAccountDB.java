@@ -8,10 +8,13 @@ import android.database.sqlite.SQLiteDatabase;
 
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.androidActivityQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.broadcastQuizPts;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.dataPassingCoursePassed;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.dynamicFragmentQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.email;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.fragmentConceptQuizPts;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.fragmentCoursePassed;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.gender;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.intentCoursePassed;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.intentQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.isLogin;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.newUser;
@@ -48,7 +51,8 @@ public class UserAccountDB {
     }
 
     public void insertRecord(String _username, String _password, String _email,
-                             String _gender, boolean _isLogin, boolean _newUser, boolean _uiCoursePassed,
+                             String _gender, boolean _isLogin, boolean _newUser, int _uiCoursePassed,
+                             int _intentCoursePassed, int _dataPassingCoursePassed, int _fragmentCoursePassed,
                              String _points, String _fragmentConceptQuizPts, String _staticFragmentQuizPts,
                              String _dynamicFragmentQuizPts, String _androidActivityQuizPts,
                              String _userInterfaceQuizPts, String _intentQuizPts, String _broadcastQuizPts) {
@@ -61,6 +65,9 @@ public class UserAccountDB {
         initialValues.put(isLogin, _isLogin);
         initialValues.put(newUser, _newUser);
         initialValues.put(uiCoursePassed, _uiCoursePassed);
+        initialValues.put(intentCoursePassed, _intentCoursePassed);
+        initialValues.put(dataPassingCoursePassed, _dataPassingCoursePassed);
+        initialValues.put(fragmentCoursePassed, _fragmentCoursePassed);
         initialValues.put(points, _points);
         initialValues.put(userInterfaceQuizPts, _userInterfaceQuizPts);
         initialValues.put(androidActivityQuizPts, _androidActivityQuizPts);
@@ -92,6 +99,9 @@ public class UserAccountDB {
                         isLogin,
                         newUser,
                         uiCoursePassed,
+                        intentCoursePassed,
+                        dataPassingCoursePassed,
+                        fragmentCoursePassed,
                         points,
                         userInterfaceQuizPts,
                         androidActivityQuizPts,
@@ -133,6 +143,9 @@ public class UserAccountDB {
                         isLogin,
                         newUser,
                         uiCoursePassed,
+                        intentCoursePassed,
+                        dataPassingCoursePassed,
+                        fragmentCoursePassed,
                         points,
                         userInterfaceQuizPts,
                         androidActivityQuizPts,
@@ -251,6 +264,36 @@ public class UserAccountDB {
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(uiCoursePassed, _uiCoursePassed);
+
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
+
+    public void updateIntentCoursePassedByIsLogin(int _isLogin, int _intentCoursePassed) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(intentCoursePassed, _intentCoursePassed);
+
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
+
+    public void updateDataPassingCoursePassedByIsLogin(int _isLogin, int _dataPassingCoursePassed) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(dataPassingCoursePassed, _dataPassingCoursePassed);
+
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
+
+    public void updateFragmentCoursePassedByIsLogin(int _isLogin, int _fragmentCoursePassed) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(fragmentCoursePassed, _fragmentCoursePassed);
 
         db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);
