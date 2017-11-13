@@ -63,7 +63,7 @@ public class SharedPrefInfoActivity extends AppCompatActivity {
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CoursePassingData.class);
+                Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
                 startActivity(myIntent);
             }
         });

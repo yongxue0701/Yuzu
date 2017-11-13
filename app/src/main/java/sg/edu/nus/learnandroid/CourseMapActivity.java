@@ -131,7 +131,7 @@ public class CourseMapActivity extends AppCompatActivity {
         mapPinThreeIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CoursePassingData.class);
+                Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }

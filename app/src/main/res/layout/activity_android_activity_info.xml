@@ -17,11 +17,11 @@
         android:id="@+id/android_activity_info_SV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@color/colorSuperLightGrey"
         android:fillViewport="true"
-        android:visibility="invisible"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:visibility="invisible">
 
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"

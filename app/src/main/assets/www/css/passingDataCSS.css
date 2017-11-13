@@ -5,7 +5,9 @@ p{
 }
 
 #shared_pref_info_title,
-#shared_pref_info_content{
+#shared_pref_info_content,
+#broadcast_info_title,
+#broadcast_info_content{
     text-align: justify;
     line-height: 200%;
     margin:20px;

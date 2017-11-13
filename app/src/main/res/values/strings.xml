@@ -50,7 +50,7 @@
     <string name="terms_and_conditions"><font size="20">Terms and Conditions</font></string>
     <string name="privacy_policy"><font size="20">Privacy Policy</font></string>
     <string name="course_intent"><font size="20">Intent &amp; Activity</font></string>
-    <string name="course_passing_data"><font size="20">Passing Data</font></string>
+    <string name="course_passing_data"><font size="20">Data Passing</font></string>
 
     <string name="fragment_quiz_info_title_TV">Practice Questions on Fragments</string>
     <string name="static_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Statically</string>

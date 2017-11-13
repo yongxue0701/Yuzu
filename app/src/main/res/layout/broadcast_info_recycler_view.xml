@@ -8,26 +8,26 @@
     android:focusable="true">
 
     <android.support.percent.PercentRelativeLayout
-        android:id="@+id/intent_info_recyclerview_PRL"
+        android:id="@+id/broadcast_info_recyclerview_PRL"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="?attr/selectableItemBackground">
 
         <ImageView
-            android:id="@+id/intent_info_buttonIcon_IV"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@+id/broadcast_info_buttonIcon_IV"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_lesson_black_24dp"
             app:layout_marginEndPercent="6%"
             app:layout_marginStartPercent="4%" />
 
         <TextView
-            android:id="@+id/intent_info_buttonName_TV"
+            android:id="@+id/broadcast_info_buttonName_TV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/intent_info_buttonIcon_IV"
+            android:layout_toEndOf="@+id/broadcast_info_buttonIcon_IV"
             android:gravity="center"
             android:paddingBottom="18dp"
             android:paddingTop="18dp"
@@ -35,7 +35,7 @@
             android:textSize="17sp" />
 
         <ImageView
-            android:id="@+id/intent_arrow_IV"
+            android:id="@+id/broadcast_concept_arrow_IV"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:layout_alignParentEnd="true"

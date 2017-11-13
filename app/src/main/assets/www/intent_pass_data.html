@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fragmentsCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Intent - Pass Data from one Activity to another</h2>
+
+        <p>
+            <b>To switch to a new screen and also pass data over:</b>
+        </p>
+
+        <p id="first_code">
+            <b>Method 1:</b><br/>
+            myIntent = new Intent(this, Act3.class);<br/>
+            myIntent.putExtra("name", "xxx");<br/>
+            myIntent.putExtra("age", 21);<br/>
+            startActivity(myIntent);<br/>
+        </p>
+
+        <p id="second_code">
+            <b>Method 2:</b><br/>
+            myIntent = new Intent(this, Act3.class);<br/>
+            Bundle bundleObject = new Bundle();<br/>
+            bundleObject.putString("name", "xxx");<br/>
+            bundleObject.putInt("age", 21);<br/>
+            myIntent.putExtras(bundleObject);<br/>
+            startActivity(myIntent);<br/>
+        </p>
+
+        <p>
+            <b>Note:</b> In the child activity, use the following in onCreate method to
+            access the data passed to it from the parent activity:
+        </p>
+
+        <p id="third_code">
+            getIntent().getStringExtra("name");<br/>
+            getIntent().getIntExtra("age", 0)));
+        </p>
+
+        <p>
+            <b>To request child activity to pass data back to parent:</b>
+        </p>
+
+        <p id="fourth_code">
+            int requestCode = 1;<br/>
+            startActivityForResult(myIntent, requestCode);
+        </p>
+
+        <p>
+            <b>Note:</b> if we use startActivityForResult, need to define
+            onActivityResult to process the returned data:
+        </p>
+
+        <p id="fifth_code">
+            public void onActivityResult<br/>
+            (int requestCode, int resultCode, <br/>
+            Intent data) {<br/>
+            &emsp;&emsp;if (requestCode == 1) {<br/>
+            &emsp;&emsp;&emsp;&emsp;if (resultCode == RESULT_OK) {<br/>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;String name = data<br/>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;.getStringExtra("howAreYou");<br/>
+            &emsp;&emsp;&emsp;&emsp;}<br/>
+            &emsp;&emsp;}<br/>
+            }<br/>
+        </p>
+
+        <p>
+            <b>Note:</b> In the child activity, need to define the following to return
+            data to parent activity:
+        </p>
+
+        <p id="sixth_code">
+            Intent myIntent = new Intent();<br/>
+            myIntent.putExtra("howAreYou", "fine");<br/>
+            setResult(RESULT_OK, myIntent);<br/>
+            finish();<br/>
+        </p>
+    </body>
+</html>

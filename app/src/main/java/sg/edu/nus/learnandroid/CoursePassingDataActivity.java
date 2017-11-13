@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by Yongxue
  */
 
-public class CoursePassingData extends AppCompatActivity {
+public class CoursePassingDataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class CoursePassingData extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) view.findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText(R.string.course_intent);
+        actionBarTitleTV.setText(R.string.course_passing_data);
 
         ImageView backBtnIV = (ImageView) view.findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {

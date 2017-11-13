@@ -12,12 +12,12 @@ import android.widget.TextView;
  * Created by Yongxue
  */
 
-public class IntentIntroActivity extends AppCompatActivity {
+public class IntentPassDataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intent_intro);
+        setContentView(R.layout.activity_intent_pass_data);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -28,7 +28,7 @@ public class IntentIntroActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
-        actionBarTitleTV.setText(R.string.course_passing_data);
+        actionBarTitleTV.setText(R.string.course_intent);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
@@ -38,9 +38,9 @@ public class IntentIntroActivity extends AppCompatActivity {
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.intent_intro_webview);
+        WebView webView = (WebView) findViewById(R.id.intent_pass_data_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/intent_introduction.html");
+        webView.loadUrl("file:///android_asset/www/intent_pass_data.html");
     }
 }

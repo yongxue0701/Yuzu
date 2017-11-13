@@ -77,6 +77,7 @@ public class IntentInfoActivity extends AppCompatActivity {
         // Set up recycler view with account buttons
         List<String> intentButtonNames = new ArrayList<>();
         intentButtonNames.add("Introduction of Intent");
+        intentButtonNames.add("Data Passing");
         intentButtonNames.add("Quiz");
 
         adapter = new IntentInfoRVAdapter(intentButtonNames, this, this);

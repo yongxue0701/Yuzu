@@ -99,14 +99,16 @@
         <activity android:name=".IntentQuizInfoActivity" />
         <activity android:name=".IntentQuizActivity" />
         <activity android:name=".IntentQuizResultsActivity" />
-        <activity android:name=".CoursePassingData" />
+        <activity android:name=".CoursePassingDataActivity" />
         <activity android:name=".BroadcastInfoActivity" />
         <activity android:name=".SharedPrefInfoActivity" />
         <activity android:name=".SharedPrefIntroActivity" />
         <activity android:name=".BroadcastQuizInfoActivity" />
         <activity android:name=".SharedPrefExampleActivity" />
         <activity android:name=".BroadcastQuizActivity" />
-        <activity android:name=".BroadcastQuizResultsActivity"></activity>
+        <activity android:name=".BroadcastQuizResultsActivity" />
+        <activity android:name=".BroadcastIntroActivity" />
+        <activity android:name=".IntentPassDataActivity"></activity>
     </application>
 
 </manifest>
