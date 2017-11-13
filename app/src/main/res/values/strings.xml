@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">AndroidMaster</string>
-    <string name="login_username_ET">Username</string>
-    <string name="login_pwd_ET">Password</string>
+    <string name="login_username_ET"><font size="18">Username</font></string>
+    <string name="login_pwd_ET"><font size="18">Password</font></string>
     <string name="login_login_btn">Login</string>
     <string name="login_signUp_btn">Sign up</string>
     <string name="login_signUp_TV">Sign up</string>
     <string name="login_needHelp_TV">Need Help?</string>
     <string name="register_title_TV">Sign up</string>
-    <string name="register_username_ET">Username</string>
-    <string name="register_pwd_ET">Password</string>
-    <string name="register_confirmPwd_ET">Confirm Password</string>
-    <string name="register_email_ET">Email Address</string>
+    <string name="register_username_ET"><font size="18">Username</font></string>
+    <string name="register_pwd_ET"><font size="18">Password</font></string>
+    <string name="register_confirmPwd_ET"><font size="18">Confirm Password</font></string>
+    <string name="register_email_ET"><font size="18">Email Address</font></string>
     <string name="register_male_RB">Male</string>
     <string name="register_female_RB">Female</string>
     <string name="register_titleInRG_TV">Gender</string>

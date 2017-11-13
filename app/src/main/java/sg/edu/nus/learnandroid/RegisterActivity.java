@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -51,6 +52,8 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_register);
+
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         userAccountDB = new UserAccountDB(this);
 
@@ -146,7 +149,7 @@ public class RegisterActivity extends Activity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
     }

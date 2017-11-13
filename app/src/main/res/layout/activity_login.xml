@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorXiaoMiGreen"
     tools:context="sg.edu.nus.learnandroid.LoginActivity">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,33 +17,77 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/login_username_ET"
-                android:layout_height="wrap_content"
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/login_username_LL"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/login_username_ET"
-                android:inputType="text"
-                app:layout_marginTopPercent="45%"
-                app:layout_widthPercent="50%" />
+                android:background="@drawable/login_layout_shape"
+                app:layout_marginTopPercent="50%"
+                app:layout_widthPercent="80%">
 
-            <EditText
-                android:id="@+id/login_pwd_ET"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/login_username_ET"
+                <ImageView
+                    android:id="@+id/login_username_IV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_user_account_white"
+                    app:layout_marginStartPercent="4%" />
+
+                <EditText
+                    android:id="@+id/login_username_ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@+id/login_username_IV"
+                    android:background="@color/colorTransparent"
+                    android:hint="@string/login_username_ET"
+                    android:inputType="text"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    app:layout_marginStartPercent="4%" />
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/login_password_LL"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/login_username_LL"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/login_pwd_ET"
-                android:inputType="text"
-                app:layout_marginTopPercent="2%"
-                app:layout_widthPercent="50%" />
+                android:layout_marginTop="15dp"
+                android:background="@drawable/login_layout_shape"
+                app:layout_widthPercent="80%">
+
+                <ImageView
+                    android:id="@+id/login_password_IV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_password_white"
+                    app:layout_marginStartPercent="4%" />
+
+                <EditText
+                    android:id="@+id/login_pwd_ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@+id/login_password_IV"
+                    android:background="@color/colorTransparent"
+                    android:hint="@string/login_pwd_ET"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    app:layout_marginStartPercent="4%" />
+
+            </android.support.percent.PercentRelativeLayout>
 
             <Button
                 android:id="@+id/login_login_Btn"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/login_pwd_ET"
+                android:layout_height="45dp"
+                android:layout_below="@id/login_password_LL"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/login_button_shape"
                 android:text="@string/login_login_btn"
-                app:layout_marginTopPercent="4%"
-                app:layout_widthPercent="50%" />
+                android:textColor="@color/colorWhite"
+                app:layout_widthPercent="80%" />
 
             <LinearLayout
                 android:id="@+id/login_signUp_LL"
@@ -50,14 +95,17 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/login_login_Btn"
                 android:layout_below="@+id/login_login_Btn"
+                android:layout_marginTop="10dp"
                 android:background="?attr/selectableItemBackground"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_marginStartPercent="1%">
 
                 <TextView
                     android:id="@+id/login_signUp_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/login_signUp_TV" />
+                    android:text="@string/login_signUp_TV"
+                    android:textColor="@color/colorWhite" />
 
             </LinearLayout>
 
@@ -67,14 +115,17 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/login_login_Btn"
                 android:layout_below="@+id/login_login_Btn"
+                android:layout_marginTop="10dp"
                 android:background="?attr/selectableItemBackground"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_marginEndPercent="1%">
 
                 <TextView
                     android:id="@+id/login_needHelp_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/login_needHelp_TV" />
+                    android:text="@string/login_needHelp_TV"
+                    android:textColor="@color/colorWhite" />
 
             </LinearLayout>
         </android.support.percent.PercentRelativeLayout>

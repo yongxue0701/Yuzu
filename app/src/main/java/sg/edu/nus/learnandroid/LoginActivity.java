@@ -1,11 +1,14 @@
 package sg.edu.nus.learnandroid;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -28,6 +31,8 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         setContentView(R.layout.activity_login);
+
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         userAccountDB = new UserAccountDB(this);
 
@@ -81,15 +86,11 @@ public class LoginActivity extends Activity {
             }
         });
 
-        LinearLayout needHelpLL = findViewById(R.id.login_needHelp_LL);
-        needHelpLL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), NeedHelpActivity.class);
-                startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-            }
-        });
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     @Override
