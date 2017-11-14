@@ -30,7 +30,7 @@ function displayResult_broadcast() {
     var answer = BroadcastQuizResults.returnQuizAnsToWebView();
     var answers = answer.split(",");
 
-    var correctAns = ["c","a"];
+    var correctAns = ["d","c"];
 
     var para_q1 = document.getElementById("q1_explain_p");
     var para_q2 = document.getElementById("q2_explain_p");

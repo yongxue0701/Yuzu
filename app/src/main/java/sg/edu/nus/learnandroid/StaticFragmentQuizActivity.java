@@ -190,16 +190,23 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
         int totalPtsFromDB = 0;
         int finalPoints = 0;
         int staticFragmentQuizPtsFromDB = 0;
+        int fragmentCoursePassedFromDB = -1;
 
         if (pointsCursor != null && pointsCursor.moveToFirst() && (pointsCursor.getCount() == 1)) {
             do {
                 totalPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("points")));
                 staticFragmentQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor
                         .getColumnIndex("staticFragmentQuizPts")));
+                fragmentCoursePassedFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("fragmentCoursePassed")));
             } while (pointsCursor.moveToNext());
         }
 
-        pointsCursor.close();
+        if (fragmentCoursePassedFromDB <= 3) {
+            if (points == 2) {
+                fragmentCoursePassedFromDB = fragmentCoursePassedFromDB + 1;
+                userAccountDB.updateFragmentCoursePassedByIsLogin(1, fragmentCoursePassedFromDB);
+            }
+        }
 
         if (staticFragmentQuizPtsFromDB == 0) {
             finalPoints = totalPtsFromDB + points;
@@ -210,5 +217,6 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateStaticFragmentQuizPtsByIsLogin(1, points);
         userAccountDB.close();
+        pointsCursor.close();
     }
 }

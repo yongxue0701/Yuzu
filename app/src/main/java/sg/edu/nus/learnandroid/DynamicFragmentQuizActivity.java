@@ -191,16 +191,23 @@ public class DynamicFragmentQuizActivity extends AppCompatActivity {
         int totalPtsFromDB = 0;
         int finalPoints = 0;
         int dynamicFragmentQuizPtsFromDB = 0;
+        int fragmentCoursePassedFromDB = -1;
 
         if (pointsCursor != null && pointsCursor.moveToFirst() && (pointsCursor.getCount() == 1)) {
             do {
                 totalPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("points")));
                 dynamicFragmentQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor
                         .getColumnIndex("dynamicFragmentQuizPts")));
+                fragmentCoursePassedFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("fragmentCoursePassed")));
             } while (pointsCursor.moveToNext());
         }
 
-        pointsCursor.close();
+        if (fragmentCoursePassedFromDB <= 3) {
+            if (points >= 2) {
+                fragmentCoursePassedFromDB = fragmentCoursePassedFromDB + 1;
+                userAccountDB.updateFragmentCoursePassedByIsLogin(1, fragmentCoursePassedFromDB);
+            }
+        }
 
         if (dynamicFragmentQuizPtsFromDB == 0) {
             finalPoints = totalPtsFromDB + points;
@@ -211,5 +218,6 @@ public class DynamicFragmentQuizActivity extends AppCompatActivity {
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateDynamicFragmentQuizPtsByIsLogin(1, points);
         userAccountDB.close();
+        pointsCursor.close();
     }
 }

@@ -154,16 +154,23 @@ public class BroadcastQuizActivity extends AppCompatActivity {
         int totalPtsFromDB = 0;
         int finalPoints = 0;
         int broadcastQuizPtsFromDB = 0;
+        int dataPassingCoursePassedFromDB = -1;
 
         if (pointsCursor != null && pointsCursor.moveToFirst() && (pointsCursor.getCount() == 1)) {
             do {
                 totalPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("points")));
                 broadcastQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor
                         .getColumnIndex("broadcastQuizPts")));
+                dataPassingCoursePassedFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("dataPassingCoursePassed")));
             } while (pointsCursor.moveToNext());
         }
 
-        pointsCursor.close();
+        if (dataPassingCoursePassedFromDB == 0) {
+            if (points == 2) {
+                dataPassingCoursePassedFromDB = dataPassingCoursePassedFromDB + 1;
+                userAccountDB.updateDataPassingCoursePassedByIsLogin(1, dataPassingCoursePassedFromDB);
+            }
+        }
 
         if (broadcastQuizPtsFromDB == 0) {
             finalPoints = totalPtsFromDB + points;
@@ -174,6 +181,7 @@ public class BroadcastQuizActivity extends AppCompatActivity {
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateBroadcastQuizPtsByIsLogin(1, points);
         userAccountDB.close();
+        pointsCursor.close();
     }
 
     private void initiateCancelQuizDialog() {

@@ -1,0 +1,56 @@
+
+p{
+    text-align: justify;
+    line-height: 200%;
+}
+
+#permission_info_title,
+#permission_info_content{
+    text-align: justify;
+    line-height: 200%;
+    margin:20px;
+}
+
+#first_code,
+#second_code,
+#third_code,
+#fourth_code,
+#fifth_code,
+#sixth_code,
+#seventh_code{
+    text-align: left;
+    line-height: 200%;
+    background-color: #E0E0E0;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#quiz_results{
+    font-weight: bold;
+    margin-top: -15px;
+    color: #EF5350;
+}
+
+#submit_btn{
+    border: none;
+    background-color: #14A892;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    font-size:16px;
+    display: inline-block;
+    border-radius: 10px;
+    position:relative;
+    margin-top: 5%;
+    width: 100%;
+}
+
+#q1_choices,
+#q2_choices,
+#q3_choices,
+#q4_choices,
+#q5_choices{
+    text-align: justify;
+    line-height: 200%;
+}

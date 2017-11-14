@@ -104,7 +104,10 @@
         <activity android:name=".DatabaseExampleActivity" />
         <activity android:name=".DatabaseQuizInfoActivity" />
         <activity android:name=".DatabaseQuizActivity" />
-        <activity android:name=".DatabaseQuizResultsActivity"></activity>
+        <activity android:name=".DatabaseQuizResultsActivity" />
+        <activity android:name=".CoursePermissionActivity" />
+        <activity android:name=".PermissionInfoActivity" />
+        <activity android:name=".PermissionIntroActivity"></activity>
     </application>
 
 </manifest>

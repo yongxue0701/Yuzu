@@ -54,6 +54,7 @@
     <string name="course_intent"><font size="20">Intent &amp; Activity</font></string>
     <string name="course_passing_data"><font size="20">Data Passing</font></string>
     <string name="course_database"><font size='20'>Database</font></string>
+    <string name="course_permission"><font size='20'>Permission</font></string>
 
     <string name="fragment_quiz_info_title_TV">Practice Questions on Fragments</string>
     <string name="static_fragment_quiz_info_title_TV">Practice Questions on Defining Fragments Statically</string>
@@ -141,4 +142,10 @@
     <string name="achievements_intent_label_TV">Activity &amp; Intent</string>
     <string name="achievements_data_passing_label_TV">Data Passing</string>
     <string name="achievements_fragment_label_TV">Fragments</string>
+    <string name="achievements_database_label_TV">Database</string>
+    <string name="achievements_permission_label_TV">Permission</string>
+
+    <string name="achievements_passed">Passed</string>
+    <string name="achievements_incomplete">Incomplete</string>
+    <string name="achievements_for_your_information">Taken/Not Taken</string>
 </resources>

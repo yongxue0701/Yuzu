@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.androidActivityQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.broadcastQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.dataPassingCoursePassed;
+import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.databaseCoursePassed;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.databaseQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.dynamicFragmentQuizPts;
 import static sg.edu.nus.learnandroid.LearnAndroidDBHelper.email;
@@ -54,8 +55,8 @@ public class UserAccountDB {
     public void insertRecord(String _username, String _password, String _email,
                              String _gender, boolean _isLogin, boolean _newUser, int _uiCoursePassed,
                              int _intentCoursePassed, int _dataPassingCoursePassed, int _fragmentCoursePassed,
-                             String _points, String _fragmentConceptQuizPts, String _staticFragmentQuizPts,
-                             String _dynamicFragmentQuizPts, String _androidActivityQuizPts,
+                             int _databaseCoursePassed, String _points, String _fragmentConceptQuizPts,
+                             String _staticFragmentQuizPts, String _dynamicFragmentQuizPts, String _androidActivityQuizPts,
                              String _userInterfaceQuizPts, String _intentQuizPts, String _broadcastQuizPts,
                              String _databaseQuizPts) {
         ContentValues initialValues = new ContentValues();
@@ -70,6 +71,7 @@ public class UserAccountDB {
         initialValues.put(intentCoursePassed, _intentCoursePassed);
         initialValues.put(dataPassingCoursePassed, _dataPassingCoursePassed);
         initialValues.put(fragmentCoursePassed, _fragmentCoursePassed);
+        initialValues.put(databaseCoursePassed, _databaseCoursePassed);
         initialValues.put(points, _points);
         initialValues.put(userInterfaceQuizPts, _userInterfaceQuizPts);
         initialValues.put(androidActivityQuizPts, _androidActivityQuizPts);
@@ -105,6 +107,7 @@ public class UserAccountDB {
                         intentCoursePassed,
                         dataPassingCoursePassed,
                         fragmentCoursePassed,
+                        databaseCoursePassed,
                         points,
                         userInterfaceQuizPts,
                         androidActivityQuizPts,
@@ -150,6 +153,7 @@ public class UserAccountDB {
                         intentCoursePassed,
                         dataPassingCoursePassed,
                         fragmentCoursePassed,
+                        databaseCoursePassed,
                         points,
                         userInterfaceQuizPts,
                         androidActivityQuizPts,
@@ -299,6 +303,16 @@ public class UserAccountDB {
         ContentValues initialValues = new ContentValues();
 
         initialValues.put(fragmentCoursePassed, _fragmentCoursePassed);
+
+        db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
+                isLogin + "=" + _isLogin, null);
+    }
+
+    public void updateDatabaseCoursePassedByIsLogin(int _isLogin, int _databaseCoursePassed) {
+
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(databaseCoursePassed, _databaseCoursePassed);
 
         db.update(LearnAndroidDBHelper.userAccountTableName, initialValues,
                 isLogin + "=" + _isLogin, null);

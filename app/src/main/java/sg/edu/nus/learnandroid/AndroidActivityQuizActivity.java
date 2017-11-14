@@ -193,16 +193,23 @@ public class AndroidActivityQuizActivity extends AppCompatActivity {
         int totalPtsFromDB = 0;
         int finalPoints = 0;
         int androidActivityQuizPtsFromDB = 0;
+        int intentCoursePassedFromDB = -1;
 
         if (pointsCursor != null && pointsCursor.moveToFirst() && (pointsCursor.getCount() == 1)) {
             do {
                 totalPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("points")));
                 androidActivityQuizPtsFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor
                         .getColumnIndex("androidActivityQuizPts")));
+                intentCoursePassedFromDB = Integer.valueOf(pointsCursor.getString(pointsCursor.getColumnIndex("intentCoursePassed")));
             } while (pointsCursor.moveToNext());
         }
 
-        pointsCursor.close();
+        if (intentCoursePassedFromDB <= 2) {
+            if (points >= 4) {
+                intentCoursePassedFromDB = intentCoursePassedFromDB + 1;
+                userAccountDB.updateIntentCoursePassedByIsLogin(1, intentCoursePassedFromDB);
+            }
+        }
 
         if (androidActivityQuizPtsFromDB == 0) {
             finalPoints = totalPtsFromDB + points;
@@ -213,5 +220,6 @@ public class AndroidActivityQuizActivity extends AppCompatActivity {
         userAccountDB.updatePointsByIsLogin(1, finalPoints);
         userAccountDB.updateAndroidActivityQuizPtsByIsLogin(1, points);
         userAccountDB.close();
+        pointsCursor.close();
     }
 }

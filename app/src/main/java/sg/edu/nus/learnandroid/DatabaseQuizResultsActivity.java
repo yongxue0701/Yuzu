@@ -11,6 +11,10 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * Created by Yongxue
+ */
+
 public class DatabaseQuizResultsActivity extends AppCompatActivity {
 
     public static final String MY_SHAREDPREF_NAME = "DatabaseQuizAnsSharedPref";

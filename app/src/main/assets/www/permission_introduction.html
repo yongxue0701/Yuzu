@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/permissionCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Introduction of Permissions</h2>
+
+        <h3 style="text-align: justify;">Android Permissions Introduction</h3>
+
+        <p>
+            System permissions have different levels, e.g., protection levels.<br/><br/>
+
+            The permission concept has changed since API 23. Before API level 23 the user
+            was asked during installation, after API level the user is asked during runtime.<br/><br/>
+
+            An Android application declares the required permissions in its
+            Android manifest. It can also define additional permissions which
+            it can use to restrict access to certain components.
+        </p>
+
+        <h3 style="text-align: justify;">Android Permissions before API 23</h3>
+
+        <p>
+            Before API 23 the requested permissions are presented to the user before
+            installing the application. The user needs to decide if these permissions
+            shall be given to the application.<br/><br/>
+            If the user denies a required permission, the related application cannot
+            be installed. The check of the permission is only performed during installation.
+            Permissions cannot be denied or granted after the installation. Many of you
+            have come across this, when installing many of the apps from the Google Play store.
+        </p>
+
+        <h3 style="text-align: justify;">Runtime Permissions</h3>
+
+        <p>
+            Android 6.0 Marshmallow (API 23) introduced a new runtime permission model.
+            If your application targets Android 6.0, you must use the new permissions model.<br/><br/>
+            The two most important protection levels are normal and dangerous permissions:<br/>
+            •&emsp;<b>Normal permissions</b> are permissions which are deemed harmless for the users privacy
+            or the operation of other applications. For example, the permission to set the time
+            zone. Normal permission are automatically granted to the application. See Normal
+            permissions for a complete list.<br/>
+            •&emsp;<b>Dangerous permissions</b> affect the users private information, or could potentially
+            affect his data or the operation of other application. For example, the ability
+            to read the users contact data. Dangerous permissions must be granted by the
+            user at runtime to the app.
+        </p>
+
+        <h3 style="text-align: justify;">Android Permissions In Manifest File</h3>
+
+        <p>
+            You need to define a permission in the android application manifest file before
+            restricting access to any application component. Use the permission tag to create
+            the permission definitions. The application components can then require them by
+            adding the android:permission attribute. Other apps will then need to include
+            a uses-permission tag in their manifest file and have it granted before they
+            can use these protected components.<br/><br/>
+            Within the permission tag you can specify the level of access the permission
+            will permit( normal, dangerous, signature, signatureOrSystem), a label, and an
+            external resource containing the description that explains the risks of
+            granting this permission.
+        </p>
+    </body>
+</html>

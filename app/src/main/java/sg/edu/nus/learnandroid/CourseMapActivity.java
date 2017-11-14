@@ -38,6 +38,10 @@ public class CourseMapActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;
     int uiCoursePassedFromDB;
+    int intentCoursePassedFromDB;
+    int dataPassingCoursePassedFromDB;
+    int fragmentCoursePassedFromDB;
+    int databaseCoursePassedFromDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,11 @@ public class CourseMapActivity extends AppCompatActivity {
             do {
                 int newUser = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("newUser")));
                 uiCoursePassedFromDB = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("uiCoursePassed")));
+                intentCoursePassedFromDB = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("intentCoursePassed")));
+                dataPassingCoursePassedFromDB = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("dataPassingCoursePassed")));
+                fragmentCoursePassedFromDB = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("fragmentCoursePassed")));
+                databaseCoursePassedFromDB = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("databaseCoursePassed")));
+
                 if (newUser == 1) {
                     initiateBeginnerTipOneDialog();
                 }
@@ -139,9 +148,14 @@ public class CourseMapActivity extends AppCompatActivity {
         mapPinThreeIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
-                startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+                if (intentCoursePassedFromDB == 2) {
+                    Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
+                    startActivity(myIntent);
+                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    initiateLockedCourseDialog();
+                }
             }
         });
 
@@ -149,9 +163,14 @@ public class CourseMapActivity extends AppCompatActivity {
         mapPinFourIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
-                startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+                if (dataPassingCoursePassedFromDB == 1) {
+                    Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
+                    startActivity(myIntent);
+                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    initiateLockedCourseDialog();
+                }
             }
         });
 
@@ -159,14 +178,50 @@ public class CourseMapActivity extends AppCompatActivity {
         mapPinSixIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CourseDatabaseActivity.class);
-                startActivity(myIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+                if (fragmentCoursePassedFromDB == 3) {
+                    Intent myIntent = new Intent(getApplicationContext(), CourseDatabaseActivity.class);
+                    startActivity(myIntent);
+                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    initiateLockedCourseDialog();
+                }
+            }
+        });
+
+        mapPinFiveIV = (ImageView) findViewById(R.id.course_map_pin_5_IV);
+        mapPinFiveIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (dataPassingCoursePassedFromDB == 1) {
+                    Intent myIntent = new Intent(getApplicationContext(), CoursePermissionActivity.class);
+                    startActivity(myIntent);
+                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    initiateLockedCourseDialog();
+                }
             }
         });
 
         if (uiCoursePassedFromDB == 1) {
             mapPinTwoIV.setImageResource(R.drawable.ic_map_pin_red_1);
+        }
+
+        if (intentCoursePassedFromDB == 2) {
+            mapPinThreeIV.setImageResource(R.drawable.ic_map_pin_red_1);
+        }
+
+        if (dataPassingCoursePassedFromDB == 1) {
+            mapPinFourIV.setImageResource(R.drawable.ic_map_pin_red_1);
+        }
+
+        if (fragmentCoursePassedFromDB == 3) {
+            mapPinSixIV.setImageResource(R.drawable.ic_map_pin_red_1);
+        }
+
+        if (databaseCoursePassedFromDB == 1) {
+            mapPinFiveIV.setImageResource(R.drawable.ic_map_pin_red_1);
         }
     }
 

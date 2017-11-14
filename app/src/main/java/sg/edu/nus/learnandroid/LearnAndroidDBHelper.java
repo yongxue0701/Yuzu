@@ -26,6 +26,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
     public static final String intentCoursePassed = "intentCoursePassed";
     public static final String dataPassingCoursePassed = "dataPassingCoursePassed";
     public static final String fragmentCoursePassed = "fragmentCoursePassed";
+    public static final String databaseCoursePassed = "databaseCoursePassed";
     public static final String points = "points";
     public static final String fragmentConceptQuizPts = "fragmentConceptQuizPts";
     public static final String staticFragmentQuizPts = "staticFragmentQuizPts";
@@ -54,6 +55,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
                     intentCoursePassed + " TEXT NOT NULL," +
                     dataPassingCoursePassed + " TEXT NOT NULL," +
                     fragmentCoursePassed + " TEXT NOT NULL," +
+                    databaseCoursePassed + " TEXT NOT NULL," +
                     points + " TEXT NOT NULL," +
                     userInterfaceQuizPts + " TEXT NOT NULL," +
                     androidActivityQuizPts + " TEXT NOT NULL," +

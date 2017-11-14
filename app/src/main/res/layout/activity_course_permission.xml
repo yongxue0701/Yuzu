@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/course_map_russia"
+    tools:context="sg.edu.nus.learnandroid.CoursePermissionActivity"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/permission_map_pin_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_map_pin_red_1"
+        app:layout_marginEndPercent="41%"
+        app:layout_marginTopPercent="38%" />
+
+</android.support.percent.PercentRelativeLayout>
