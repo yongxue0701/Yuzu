@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,12 +11,12 @@ import android.widget.TextView;
  * Created by Yongxue
  */
 
-public class BroadcastIntroActivity extends AppCompatActivity {
+public class CourseDatabaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_broadcast_intro);
+        setContentView(R.layout.activity_course_database);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -28,28 +26,34 @@ public class BroadcastIntroActivity extends AppCompatActivity {
         // Set up the back button and title on action bar
         View view = getSupportActionBar().getCustomView();
 
-        TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText(R.string.course_passing_data);
+        TextView actionBarTitleTV = (TextView) view.findViewById(R.id.action_bar_title_without_donebtn);
+        actionBarTitleTV.setText(R.string.course_database);
 
-        ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
+        ImageView backBtnIV = (ImageView) view.findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), BroadcastInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.broadcast_intro_webview);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/broadcast_introduction.html");
+        // Start a new activity for the image view of database sqlite
+        ImageView dynamicFragmentIV = (ImageView) findViewById(R.id.database_map_pin_concept_IV);
+        dynamicFragmentIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), DatabaseInfoActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
-        Intent myIntent = new Intent(getApplicationContext(), BroadcastInfoActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
         startActivity(myIntent);
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }

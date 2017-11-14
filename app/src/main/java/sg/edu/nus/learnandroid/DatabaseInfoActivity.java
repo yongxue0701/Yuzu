@@ -22,28 +22,28 @@ import java.util.List;
  * Created by Yongxue
  */
 
-public class BroadcastInfoActivity extends AppCompatActivity {
+public class DatabaseInfoActivity extends AppCompatActivity {
 
-    private BroadcastInfoRVAdapter adapter;
-    private RecyclerView broadcastInfoRV;
+    private DatabaseInfoRVAdapter adapter;
+    private RecyclerView databaseInfoRV;
     private LinearLayoutManager layoutManager;
     private ImageView loadingAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_broadcast_info);
+        setContentView(R.layout.activity_database_info);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ScrollView broadcastInfoSV = (ScrollView) findViewById(R.id.broadcast_info_SV);
-                broadcastInfoSV.setVisibility(View.VISIBLE);
+                ScrollView dynamicFragmentInfoSV = (ScrollView) findViewById(R.id.database_info_SV);
+                dynamicFragmentInfoSV.setVisibility(View.VISIBLE);
             }
         }, 2000);
 
-        loadingAnim = (ImageView) findViewById(R.id.broadcast_loading_anim);
+        loadingAnim = (ImageView) findViewById(R.id.database_loading_anim);
         loadingAnim.setBackgroundResource(R.drawable.spinning_globe_grey);
         AnimationDrawable frameAnimation = (AnimationDrawable) loadingAnim.getBackground();
         frameAnimation.start();
@@ -57,41 +57,42 @@ public class BroadcastInfoActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText(R.string.course_passing_data);
+        actionBarTitleTV.setText(R.string.course_database);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), CourseDatabaseActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.broadcast_info_webview);
+        WebView webView = (WebView) findViewById(R.id.database_info_webview);
         WebView.setWebContentsDebuggingEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/broadcast_info.html");
+        webView.loadUrl("file:///android_asset/www/database_info.html");
 
         // Set up recycler view with account buttons
-        List<String> broadcastButtonNames = new ArrayList<>();
-        broadcastButtonNames.add("Introduction");
-        broadcastButtonNames.add("Quiz");
+        List<String> databaseButtonNames = new ArrayList<>();
+        databaseButtonNames.add("Introduction");
+        databaseButtonNames.add("Example");
+        databaseButtonNames.add("Quiz");
 
-        adapter = new BroadcastInfoRVAdapter(broadcastButtonNames, this, this);
-        broadcastInfoRV = (RecyclerView) findViewById(R.id.broadcast_info_RV);
-        broadcastInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
+        adapter = new DatabaseInfoRVAdapter(databaseButtonNames, this, this);
+        databaseInfoRV = (RecyclerView) findViewById(R.id.database_info_RV);
+        databaseInfoRV.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         layoutManager = new LinearLayoutManager(this, OrientationHelper.VERTICAL, false);
 
-        broadcastInfoRV.setLayoutManager(layoutManager);
-        broadcastInfoRV.setAdapter(adapter);
-        broadcastInfoRV.setHasFixedSize(true);
+        databaseInfoRV.setLayoutManager(layoutManager);
+        databaseInfoRV.setAdapter(adapter);
+        databaseInfoRV.setHasFixedSize(true);
     }
 
     @Override
     public void onBackPressed() {
-        Intent myIntent = new Intent(getApplicationContext(), CoursePassingDataActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), CourseDatabaseActivity.class);
         startActivity(myIntent);
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }

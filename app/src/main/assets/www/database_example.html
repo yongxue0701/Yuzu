@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fragmentsCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Example of SQLite Database</h2>
+
+        <p>
+            <b>Create an SQLite Helper class:</b><br/>
+            •&emsp;public class MyDBHelper extends SQLiteOpenHelper { }<br/>
+            •&emsp;The constructor of this helper class should look like
+        </p>
+
+        <p id="first_code">
+            public MyDBHelper(Context context) {<br/>
+            &emsp;&emsp;super(context, databaseName,<br/>
+            &emsp;&emsp;null, databaseVersion);<br/>
+            }
+        </p>
+
+        <p>
+            <b>Define some useful strings within the Helper class:</b>
+        </p>
+
+        <p id="second_code">
+            public static final int dbVersion = 1;<br/>
+            public static final String dbName = “dbName”;<br/>
+            public static final String<br/>
+            tableName = “tableName”;<br/>
+            public static final String colName1 = “_id”;<br/>
+            public static final String colName2 = “name2”;<br/>
+            public static final String colName3 = “name3”;<br/><br/>
+
+            private static final String SQLite_CREATE =<br/>
+            “CREATE TABLE “ + tableName + “ (“ <br/>
+            + colName1 <br/>
+            + “ INTEGER PRIMARY KEY AUTOINCREMENT,”<br/>
+            + colName2 + “ TEXT NOT NULL,” + colName3 <br/>
+            + “ TEXT NOT NULL)”;<br/><br/>
+
+            private static final String SQLite_DELETE =<br/>
+            “DROP TABLE IF EXISTS “ + tableName;
+        </p>
+
+        <p>
+            <b>Override the following methods of DBHelper</b><br/>
+        </p>
+
+        <p id="third_code">
+            @Override<br/>
+            public void onCreate(SQLiteDatabase db){<br/>
+            &emsp;&emsp;db.execSQL(SQLite_CREATE);<br/>
+            }<br/><br/>
+
+            @Override
+            public void onUpgrade(SQLiteDatabase db,<br/>
+            int oldVersion, int newVersion) {<br/>
+            &emsp;&emsp;db.execSQL(SQLite_DELETE);<br/>
+            &emsp;&emsp;onCreate(db);<br/>
+            }<br/>
+        </p>
+    </body>
+</html>

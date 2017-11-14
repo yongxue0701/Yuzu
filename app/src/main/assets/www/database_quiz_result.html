@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/databaseCSS.css" type="text/css" media="all"/>
+        <script type="text/javascript" src="js/databaseJS.js"></script>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body onload="displayResult_database()">
+        <h2>Quiz Results</h2>
+
+        <form>
+            <p id="quiz_results"></p>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q1.&emsp;What is the use of SQLite open helper class in SQLite?
+                </p>
+
+                <div id="q1_choices">
+                    <input type="radio" id="q1a" name="q1" value="a">&emsp;A helper class provides functionalities
+                    for deleting rows, inserting data into rows into a table.&ensp;<br/>
+                    <input type="radio" id="q1b" name="q1" value="b">&emsp;A helper class allows database management
+                    ,creation and version management. This is the class where we will create all the
+                    tables, and upgrade tables.&ensp;<br/>
+                    <input type="radio" id="q1c" name="q1" value="c">&emsp;A helper class is used for fetching
+                    the data from remote servers and storing it into SQLiteDatabase.&ensp;<br/>
+                    <input type="radio" id="q1d" name="q1" value="d">&emsp;None are correct.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q1_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q1_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q2.&emsp;How to show SQLite Database table information in android application? What is the best way to do it?
+                </p>
+
+                <div id="q2_choices">
+                    <input type="radio" id="q2a" name="q2" value="a">&emsp;Use list view with cursor adapter.&ensp;<br/>
+                    <input type="radio" id="q2b" name="q2" value="b">&emsp;Use grid view with cursor adapter.&ensp;<br/>
+                    <input type="radio" id="q2c" name="q2" value="c">&emsp;Use table layout with cursor adapter.&ensp;<br/>
+                    <input type="radio" id="q2d" name="q2" value="d">&emsp;Use table layout with cursor.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q2_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q2_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+        </form>
+    </body>
+</html>

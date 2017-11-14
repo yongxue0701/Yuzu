@@ -46,6 +46,7 @@ public class RegisterActivity extends Activity {
     private int userInterfaceQuizPts;
     private int intentQuizPts;
     private int broadcastQuizPts;
+    private int databaseQuizPts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +97,7 @@ public class RegisterActivity extends Activity {
                 userInterfaceQuizPts = 0;
                 intentQuizPts = 0;
                 broadcastQuizPts = 0;
+                databaseQuizPts = 0;
 
                 genderRG = findViewById(R.id.register_gender_RG);
 
@@ -129,6 +131,7 @@ public class RegisterActivity extends Activity {
                 }
                 if (pwd.length() < 8) {
                     pwdET.setError("You must have 8 characters in your password");
+                    allDone = false;
                 }
 
                 if (allDone) {
@@ -137,7 +140,8 @@ public class RegisterActivity extends Activity {
                             uiCoursePassed, intentCoursePassed, dataPassingCoursePassed, fragmentCoursePassed,
                             String.valueOf(points), String.valueOf(userInterfaceQuizPts), String.valueOf(androidActivityQuizPts),
                             String.valueOf(intentQuizPts), String.valueOf(broadcastQuizPts), String.valueOf(fragmentConceptQuizPts),
-                            String.valueOf(staticFragmentQuizPts), String.valueOf(dynamicFragmentQuizPts));
+                            String.valueOf(staticFragmentQuizPts), String.valueOf(dynamicFragmentQuizPts),
+                            String.valueOf(databaseQuizPts));
                     userAccountDB.close();
 
                     Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);

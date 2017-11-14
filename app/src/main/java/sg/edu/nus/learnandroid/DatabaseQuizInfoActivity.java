@@ -13,14 +13,14 @@ import android.widget.TextView;
  * Created by Yongxue
  */
 
-public class BroadcastQuizInfoActivity extends AppCompatActivity {
+public class DatabaseQuizInfoActivity extends AppCompatActivity {
 
     UserAccountDB userAccountDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_broadcast_quiz_info);
+        setContentView(R.layout.activity_database_quiz_info);
 
         userAccountDB = new UserAccountDB(this);
 
@@ -30,42 +30,42 @@ public class BroadcastQuizInfoActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar_without_donebtn);
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText(R.string.course_passing_data);
+        actionBarTitleTV.setText(R.string.course_database);
 
         // Set up the back button and title on action bar
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), BroadcastInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), DatabaseInfoActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
 
         // Set onclick function for submit button
-        Button submitBtn = (Button) findViewById(R.id.broadcast_quiz_info_submit_btn);
+        Button submitBtn = (Button) findViewById(R.id.database_quiz_info_submit_btn);
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), BroadcastQuizActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), DatabaseQuizActivity.class);
                 startActivity(myIntent);
             }
         });
 
         userAccountDB.open();
         Cursor mCursor = userAccountDB.getRecordByIsLogin(1);
-        TextView scoreTV = (TextView) findViewById(R.id.broadcast_quiz_info_score_content_TV);
+        TextView scoreTV = (TextView) findViewById(R.id.database_quiz_info_score_content_TV);
 
         if (mCursor != null && mCursor.moveToFirst() && (mCursor.getCount() == 1)) {
             do {
-                int broadcastQuizPts = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("broadcastQuizPts")));
+                int databaseQuizPts = Integer.valueOf(mCursor.getString(mCursor.getColumnIndex("databaseQuizPts")));
 
-                if (broadcastQuizPts == 1 || broadcastQuizPts == 0) {
-                    scoreTV.setText(broadcastQuizPts + "/2 point");
+                if (databaseQuizPts == 1 || databaseQuizPts == 0) {
+                    scoreTV.setText(databaseQuizPts + "/2 point");
 
-                } else if (broadcastQuizPts > 0) {
-                    scoreTV.setText(broadcastQuizPts + "/2 points");
+                } else if (databaseQuizPts > 0) {
+                    scoreTV.setText(databaseQuizPts + "/2 points");
                 }
             } while (mCursor.moveToNext());
         }
@@ -74,9 +74,8 @@ public class BroadcastQuizInfoActivity extends AppCompatActivity {
         userAccountDB.close();
     }
 
-    @Override
     public void onBackPressed() {
-        Intent myIntent = new Intent(getApplicationContext(), BroadcastInfoActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), DatabaseInfoActivity.class);
         startActivity(myIntent);
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }

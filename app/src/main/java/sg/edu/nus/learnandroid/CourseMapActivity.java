@@ -33,6 +33,8 @@ public class CourseMapActivity extends AppCompatActivity {
     private ImageView mapPinTwoIV;
     private ImageView mapPinThreeIV;
     private ImageView mapPinFourIV;
+    private ImageView mapPinFiveIV;
+    private ImageView mapPinSixIV;
 
     UserAccountDB userAccountDB;
     int uiCoursePassedFromDB;
@@ -148,6 +150,16 @@ public class CourseMapActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), CourseFragmentActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+
+        mapPinSixIV = (ImageView) findViewById(R.id.course_map_pin_6_IV);
+        mapPinSixIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), CourseDatabaseActivity.class);
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }

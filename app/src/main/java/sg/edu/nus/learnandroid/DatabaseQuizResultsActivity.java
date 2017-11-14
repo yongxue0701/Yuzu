@@ -11,18 +11,14 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Yongxue
- */
+public class DatabaseQuizResultsActivity extends AppCompatActivity {
 
-public class BroadcastQuizResultsActivity extends AppCompatActivity {
-
-    public static final String MY_SHAREDPREF_NAME = "BroadcastQuizAnsSharedPref";
+    public static final String MY_SHAREDPREF_NAME = "DatabaseQuizAnsSharedPref";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_broadcast_quiz_results);
+        setContentView(R.layout.activity_database_quiz_results);
 
         // Set up custom action bar with back button
         getSupportActionBar().setDisplayOptions(getActionBar().DISPLAY_SHOW_CUSTOM);
@@ -33,41 +29,41 @@ public class BroadcastQuizResultsActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_with_crossbtn);
-        actionBarTitleTV.setText(R.string.course_passing_data);
+        actionBarTitleTV.setText(R.string.course_database);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_cross_with_crossbtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), BroadcastInfoActivity.class);
+                Intent myIntent = new Intent(getApplicationContext(), DatabaseInfoActivity.class);
                 startActivity(myIntent);
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.broadcast_quiz_result_webview);
-        BroadcastQuizResultsActivity.JavaScriptInterface myJavaScriptInterface =
-                new BroadcastQuizResultsActivity.JavaScriptInterface(this, webView);
+        WebView webView = (WebView) findViewById(R.id.database_quiz_result_webview);
+        DatabaseQuizResultsActivity.JavaScriptInterface myJavaScriptInterface =
+                new DatabaseQuizResultsActivity.JavaScriptInterface(this, webView);
 
         webView.getSettings().setJavaScriptEnabled(true);
         WebView.setWebContentsDebuggingEnabled(true);
-        webView.addJavascriptInterface(myJavaScriptInterface, "BroadcastQuizResults");
+        webView.addJavascriptInterface(myJavaScriptInterface, "DatabaseQuizResults");
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/broadcast_quiz_result.html");
+        webView.loadUrl("file:///android_asset/www/database_quiz_result.html");
     }
 
     @Override
     public void onBackPressed() {
-        Intent myIntent = new Intent(getApplicationContext(), BroadcastInfoActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), DatabaseInfoActivity.class);
         startActivity(myIntent);
     }
 
     public class JavaScriptInterface {
 
-        private BroadcastQuizResultsActivity parentActivity;
+        private DatabaseQuizResultsActivity parentActivity;
         private WebView webView;
 
-        public JavaScriptInterface(BroadcastQuizResultsActivity broadcastQuizResultsActivity, WebView mWebView) {
-            parentActivity = broadcastQuizResultsActivity;
+        public JavaScriptInterface(DatabaseQuizResultsActivity databaseQuizResultsActivity, WebView mWebView) {
+            parentActivity = databaseQuizResultsActivity;
             webView = mWebView;
         }
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/databaseCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Introduction of SQLite</h2>
+
+        <h3>1.&emsp;SQLite and Android</h3>
+
+        <p>
+            <b>a)&emsp;What is SQLite ?</b><br/>
+            SQLite is an Open Source Database which is embedded into Android.
+            SQLite supports standard relational database features like SQL syntax,
+            transactions and prepared statements.<br/><br/>
+            In addition it requires only little memory at runtime (approx. 250 KByte).<br/><br/>
+            SQLite supports the data types TEXT (similar to String in Java),
+            INTEGER (similar to long in Java) and REAL (similar to double in Java).
+            All other types must be converted into one of these fields before saving
+            them in the database. SQLite itself does not validate if the types
+            written to the columns are actually of the defined type, you can
+            write an integer into a string column.<br/>
+        </p>
+
+        <p>
+            <b>b)&emsp;SQLite in Android</b><br/>
+            SQLite is available on every Android device. Using an SQLite database
+            in Android does not require any database setup or administration.
+            You specify the SQL for working with the database and the database
+            is automatically managed for you.<br/><br/>
+            Working with databases can be slow. Therefore is it recommended to perform these
+            task in the background, for example via an AsyncTask.<br/><br/>
+            If your application creates an database this database is saved in the directory
+            DATA/data/ APP_NAME/ databases/ FILENAME.DATA is the path which
+            Environment.getDataDirectory() returns, APP_NAME is your application
+            name and FILENAME is the name you give the database during creation.
+            Environment.getDataDirectory() usually return the SD card as location.<br/>
+        </p>
+
+        <p>
+            <b>c)&emsp;Content Provider and sharing data</b><br/>
+            A SQLite database is private to the application which creates it. If you
+            want to share data with other applications you can use a ContentProvider.
+            If data is not shared it typically easier to work directly with the database.
+        </p>
+
+        <h3>2.&emsp;Android Architecture</h3>
+
+        <p>
+            <b>a)&emsp;Packages</b><br/>
+            The package android.database contains all general classes for working
+            with databases. android.database.sqlite contains the SQLite specific classes.
+        </p>
+
+        <p>
+            <b>b)&emsp;SQLiteOpenHelper</b><br/>
+            To create and upgrade a database in your Android application you usually subclass
+            SQLiteOpenHelper. In this class you need to override the methods onCreate()
+            to create the database and onUpgrade() to upgrade the database in case of
+            changes in the database schema. Both methods receive an SQLiteDatabase
+            object which represents the database.<br/><br/>
+
+            SQLiteOpenHelper provides the methods getReadableDatabase() and
+            getWriteableDatabase() to get access to an SQLiteDatabase object
+            which allows database access either in read or write mode.<br/><br/>
+
+            For the primary key of the database tables you should always use the
+            identifier _id as some of Android functions rely on this standard.<br/><br/>
+
+            A best practice is to create per table a separate class which define static
+            onCreate() and onUpdate() methods. These methods are then called in the
+            corresponding methods of SQLiteOpenHelper . This way your implementation
+            of SQLiteOpenHelper will not get to large even if you have several tables.
+        </p>
+
+        <p>
+            <b>c)&emsp;SQLiteDatabase</b><br/>
+            SQLiteDatabase is the base class for working with an SQLite database in Android
+            and provides methods to open, query, update and close the database.
+            More specifically SQLiteDatabase provides the insert(), update() and
+            delete() methods. The execSQL() method allows to execute directly SQL.
+            The object ContentValues allow to define key/values for insert and update.
+            The key is the column and the value is the value for this column.
+        </p>
+
+        <p>
+            <b>d)&emsp;Cursor</b><br/>
+            A query returns always a Cursor. A Cursor represents the result of a query
+            and basically points always to one row of the database. This way Android
+            can buffer the results efficiently as it does not have to load all data
+            into memory.<br/><br/>
+
+            To get the number of elements use the method getCount(). To move between
+            individual data rows, you can use the methods moveToFirst() and moveToNext().
+            Via the method isAfterLast() you can check if there is still some data.<br/><br/>
+
+            To access data Cursor provides typed get methods, e.g. getLong(columnIndex), getString(columnIndex)
+            whereby the columnIndex is the number of the column you are accessing.<br/><br/>
+
+            A Cursor can be directly used via the SimpleCursorAdapter in ListViews
+        </p>
+    </body>
+</html>

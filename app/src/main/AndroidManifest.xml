@@ -9,11 +9,10 @@
         android:icon="@mipmap/ic_launcher_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_logo"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:screenOrientation="portrait"
         android:windowSoftInputMode="stateAlwaysHidden">
-
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider1574771352590790"
@@ -27,7 +26,6 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name"
@@ -35,10 +33,10 @@
             android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".CourseMapActivity" />
@@ -99,7 +97,14 @@
         <activity android:name=".BroadcastQuizActivity" />
         <activity android:name=".BroadcastQuizResultsActivity" />
         <activity android:name=".BroadcastIntroActivity" />
-        <activity android:name=".IntentPassDataActivity"></activity>
+        <activity android:name=".IntentPassDataActivity" />
+        <activity android:name=".CourseDatabaseActivity" />
+        <activity android:name=".DatabaseInfoActivity" />
+        <activity android:name=".DatabaseIntroActivity" />
+        <activity android:name=".DatabaseExampleActivity" />
+        <activity android:name=".DatabaseQuizInfoActivity" />
+        <activity android:name=".DatabaseQuizActivity" />
+        <activity android:name=".DatabaseQuizResultsActivity"></activity>
     </application>
 
 </manifest>
