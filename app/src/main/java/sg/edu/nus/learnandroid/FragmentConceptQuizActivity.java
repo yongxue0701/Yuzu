@@ -168,7 +168,7 @@ public class FragmentConceptQuizActivity extends AppCompatActivity {
             } while (pointsCursor.moveToNext());
         }
 
-        if (fragmentCoursePassedFromDB <= 3) {
+        if (fragmentCoursePassedFromDB < 3) {
             if (points >= 4) {
                 fragmentCoursePassedFromDB = fragmentCoursePassedFromDB + 1;
                 userAccountDB.updateFragmentCoursePassedByIsLogin(1, fragmentCoursePassedFromDB);

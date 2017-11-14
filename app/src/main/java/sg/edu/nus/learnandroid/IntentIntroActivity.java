@@ -29,7 +29,7 @@ public class IntentIntroActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText(R.string.course_passing_data);
+        actionBarTitleTV.setText(R.string.course_intent);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {

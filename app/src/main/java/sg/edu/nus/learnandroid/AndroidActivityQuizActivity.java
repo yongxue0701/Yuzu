@@ -204,7 +204,7 @@ public class AndroidActivityQuizActivity extends AppCompatActivity {
             } while (pointsCursor.moveToNext());
         }
 
-        if (intentCoursePassedFromDB <= 2) {
+        if (intentCoursePassedFromDB < 2) {
             if (points >= 4) {
                 intentCoursePassedFromDB = intentCoursePassedFromDB + 1;
                 userAccountDB.updateIntentCoursePassedByIsLogin(1, intentCoursePassedFromDB);

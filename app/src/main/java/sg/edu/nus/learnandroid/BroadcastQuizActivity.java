@@ -140,7 +140,7 @@ public class BroadcastQuizActivity extends AppCompatActivity {
     private void calculatePoints(String[] answers, int counts) {
 
         int points = 0;
-        String[] correctAns = {"d", "c"};
+        String[] correctAns = {"c", "a"};
 
         for (int i = 0; i < correctAns.length; i++) {
             if (answers[i].equals(correctAns[i])) {

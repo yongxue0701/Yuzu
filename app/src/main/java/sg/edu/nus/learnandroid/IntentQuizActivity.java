@@ -165,7 +165,7 @@ public class IntentQuizActivity extends AppCompatActivity {
             } while (pointsCursor.moveToNext());
         }
 
-        if (intentCoursePassedFromDB <= 2) {
+        if (intentCoursePassedFromDB < 2) {
             if (points == 2) {
                 intentCoursePassedFromDB = intentCoursePassedFromDB + 1;
                 userAccountDB.updateIntentCoursePassedByIsLogin(1, intentCoursePassedFromDB);

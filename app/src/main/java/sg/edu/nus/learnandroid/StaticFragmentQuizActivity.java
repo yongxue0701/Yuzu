@@ -201,7 +201,7 @@ public class StaticFragmentQuizActivity extends AppCompatActivity {
             } while (pointsCursor.moveToNext());
         }
 
-        if (fragmentCoursePassedFromDB <= 3) {
+        if (fragmentCoursePassedFromDB < 3) {
             if (points == 2) {
                 fragmentCoursePassedFromDB = fragmentCoursePassedFromDB + 1;
                 userAccountDB.updateFragmentCoursePassedByIsLogin(1, fragmentCoursePassedFromDB);

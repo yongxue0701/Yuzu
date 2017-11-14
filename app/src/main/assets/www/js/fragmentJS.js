@@ -346,7 +346,7 @@ function displayResult_dynamic() {
     }
 
     if(answers[2] != "empty") {
-        document.getElementById("q2"+answers[2]).checked = true;
+        document.getElementById("q3"+answers[2]).checked = true;
         if(answers[2] == correctAns[2]) {
             para_q3.innerHTML = "You are correct!";
             img_q3.src = "file:///android_res/drawable/correct_ans.png";

@@ -17,6 +17,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Yongxue
@@ -202,7 +203,9 @@ public class DynamicFragmentQuizActivity extends AppCompatActivity {
             } while (pointsCursor.moveToNext());
         }
 
-        if (fragmentCoursePassedFromDB <= 3) {
+        Toast.makeText(this, fragmentCoursePassedFromDB, Toast.LENGTH_SHORT).show();
+
+        if (fragmentCoursePassedFromDB < 3) {
             if (points >= 2) {
                 fragmentCoursePassedFromDB = fragmentCoursePassedFromDB + 1;
                 userAccountDB.updateFragmentCoursePassedByIsLogin(1, fragmentCoursePassedFromDB);

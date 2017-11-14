@@ -64,7 +64,7 @@
                     android:layout_below="@+id/userAccount_userImage_CV"
                     android:layout_centerHorizontal="true"
                     android:textSize="15sp"
-                    app:layout_marginTopPercent="8%" />
+                    app:layout_marginBottomPercent="1%" />
 
             </android.support.percent.PercentRelativeLayout>
 
