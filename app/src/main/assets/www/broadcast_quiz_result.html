@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/passingDataCSS.css" type="text/css" media="all"/>
+        <script type="text/javascript" src="js/passingDataJS.js"></script>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body onload="displayResult_broadcast()">
+        <h2>Quiz Results</h2>
+
+        <form>
+            <p id="quiz_results"></p>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q1.&emsp;What is broadcast receiver in android?
+                </p>
+
+                <div id="q1_choices">
+                    <input type="radio" id="q1a" name="q1" value="a">&emsp;It is a component of android which responds to system wide broadcast announcements.&ensp;<br/>
+                    <input type="radio" id="q1b" name="q1" value="b">&emsp;It acts like a gateway between outside world and your application.&ensp;<br/>
+                    <input type="radio" id="q1c" name="q1" value="c">&emsp;Both are true.&ensp;<br/>
+                    <input type="radio" id="q1d" name="q1" value="d">&emsp;None.&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q1_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q1_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+
+            <div>
+                <p style="font-weight: bold;">
+                    Q2.&emsp;What is the life cycle of a broadcast receiver in android?
+                </p>
+
+                <div id="q2_choices">
+                    <input type="radio" id="q2a" name="q2" value="a">&emsp;onReceive()&ensp;<br/>
+                    <input type="radio" id="q2b" name="q2" value="b">&emsp;onCreate() - onReceive()&ensp;<br/>
+                    <input type="radio" id="q2c" name="q2" value="c">&emsp;onCreate() - onReceive() - onDestroy()&ensp;<br/>
+                    <input type="radio" id="q2d" name="q2" value="d">&emsp;onReceive() - onDestroy()&ensp;<br/>
+                </div>
+            </div>
+
+            <div style="background-color: #E0E0E0;">
+                <img id="q2_explain_img"
+                     height="30" width="30"
+                     style="padding-top:10px;padding-left:10px">
+
+                <p id="q2_explain_p"
+                   style="padding-left:10px;padding-right:10px;padding-bottom:10px;line-height: 180%;margin-top:-0.1px;">
+                </p>
+            </div>
+        </form>
+    </body>
+</html>

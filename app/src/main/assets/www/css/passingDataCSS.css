@@ -47,3 +47,12 @@ p{
     margin-top: 5%;
     width: 100%;
 }
+
+#q1_choices,
+#q2_choices,
+#q3_choices,
+#q4_choices,
+#q5_choices{
+    text-align: justify;
+    line-height: 200%;
+}

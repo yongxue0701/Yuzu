@@ -33,7 +33,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
     public static final String androidActivityQuizPts = "androidActivityQuizPts";
     public static final String userInterfaceQuizPts = "userInterfaceQuizPts";
     public static final String intentQuizPts = "intentQuizPts";
-    public static final String broadcastQuizPts = "sharedPrefQuizPts";
+    public static final String broadcastQuizPts = "broadcastQuizPts";
 
     public static final String feedbackTitle = "feedbackTitle";
     public static final String feedbackDate = "feedbackDate";

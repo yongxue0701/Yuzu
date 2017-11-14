@@ -38,6 +38,8 @@ public class UserFeedbackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_feedback);
 
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
         feedbackDB = new FeedbackDB(this);
 
         // Set up custom action bar with back button and done button

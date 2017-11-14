@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/passingDataCSS.css" type="text/css" media="all"/>
+        <!--<meta name="viewport" content="user-scalable=no,initial-scale=1"/>-->
+    </head>
+
+    <body>
+        <h2>Introduction of Broadcast</h2>
+
+        <p>
+            Android apps can send or receive broadcast messages from the Android system and
+            other Android apps, similar to the publish-subscribe design pattern. These broadcasts
+            are sent when an event of interest occurs. For example, the Android system sends
+            broadcasts when various system events occur, such as when the system boots up or
+            the device starts charging. Apps can also send custom broadcasts, for example,
+            to notify other apps of something that they might be interested in (for example,
+            some new data has been downloaded).<br/><br/>
+            Apps can register to receive specific broadcasts. When a broadcast is sent,
+            the system automatically routes broadcasts to apps that have subscribed
+            to receive that particular type of broadcast.<br/><br/>
+            Generally speaking, broadcasts can be used as a messaging system across apps and
+            outside of the normal user flow. However, you must be careful not to abuse the
+            opportunity to respond to broadcasts and run jobs in the background that can
+            contribute to a slow system performance, as described in the following video.<br/>
+        </p>
+
+        <p>
+            <b>Note:</b> To set up a broadcast receiver, include the following in the
+            activity from which you want to listen to broadcast:
+        </p>
+
+        <p>
+            <b>Note:</b> Include also the following in the activity from which you
+            want to listen to broadcast:
+        </p>
+
+        <p id="second_code">
+            MyBroadcastReceiver myReceiver;<br/>
+            IntentFilter myIntentFilter;
+        </p>
+
+        <p>
+            In the onCreate method, add:
+        </p>
+
+        <p id="third_code">
+            myReceiver = new MyBroadcastReceiver();<br/>
+            myIntentFilter = new IntentFilter(“broadcast");
+        </p>
+
+        <p>
+            Register the receiver in onResume() :
+        </p>
+
+        <p id="fourth_code">
+            registerReceiver(myReceiver, myIntentFilter);
+        </p>
+
+        <p>
+            Unregister the receiver in onPause():
+        </p>
+
+        <p id="fifth_code">
+            unregisterReceiver(myReceiver);
+        </p>
+
+        <p>
+            To send a broadcast (can be from a different activity):
+        </p>
+
+        <p id="sixth_code">
+            Intent i = new Intent(“broadcast");<br/>
+            i.putExtra("key", "some value from intent");<br/>
+            sendBroadcast(i);
+        </p>
+
+        <p>
+            Can also define a receiver through the AndroidManifest.xml file:
+        </p>
+
+        <p id="seventh_code">
+            &lt;receiver android:name=".SecondReceiver"&gt;<br/>
+            &emsp;&emsp;&lt;intent-filter&gt;<br/>
+            &emsp;&emsp;&emsp;&emsp;&lt;action android:name=“broadcast"/&gt;<br/>
+            &emsp;&emsp;&lt;/intent-filter&gt;<br/>
+            &lt;/receiver&gt;
+        </p>
+
+        <p>
+            Then define a SecondReceiver class to listen to broadcast:
+        </p>
+
+        <p id="first_code">
+            @Override<br/>
+            public void onReceive<br/>
+            (Context context, Intent i) {<br/>
+            &emsp;&emsp;Toast.makeText(context, <br/>
+            &emsp;&emsp;"I am in broadcast receiver, "<br/>
+            &emsp;&emsp;+ "message received = " <br/>
+            &emsp;&emsp;+ i.getStringExtra("key"),<br/>
+            &emsp;&emsp;Toast.LENGTH_LONG).show();<br/>
+            }
+        </p>
+    </body>
+</html>

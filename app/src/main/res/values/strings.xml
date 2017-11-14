@@ -45,6 +45,8 @@
     <string name="action_bar_title_explore"><font size="20">Explore</font></string>
     <string name="action_bar_title_course_map"><font size="20">Course Map</font></string>
     <string name="action_bar_title_account"><font size="20">Account</font></string>
+    <string name="action_bar_title_achievements"><font size="20">Achievements</font></string>
+
     <string name="course_fragments"><font size="20">Fragments</font></string>
     <string name="course_user_interface"><font size="20">User Interface</font></string>
     <string name="terms_and_conditions"><font size="20">Terms and Conditions</font></string>
@@ -66,7 +68,7 @@
     <string name="ui_quiz_info_questionNum_TV">4 questions, 1 point per question</string>
     <string name="android_activity_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
     <string name="intent_quiz_info_questionNum_TV">2 questions, 1 point per question</string>
-    <string name="broadcast_quiz_info_questionNum_TV">5 questions, 1 point per question</string>
+    <string name="broadcast_quiz_info_questionNum_TV">2 questions, 1 point per question</string>
 
     <string name="quiz_info_score_label_TV">Your Score</string>
     <string name="quiz_info_attempts_label_TV">Attempts</string>
@@ -80,7 +82,7 @@
     <string name="fragment_quiz_info_to_pass_content_TV">80% or higher</string>
     <string name="static_fragment_quiz_info_to_pass_content_TV">100%</string>
     <string name="intent_quiz_info_to_pass_content_TV">100%</string>
-    <string name="broadcast_quiz_info_to_pass_content_TV">don know</string>
+    <string name="broadcast_quiz_info_to_pass_content_TV">100%</string>
 
     <string name="cancel_btn_popup_cancel_btn">Cancel</string>
     <string name="cancel_btn_popup_yes_btn">Yes, I\'m sure</string>
@@ -129,4 +131,10 @@
 
     <string name="background_image_references_TV">Background Image References</string>
     <string name="acknowledgements_references_TV">References</string>
+
+    <string name="achievements_points_TV">Your Score</string>
+    <string name="achievements_ui_label_TV">User Interface</string>
+    <string name="achievements_intent_label_TV">Activity &amp; Intent</string>
+    <string name="achievements_data_passing_label_TV">Data Passing</string>
+    <string name="achievements_fragment_label_TV">Fragments</string>
 </resources>

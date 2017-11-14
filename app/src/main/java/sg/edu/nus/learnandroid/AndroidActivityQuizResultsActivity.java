@@ -10,7 +10,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Yongxue
@@ -83,8 +82,6 @@ public class AndroidActivityQuizResultsActivity extends AppCompatActivity {
             String q3 = prefs.getString("q3", "default value");
             String q4 = prefs.getString("q4", "default value");
             String q5 = prefs.getString("q5", "default value");
-
-            Toast.makeText(getApplicationContext(), q1 + "," + q2 + "," + q3 + "," + q4 + "," + q5, Toast.LENGTH_LONG).show();
 
             return q1 + "," + q2 + "," + q3 + "," + q4 + "," + q5;
         }
