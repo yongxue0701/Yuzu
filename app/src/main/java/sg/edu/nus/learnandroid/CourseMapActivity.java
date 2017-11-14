@@ -194,7 +194,7 @@ public class CourseMapActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (dataPassingCoursePassedFromDB == 1) {
+                if (databaseCoursePassedFromDB == 1) {
                     Intent myIntent = new Intent(getApplicationContext(), CoursePermissionActivity.class);
                     startActivity(myIntent);
                     overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);

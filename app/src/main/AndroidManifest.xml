@@ -107,7 +107,10 @@
         <activity android:name=".DatabaseQuizResultsActivity" />
         <activity android:name=".CoursePermissionActivity" />
         <activity android:name=".PermissionInfoActivity" />
-        <activity android:name=".PermissionIntroActivity"></activity>
+        <activity android:name=".PermissionIntroActivity" />
+        <activity android:name=".BackgroundImageRefActivity" />
+        <activity android:name=".CourseContentRefActivity" />
+        <activity android:name=".CourseQuizRefActivity"></activity>
     </application>
 
 </manifest>

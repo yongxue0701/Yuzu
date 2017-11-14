@@ -20,7 +20,7 @@
     <android.support.percent.PercentRelativeLayout
         android:id="@+id/background_image_references_PRL"
         android:layout_width="match_parent"
-        android:background="@color/colorWhite"
+        android:background="@drawable/border_line_with_white_background"
         app:layout_heightPercent="8%"
         app:layout_marginTopPercent="10%">
 
@@ -38,6 +38,68 @@
 
         <ImageView
             android:id="@+id/acknowledgements_arrow_IV"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_right_super_light_gray"
+            app:layout_marginEndPercent="2%"
+            app:layout_marginStartPercent="4%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/course_content_references_PRL"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/background_image_references_PRL"
+        android:background="@drawable/border_line_with_white_background"
+        app:layout_heightPercent="8%">
+
+        <TextView
+            android:id="@+id/course_content_references_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/course_content_references_TV"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_marginStartPercent="4%" />
+
+        <ImageView
+            android:id="@+id/acknowledgements_course_content_arrow_IV"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_right_super_light_gray"
+            app:layout_marginEndPercent="2%"
+            app:layout_marginStartPercent="4%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/course_quiz_references_PRL"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/course_content_references_PRL"
+        android:background="@drawable/border_line_with_white_background"
+        app:layout_heightPercent="8%">
+
+        <TextView
+            android:id="@+id/course_quiz_references_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/course_quiz_references_TV"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_marginStartPercent="4%" />
+
+        <ImageView
+            android:id="@+id/acknowledgements_course_quiz_arrow_IV"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:layout_alignParentEnd="true"

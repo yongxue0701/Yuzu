@@ -24,7 +24,7 @@ public class AcknowledgementsActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         TextView actionBarTitleTV = (TextView) findViewById(R.id.action_bar_title_without_donebtn);
-        actionBarTitleTV.setText(R.string.course_intent);
+        actionBarTitleTV.setText(R.string.action_bar_title_acknowledgements);
 
         ImageView backBtnIV = (ImageView) findViewById(R.id.action_bar_back_without_donebtn);
         backBtnIV.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +40,29 @@ public class AcknowledgementsActivity extends AppCompatActivity {
         backgroundImageRefPRL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), BackgroundImageRefActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
 
+        PercentRelativeLayout courseContentRefPRL = (PercentRelativeLayout) findViewById(R.id.course_content_references_PRL);
+        courseContentRefPRL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), CourseContentRefActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+
+        PercentRelativeLayout courseQuizRefPRL = (PercentRelativeLayout) findViewById(R.id.course_quiz_references_PRL);
+        courseQuizRefPRL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), CourseQuizRefActivity.class);
+                startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
     }

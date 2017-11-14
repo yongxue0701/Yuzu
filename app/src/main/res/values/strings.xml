@@ -46,6 +46,7 @@
     <string name="action_bar_title_course_map"><font size="20">Course Map</font></string>
     <string name="action_bar_title_account"><font size="20">Account</font></string>
     <string name="action_bar_title_achievements"><font size="20">Achievements</font></string>
+    <string name="action_bar_title_acknowledgements"><font size="20">Acknowledgements</font></string>
 
     <string name="course_fragments"><font size="20">Fragments</font></string>
     <string name="course_user_interface"><font size="20">User Interface</font></string>
@@ -136,6 +137,8 @@
 
     <string name="background_image_references_TV">Background Image References</string>
     <string name="acknowledgements_references_TV">References</string>
+    <string name="course_content_references_TV">Course Content</string>
+    <string name="course_quiz_references_TV">Course Quizzes</string>
 
     <string name="achievements_points_TV">Your Score</string>
     <string name="achievements_ui_label_TV">User Interface</string>
