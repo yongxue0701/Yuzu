@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sg.edu.nus.learnandroid.AndroidActivityLifeCycleActivity">
+    tools:context="sg.edu.nus.learnandroid.activity.android_intro.AndroidActivityLifeCycleActivity">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/android_activity_life_cycle_SV"

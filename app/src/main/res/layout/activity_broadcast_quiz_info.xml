@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sg.edu.nus.learnandroid.BroadcastQuizInfoActivity">
+    tools:context="sg.edu.nus.learnandroid.activity.broadcast.BroadcastQuizInfoActivity">
 
     <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"

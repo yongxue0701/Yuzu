@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/course_map_europe"
-    tools:context="sg.edu.nus.learnandroid.CourseFragmentActivity"
+    tools:context="sg.edu.nus.learnandroid.activity.course.CourseFragmentActivity"
     tools:ignore="ContentDescription">
 
     <ImageView

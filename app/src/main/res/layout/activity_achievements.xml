@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorSuperLightGrey"
-    tools:context="sg.edu.nus.learnandroid.AchievementsActivity">
+    tools:context="sg.edu.nus.learnandroid.activity.general.AchievementsActivity">
 
     <LinearLayout
         android:id="@+id/achievements_points_LL"

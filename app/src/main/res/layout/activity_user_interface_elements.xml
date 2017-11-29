@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sg.edu.nus.learnandroid.UserInterfaceElementsActivity">
+    tools:context="sg.edu.nus.learnandroid.activity.user_interface.UserInterfaceElementsActivity">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ui_components_SV"

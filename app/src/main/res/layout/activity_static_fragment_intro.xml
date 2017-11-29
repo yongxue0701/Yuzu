@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sg.edu.nus.learnandroid.FragmentIntroductionActivity">
+    tools:context="sg.edu.nus.learnandroid.activity.fragment_concept.FragmentIntroductionActivity">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/static_fragment_intro_SV"

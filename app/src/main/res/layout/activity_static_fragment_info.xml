@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sg.edu.nus.learnandroid.FragmentConceptInfoActivity">
+    tools:context="sg.edu.nus.learnandroid.activity.fragment_concept.FragmentConceptInfoActivity">
 
     <ImageView
         android:id="@+id/static_fragment_loading_anim"

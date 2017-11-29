@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/course_map"
-    tools:context="sg.edu.nus.learnandroid.CourseMapActivity"
+    tools:context="sg.edu.nus.learnandroid.activity.course.CourseMapActivity"
     tools:ignore="ContentDescription">
 
     <android.support.design.widget.BottomNavigationView
