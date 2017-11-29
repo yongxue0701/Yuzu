@@ -4,10 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import static sg.edu.nus.learnandroid.database.LearnAndroidDBHelper.feedbackContactDetail;
-import static sg.edu.nus.learnandroid.database.LearnAndroidDBHelper.feedbackContent;
-import static sg.edu.nus.learnandroid.database.LearnAndroidDBHelper.feedbackDate;
-import static sg.edu.nus.learnandroid.database.LearnAndroidDBHelper.feedbackTitle;
+import static sg.edu.nus.learnandroid.database.AndroidMasterDBHelper.feedbackContactDetail;
+import static sg.edu.nus.learnandroid.database.AndroidMasterDBHelper.feedbackContent;
+import static sg.edu.nus.learnandroid.database.AndroidMasterDBHelper.feedbackDate;
+import static sg.edu.nus.learnandroid.database.AndroidMasterDBHelper.feedbackTitle;
 
 /**
  * Created by Yongxue on 8/11/17.
@@ -15,13 +15,13 @@ import static sg.edu.nus.learnandroid.database.LearnAndroidDBHelper.feedbackTitl
 
 public class FeedbackDB {
 
-    LearnAndroidDBHelper feedbackDBHelper;
+    AndroidMasterDBHelper feedbackDBHelper;
     SQLiteDatabase db;
     final Context context;
 
     public FeedbackDB(Context ctx) {
         this.context = ctx;
-        feedbackDBHelper = new LearnAndroidDBHelper(this.context);
+        feedbackDBHelper = new AndroidMasterDBHelper(this.context);
     }
 
     public FeedbackDB open() {
@@ -41,6 +41,6 @@ public class FeedbackDB {
         initialValues.put(feedbackContent, _feedbackContent);
         initialValues.put(feedbackContactDetail, _feedbackContactDetail);
 
-        db.insert(LearnAndroidDBHelper.feedbackTableName, null, initialValues);
+        db.insert(AndroidMasterDBHelper.feedbackTableName, null, initialValues);
     }
 }

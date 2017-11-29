@@ -8,10 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Yongxue on 16/10/17.
  */
 
-public class LearnAndroidDBHelper extends SQLiteOpenHelper {
+public class AndroidMasterDBHelper extends SQLiteOpenHelper {
 
     public static final int databaseVersion = 1;
-    public static final String databaseName = "learnAndroidDBName";
+    public static final String databaseName = "androidMasterDBName";
 
     public static final String userAccountTableName = "userAccountTableName";
     public static final String feedbackTableName = "feedbackTableName";
@@ -37,6 +37,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
     public static final String broadcastQuizPts = "broadcastQuizPts";
     public static final String databaseQuizPts = "databaseQuizPts";
 
+    public static final String feedbackId = "feedbackId";
     public static final String feedbackTitle = "feedbackTitle";
     public static final String feedbackDate = "feedbackDate";
     public static final String feedbackContent = "feedbackContent";
@@ -68,6 +69,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
 
     private static final String SQLite_CREATE_FEEDBACK =
             "CREATE TABLE " + feedbackTableName + "(" +
+                    feedbackId + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     feedbackTitle + " TEXT NOT NULL," +
                     feedbackDate + " TEXT NOT NULL," +
                     feedbackContent + " TEXT NOT NULL," +
@@ -92,7 +94,7 @@ public class LearnAndroidDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public LearnAndroidDBHelper(Context context) {
+    public AndroidMasterDBHelper(Context context) {
         super(context, databaseName, null, databaseVersion);
     }
 }
