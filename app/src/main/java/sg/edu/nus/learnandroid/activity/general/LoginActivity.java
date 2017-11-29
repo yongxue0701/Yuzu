@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import sg.edu.nus.learnandroid.R;
 import sg.edu.nus.learnandroid.activity.course.CourseMapActivity;
@@ -82,8 +83,14 @@ public class LoginActivity extends Activity {
                             Intent myIntent = new Intent(getApplicationContext(), CourseMapActivity.class);
                             startActivity(myIntent);
                             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Your password is incorrect, please try again!",
+                                    Toast.LENGTH_SHORT).show();
                         }
                     } while (mCursor.moveToNext());
+                } else {
+                    Toast.makeText(getApplicationContext(), "Your username is invalid, please try again!",
+                            Toast.LENGTH_SHORT).show();
                 }
 
                 mCursor.close();
